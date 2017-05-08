@@ -1,0 +1,49 @@
+.djs-wrapper {
+	width: 85%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.djs-content {
+	width: 70%;
+	float: left;
+	background: white;
+	padding: 20px;
+}
+.djs-return {
+	width: 100%;
+	color: #C1C1C1;
+}
+.djs-return a {
+	color: #C1C1C1;
+	font-size: 16px;
+}
+.djs-return a:hover {
+	color: #8A8A8A;
+	text-decoration: none;
+}
+.djs-return span {
+	font-size: 14px;
+}
+.djs-return .djs-returnTitle {
+	font-size: 16px;
+}
+.djs-content p {
+	font-size: 20px;
+	font-weight: bold;
+}
+.djs-Content {
+	width: 100%;
+	margin-top: 20px;
+}
+
+.djs-right {
+	width: 28%;
+	float: right;
+	background: white;
+}
+.djs-price {
+	width: 100%;
+	
+}
+
+
