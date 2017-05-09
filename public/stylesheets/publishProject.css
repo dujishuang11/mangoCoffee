@@ -1,0 +1,141 @@
+.lhq_pP{
+	width: 85%;
+	height: auto;
+	margin: 0 auto;
+	margin-top: 70px;
+	background: #FFFFFF;
+}
+.lhq_pP>p:nth-child(1){
+	
+	width: 100%;
+	font-size:20px;
+	font-weight: 600;
+	line-height: 70px;
+	padding-left: 30px;
+	color: #777777;
+	height: 70px;
+}
+.lhq_pP>p:nth-child(2){
+	width: 100%;
+	font-size:15px;
+	font-weight: 600;
+	line-height: 20px;
+	padding-left: 15%;
+	color: #000000;
+	height: 20px;
+}
+.lhq_pP_img{
+	width:40%;
+	height: 250px;
+	text-align: center;
+	line-height: 250px;
+	font-size: 20px;
+	background: #F7F7F7;
+	margin-left:15%;
+	border: 0.1px solid #C1C1C1;
+	color: #999999;
+	font-size: 100px;
+	margin-top: 5px;
+	cursor: pointer;
+}
+.lhq_pP>p:nth-child(4){
+	width: 100%;
+	font-size:15px;
+	font-weight: 600;
+	line-height: 20px;
+	padding-left: 15%;
+	color: #000000;
+	margin-top: 20px;
+	height: 20px;
+}
+.lhq_pP>input{
+	width:70%;
+	height: 40px;
+	display: block;
+	margin-top:5px;
+	margin-left: 15%;
+}
+.lhq_pP>p:nth-child(6){
+	width: 100%;
+	font-size:15px;
+	font-weight: 600;
+	line-height: 20px;
+	padding-left: 15%;
+	color: #000000;
+	margin-top: 20px;
+	height: 20px;
+}
+.lhq_pP>select{
+	width:70%;
+	height: 40px;
+	display: block;
+	outline: none;
+	margin-top: 5px;
+	margin-left: 15%;
+}
+.lhq_pP>p:nth-child(8){
+	width: 100%;
+	font-size:15px;
+	font-weight: 600;
+	line-height: 20px;
+	padding-left: 15%;
+	color: #000000;
+	height: 20px;
+	margin-top: 20px;
+}
+.lhq_pP>.lhq_pP_fwb{
+	width:40%;
+	height:250px;
+	text-align: center;
+	line-height:250px;
+	font-size: 20px;
+	margin-top: 5px;
+	color: #999999;
+	font-size: 100px;
+	margin-left: 15%;
+	background: #f7f7f7;
+	border: 0.1px solid #C1C1C1;
+}
+.lhq_pP>p:nth-child(10){
+	width: 100%;
+	font-size:15px;
+	font-weight: 600;
+	line-height: 20px;
+	padding-left: 15%;
+	color: #000000;
+	height: 20px;
+	margin-top: 20px;
+}
+.lhq_pP>p:nth-child(12){
+	width: 100%;
+	font-size: 18px;
+	margin-top: 20px;
+	height: 50px;
+}
+.lhq_pP>p:nth-child(12)>button:nth-child(1){
+	width:100px;
+	height: 30px;
+	float: right;
+	margin-right:15%;
+	background: #333333;
+	cursor: pointer;
+	font-size: 16px;
+	outline: none;
+	border-radius: 5px;
+	border: none;
+	color: #FFFFFF;
+}
+.lhq_pP>p:nth-child(12)>button:nth-child(2){
+	width: 50px;
+	height: 30px;
+	float: right;
+	margin-right: 30px;
+	font-size: 16px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-weight: 600;
+	background: #FFFFFF;
+	color: #777777;
+}
