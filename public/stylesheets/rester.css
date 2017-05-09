@@ -15,4 +15,5 @@ a img{border:none}
 .btn{cursor:pointer;border:none}
 .rel{position:relative}
 .abs{position:absolute}
+.cur{cursor: pointer;}
 body{background:#F7F7F7;}
