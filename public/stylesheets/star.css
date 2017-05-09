@@ -1,0 +1,120 @@
+.djs-wrapper {
+	width: 100%;
+}
+.djs-nav {
+	width: 85%;
+	margin: 0 auto;
+	box-shadow: 0 0 2px 3px #F2F2F2;
+}
+.djs-navTop {
+	width: 100%;
+	background: white;
+	padding: 30px;
+	overflow: hidden;
+}
+.djs-nav span {
+	height: 100%;
+	float: left;
+	font-size: 16px;
+}
+.djs-nav ul {
+	width: 100%;
+	height: 100%;
+	font-size: 16px;
+}
+.djs-nav ul li {
+	margin: 0 15px 5px 0;
+	float: left;
+	cursor:pointer;
+}
+
+.djs-navBottom {
+	width: 100%;
+	background: white;
+	padding: 30px;
+	overflow: hidden;
+	display: none;
+}
+
+.djs-px {
+	width: 85%;
+	margin: 0 auto;
+	display: flex;
+	border-bottom: 4px solid #F0F0F0;
+}
+.djs-px > li {
+	padding: 20px 40px 15px 0;
+}
+.djs-px > li > ul {
+	width: 140%;
+	background: white;
+	display: none;
+}
+.djs-px > li > ul > li {
+	width: 100%;
+	padding: 10px 0;
+	text-align: center;
+}
+.djs-list {
+	width: 85%;
+	margin: 0 auto;
+}
+.djs-list > ul {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.djs-list > ul > li {
+	width: 49%;
+	margin-top: 20px;
+	background: white;
+}
+.djs-list > ul > li a {
+	width: 100%;
+}
+.djs-list > ul > li a:hover {
+	text-decoration: none;
+	color: black;
+}
+.djs-list > ul > li .djs-top {
+	width: 100%;
+	overflow: hidden;
+}
+.djs-list > ul > li .djs-top img {
+	width: 150px;
+	height: 150px;
+	background: blue;
+	float: left;
+}
+.djs-list > ul > li .djs-top .djs-text {
+	padding: 10px 20px;
+}
+.djs-list > ul > li .djs-top .djs-text .djs-name {
+	width: 100px;
+	padding-bottom: 5px;
+	color: #222222;
+	font-size: 18px;
+	font-weight: bold;
+	border-bottom: 2px solid #DDDDDD;
+}
+.djs-list > ul > li .djs-top .djs-text div {
+	margin-top: 10px;
+	color: #999999;
+	font-size: 16px;
+}
+.djs-list > ul > li .djs-top .djs-text .djs-category {
+	margin-top: 15px;
+}
+.djs-list > ul > li .djs-top .djs-text .djs-category li {
+	margin-right: 10px;
+}
+.djs-list > ul > li .djs-bottom {
+	width: 100%;
+	padding: 20px;
+	border-top: 1px solid #F3F3F3;
+}
+
+.color {
+	color: #EA5813 !important;
+}
