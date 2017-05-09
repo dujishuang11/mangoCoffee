@@ -149,11 +149,11 @@
 }
 .zhj_wallet{
 	width: 85%;
-	height: auto;
+	height: 320px;
 	margin: 0 auto;
 	border: 1px solid #DDDDDD;
-	border-top: 0;
 	background: white;
+	margin-top: 1%;
 	display: none;
 }
 .zhj_walletTex{
