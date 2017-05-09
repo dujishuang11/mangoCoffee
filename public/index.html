@@ -6,11 +6,147 @@
 		<link rel="stylesheet" type="text/css" href="stylesheets/rester.css"/>
 		<link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.css"/>
 		<link rel="stylesheet" type="text/css" href="stylesheets/index.css"/>
+		<link rel="stylesheet" href="stylesheets/nav.css" />
 		<script src="../node_modules/angular/angular.js"></script>
 		<script src="../node_modules/jquery/dist/jquery.js"></script>
+		<script src="javascripts/gVerify.js"></script>
 		<script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
-		<script src="javascripts/index.js"></script>
 	</head>
 	<body>
+		<div class="lxm_wrapper">
+			<!--<a href="https://open.weixin.qq.com/connect/qrconnect?appid=wx946d422a92ca5112&redirect_uri=http://www.kamangchina.com&response_type=code&scope=snsapi_login&state=1#wechat_redirect">点击这里绑定</a>-->
+			<div class="nav">
+				<div class="nav_logo">
+					<img src="images/logo.png" alt="" />
+				</div>
+				<div class="nav_list">
+					<ul>
+						<li class="nav_one"><a href="#">首页</a></li>
+						<li class="nav_one">
+							<a href="#">设计服务</a><i class="glyphicon glyphicon-triangle-bottom"></i>
+							<div class="nav_hide">
+								<ul class="nav_hide_list">
+									<!--<li><a href="#">LOGO/品牌</a></li>
+									<li><a href="#">UI设计</a></li>
+									<li><a href="#">工业/产品设计</a></li>
+									<li><a href="#">摄影</a></li>
+									<li><a href="#">室内设计</a></li>
+									<li><a href="#">私家定制</a></li>
+									<li><a href="#">平面设计</a></li>
+									<li><a href="#">绘画/插画</a></li>
+									<li><a href="#">影视/动画</a></li>
+									<li><a href="#">服装设计</a></li>
+									<li><a href="#">造型设计</a></li>
+									<li><a href="#">其它</a></li>
+									<li><a href="#">造型设计</a></li>-->
+								</ul>
+								<div class="nav_title"></div>
+							</div>
+						</li>
+						<li class="nav_one"><a href="#">设计师</a></li>
+					</ul>
+				</div>
+				<div class="nav_right">
+					<div class="nav_search">
+						<input class="search_con" type="text" placeholder="搜索设计服务" />
+						<i class="glyphicon glyphicon-search"></i>
+					</div>
+					<p class="login">登录</p>
+					<p class="res">注册</p>
+					<!--<div class="user">
+						<img src="images/40x40.jpg" alt="" />
+						<div class="user_list_wrapper">
+							<div class="user_list">
+								<ul>
+									<li><a href="#">我的美思</a></li>
+									<li><a href="#">设置</a></li>
+									<li><a href="#">我的花瓣</a></li>
+									<li><a href="#">退出</a></li>
+								</ul>
+								<div class="user_title"></div>
+							</div>
+						</div>
+					</div>-->
+				</div>
+			</div>
+			<!--<p class="inter">咖芒网</p>-->
+			<div class="login_wrapper" style="opacity: 0; z-index: -1;">
+				<div class="login_con">
+					<p>用第三方帐号登录咖芒</p>
+					<i class="glyphicon glyphicon-remove login_remove"></i>
+					
+					<!--第三方-->
+					<div class="other_mode">
+						<div class="tencent"><img src="images/QQ-1.png" alt="" /></div>
+						<div class="WeChat"><img src="images/wx-1.png" alt="" /></div>
+					</div>
+					
+					<!--标题-->
+					<div class="login_email">
+						<p></p>
+						<p>用邮箱/手机号登录咖芒</p>
+						<p></p>
+					</div>
+					
+
+					<div class="login_enter">
+						<!--普通登录-->
+						<div class="login_enter_main">
+							<input type="text" placeholder="输入手机号或邮箱" />
+							<input type="password" placeholder="密码" />
+							<div class="login_yzm">
+								<div class="yzm_pic" id="v_container" style="width: 100px;height: 50px;"></div>
+								<input type="text" placeholder="请输入验证码" />
+							</div>
+							<button>登录</button>
+						</div>
+						
+						<!--忘记密码-->
+						<div class="login_enter_forget" style="display: none;">
+							<input type="text" placeholder="输入手机号或邮箱" />
+							<button>重置</button>
+						</div>
+						
+						<!--注册账号-->
+						<div class="login_enter_resgister" style="display: none;">
+							<input type="text" placeholder="输入手机号或邮箱" />
+							<button class="resgister_list">注册</button>
+						</div>
+						<a href="#" class="forget_pass">忘记密码</a><a href="#" class="resgister_now">立即注册</a><span class="login_user">还没有账号？</span>
+					</div>
+					
+					<!--注册列表-->
+					<div class="resgister" style="display: none;">
+						<img src="images/logo.png" alt="" />
+						<p></p>
+						<p>欢迎来到咖芒！请完善你的信息</p>
+						<p>账号　17600022763</p>
+						<p>手机验证码　<input type="text" placeholder="收到的验证码" /><button class="login_rester">重新发送</button></p>
+						<p>昵称　<input type="text" placeholder="昵称" /><span>请输入用户昵称</span></p>
+						<p>密码　<input type="password" placeholder="设定登录密码" /><span>请输入密码</span></p>
+						<p>确认密码　<input type="password" placeholder="请再输入一次登录密码" /></p>
+						<p><input type="checkbox" id="aa" /><label for="aa">我已认真阅读并接受<a href="#">《花瓣网免责声明》</a></label></p>
+						<button class="register_sub">提交</button>
+						<i class="glyphicon glyphicon-arrow-left resgister_back"></i>
+						<i class="glyphicon glyphicon-remove resgister_remove"></i>
+					</div>
+					
+				</div>
+			</div>
+
+		</div>
 	</body>
+	<script src="javascripts/common.js"></script>
+	<script src="javascripts/index.js"></script>
+	<!--<script type="text/javascript">
+//		alert(1)
+		$.ajax({
+			type:"get",
+			url:"http://47.92.145.129:8000/users/gg",
+//			async:true,
+			success:function(e){
+				console.log(e)
+			}
+		});
+	</script>-->
 </html>

@@ -44,16 +44,20 @@
 }
 .djs-px > li {
 	padding: 20px 40px 15px 0;
+	cursor: pointer;
+	position: relative;
 }
 .djs-px > li > ul {
-	width: 140%;
+	width: 120%;
 	background: white;
+	position: absolute;
 	display: none;
 }
 .djs-px > li > ul > li {
 	width: 100%;
 	padding: 10px 0;
 	text-align: center;
+	cursor: pointer;
 }
 
 .djs-list {
@@ -64,12 +68,19 @@
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
+	flex-wrap: wrap;
 }
 .djs-list ul li {
 	width: 24%;
-	height: 420px;
 	margin-top: 20px;
 	background: white;
+}
+.djs-list ul li a {
+	width: 100%;
+}
+.djs-list ul li a:hover {
+	text-decoration: none;
+	color: black;
 }
 .djs-list ul li img {
 	width: 100%;
@@ -96,4 +107,8 @@
 	padding: 5px 0;
 	text-align: center;
 	font-size: 14px;
+}
+
+.color {
+	color: #EA5813 !important;
 }
