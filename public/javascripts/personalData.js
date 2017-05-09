@@ -6,6 +6,11 @@ window.addEventListener('load',function(){
 		$(".zhj_hoverReset").css('opacity','0');
 	})
 	
+	$(".zhj_shop").hover(function(){
+		$(".zhj_hoverShop").css('opacity','1');
+	},function(){
+		$(".zhj_hoverShop").css('opacity','0');
+	})
 	
 	$(".zhj_Release").eq(0).css('color','black').css("border-bottom","2px solid black").css('font-weight','700').css("background","white");
 	$(".zhj_Release").click(function(){

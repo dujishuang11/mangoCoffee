@@ -19,7 +19,7 @@
 	margin: 0 auto;
 }
 .zhj_personTopImg{
-	width: 11.5%;
+	width: 140px;
 	height: 140px;
 	float: left;
 	border-radius: 50%;
@@ -47,7 +47,7 @@
 	height: 40px;
 	float: left;
 	margin-top: 8%;
-	margin-left: 40%;
+	margin-left: 33%;
 	text-align: center;
 	line-height: 40px;
 	font-size: 18px;
@@ -57,12 +57,49 @@
 	background: white;
 	position: relative;
 }
-.zhj_hoverReset{
+.zhj_shop{
+	width: 3.3%;
+	height: 40px;
+	float: left;
+	margin-top: 8%;
+	margin-left: 2%;
+	text-align: center;
+	line-height: 40px;
+	font-size: 18px;
+	color: black;
+	border: 1px solid #DDDDDD;
+	border-radius: 5px;
+	background: white;
+	position: relative;
+}
+.zhj_hoverShop{
 	width: 350%;
-	height: 80px;
+	height: 40px;
 	background: white;
 	position: absolute;
-	top: -90px;
+	top: -50px;
+	left: -30px;	
+	border: 1px solid #DDDDDD;
+	box-shadow: 3px 3px 8px #DDDDDD;
+	opacity: 0;
+	transition: all 0.5s;
+}
+.zhj_personShop{
+	width: 100%;
+	height: 40px;
+	float: left;
+	text-align: center;
+	line-height: 40px;
+	color: black;
+	cursor: pointer;
+	font-size: 16px;
+}
+.zhj_hoverReset{
+	width: 350%;
+	height: 40px;
+	background: white;
+	position: absolute;
+	top: -50px;
 	left: -70px;	
 	border: 1px solid #DDDDDD;
 	box-shadow: 3px 3px 8px #DDDDDD;
@@ -87,7 +124,6 @@
 	line-height: 40px;
 	color: black;
 	font-size: 16px;
-	border-top: 1px solid #DDDDDD;
 	cursor: pointer;
 }
 .zhj_aline{
@@ -519,15 +555,16 @@ body,html{
 }
 .zhj_Notice{
 	width: 100%;
-	height: 70px;
+	height: 80px;
 	padding-left: 3%;
 	padding-top: 10px;
+	margin-top: 2%;
 	background: #DFF0FF;
 }
 .zhj_Notice span:nth-child(1){
 	color: #505152;
 	width: 100%;
-	font-size: 20px;
+	font-size: 18px;
 	font-weight: bold;
 	float: left;
 	display: inline-block;
@@ -548,25 +585,27 @@ body,html{
 .cancel{
 	background: #EDEDED;
 	float: left;
-	width: 10%;
+	width: 12%;
 	height: 40px;
+	text-align: center;
 	border-radius: 2%;
 	font-size: 16px;
 	color: #444444;
 	font-weight: bold;
-	margin-left: 78%;
+	margin-left: 70%;
 	margin-top: 1%;
 }
 .beSure{
 	background: #C0A75E;
 	float: left;
-	width: 10%;
+	width: 12%;
 	height: 40px;
+	text-align: center;
 	border-radius: 2%;
 	font-size: 16px;
 	color: white;
 	font-weight: bold;
-	margin-left: 2%;
+	margin-left: 4%;
 	margin-top: 1%;
 }
 
