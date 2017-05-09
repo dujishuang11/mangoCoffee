@@ -30,6 +30,7 @@
 .djs-content p {
 	font-size: 20px;
 	font-weight: bold;
+	color: #393939;
 }
 .djs-Content {
 	width: 100%;
@@ -111,6 +112,7 @@
 	text-align: center;
 	line-height: 30px;
 	background: #EDEDED;
+	font-size: 14px;
 }
 .djs-data .dis-name div span {
 	margin-right: 5px;
