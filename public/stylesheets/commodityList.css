@@ -1,5 +1,6 @@
 .djs-wrapper {
 	width: 100%;
+	margin-top: 20px;
 }
 .djs-nav {
 	width: 85%;
@@ -39,24 +40,31 @@
 .djs-px {
 	width: 85%;
 	margin: 0 auto;
-	display: flex;
 	border-bottom: 4px solid #F0F0F0;
 }
 .djs-px > li {
 	padding: 20px 40px 15px 0;
 	cursor: pointer;
+	float: left;
+	margin-right: 20px;
 	position: relative;
+	font-size: 16px;
 }
 .djs-px > li > ul {
 	width: 120%;
 	background: white;
 	position: absolute;
 	display: none;
+	z-index: 9999;
 }
 .djs-px > li > ul > li {
 	width: 100%;
 	padding: 10px 0;
 	text-align: center;
+	cursor: pointer;
+}
+.djs-px > li > ul > li:hover {
+	background: #F7F7F7;
 	cursor: pointer;
 }
 
@@ -66,22 +74,24 @@
 }
 .djs-list ul {
 	width: 100%;
-	display: flex;
-	justify-content: space-between;
-	flex-wrap: wrap;
+	overflow: hidden;
 }
 .djs-list ul li {
 	width: 24%;
-	margin-top: 20px;
+	margin: 20px;
+	margin-left: .5%;
+	margin-right: .5%;
 	background: white;
+	float: left;
 	transition: .3s;
 }
 .djs-list ul li a {
 	width: 100%;
+	color: #555555;
 }
 .djs-list ul li a:hover {
 	text-decoration: none;
-	color: black;
+	color: #555555;
 }
 .djs-list ul li img {
 	width: 100%;
@@ -113,3 +123,4 @@
 .color {
 	color: #EA5813 !important;
 }
+

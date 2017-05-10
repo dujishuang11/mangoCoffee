@@ -37,19 +37,19 @@ window.addEventListener("load",function(){
 		$("#peopl_gr").css("display","block");
 		$("#geren_single").css("height","51px").css("border","1px solid #DDDDDD").css("background","white").css("border-bottom","none");
 		//团队
-		$("#yu_teamkey").css("display","none");
+		$("#yu_aboutTeam").css("display","none");
 		$("#team_single").css("background","#F7F7F7").css("height","49px").css("border","none");
 		//企业
-		$("#yu_qiyekey").css("display","none");
+		$("#yu_aboutQiye").css("display","none");
 		$("#qiye_single").css("height","49px").css("border","none").css("background","#F7F7F7");
 	})
 	//点击团队
 	$("#team_single").click(function(){
-		$("#yu_qiyekey").css("display","none");
-		$("#yu_teamkey").css("display","block");
+		$("#yu_aboutQiye").css("display","none");
+		$("#yu_aboutTeam").css("display","block");
 		$("#peopl_gr").css("display","none");
 		//团队
-		$("#yu_teamkey").css("display","block");
+		$("#yu_aboutTeam").css("display","block");
 		$("#team_single").css("height","51px").css("border","1px solid #DDDDDD").css("background","white").css("border-bottom","none");
 		//个人
 		$("#geren_single").css("background","#F7F7F7").css("height","49px").css("border","none");
@@ -59,8 +59,8 @@ window.addEventListener("load",function(){
 	})
 	$("#qiye_single").click(function(){
 		$("#peopl_gr").css("display","none");
-		$("#yu_teamkey").css("display","none");
-		$("#yu_qiyekey").css("display","block");
+		$("#yu_aboutTeam").css("display","none");
+		$("#yu_aboutQiye").css("display","block");
 		//个人
 		$("#geren_single").css("background","#F7F7F7").css("height","49px").css("border","none");
 		//团队
