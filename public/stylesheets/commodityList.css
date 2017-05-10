@@ -40,13 +40,15 @@
 .djs-px {
 	width: 85%;
 	margin: 0 auto;
-	display: flex;
 	border-bottom: 4px solid #F0F0F0;
 }
 .djs-px > li {
 	padding: 20px 40px 15px 0;
 	cursor: pointer;
+	float: left;
+	margin-right: 20px;
 	position: relative;
+	font-size: 16px;
 }
 .djs-px > li > ul {
 	width: 120%;
@@ -72,14 +74,15 @@
 }
 .djs-list ul {
 	width: 100%;
-	display: flex;
-	justify-content: space-between;
-	flex-wrap: wrap;
+	overflow: hidden;
 }
 .djs-list ul li {
 	width: 24%;
-	margin-top: 20px;
+	margin: 20px;
+	margin-left: .5%;
+	margin-right: .5%;
 	background: white;
+	float: left;
 	transition: .3s;
 }
 .djs-list ul li a {
