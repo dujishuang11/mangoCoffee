@@ -37,6 +37,7 @@
 	height: 60px;
 	display: block;
 	border-bottom: 1px solid #C1C1C1;
+	font-size: 14px;
 }
 .lhq_newList>ul>li>a:hover{
 	background: #F7F7F7;
