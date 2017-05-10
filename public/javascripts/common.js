@@ -1,3 +1,10 @@
+
+if(-[1,]){ 
+	console.log("这不是IE浏览器！"); 
+}else{ 
+	console.log("这是IE浏览器！");
+} 
+
 $.ajax({
 	type:"get",
 	url:"http://47.92.145.129:8000/users/nav",
@@ -50,6 +57,8 @@ $('.nav_list > ul').find('.nav_one').click(function(){
 	$('.nav_one').eq(index).siblings('.nav_one').css('border-bottom','none')
 //	alert(index)
 })
+
+
 
 //$('.nav_list > ul li:nth-child(2)').hover(function(){
 //	$('.nav_hide').css('display','block')

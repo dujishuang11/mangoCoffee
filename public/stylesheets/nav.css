@@ -84,8 +84,8 @@
 .nav_logo img {
 	width: 30%;
 	position: absolute;
-	/*<!--[if IE]>top: 20%;<![endif]-->*/
 	top: 50%;
+	top: 20%\0;
 	left: 50%;
 	transform: translate(-50%,-50%);
 	/*margin-top: -50%;*/

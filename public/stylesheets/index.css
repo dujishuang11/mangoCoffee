@@ -38,6 +38,7 @@ html,body {
 	margin-left: 30%;
 	position: absolute;
 	top: 50%;
+	top: 20%\0;
 	transform: translateY(-50%);
 	border-radius: 5px;
 }
