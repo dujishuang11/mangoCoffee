@@ -129,11 +129,11 @@
     resize: none;
     outline: 0;
 }
-.yu_gettel{
+.yu_getemail{
 	width:50%;
 	height:100px;
 }
-.yu_gettel lable{
+.yu_getemail lable{
 	width:97%;
 	height:auto;
 	color: #999;
@@ -142,13 +142,8 @@
     float: left;
     margin-left:3%;
 }
-.yu_telnumber{
+.yu_email{
 	width:97%;
-	height: auto;
-	margin-left: 3%;
-}
-.yu_tel{
-	width:80%;
 	height: 45px;
 	background-color: #fafafa;
     border: 1px solid #ddd;
@@ -161,17 +156,7 @@
     font-weight: inherit;
     resize: none;
     outline: 0;
-    border-right:none;
-}
-.yu_gaintel{
-	width:20%;
-	height:45px;
-	background: #EDEDED;
-	text-align: center;
-	line-height: 45px;
-	color:#000000;
-	font-size: 15px;
-	border:none;
+    margin-left:3%;
 }
 /*yu_linec*/
 .yu_linec{
@@ -356,13 +341,37 @@
 	border:2px dashed #E3E3E3;
 	background: #FAFAFA;
 }
-.yuon_diy input{
-	text-align: center;
-	/*line-height: 200px;
-	color:#D7A46B;
-	display: block;
-	font-size: 18px;*/
+.yuhan_img{
+	/*width:300px;
+	height:300px*/
+    position: relative;
+    /*background: red;*/
+   border:5px solid #E3E3E3;
+    width:150px;
+	height:160px;
+	padding:5px;
+	margin:20px;
 }
+.yuh_pic{
+	width:130px;
+	height:130px;
+	display:block;
+    opacity:0;
+    filter:alpha(opacity=0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    /*background: green;*/
+}
+.han_imgg{
+	width:130px;
+	height:130px;
+}
+
+/*.yuon_diy input{
+	text-align: center;
+}*/
 .yu_detail{
 	width:100%;
 	height:100px;

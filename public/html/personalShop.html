@@ -60,12 +60,9 @@
 							<lable>真实姓名</lable><br />
 							<input name="name" type="text" class="yu_tname" placeholder="请输入您的真实姓名" />
 						</div>
-						<div class="yu_gettel fl">
-							<lable>手机验证码</lable><br />
-							<div class="yu_telnumber">
-								<input name="name" type="text" class="yu_tel fl" placeholder="请输入您的手机验证码" />
-								<button class="yu_gaintel fl">获取验证码</button>
-							</div>
+						<div class="yu_getemail fl">
+							<lable>邮箱</lable><br />
+							<input name="name" type="text" class="yu_email fl" placeholder="请输入您的邮箱地址" />
 						</div>
 					</div>
 					<div class="yu_linec">
@@ -93,12 +90,19 @@
 							<div class="yu_imgon fl">
 								<!--<img src="" alt="" />-->
 							</div>
-							<input type="file" value="删" class="on_photo fl"/>
+							<!--<div>
+								<input class="yuh_pic cur" type="file">-->
+								<input type="button" value="上传头像" class="btn btn-info on_photo fl"/>
+							<!--</div>-->
+							
 						</div>
 						<div class="wyh_teamthings">
 							<lable >上传个人作品（不少于5个）：&nbsp;</lable>
 							<div class="yuon_diy fl">
-								<input type="file"  value="点击作品上传">
+								<div class="yuhan_img ">
+							        <input class="yuh_pic cur" type="file">
+							        <img src="../images/onImg.png" class="han_imgg cur">
+							    </div>
 							</div>
 						</div>
 						
@@ -148,7 +152,7 @@
 					<button class="btn btn-danger yu-submit" id="yu-submit" disabled="disabled">提交审核</button>
 				</div>
 				
-				<footer>
+				<div class="footer">
 					<ul>
 						<li class="fl">
 							<a href="">联系我们 </a>|
@@ -158,7 +162,7 @@
 						</li>
 						<li class="fr">Copyright Huaban.com 2016 | 浙B2-20110282 浙ICP备05049240</li>
 					</ul>
-				</footer>
+				</div>
 			</div>
 			
 		</div>
