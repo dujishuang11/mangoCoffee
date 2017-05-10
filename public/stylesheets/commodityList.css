@@ -1,5 +1,6 @@
 .djs-wrapper {
 	width: 100%;
+	margin-top: 20px;
 }
 .djs-nav {
 	width: 85%;
@@ -116,6 +117,27 @@
 	font-size: 14px;
 }
 
+.djs-fy {
+	width: 70%;
+	height: 40px;
+	margin: 20px auto;
+	display: flex;
+	justify-content: space-around;
+}
+.djs-fy li {
+	height: 40px;
+	padding: 0 10px;
+	line-height: 50px;
+	font-size: 16px;
+	font-weight: bold;
+	list-style: none;
+	cursor:pointer;
+	background: white;
+}
+
 .color {
 	color: #EA5813 !important;
+}
+.page {
+	color: red;
 }
