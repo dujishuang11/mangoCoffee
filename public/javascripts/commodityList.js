@@ -1,4 +1,4 @@
-window.addEventListener('load',function(){
+window.onload=function() {
 	var indexNav = 0,
 		indexnav = 0;
 	$('.djs-navTop ul li:nth-child(1)').addClass("color");
@@ -78,4 +78,4 @@ window.addEventListener('load',function(){
 	
 	
 	
-},false)
+}
