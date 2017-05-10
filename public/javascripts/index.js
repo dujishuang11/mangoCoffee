@@ -99,18 +99,20 @@ $('.lxm_login_one').click(function(){
 })
 
 $('.register_sub').click(function(){
-//	alert(1)
+//	alert(1)		
 	if($('.resgister_user').val() == ''){
 		layer.msg('请输入昵称');
 	}else if($('.resgister_pass').val() == ''){
 		layer.msg('请输入密码');
 	}else if($('.resgister_pass_agin').val() == ''){
 		layer.msg('请再次输入密码');
+	}else if($('.resgister_pass_agin').val() != $('.resgister_pass').val()){
+		layer.msg('两次输入密码不同');
 	}else if($('.resgister_Answer').val() == ''){
 		layer.msg('请输入答案');
 	}else if($('.resgister_Check').is(':checked') == false){
 		layer.msg('请阅读协议');
-	}else{
+	}else{		
 		layer.msg('成功');
 	}
 })
