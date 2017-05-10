@@ -12,11 +12,11 @@ window.addEventListener('load',function(){
 		$(".zhj_hoverShop").css('opacity','0');
 	})
 	
-	$(".zhj_Release").eq(0).css('color','black').css("border-bottom","2px solid black").css('font-weight','700').css("background","white");
+	$(".zhj_Release").eq(0).css('color','black').css("border-bottom","2px solid black").css("background","white");
 	$(".zhj_Release").click(function(){
 		var a = $(this).index(".zhj_Release")
-		$(".zhj_Release").eq(a).css('color','black').css("border-bottom","2px solid black").css('font-weight','700').css("background","white");
-		$(".zhj_Release").eq(a).siblings('div').css('color','rgba(0,0,0,0.6)').css("border-bottom","2px solid #dddddd").css('font-weight','500').css("background","#F7F7F7");
+		$(".zhj_Release").eq(a).css('color','black').css("border-bottom","2px solid black").css("background","white");
+		$(".zhj_Release").eq(a).siblings('div').css('color','rgba(0,0,0,0.6)').css("border-bottom","2px solid #dddddd").css("background","#F7F7F7");
 	})
 	
 	$(".zhj_wallet").css("display","none");
@@ -50,6 +50,18 @@ window.addEventListener('load',function(){
 	$(".cuo").click(function(){
 		$(".zhj_Withdrawals").css("display","none")
 	})
+	
+	
+	$(".beSure").click(function(){
+		$(".zhj_Withdrawals").css("display","none");
+	})
+	
+	$(".cancel").click(function(){
+		$(".zhj_Withdrawals").css("display","none");
+	})
+	
+	
+	
 	
 	
 	

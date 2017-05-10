@@ -36,7 +36,7 @@
 	height: 60px;
 	float: left;
 	margin-top: 6%;
-	color: black;
+	/*color: black;*/
 	font-size: 18px;
 	font-weight: 800;
 	text-align: center;
@@ -51,7 +51,7 @@
 	text-align: center;
 	line-height: 40px;
 	font-size: 18px;
-	color: black;
+	/*color: black;*/
 	border: 1px solid #DDDDDD;
 	border-radius: 5px;
 	background: white;
@@ -66,7 +66,7 @@
 	text-align: center;
 	line-height: 40px;
 	font-size: 18px;
-	color: black;
+	/*color: black;*/
 	border: 1px solid #DDDDDD;
 	border-radius: 5px;
 	background: white;
@@ -90,7 +90,7 @@
 	float: left;
 	text-align: center;
 	line-height: 40px;
-	color: black;
+	/*color: black;*/
 	cursor: pointer;
 	font-size: 16px;
 }
@@ -112,7 +112,7 @@
 	float: left;
 	text-align: center;
 	line-height: 40px;
-	color: black;
+	/*color: black;*/
 	cursor: pointer;
 	font-size: 16px;
 }
@@ -122,7 +122,7 @@
 	float: left;
 	text-align: center;
 	line-height: 40px;
-	color: black;
+	/*color: black;*/
 	font-size: 16px;
 	cursor: pointer;
 }
@@ -143,11 +143,11 @@
 }
 .zhj_authentication i{
 	font-size: 16px;
-	color: rgba(0,0,0,0.7);
+	/*color: rgba(0,0,0,0.7);*/
 }
 .zhj_authentication span{
 	font-size: 15px;
-	color: rgba(0,0,0,0.7);
+	/*color: rgba(0,0,0,0.7);*/
 	margin-left: 2%;
 }
 .zhj_notCertified{
@@ -160,11 +160,11 @@
 }
 .zhj_notCertified i{
 	font-size: 16px;
-	color: rgba(0,0,0,0.7);
+	/*color: rgba(0,0,0,0.7);*/
 }
 .zhj_notCertified span{
 	font-size: 15px;
-	color: rgba(0,0,0,0.7);
+	/*color: rgba(0,0,0,0.7);*/
 	margin-left: 2%;
 }
 .zhj_myType{
@@ -178,7 +178,7 @@
 	height: 50px;
 	text-align: center;
 	line-height: 50px;
-	color: rgba(0,0,0,0.6);
+	/*color: rgba(0,0,0,0.6);*/
 	font-size: 18px;
 	cursor: pointer;
 	float: left;
@@ -195,7 +195,7 @@
 .zhj_walletTex{
 	width: 100%;
 	height: 80px;
-	color: black;
+	/*color: black;*/
 	line-height: 100px;
 	font-size: 18px;
 	text-indent: 2%;
@@ -216,7 +216,7 @@
 }
 .zhj_Amount span{
 	float: left;
-	color: black;
+	/*color: black;*/
 	font-size: 15px;
 	margin-left: 1%;
 	margin-top: 0.5%;
@@ -225,7 +225,7 @@
 	width: 100%;
 	height: 30px;
 	margin: 0 auto;
-	color: black;
+	/*color: black;*/
 	font-size: 16px;
 	text-indent: 2%;
 }
@@ -251,7 +251,7 @@
 .zhj_myRelease{
 	width: 100%;
 	height: 40px;
-	color: black;
+	/*color: black;*/
 	font-size: 16px;
 	line-height: 40px;
 	text-indent: 2%;
@@ -283,7 +283,7 @@
 	float: left;
 	margin-left: 10%;
 	margin-top: 5%;
-	color:rgba(0,0,0,0.8);
+	/*color:rgba(0,0,0,0.8);*/
 	font-size: 16px;
 	text-align: center;
 	line-height: 40px;	
@@ -295,7 +295,7 @@
 	float: left;
 	margin-left: 10%;
 	margin-top: 5%;
-	color:rgba(0,0,0,0.8);
+	/*color:rgba(0,0,0,0.8);*/
 	font-size: 16px;
 	text-align: center;
 	line-height: 40px;	
@@ -317,7 +317,7 @@
 .zhj_ModularUp span{
 	display: inline-block;
 	width: 100%;
-	color: black;
+	/*color: black;*/
 	font-weight: bold;
 	font-size: 28px;
 	margin-top: 20%;	
@@ -336,7 +336,7 @@
 .zhj_mypurchase{
 	width: 100%;
 	height: 40px;
-	color: black;
+	/*color: black;*/
 	font-size: 16px;
 	line-height: 40px;
 	text-indent: 2%;
@@ -368,7 +368,7 @@
 	float: left;
 	margin-left: 10%;
 	margin-top: 5%;
-	color:rgba(0,0,0,0.8);
+	/*color:rgba(0,0,0,0.8);*/
 	font-size: 16px;
 	text-align: center;
 	line-height: 40px;	
@@ -380,7 +380,7 @@
 	float: left;
 	margin-left: 10%;
 	margin-top: 5%;
-	color:rgba(0,0,0,0.8);
+	/*color:rgba(0,0,0,0.8);*/
 	font-size: 16px;
 	text-align: center;
 	line-height: 40px;	
@@ -428,14 +428,14 @@ body,html{
 	width: 100%;
 	height: 50px;
 	line-height: 50px;
-	color: black;
+	/*color: black;*/
 	font-size: 20px;
 	font-weight: bold;
 }
 .zhj_Amounts{
 	width: 100%;
 	height: 30px;
-	color: black;
+	/*color: black;*/
 	font-weight: bold;
 	font-size: 15px;
 }
@@ -454,7 +454,7 @@ body,html{
 	left: 0.2%;
 	font-size: 16px;
 	font-weight: 700;
-	color: #636363;
+	/*color: #636363;*/
 	text-align: center;
 	line-height: 31px;
 	background: #F7F7F7;
@@ -469,7 +469,7 @@ body,html{
 }
 .zhj_money span:nth-child(3){
 	float: left;
-	color: rgba(0,0,0,0.8);
+	/*color: rgba(0,0,0,0.8);*/
 	font-size: 16px;
 	margin-left: 2%;
 	margin-top: 0.6%;
@@ -477,7 +477,7 @@ body,html{
 .zhj_account{
 	width: 100%;
 	height: 30px;
-	color: black;
+	/*color: black;*/
 	font-weight: bold;
 	font-size: 15px;
 }
@@ -495,7 +495,7 @@ body,html{
 .zhj_phone{
 	width: 100%;
 	height: 30px;
-	color: black;
+	/*color: black;*/
 	font-weight: bold;
 	font-size: 15px;
 }
@@ -513,7 +513,7 @@ body,html{
 .zhj_Code{
 	width: 100%;
 	height: 30px;
-	color: black;
+	/*color: black;*/
 	font-weight: bold;
 	font-size: 15px;
 }
@@ -538,7 +538,7 @@ body,html{
 .zhj_Verification{
 	width: 100%;
 	height: 30px;
-	color: black;
+	/*color: black;*/
 	font-weight: bold;
 	font-size: 15px;
 }
@@ -562,7 +562,7 @@ body,html{
 	background: #DFF0FF;
 }
 .zhj_Notice span:nth-child(1){
-	color: #505152;
+	/*color: #505152;*/
 	width: 100%;
 	font-size: 18px;
 	font-weight: bold;
@@ -571,7 +571,7 @@ body,html{
 }
 .zhj_Notice span:nth-child(2){
 	width: 100%;
-	color: #505152;
+	/*color: #505152;*/
 	font-size: 15px;
 	float: left;
 	display: inline-block;
@@ -583,7 +583,7 @@ body,html{
 	margin-top: 3%;
 }
 .cancel{
-	background: #EDEDED;
+	background:#EDEDED;
 	float: left;
 	width: 12%;
 	height: 40px;
@@ -594,9 +594,11 @@ body,html{
 	font-weight: bold;
 	margin-left: 70%;
 	margin-top: 1%;
+	border:none;
+	outline: none;
 }
 .beSure{
-	background: #C0A75E;
+	background:#C0A75E;
 	float: left;
 	width: 12%;
 	height: 40px;
@@ -607,6 +609,8 @@ body,html{
 	font-weight: bold;
 	margin-left: 4%;
 	margin-top: 1%;
+	border:none;
+	outline: none;
 }
 
 

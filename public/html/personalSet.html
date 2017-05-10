@@ -80,7 +80,7 @@
 			</div>
 			
 		<!--个人资料下拉-->
-			<div class="zhj_personAll allClick">
+			<div class="zhj_personAll">
 				<div class="zhj_Sign">
 					<span>登录名：</span>
 					<input type="email" class="form-control zhj_email" value="1457800393@qq.com"/>
@@ -135,11 +135,11 @@
 				<span class="zhj_touEdits allShow"><a>编辑</a><i class="glyphicon glyphicon-menu-down"></i></span>
 			</div>
 			
-			<div class="zhj_ImgShow allClick">
+			<div class="zhj_ImgShow">
 				<div class="zhj_upImg">
 					<img src="../images/gg3.jpeg" alt="" />
 				</div>
-				<input type="button" value="上传图片" class="btn btn-sm"/>
+				<input type="button" value="上传图片" class="btn btn-sm upButn"/>
 			</div>
 			
 		<!--登录邮箱-->	
@@ -150,11 +150,23 @@
 				<input type="email" class="form-control email" value="14579000@qq.com"/>
 				<span class="emailShow allShow"><a>编辑</a><i class="glyphicon glyphicon-menu-down"></i></span>
 			</div>
-			<div class="zhj_showEmail allClick">
-				<p>当前邮箱：14579000@qq.com 未验证</p>
-				<input type="button" class="btn btn-danger" value="更换邮箱"/>
-			</div>
 			
+			<div class="zhj_showEmail">
+			<div class="oneEmail">
+				<p>当前邮箱：14579000@qq.com 未验证</p>
+				<input type="button" class="btn btn-danger changeMail" value="更换邮箱"/>	
+			</div>
+			<div class="twoEmails">
+				<p>邮箱：</p>
+				<p>
+				<input type="email" class="form-control"/>
+				</p>
+				<p>
+					<input type="button" class="btn btn-danger baoCunY" value="保存"/>
+				</p>				
+			</div>			
+			</div>
+						
 			<!--绑定手机号-->	
 			<div class="zhj_binding">
 				<span>
@@ -165,8 +177,8 @@
 			</div>
 			<div class="zhj_showtel allClick">
 				<p>支护宝账号：</p>
-				<input type="text" class="form-control zhj_telP" value="输入手机号"/>
-				<input type="button" class="btn btn-danger" value="绑定支护宝"/>
+				<input type="text" class="form-control zhj_telP" value="输入支护宝账号"/>
+				<input type="button" class="btn btn-danger zhihubao" value="保存"/>
 			</div>
 			
 			<!--密码-->	
@@ -177,7 +189,7 @@
 				<input type="password" class="form-control passwordTxt" value="11111"/>
 				<span class="passwordShow allShow"><a>编辑</a><i class="glyphicon glyphicon-menu-down"></i></span>
 			</div>
-			<div class="zhj_showpassword allClick">
+			<div class="zhj_showpassword">
 				<div class="dangq">
 				<p>当前密码：</p>
 				<input type="text" class="form-control zhj_telP"/>
@@ -190,7 +202,7 @@
 				<p>确认密码：</p>
 				<input type="text" class="form-control zhj_telP"/>
 				</div>
-				<input type="button" class="btn btn-danger" value="绑定手机号"/>
+				<input type="button" class="btn btn-danger passwordB" value="绑定密码"/>
 			</div>									
 		</div>				
 		</div>

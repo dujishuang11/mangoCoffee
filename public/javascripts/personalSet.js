@@ -124,6 +124,8 @@ window.addEventListener('load',function(){
 	
    $(".emailShow").click(function(){
 	   	if(off1){
+	   		$(".oneEmail").css("display","block");
+	   		$(".twoEmails").css("display","none");
 	        $(".emailShow i").attr("class","glyphicon glyphicon-menu-up");
 	        	$(".email").css("opacity","0").css('background','#dddddd');
 	        	$(".zhj_loginEmail").css("background","");
@@ -262,19 +264,63 @@ window.addEventListener('load',function(){
 	
 	
 	
-//	修改资料详情时当前开 其他收起
-    
+//	点击各个保存时
+	$(".zhj_baoCun").click(function(){
+		$(".zhj_personAll").hide(500);
+		$(".zhj_data").css("border-bottom","1px solid #dddddd");
+		$(".zhj_edits a").text("编辑");
+		$(".zhj_edits a").css("color","rgba(0,0,0,0.8)");
+		$(".zhj_edits i").attr("class","glyphicon glyphicon-menu-down");
+		$(".zhj_name").css("opacity","1");
+		off1=true;
+	})
+	
+	$(".upButn").click(function(){
+		$(".zhj_ImgShow").hide(500);
+		$(".zhj_portrait").css("border-bottom","1px solid #dddddd");
+		$(".zhj_touEdits a").text("编辑");
+		$(".zhj_touEdits a").css("color","rgba(0,0,0,0.8)");
+		$(".zhj_touEdits i").attr("class","glyphicon glyphicon-menu-down");
+		$(".zhj_touImg").css("opacity","1");
+		off1=true;
+	})
+	
+	$(".changeMail").click(function(){
+		$(".oneEmail").css("display","none");
+		$(".twoEmails").css("display","block");
+	})
+		
+	$(".baoCunY").click(function(){
+		$(".zhj_showEmail").hide(500);
+		$(".zhj_loginEmail").css("border-bottom","1px solid #dddddd");
+		$(".emailShow a").text("编辑");
+		$(".emailShow a").css("color","rgba(0,0,0,0.8)");
+		$(".emailShow i").attr("class","glyphicon glyphicon-menu-down");
+		$(".email").css("opacity","1");
+		off1=true;
+	})
 	
 	
 	
+	$(".zhihubao").click(function(){
+		$(".zhj_showtel").hide(500);
+		$(".zhj_binding").css("border-bottom","1px solid #dddddd");
+		$(".telShow a").text("编辑");
+		$(".telShow a").css("color","rgba(0,0,0,0.8)");
+		$(".telShow i").attr("class","glyphicon glyphicon-menu-down");
+		$(".bindingTel").css("opacity","1");
+		off1=true;
+	})
 	
-	
-	
-	
-	
-	
-	
-	
+	$(".passwordB").click(function(){
+		$(".zhj_showpassword").hide(500);
+		$(".zhj_password").css("border-bottom","1px solid #dddddd");
+		$(".passwordShow a").text("编辑");
+		$(".passwordShow a").css("color","rgba(0,0,0,0.8)");
+		$(".passwordShow i").attr("class","glyphicon glyphicon-menu-down");
+		$(".passwordTxt").css("opacity","1");
+		off1=true;
+	})
 	
 	
 	

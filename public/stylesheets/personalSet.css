@@ -2,10 +2,6 @@ body,html{
 	width: 100%;
 	height: 100%;
 }
-/*footer{
-	position: absolute;
-	bottom: 0;
-}*/
 .aaa{
 	width: 100%;
 	height: 80px;
@@ -27,7 +23,7 @@ body,html{
 .zhj_Account{
 	width: 100%;
 	height: 60px;
-	color: black;
+	/*color: black;*/
 	text-align: center;
 	line-height: 60px;
 	font-size: 26px;
@@ -45,22 +41,22 @@ body,html{
 	border-bottom:1px solid #DDDDDD;
 }
 .zhj_data span:nth-child(1){
-	color: black;
+	/*color: black;*/
 	font-size: 19px;
 }
 .zhj_data span:nth-child(2){
-	color: #505152;
+	/*color: #505152;*/
 	font-size: 15px;
 	margin-left: 10%;
 }
 .zhj_data span:nth-child(3){
-	color:#797979;
+	/*color:#797979;*/
 	font-size: 15px;
-	margin-left: 70%;
+	margin-left: 68.4%;
 	cursor: pointer;
 }
 .zhj_data span:nth-child(3) i{
-	color:#797979;
+	/*color:#797979;*/
 	font-size: 15px;
 	margin-left: 0.5%;
 }
@@ -80,7 +76,7 @@ body,html{
 }
 .zhj_Sign span:nth-child(1){
 	float: left;
-	color: #666666;
+	/*color: #666666;*/
 	font-size: 14px;
 }
 .zhj_email{
@@ -95,6 +91,9 @@ body,html{
 	color: #C90000;
 	font-size: 14px;
 }
+.zhj_Sign span:nth-child(3) a:hover{
+	color: #C90000;
+}
 .zhj_Sign span:nth-child(3) a i{
 	font-size: 13px;
 }
@@ -104,7 +103,8 @@ body,html{
 	line-height: 40px;
 }
 .nickName span:nth-child(1){
-	color: #666666;
+	/*color: #666666;*/
+	font-size: 14px;
 	margin-left: 1.5%;
 	float: left;
 }
@@ -118,7 +118,8 @@ body,html{
 	line-height: 40px;
 }
 .address span:nth-child(1){
-	color: #666666;
+	/*color: #666666;*/
+	font-size: 14px;
 	float: left;
 	margin-left: -1.5%;
 }
@@ -132,13 +133,15 @@ body,html{
 	line-height: 40px;
 }
 .sex span:nth-child(1){
-	color: #666666;
+	/*color: #666666;*/
 	float: left;
+	font-size: 14px;
 	margin-left: 1.6%;
 }
 
 .sex div{
 	margin-left: 6%;
+	font-size: 14px;
 }
 .sex div input:nth-child(2){
 	margin-left:  5%;
@@ -152,8 +155,9 @@ body,html{
 	line-height: 40px;
 }
 .zhj_happyBirth span:nth-child(1){
-	color: #666666;
+	/*color: #666666;*/
 	float: left;
+	font-size: 14px;
 	margin-left: 1.5%;
 }
 .zhj_happyBirth input{
@@ -162,10 +166,12 @@ body,html{
 	border: 1px solid #DDDDDD;
 	border-radius: 5px;
 	float: left;
+	font-size: 14px;
 }
 .zhj_happyBirth span:nth-child(3){
-	color: #666666;
+	/*color: #666666;*/
 	float: left;
+	font-size: 14px;
 	margin-left: 1.5%;
 	margin-top: -0.5%;
 }
@@ -175,8 +181,9 @@ body,html{
 	line-height: 40px;
 }
 .Occupation span:nth-child(1){
-	color: #666666;
+	/*color: #666666;*/
 	float: left;
+	font-size: 14px;
 	margin-left: 1.5%;
 }
 .zhj_Occupation{
@@ -198,7 +205,7 @@ body,html{
 	border-bottom:1px solid #DDDDDD;
 }
 .zhj_portrait span:nth-child(1){
-	color: black;
+	/*color: black;*/
 	font-size: 19px;
 	float: left;
 }
@@ -207,7 +214,7 @@ body,html{
 	width: 45px;
 	height: 45px;
 	float: left;
-	color: #505152;
+	/*color: #505152;*/
 	font-size: 15px;
 	margin-left: 14%;
 	margin-top: 0.5%;
@@ -218,13 +225,13 @@ body,html{
 	height: 100%;
 }
 .zhj_portrait span:nth-child(3){
-	color:#797979;
+	/*color:#797979;*/
 	font-size: 15px;
-	margin-left: 70.4%;
+	margin-left: 69%;
 	cursor: pointer;
 }
 .zhj_portrait span:nth-child(3) i{
-	color:#797979;
+	/*color:#797979;*/
 	font-size: 15px;
 	margin-left: 0.5%;
 }
@@ -253,7 +260,7 @@ body,html{
 	width: 15%;
 	height: 40px;
 	font-size: 18px;
-	color: rgba(0,0,0,0.8);
+	/*color: rgba(0,0,0,0.8);*/
 	margin-left: 5%;
 	margin-top: 5%;
 }
@@ -265,7 +272,7 @@ body,html{
 	border-bottom:1px solid #DDDDDD;
 }
 .zhj_loginEmail span:nth-child(1){
-	color: black;
+	/*color: black;*/
 	font-size: 19px;
 	float: left;
 }
@@ -279,30 +286,13 @@ body,html{
 	box-shadow: none;
 }
 .zhj_loginEmail span:nth-child(3){
-	color:#797979;
+	/*color:#797979;*/
 	font-size: 15px;
-	margin-left: 45.6%;
+	margin-left: 44.3%;
 	cursor: pointer;
 }
 .zhj_loginEmail span:nth-child(3) i{
 	margin-left: 0.5%;
-}
-.zhj_showEmail{
-	width: 100%;
-	height: auto;
-	/*border-bottom: 1px solid #DDDDDD;*/
-	display: none;
-	padding-left: 17.5%;
-	margin-bottom: 1%;
-}
-.zhj_showEmail p{
-	color: #666666;
-	font-size: 14px;
-	margin-top: 3%;
-}
-.zhj_showEmail input{
-	margin-top: 3%;
-	margin-left: 8%;
 }
 
 /*绑定手机号*/
@@ -313,7 +303,7 @@ body,html{
 	border-bottom:1px solid #DDDDDD;
 }
 .zhj_binding span:nth-child(1){
-	color: black;
+	/*color: black;*/
 	font-size: 19px;
 	float: left;
 }
@@ -327,9 +317,9 @@ body,html{
 	box-shadow: none;
 }
 .zhj_binding span:nth-child(3){
-	color:#797979;
+	/*color:#797979;*/
 	font-size: 15px;
-	margin-left: 45.5%;
+	margin-left: 44%;
 	cursor: pointer;
 }
 .zhj_binding span:nth-child(3) i{
@@ -346,7 +336,7 @@ body,html{
 	margin-bottom: 2%;
 }
 .zhj_showtel p{
-	color: #666666;
+	/*color: #666666;*/
 	font-size: 14px;
 	margin-top: 3%;
 	float: left;
@@ -371,7 +361,7 @@ body,html{
 	border-bottom:1px solid #DDDDDD;
 }
 .zhj_password span:nth-child(1){
-	color: black;
+	/*color: black;*/
 	font-size: 19px;
 	float: left;
 }
@@ -385,9 +375,9 @@ body,html{
 	box-shadow: none;
 }
 .zhj_password span:nth-child(3){
-	color:#797979;
+	/*color:#797979;*/
 	font-size: 15px;
-	margin-left: 45%;
+	margin-left: 44%;
 	cursor: pointer;
 }
 .zhj_password span:nth-child(3) i{
@@ -404,7 +394,7 @@ body,html{
 	margin-bottom: 2%;
 }
 .dangq p:nth-child(1){
-	color: #666666;
+	/*color: #666666;*/
 	font-size: 14px;
 	margin-top: 3%;
 	float: left;
@@ -428,7 +418,7 @@ body,html{
 	float: left;
 }
 .surnNewPas p:nth-child(1){
-	color: #666666;
+	/*color: #666666;*/
 	font-size: 14px;
 	margin-top: 3%;
 	float: left;
@@ -441,7 +431,7 @@ body,html{
 	width: 30%;
 }
 .newPas p:nth-child(1){
-	color: #666666;
+	/*color: #666666;*/
 	font-size: 14px;
 	margin-top: 3%;
 	float: left;
@@ -458,5 +448,61 @@ body,html{
 	float: left;
 	margin-top: 3%;
 }
+
+.zhj_showEmail{
+	width: 100%;
+	height: auto;
+	/*border-bottom: 1px solid #DDDDDD;*/
+	display: none;
+	padding-left: 17.5%;
+	/*margin-bottom: 1%;*/
+}
+.oneEmail {
+	/*display: none;*/
+}
+.oneEmail p{
+	/*color: #666666;*/
+	font-size: 14px;
+	margin-top: 3%;
+}
+.oneEmail input{
+	margin-top: 3%;
+	margin-left: 8%;
+}
+.twoEmails{
+	width: 100%;
+	height:auto;
+	/*border-bottom: 1px solid #DDDDDD;*/
+	/*padding-left: 17.5%;*/
+	margin-bottom: 1%;
+	display: none;
+}
+.twoEmails p:nth-child(1){
+	/*color: #666666;*/
+	font-size: 14px;
+	margin-top: 3%;
+	/*float: left;*/
+}
+.twoEmails p:nth-child(2){
+	width: 30%;
+	height: 30px;
+	/*float: left;*/
+	margin-top: 1%;
+}
+.twoEmails p:nth-child(3) input{
+	/*float: left;*/
+	margin-top: 2%;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
