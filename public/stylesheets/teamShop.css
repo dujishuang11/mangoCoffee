@@ -15,6 +15,7 @@
 .yu_teamtop{
 	text-align: center;
 	margin-top:30px;
+	
 }
 .yu_teamtop img{
 	width:80px;
@@ -31,16 +32,16 @@
 .yuheader_on{
 	width:100%;
 	height:170px;
-	margin:20px auto;
+	margin:20px auto 0;
 	text-align: center;
 }
 .yu_teamphoto{
 	width:150px;
 	height:170px;
 	margin-left:30px;
-	border:#CCCCCC 7px solid;
+	border:#E3E3E3 5px solid;
 }
-.yu_teamphoto img{
+.yu_imghead{
 	width:100%;
 	height:100%;
 	background-size: 100% 100%;
@@ -48,6 +49,7 @@
 .yu_ontp{ 
     position: relative;
     margin:60px 0 0 50px;
+    
 }
 .on_tpfil{
 	width:90px;
@@ -86,9 +88,6 @@
 .yu_teamnamee{
 	width:97%;
 	height: 45px;
-	/*height:10px;*/
-	/*padding:20px 10px;*/
-	/*background-color: #fafafa;*/
     border: 1px solid #ddd;
     border-radius: 1px;
     display: inline-block;
@@ -99,6 +98,7 @@
     resize: none;
     outline: 0;
     font-size: 14px;
+    color:#A9A9A9;
 }
 .yu_teamnamee,.yu_address,.yu_peopname,.yu_telh::-webkit-input-placeholder{
 	font-size: 14px;
@@ -119,8 +119,6 @@
 .yu_address{
 	width:97%;
 	height: 45px;
-	
-	/*background-color: #fafafa;*/
     border: 1px solid #ddd;
     border-radius: 1px;
     display: inline-block;
@@ -132,6 +130,7 @@
     resize: none;
     outline: 0;
     margin-left:3%;
+    color:#A9A9A9;
 }
 /*yu_line22*/
 .yu_peoplec{
@@ -154,7 +153,6 @@
 .yu_peopname{
 	width:97%;
 	height: 45px;
-	/*background-color: #fafafa;*/
     border: 1px solid #ddd;
     border-radius: 1px;
     display: inline-block;
@@ -165,6 +163,7 @@
     font-weight: inherit;
     resize: none;
     outline: 0;
+    color:#A9A9A9;
 }
 .yu_tells{
 	width:50%;
@@ -182,7 +181,6 @@
 .yu_telh{
 	width:97%;
 	height: 45px;
-	/*background-color: #fafafa;*/
     border: 1px solid #ddd;
     border-radius: 1px;
     display: inline-block;
@@ -194,6 +192,7 @@
     resize: none;
     outline: 0;
     margin-left:3%;
+    color:#A9A9A9;
 }
 .wyh_team{
 	width:100%;
@@ -213,7 +212,6 @@
 .yu_teamname{
 	width:100%;
 	height: 45px;
-	/*background-color: #fafafa;*/
     border: 1px solid #ddd;
     border-radius: 1px;
     display: inline-block;
@@ -224,6 +222,7 @@
     font-weight: inherit;
     resize: none;
     outline: 0;
+    color:#A9A9A9;
 }
 .yu_idzhengs{ 
     position: relative;
@@ -246,7 +245,7 @@
 	background: #FAFAFA;
 	line-height: 160px;
 	text-align: center;
-	color:#444444;
+	color:#969696;
 	font-size: 17px;
 	border:2px dashed #E3E3E3;
 	margin-top:10px;
@@ -271,7 +270,7 @@
 	background: #FAFAFA;
 	line-height: 160px;
 	text-align: center;
-	color:#444444;
+	color:#969696;
 	font-size: 17px;
 	border:2px dashed #E3E3E3;
 	margin-left:25px;

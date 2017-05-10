@@ -23,6 +23,7 @@
 	text-align: center;
     color: #444;
     font-weight: 700;
+    line-height: 60px;
 }
 .wyh_form{
 	width:85%;
@@ -50,7 +51,6 @@
 .yu_nickname{
 	width:97%;
 	height: 45px;
-	/*background-color: #fafafa;*/
     border: 1px solid #ddd;
     border-radius: 1px;
     display: inline-block;
@@ -61,13 +61,14 @@
     font-weight: inherit;
     resize: none;
     outline: 0;
+    color:#A9A9A9;
 }
 .yu_nickname,.yu_tname,.yu_email,.yu_telhao,.yu_qqhao,.yu_person,.yu_ads,.yu_idhao::-webkit-input-placeholder{
 	font-size: 14px;
 }
 .yu_filedb{
 	width:50%;
-	height:100px;
+	height:auto;
 	float: left;
 }
 .yu_filedb lable{
@@ -76,28 +77,12 @@
 	color: #999;
     font-size: 16px;
     line-height: 45px;
-     margin-left:3%;
-}
-.yu_more{
-	width:97%;
-	height: 45px;
-	/*background-color: #fafafa;*/
-    border: 1px solid #ddd;
-    border-radius: 1px;
-    display: inline-block;
-    padding: 4px 10px;
-    box-shadow: none;
-    font-family: inherit;
-    font-size: 14px;
-    font-weight: inherit;
-    resize: none;
-    outline: 0;
     margin-left:3%;
-    color: #999;
 }
-.yu_more option{
-	height:40px;
-	line-height: 40px;
+.topp{
+	height:50px;
+	width:100%;
+	background: red;
 }
 /*lineb*/
 .yu_lineb{
@@ -120,7 +105,6 @@
 .yu_tname{
 	width:97%;
 	height: 45px;
-	/*background-color: #fafafa;*/
     border: 1px solid #ddd;
     border-radius: 1px;
     display: inline-block;
@@ -131,6 +115,7 @@
     font-weight: inherit;
     resize: none;
     outline: 0;
+    color:#A9A9A9;
 }
 .yu_getemail{
 	width:50%;
@@ -148,7 +133,6 @@
 .yu_email{
 	width:97%;
 	height: 45px;
-	/*background-color: #fafafa;*/
     border: 1px solid #ddd;
     border-radius: 1px;
     display: inline-block;
@@ -160,6 +144,7 @@
     resize: none;
     outline: 0;
     margin-left:3%;
+    color:#A9A9A9;
 }
 /*yu_linec*/
 .yu_linec{
@@ -182,7 +167,6 @@
 .yu_telhao{
 	width:97%;
 	height: 45px;
-	/*background-color: #fafafa;*/
     border: 1px solid #ddd;
     border-radius: 1px;
     display: inline-block;
@@ -193,6 +177,7 @@
     font-weight: inherit;
     resize: none;
     outline: 0;
+    color:#A9A9A9;
 }
 .yu_qq{
 	width:50%;
@@ -210,7 +195,6 @@
 .yu_qqhao{
 	width:97%;
 	height: 45px;
-	/*background-color: #fafafa;*/
     border: 1px solid #ddd;
     border-radius: 1px;
     display: inline-block;
@@ -222,6 +206,7 @@
     resize: none;
     outline: 0;
     margin-left:3%;
+    color:#A9A9A9;
 }
 /*lined*/
 .yu_lined{
@@ -240,7 +225,6 @@
 .yu_person{
 	width:100%;
 	height: 100px;
-	/*background-color: #fafafa;*/
     border: 1px solid #ddd;
     border-radius: 1px;
     display: inline-block;
@@ -251,6 +235,7 @@
     font-weight: inherit;
     resize: none;
     outline: 0;
+    color:#A9A9A9;
 }
 .yu_chioces{
 	width:100%;
@@ -285,7 +270,6 @@
 	background: #F7F7F7;
 	outline: none;
 	border:none;
-	/*margin-top:30px;*/
 }
 .yu_qiye{
 	width:auto;
@@ -298,7 +282,6 @@
 	background: #F7F7F7;
 	outline: none;
 	border:none;
-	/*margin-top:30px;*/
 }
 /*个人*/
 .peopl_gr{
@@ -308,14 +291,14 @@
 .yu_perheader{
 	width:100%;
 	height:170px;
-	margin:20px auto;
+	margin:40px auto 10px;
 }
 .yu_imgon{
 	width:150px;
 	height:170px;
-	border:#CCCCCC 7px solid;
+	border:#E3E3E3 5px solid;
 }
-.yu_imgon img{
+.yu_imghead{
 	width:100%;
 	height:100%;
 	background-size: 100% 100%;
@@ -325,8 +308,6 @@
     margin:60px 0 0 50px;
 }
 .on_tpfil{
-	/*width:300px;
-	height:300px;*/
 	width:90px;
 	height:35px;
 	display:block;
@@ -341,15 +322,7 @@
 .yu_ontpbt{
 	width:90px;
 	height:35px;
-	/*width:100px;
-	height:40px;*/
 }
-
-
-
-/*.on_photo{
-	margin:60px 0 0 50px;
-}*/
 .wyh_teamthings{
 	width:100%;
 	height:260px;
@@ -372,10 +345,7 @@
 	background: #FAFAFA;
 }
 .yuhan_img{
-	/*width:300px;
-	height:300px*/
     position: relative;
-    /*background: red;*/
    border:5px solid #E3E3E3;
     width:150px;
 	height:160px;
@@ -392,16 +362,12 @@
     top: 0;
     left: 0;
     z-index: 9;
-    /*background: green;*/
 }
 .han_imgg{
 	width:130px;
 	height:130px;
 }
 
-/*.yuon_diy input{
-	text-align: center;
-}*/
 .yu_detail{
 	width:100%;
 	height:100px;
@@ -422,7 +388,6 @@
 .yu_ads{
 	width:97%;
 	height: 45px;
-	/*background-color: #fafafa;*/
     border: 1px solid #ddd;
     border-radius: 1px;
     display: inline-block;
@@ -433,6 +398,7 @@
     font-weight: inherit;
     resize: none;
     outline: 0;
+    color:#A9A9A9;
 }
 .yu_shenfen{
 	width:50%;
@@ -450,7 +416,6 @@
 .yu_idhao{
 	width:97%;
 	height: 45px;
-	/*background-color: #fafafa;*/
     border: 1px solid #ddd;
     border-radius: 1px;
     display: inline-block;
@@ -462,6 +427,7 @@
     resize: none;
     outline: 0;
     margin-left:3%;
+    color:#A9A9A9;
 }
 .yu_idnums{
 	width:100%;
@@ -478,17 +444,6 @@
     float: left;
     display: block;
 }
-/*.yu_idnums .yu_idzhengs{
-	width:280px;
-	height:160px;
-	background: #FAFAFA;
-	line-height: 160px;
-	text-align: center;
-	color:#444444;
-	font-size: 17px;
-	border:2px dashed #E3E3E3;
-	margin-top:10px;
-}*/
 .yu_idzhengs{ 
     position: relative;
 }
@@ -510,23 +465,11 @@
 	background: #FAFAFA;
 	line-height: 160px;
 	text-align: center;
-	color:#444444;
+	color:#969696;
 	font-size: 17px;
 	border:2px dashed #E3E3E3;
 	margin-top:10px;
 }
-/*.yu_idnums .yu_idfans{
-	width:280px;
-	height:160px;
-	background: #FAFAFA;
-	line-height: 160px;
-	text-align: center;
-	color:#444444;
-	font-size: 17px;
-	border:2px dashed #E3E3E3;
-	margin-left:25px;
-	margin-top:10px;
-}*/
 .yu_idfans{ 
     position: relative;
 }
@@ -547,7 +490,7 @@
 	background: #FAFAFA;
 	line-height: 160px;
 	text-align: center;
-	color:#444444;
+	color:#969696;
 	font-size: 17px;
 	border:2px dashed #E3E3E3;
 	margin-left:25px;
@@ -562,10 +505,41 @@
 	margin-top:25px;
 }
 /*团队密钥*/
-.yu_teamkey{
+.yu_aboutTeam{
 	width:100%;
 	height:auto;
 	display: none;
+	margin-top:30px;
+}
+.yu_teamName{
+	width:100%;
+	height:45px;
+}
+.yu_teamName lable{
+	color: #999;
+    font-size: 16px;
+    line-height: 45px;
+    float: left;
+    margin-right:15px;
+}
+.yu_tName{
+	width:90%;
+	height: 45px;
+    border: 1px solid #ddd;
+    border-radius: 1px;
+    display: inline-block;
+    padding: 4px 10px;
+    box-shadow: none;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: inherit;
+    resize: none;
+    outline: 0;
+    color:#A9A9A9;
+}
+.yu_teamkey{
+	width:100%;
+	height:auto;
 	margin-top:30px;
 }
 .yu_teamkey lable{
@@ -576,9 +550,8 @@
     margin-right:15px;
 }
 .yu_tkyes{
-	width:60%;
+	width:90%;
 	height: 45px;
-	/*background-color: #fafafa;*/
     border: 1px solid #ddd;
     border-radius: 1px;
     display: inline-block;
@@ -589,15 +562,45 @@
     font-weight: inherit;
     resize: none;
     outline: 0;
+    color:#A9A9A9;
 }
-/*团队密钥*/
-.yu_qiyekey{
+/*企业密钥*/
+.yu_aboutQiye{
 	width:100%;
 	height:auto;
 	display: none;
 	margin-top:30px;
-	/*margin-bottom:15px;*/
-	/*background: gold;*/
+}
+.yu_qiyeName{
+	width:100%;
+	height:45px;
+}
+.yu_qiyeName lable{
+	color: #999;
+    font-size: 16px;
+    line-height: 45px;
+    float: left;
+    margin-right:15px;
+}
+.yu_qName{
+	width:90%;
+	height: 45px;
+    border: 1px solid #ddd;
+    border-radius: 1px;
+    display: inline-block;
+    padding: 4px 10px;
+    box-shadow: none;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: inherit;
+    resize: none;
+    outline: 0;
+    color:#A9A9A9;
+}
+.yu_qiyekey{
+	width:100%;
+	height:auto;
+	margin-top:30px;
 }
 .yu_qiyekey lable{
 	color: #999;
@@ -605,12 +608,10 @@
     line-height: 45px;
     float: left;
     margin-right:15px;
-    /*background: gold;*/
 }
 .yu_qikyes{
-	width:60%;
+	width:90%;
 	height: 45px;
-	/*background-color: #fafafa;*/
     border: 1px solid #ddd;
     border-radius: 1px;
     display: inline-block;
@@ -621,41 +622,24 @@
     font-weight: inherit;
     resize: none;
     outline: 0;
+    color:#A9A9A9;
 }
 .yu_rekuang{
 	width:85%;
 	height:30px;
 	margin:25px auto 0;
 	line-height: 30px;
-	/*margin-top:15px;*/
 }
 .yu_lab{
 	font-size:14px;
 	font-weight: normal;
 }
-/*.check .prise{
-	width:100%;
-	height:30px;
-	margin:0 auto;
-	display: block;
-    margin-top: 22px;
-    margin-bottom: 22px;
-    cursor: default;
-    background: greenyellow;
-    
-}
-.qq{
-	box-sizing: border-box;
-}*/
 .button_u{
 	width:85%;
 	height:40px;
 	margin:0 auto;
 }
 .yu-submit{
-	/*width:85%;*/
-	/*height:30px;*/
-	/*margin:0 auto;*/
 	display: block;
 	background: #E62B00;
 	width:100px;

@@ -31,15 +31,15 @@
 .yuheader_on{
 	width:100%;
 	height:170px;
-	margin:20px auto;
+	margin:20px auto 0;
 }
 .yu_teamphoto{
 	width:150px;
 	height:170px;
 	margin-left:30px;
-	border:#CCCCCC 7px solid;
+	border:#E3E3E3 5px solid;
 }
-.yu_teamphoto img{
+.yu_imghead{
 	width:100%;
 	height:100%;
 	background-size: 100% 100%;
@@ -96,6 +96,7 @@
     font-weight: inherit;
     resize: none;
     outline: 0;
+    color:#A9A9A9;
 }
 .yu_qyname,.yu_ads,.yu_qypeoname,.yu_qitel::-webkit-input-placeholder{
 	font-size: 14px;
@@ -128,6 +129,7 @@
     resize: none;
     outline: 0;
     margin-left:3%;
+    color:#A9A9A9;
 }
 /*yu_line22*/
 .yu_qiyepeo{
@@ -161,6 +163,7 @@
     font-weight: inherit;
     resize: none;
     outline: 0;
+    color:#A9A9A9;
 }
 .yu_qytel{
 	width:50%;
@@ -178,7 +181,6 @@
 .yu_qitel{
 	width:97%;
 	height: 45px;
-	/*background-color: #fafafa;*/
     border: 1px solid #ddd;
     border-radius: 1px;
     display: inline-block;
@@ -190,6 +192,7 @@
     resize: none;
     outline: 0;
     margin-left:3%;
+    color:#A9A9A9;
 }
 /*.yu_idnum .yu_idzheng{
 	width:320px;
@@ -220,10 +223,10 @@
 .yu_sfzzbt{
 	width:320px;
 	height:175px;
-	background: #FAFAFA;
+	background: white;
 	line-height: 160px;
 	text-align: center;
-	color:#444444;
+	color:#969696;
 	font-size: 17px;
 	border:2px dashed #E3E3E3;
 	margin-top:10px;
@@ -284,7 +287,7 @@
 	background: #FAFAFA;
 }*/
 
-.wyh_teamthings{
+/*.wyh_teamthings{
 	width:100%;
 	height:260px;
 	margin:0 auto;
@@ -327,7 +330,7 @@
 .han_imgg{
 	width:130px;
 	height:130px;
-}
+}*/
 
 
 .yuon_diy input{
@@ -341,6 +344,7 @@
 	width:100%;
 	height:40px;
 	line-height: 50px;
+	margin-top:20px;
 }
 .yu_lab{
 	font-size:14px;

@@ -3,15 +3,18 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-		<link rel="stylesheet" type="text/css" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+		
 		<link rel="stylesheet" type="text/css" href="../stylesheets/footer.css"/>
 		<link rel="stylesheet" type="text/css" href="../stylesheets/personalShop.css"/>
 		<link rel="stylesheet" type="text/css" href="../stylesheets/rester.css"/>
+		<link rel="stylesheet" type="text/css" href="../../node_modules/bootstrap/dist/css/bootstrap.css"/>
 		<script src="../../node_modules/angular/angular.js"></script>
 		<script src="../../node_modules/jquery/dist/jquery.js"></script>
-		<script src="../javascripts/bootstrap-select.min.js"></script>
 		<script src="../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
-		<link rel="stylesheet" type="text/css" href="../stylesheets/bootstrap-select.min.css"/>
+		<!--<link rel="stylesheet" type="text/css" href="../stylesheets/bootstrap-select.min.css"/>
+		<script src="../javascripts/bootstrap-select.min.js"></script>-->
+		<link rel="stylesheet" type="text/css" href="../stylesheets/bootstrap-select.css"/>
+		<script src="../javascripts/bootstrap-select.js"></script>
 		<script src="../javascripts/personalShop.js"></script>
 	</head>
 	<body>
@@ -34,8 +37,7 @@
 						</div>
 						<div class="yu_filedb fl">
 							<lable>设计领域</lable><br />
-							<!--<label for="id_select"></label>-->
-							<select id="id_select" class="selectpicker bla bla bli " multiple data-live-search="true" >
+							<select id="id_select" class="selectpicker bla bla bli topp" multiple data-live-search="true" >
 							    <option>UI设计师</option>
 							    <option>平面设计师</option>
 							    <option>摄影师</option>
@@ -88,7 +90,7 @@
 					<div id="peopl_gr" class="peopl_gr">
 						<div class="yu_perheader">
 							<div class="yu_imgon fl">
-								<!--<img src="" alt="" />-->
+								<img src="../images/hhou.png" class="yu_imghead"  alt="" />
 							</div>
 							<div class="yu_ontp fl cur">
 								<input class="on_tpfil cur" type="file">
@@ -120,11 +122,11 @@
 							<lable>身份证照片：&nbsp;</lable>
 							<div class="yu_idzhengs fl cur">
 								<input type="file" class="yu_sfzzheng cur" />
-								<button class="yu_sfzzbt cur">身份证正面</button>
+								<button class="yu_sfzzbt cur">上传身份证正面照</button>
 							</div>
 							<div class="yu_idfans fl cur">
 								<input type="file" class="yu_sfzfan cur" />
-								<button class="yu_sfzfbt cur">身份证正面</button>
+								<button class="yu_sfzfbt cur">上传身份证反面照</button>
 							</div>
 							<p class="yu_idxys fl">为了保证您和雇主的合法权益，我们需要您提供身份证信息，请务必上传真实有效的身份证扫描件。
 		我们会为您保密，并承诺不用于其它用途。</p>
@@ -132,15 +134,33 @@
 					</div>
 					
 					<!--团队-->
-					<div class="yu_teamkey " id="yu_teamkey">
-						<lable>团队密钥：</lable>
-						<input name="name" type="text" class="yu_tkyes fl" placeholder="请输入团队密钥" />
+					<div class="yu_aboutTeam" id="yu_aboutTeam">
+						<div class="yu_teamName " id="yu_teamkey">
+							<lable>团队名称：</lable>
+							<input name="name" type="text" class="yu_tName fl" placeholder="请输入团队名称" />
+						</div>
+						<div class="yu_teamkey " id="yu_teamkey">
+							<lable>团队密钥：</lable>
+							<input name="name" type="text" class="yu_tkyes fl" placeholder="请输入团队密钥" />
+						</div>
 					</div>
+					
 					<!--企业密钥-->
-					<div class="yu_qiyekey " id="yu_qiyekey">
-						<lable>企业密钥：</lable>
-						<input name="name" type="text" class="yu_qikyes fl" placeholder="请输入企业密钥" />
+					<div class="yu_aboutQiye" id="yu_aboutQiye">
+						<div class="yu_qiyeName " id="yu_qiyeName">
+							<lable>企业名称：</lable>
+							<input name="name" type="text" class="yu_qName fl" placeholder="请输入企业名称" />
+						</div>
+						<div class="yu_qiyekey " id="yu_qiyekey">
+							<lable>企业密钥：</lable>
+							<input name="name" type="text" class="yu_qikyes fl" placeholder="请输入企业密钥" />
+						</div>
 					</div>
+					
+					
+					
+					
+					
 				</div>
 				
 				
