@@ -1,56 +1,64 @@
 有个公共js 叫comment.js 引入一下
 
-<div class="nav">
-				<div class="nav_logo">
-					<img src="images/logo.png" alt="" />
-				</div>
-				<div class="nav_list">
-					<ul>
-						<li class="nav_one"><a href="#">首页</a></li>
-						<li class="nav_one">
-							<a href="#">设计服务</a><i class="glyphicon glyphicon-triangle-bottom"></i>
-							<div class="nav_hide">
-								<ul class="nav_hide_list">
-									<!--<li><a href="#">LOGO/品牌</a></li>
-									<li><a href="#">UI设计</a></li>
-									<li><a href="#">工业/产品设计</a></li>
-									<li><a href="#">摄影</a></li>
-									<li><a href="#">室内设计</a></li>
-									<li><a href="#">私家定制</a></li>
-									<li><a href="#">平面设计</a></li>
-									<li><a href="#">绘画/插画</a></li>
-									<li><a href="#">影视/动画</a></li>
-									<li><a href="#">服装设计</a></li>
-									<li><a href="#">造型设计</a></li>
-									<li><a href="#">其它</a></li>
-									<li><a href="#">造型设计</a></li>-->
-								</ul>
-								<div class="nav_title"></div>
-							</div>
-						</li>
-						<li class="nav_one"><a href="#">设计师</a></li>
-					</ul>
-				</div>
-				<div class="nav_right">
-					<div class="nav_search">
-						<input class="search_con" type="text" placeholder="搜索设计服务" />
-						<i class="glyphicon glyphicon-search"></i>
+导航有另一套样式 
+1、在 nav_wrapper 加 class nav_bg_a 默认没有class
+2、在 nav_list 下的第一个UL 把class nav_color_f 改为 nav_color_a  默认为 nav_color_f
+
+
+
+<div class="nav_wrapper">
+				<div class="nav">
+					<div class="nav_logo">
+						<img src="images/logo.png" alt="" />
 					</div>
-					<p class="login">登录</p>
-					<p class="res">注册</p>
-					<!--<div class="user">
-						<img src="images/40x40.jpg" alt="" />
-						<div class="user_list_wrapper">
-							<div class="user_list">
-								<ul>
-									<li><a href="#">我的美思</a></li>
-									<li><a href="#">设置</a></li>
-									<li><a href="#">我的花瓣</a></li>
-									<li><a href="#">退出</a></li>
-								</ul>
-								<div class="user_title"></div>
-							</div>
+					<div class="nav_list">
+						<ul class="nav_color_f">
+							<li class="nav_one"><a href="#">首页</a></li>
+							<li class="nav_one">
+								<a href="#">设计服务</a><i class="glyphicon glyphicon-triangle-bottom"></i>
+								<div class="nav_hide">
+									<ul class="nav_hide_list">
+										<!--<li><a href="#">LOGO/品牌</a></li>
+										<li><a href="#">UI设计</a></li>
+										<li><a href="#">工业/产品设计</a></li>
+										<li><a href="#">摄影</a></li>
+										<li><a href="#">室内设计</a></li>
+										<li><a href="#">私家定制</a></li>
+										<li><a href="#">平面设计</a></li>
+										<li><a href="#">绘画/插画</a></li>
+										<li><a href="#">影视/动画</a></li>
+										<li><a href="#">服装设计</a></li>
+										<li><a href="#">造型设计</a></li>
+										<li><a href="#">其它</a></li>
+										<li><a href="#">造型设计</a></li>-->
+									</ul>
+									<div class="nav_title"></div>
+								</div>
+							</li>
+							<li class="nav_one"><a href="#">设计师</a></li>
+						</ul>
+					</div>
+					<div class="nav_right">
+						<div class="nav_search">
+							<input class="search_con" type="text" placeholder="搜索设计服务" />
+							<i class="glyphicon glyphicon-search"></i>
 						</div>
-					</div>-->
+						<p class="login">登录</p>
+						<p class="res">注册</p>
+						<!--<div class="user">
+							<img src="images/40x40.jpg" alt="" />
+							<div class="user_list_wrapper">
+								<div class="user_list">
+									<ul>
+										<li><a href="#">我的美思</a></li>
+										<li><a href="#">设置</a></li>
+										<li><a href="#">我的花瓣</a></li>
+										<li><a href="#">退出</a></li>
+									</ul>
+									<div class="user_title"></div>
+								</div>
+							</div>
+						</div>-->
+					</div>
 				</div>
 			</div>
