@@ -145,7 +145,7 @@
 	background: rgba(0,0,0,0);
 	border: none;
 	float: left;
-	text-indent: 2em;
+	text-indent: 1.5em;
 }
 
 .nav_search i {
@@ -170,6 +170,7 @@
 	border-radius: 2px;
 	color: white;
 	cursor: pointer;
+	font-size: 14px;
 }
 
 .login:hover {
@@ -189,6 +190,7 @@
 	color: white;
 	cursor: pointer;
 	border-radius: 2px;
+	font-size: 14px;
 }
 
 .res:hover {
