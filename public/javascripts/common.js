@@ -42,7 +42,7 @@ $('.nav_search i').hover(function(){
 })
 
 
-$('.nav_one').css('border-bottom','2px #C0A75E solid')
+$('.lxm_nav_first').css('border-bottom','2px #C0A75E solid')
 //style.borderBottom = '2px #C0A75E solid'
 $('.nav_list > ul').find('.nav_one').click(function(){
 	var index = $(this).index('.nav_one')

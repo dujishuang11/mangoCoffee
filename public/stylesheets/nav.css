@@ -62,8 +62,6 @@
 .nav_color_a i {
 	color: black;
 }	
-	
-	
 
 .nav {
 	width: 85%;
@@ -86,9 +84,12 @@
 .nav_logo img {
 	width: 30%;
 	position: absolute;
+	/*<!--[if IE]>top: 20%;<![endif]-->*/
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%,-50%);
+	/*margin-top: -50%;*/
+	/*margin-left: -50%;*/
 	/*height: 50%;*/
 }
 
