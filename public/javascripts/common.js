@@ -5,11 +5,23 @@ $.ajax({
 	success:function(e){
 		var html = ''
 		for(var i = 0; i < e.length; i++){
-			html += '<li><a href="#?'+e[i].uid+'">'+e[i].names+'</a></li>'
+			html += '<li><a href="html/commodityList.html?'+e[i].uid+'">'+e[i].names+'</a></li>'
 		}
 		$('.nav_hide_list').append(html)
 	}
 });
+
+$('.search_con').keydown(function(event){
+//	alert(event.keyCode)
+	var key_code = event.keyCode;
+	if(key_code==13){
+		location.href = 'html/commodityList.html?'+$('.search_con').val()+''
+	}
+})
+
+$('.search_now').click(function(){
+	location.href = 'html/commodityList.html?'+$('.search_con').val()+''
+})
 
 $('.search_con').focus(function(){
 	$('.nav_search').css('background','#fff')
@@ -30,7 +42,8 @@ $('.nav_search i').hover(function(){
 })
 
 
-$('.nav_one')[0].style.borderBottom = '2px #C0A75E solid'
+$('.nav_one').css('border-bottom','2px #C0A75E solid')
+//style.borderBottom = '2px #C0A75E solid'
 $('.nav_list > ul').find('.nav_one').click(function(){
 	var index = $(this).index('.nav_one')
 	$('.nav_one').eq(index).css('border-bottom','2px #C0A75E solid')

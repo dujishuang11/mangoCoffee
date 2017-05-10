@@ -1,5 +1,6 @@
 .djs-wrapper {
 	width: 100%;
+	margin-top: 20px;
 }
 .djs-nav {
 	width: 85%;
@@ -52,11 +53,16 @@
 	background: white;
 	position: absolute;
 	display: none;
+	z-index: 9999;
 }
 .djs-px > li > ul > li {
 	width: 100%;
 	padding: 10px 0;
 	text-align: center;
+	cursor: pointer;
+}
+.djs-px > li > ul > li:hover {
+	background: #F7F7F7;
 	cursor: pointer;
 }
 
@@ -78,10 +84,11 @@
 }
 .djs-list ul li a {
 	width: 100%;
+	color: #555555;
 }
 .djs-list ul li a:hover {
 	text-decoration: none;
-	color: black;
+	color: #555555;
 }
 .djs-list ul li img {
 	width: 100%;
@@ -113,3 +120,4 @@
 .color {
 	color: #EA5813 !important;
 }
+
