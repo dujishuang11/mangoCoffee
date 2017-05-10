@@ -25,7 +25,11 @@
 					<div class="yu_teamphoto fl">
 						<!--<img src="../images/logo.png" alt="" />-->
 					</div>
-					<input type="file" class="yu_btn fl" value=""/>
+					<div class="yu_ontp fl cur">
+						<input class="on_tpfil cur" type="file">
+						<input type="button" value="上传头像" class="btn btn-info yu_ontpbt cur"/>
+					</div>
+					<!--<input type="file" class="yu_btn fl" value=""/>-->
 				</div><br />
 				
 				<div class="yu_teamm">
@@ -49,29 +53,38 @@
 					</div>
 				</div>
 				<div class="wyh_team">
-					<lable >负责人身份证号：&nbsp;</lable>
+					<lable >负责人身份证号&nbsp;</lable>
 					<input name="name" type="text" class="yu_teamname" placeholder="请填写真实有效的证件号" />
 				</div>
 				<div class="yu_idnum">
-					<lable>团队负责人身份证照片：&nbsp;</lable>
-					<div class="yu_idzheng fl">
-						<!--<img src="" alt="" />-->
-						身份证正面
+					<lable>团队负责人身份证照片&nbsp;</lable>
+					<div class="yu_idzhengs fl cur">
+						<input type="file" class="yu_sfzzheng cur" />
+						<button class="yu_sfzzbt cur">身份证正面</button>
 					</div>
-					<div class="yu_idfan fl">
-						<!--<img src="" alt="" />-->
-						身份证反面
+					<div class="yu_idfans fl cur">
+						<input type="file" class="yu_sfzfan cur" />
+						<button class="yu_sfzfbt cur">身份证正面</button>
 					</div>
 					<p class="yu_idxy fl">为了保证您和雇主的合法权益，我们需要您提供身份证信息，请务必上传真实有效的身份证扫描件。<br />
 我们会为您保密，并承诺不用于其它用途。</p>
 				</div>
-				<div class="wyh_teamthings">
+				<!--<div class="wyh_teamthings">
 					<lable >团队作品：&nbsp;</lable>
 					<div class="yuon_diy fl">
-						<!--<a href="">点击作品上传</a>-->
 						<input type="file"  value="点击作品上传">
 					</div>
+				</div>-->
+				<div class="wyh_teamthings">
+					<lable >上传团队作品（不少于5个）：&nbsp;</lable>
+					<div class="yuon_diy fl">
+						<div class="yuhan_img ">
+					        <input class="yuh_pic cur" type="file">
+					        <img src="../images/onImg.png" class="han_imgg cur">
+					    </div>
+					</div>
 				</div>
+				
 				<div class="yu_rekuang">
 					<input type="checkbox" name="Pages" value="Job" id="Job" >
 					<label for="Job" class="yu_lab cur" id="yu_lab">我保证作品的原创性，上传的图片没有法律纠纷，我对因虚假资料或图片版权引起的法律纠纷负全部责任。</label>
@@ -81,17 +94,17 @@
 				</div>
 				
 			</div>
-			<footer>
-				<ul>
-					<li class="fl">
-						<a href="">联系我们 </a>|
-						<a href="">关于我们 </a>|
-						<a href="">咖芒招聘 </a>|
-						<a href="">咖芒新闻</a>
-					</li>
-					<li class="fr">Copyright Huaban.com 2016 | 浙B2-20110282 浙ICP备05049240</li>
-				</ul>
-			</footer>
+		</div>
+		<div class="footer">
+			<ul>
+				<li class="fl">
+					<a href="">联系我们 </a>|
+					<a href="">关于我们 </a>|
+					<a href="">咖芒招聘 </a>|
+					<a href="">咖芒新闻</a>
+				</li>
+				<li class="fr">Copyright Huaban.com 2016 | 浙B2-20110282 浙ICP备05049240</li>
+			</ul>
 		</div>
 	</body>
 </html>

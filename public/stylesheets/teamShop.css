@@ -45,8 +45,25 @@
 	height:100%;
 	background-size: 100% 100%;
 }
-.yu_btn{
-	margin:60px 0 0 50px;
+.yu_ontp{ 
+    position: relative;
+    margin:60px 0 0 50px;
+}
+.on_tpfil{
+	width:90px;
+	height:35px;
+	display:block;
+    opacity:0;
+    filter:alpha(opacity=0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    background: green;
+}
+.yu_ontpbt{
+	width:90px;
+	height:35px;
 }
 /*yu_line11*/
 .yu_teamm{
@@ -69,17 +86,22 @@
 .yu_teamnamee{
 	width:97%;
 	height: 45px;
-	background-color: #fafafa;
+	/*height:10px;*/
+	/*padding:20px 10px;*/
+	/*background-color: #fafafa;*/
     border: 1px solid #ddd;
     border-radius: 1px;
     display: inline-block;
     padding: 4px 10px;
     box-shadow: none;
     font-family: inherit;
-    font-size: inherit;
     font-weight: inherit;
     resize: none;
     outline: 0;
+    font-size: 14px;
+}
+.yu_teamnamee,.yu_address,.yu_peopname,.yu_telh::-webkit-input-placeholder{
+	font-size: 14px;
 }
 .yu_teaadds{
 	width:50%;
@@ -97,14 +119,15 @@
 .yu_address{
 	width:97%;
 	height: 45px;
-	background-color: #fafafa;
+	
+	/*background-color: #fafafa;*/
     border: 1px solid #ddd;
     border-radius: 1px;
     display: inline-block;
     padding: 4px 10px;
     box-shadow: none;
     font-family: inherit;
-    font-size: inherit;
+    font-size: 14px;
     font-weight: inherit;
     resize: none;
     outline: 0;
@@ -131,14 +154,14 @@
 .yu_peopname{
 	width:97%;
 	height: 45px;
-	background-color: #fafafa;
+	/*background-color: #fafafa;*/
     border: 1px solid #ddd;
     border-radius: 1px;
     display: inline-block;
     padding: 4px 10px;
     box-shadow: none;
     font-family: inherit;
-    font-size: inherit;
+    font-size: 14px;
     font-weight: inherit;
     resize: none;
     outline: 0;
@@ -159,45 +182,19 @@
 .yu_telh{
 	width:97%;
 	height: 45px;
-	background-color: #fafafa;
+	/*background-color: #fafafa;*/
     border: 1px solid #ddd;
     border-radius: 1px;
     display: inline-block;
     padding: 4px 10px;
     box-shadow: none;
     font-family: inherit;
-    font-size: inherit;
+    font-size: 14px;
     font-weight: inherit;
     resize: none;
     outline: 0;
     margin-left:3%;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .wyh_team{
 	width:100%;
 	height:100px;
@@ -216,21 +213,36 @@
 .yu_teamname{
 	width:100%;
 	height: 45px;
-	background-color: #fafafa;
+	/*background-color: #fafafa;*/
     border: 1px solid #ddd;
     border-radius: 1px;
     display: inline-block;
     padding: 4px 10px;
     box-shadow: none;
     font-family: inherit;
-    font-size: inherit;
+    font-size: 14px;
     font-weight: inherit;
     resize: none;
     outline: 0;
 }
-.yu_idnum .yu_idzheng{
+.yu_idzhengs{ 
+    position: relative;
+}
+.yu_sfzzheng{
 	width:280px;
 	height:160px;
+	display:block;
+    opacity:0;
+    filter:alpha(opacity=0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+}
+.yu_sfzzbt{
+	width:280px;
+	height:160px;
+	border:none;
 	background: #FAFAFA;
 	line-height: 160px;
 	text-align: center;
@@ -239,7 +251,21 @@
 	border:2px dashed #E3E3E3;
 	margin-top:10px;
 }
-.yu_idnum .yu_idfan{
+.yu_idfans{ 
+    position: relative;
+}
+.yu_sfzfan{
+	width:280px;
+	height:160px;
+	display:block;
+    opacity:0;
+    filter:alpha(opacity=0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+}
+.yu_sfzfbt{
 	width:280px;
 	height:160px;
 	background: #FAFAFA;
@@ -251,8 +277,6 @@
 	margin-left:25px;
 	margin-top:10px;
 }
-
-
 .yu_idnum{
 	width:100%;
 	height:300px;
@@ -273,12 +297,12 @@
 	height:30px;
 	color:#777777;
 	line-height: 20px;
-	font-size: 15px;
+	font-size: 14px;
 	margin-top:25px;
 }
 .wyh_teamthings{
 	width:100%;
-	height:240px;
+	height:260px;
 	margin:0 auto;
 	padding:15px 0;
 }
@@ -291,25 +315,39 @@
     float: left;
     display: block;
 }
-
 .yuon_diy{
 	width:100%;
-	height:150px;
+	height:200px;
 	border:2px dashed #E3E3E3;
 	background: #FAFAFA;
 }
-.yuon_diy input{
-	/*text-align: center;
-	line-height: 150px;
-	color:#D7A46B;
-	display: block;
-	font-size: 18px;*/
-	
+.yuhan_img{
+    position: relative;
+   border:5px solid #E3E3E3;
+    width:150px;
+	height:160px;
+	padding:5px;
+	margin:20px;
+}
+.yuh_pic{
+	width:130px;
+	height:130px;
+	display:block;
+    opacity:0;
+    filter:alpha(opacity=0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+}
+.han_imgg{
+	width:130px;
+	height:130px;
 }
 .yu_rekuang{
 	width:100%;
-	height:30px;
-	line-height: 30px;
+	height:40px;
+	line-height: 50px;
 }
 .yu_lab{
 	font-size:14px;

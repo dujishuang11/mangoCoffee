@@ -3,10 +3,10 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-		<link rel="stylesheet" type="text/css" href="../stylesheets/rester.css"/>
 		<link rel="stylesheet" type="text/css" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"/>
 		<link rel="stylesheet" type="text/css" href="../stylesheets/footer.css"/>
 		<link rel="stylesheet" type="text/css" href="../stylesheets/personalShop.css"/>
+		<link rel="stylesheet" type="text/css" href="../stylesheets/rester.css"/>
 		<script src="../../node_modules/angular/angular.js"></script>
 		<script src="../../node_modules/jquery/dist/jquery.js"></script>
 		<script src="../javascripts/bootstrap-select.min.js"></script>
@@ -90,10 +90,10 @@
 							<div class="yu_imgon fl">
 								<!--<img src="" alt="" />-->
 							</div>
-							<!--<div>
-								<input class="yuh_pic cur" type="file">-->
-								<input type="button" value="上传头像" class="btn btn-info on_photo fl"/>
-							<!--</div>-->
+							<div class="yu_ontp fl cur">
+								<input class="on_tpfil cur" type="file">
+								<input type="button" value="上传头像" class="btn btn-info yu_ontpbt cur"/>
+							</div>
 							
 						</div>
 						<div class="wyh_teamthings">
@@ -119,12 +119,12 @@
 						<div class="yu_idnums">
 							<lable>身份证照片：&nbsp;</lable>
 							<div class="yu_idzhengs fl cur">
-								<!--<img src="" alt="" />-->
-								身份证正面
+								<input type="file" class="yu_sfzzheng cur" />
+								<button class="yu_sfzzbt cur">身份证正面</button>
 							</div>
 							<div class="yu_idfans fl cur">
-								<!--<img src="" alt="" />-->
-								身份证反面
+								<input type="file" class="yu_sfzfan cur" />
+								<button class="yu_sfzfbt cur">身份证正面</button>
 							</div>
 							<p class="yu_idxys fl">为了保证您和雇主的合法权益，我们需要您提供身份证信息，请务必上传真实有效的身份证扫描件。
 		我们会为您保密，并承诺不用于其它用途。</p>
@@ -151,20 +151,18 @@
 				<div class="button_u">
 					<button class="btn btn-danger yu-submit" id="yu-submit" disabled="disabled">提交审核</button>
 				</div>
-				
-				<div class="footer">
-					<ul>
-						<li class="fl">
-							<a href="">联系我们 </a>|
-							<a href="">关于我们 </a>|
-							<a href="">咖芒招聘 </a>|
-							<a href="">咖芒新闻</a>
-						</li>
-						<li class="fr">Copyright Huaban.com 2016 | 浙B2-20110282 浙ICP备05049240</li>
-					</ul>
-				</div>
 			</div>
-			
+		</div>
+		<div class="footer">
+			<ul>
+				<li class="fl">
+					<a href="">联系我们 </a>|
+					<a href="">关于我们 </a>|
+					<a href="">咖芒招聘 </a>|
+					<a href="">咖芒新闻</a>
+				</li>
+				<li class="fr">Copyright Huaban.com 2016 | 浙B2-20110282 浙ICP备05049240</li>
+			</ul>
 		</div>
 	</body>
 </html>
