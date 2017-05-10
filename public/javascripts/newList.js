@@ -1,4 +1,5 @@
-function showPages(page, total) {
+window.addEventListener("load",function(){
+	function showPages(page, total) {
 		var str = '<li class="page">' + page + '</li>';
 
 		for(var i = 1; i <= 2; i++) {
@@ -41,3 +42,5 @@ function showPages(page, total) {
 		}
 
 	})
+})
+

@@ -55,6 +55,7 @@
 	margin-top:5px;
 	margin-left: 15%;
 	padding-left: 3px;
+	font-size: 14px;
 	border: 0.1px solid #D8D8D8;
 }
 .lhq_pP>p:nth-child(6){
@@ -70,6 +71,7 @@
 .lhq_pP>select{
 	width:70%;
 	height: 40px;
+	font-size: 14px;
 	display: block;
 	outline: none;
 	margin-top: 5px;
