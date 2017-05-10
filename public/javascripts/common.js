@@ -13,11 +13,13 @@ $.ajax({
 
 $('.search_con').focus(function(){
 	$('.nav_search').css('background','#fff')
+	$('.nav_search').css('border','1px #C0A75E solid')
 	$('.nav_search i').css('color','#999')
 })
 
 $('.search_con').blur(function(){
 	$('.nav_search').css('background','#F1F1F1')
+	$('.nav_search').css('border','none')
 	$('.nav_search i').css('color','#d1d1d1')
 })
 

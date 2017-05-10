@@ -7,11 +7,269 @@
 		<link rel="stylesheet" type="text/css" href="../stylesheets/rester.css"/>
 		<link rel="stylesheet" type="text/css" href="../stylesheets/footer.css"/>
 		<link rel="stylesheet" type="text/css" href="../stylesheets/personalData.css"/>
+		<link rel="stylesheet" href="../stylesheets/nav.css" />
 		<script src="../../node_modules/angular/angular.js"></script>
 		<script src="../../node_modules/jquery/dist/jquery.js"></script>
 		<script src="../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
 		<script src="../javascripts/personalData.js"></script>
 	</head>
 	<body>
+		<div class="nav">
+				<div class="nav_logo">
+					<img src="../images/logo.png" alt="" />
+				</div>
+				<div class="nav_list">
+					<ul>
+						<li class="nav_one"><a href="#">首页</a></li>
+						<li class="nav_one">
+							<a href="#">设计服务</a><i class="glyphicon glyphicon-triangle-bottom"></i>
+							<div class="nav_hide">
+								<ul class="nav_hide_list">
+									<!--<li><a href="#">LOGO/品牌</a></li>
+									<li><a href="#">UI设计</a></li>
+									<li><a href="#">工业/产品设计</a></li>
+									<li><a href="#">摄影</a></li>
+									<li><a href="#">室内设计</a></li>
+									<li><a href="#">私家定制</a></li>
+									<li><a href="#">平面设计</a></li>
+									<li><a href="#">绘画/插画</a></li>
+									<li><a href="#">影视/动画</a></li>
+									<li><a href="#">服装设计</a></li>
+									<li><a href="#">造型设计</a></li>
+									<li><a href="#">其它</a></li>
+									<li><a href="#">造型设计</a></li>-->
+								</ul>
+								<div class="nav_title"></div>
+							</div>
+						</li>
+						<li class="nav_one"><a href="#">设计师</a></li>
+					</ul>
+				</div>
+				<div class="nav_right">
+					<div class="nav_search">
+						<input class="search_con" type="text" placeholder="搜索设计服务" />
+						<i class="glyphicon glyphicon-search"></i>
+					</div>
+					<p class="login">登录</p>
+					<p class="res">注册</p>
+					<!--<div class="user">
+						<img src="images/40x40.jpg" alt="" />
+						<div class="user_list_wrapper">
+							<div class="user_list">
+								<ul>
+									<li><a href="#">我的美思</a></li>
+									<li><a href="#">设置</a></li>
+									<li><a href="#">我的花瓣</a></li>
+									<li><a href="#">退出</a></li>
+								</ul>
+								<div class="user_title"></div>
+							</div>
+						</div>
+					</div>-->
+				</div>
+			</div>
+		<!--<div class="aaa"></div>-->
+		<div class="zhj_wrapper">
+			<div class="zhj_personTop">
+				<div class="zhj_personTopImg">
+					<img src="../images/dfdg.jpg" alt="" />
+				</div>
+				<div class="zhj_personTopName">处处像风</div>
+				<div class="zhj_reset">
+					<i class="glyphicon glyphicon-cog"></i>
+				<div class="zhj_hoverReset">
+					<div class="zhj_personReset">
+						<div class="zhj_personReset">
+						个人设置	
+						</div>
+						<div class="zhj_personShop">
+							个人开店
+						</div>
+					</div>
+				</div>	
+					
+				</div>
+				<div class="zhj_aline"></div>
+				<div class="zhj_authentication">
+					<i class="glyphicon glyphicon-user"></i>
+					<span>实名认证</span>
+				</div>
+				<div class="zhj_notCertified">
+					<i class="glyphicon glyphicon-eye-close"></i>
+					<span>未认证</span>
+				</div>
+			</div>
+			
+			<div class="zhj_myType">
+				<div class="zhj_Release">我的发布</div>
+				<div class="zhj_Release">购买记录</div>
+				<div class="zhj_Release">钱包</div>
+			</div>
+			
+			<div class="zhj_wallet">
+				<div class="zhj_walletTex">
+					钱包
+				</div>
+				<div class="zhj_Amount">
+					<input type="text" class="form-control inputTxt"/>
+					<input type="button" class="btn btn-primary walletCash
+" value="钱包提现"/>
+					<span>(弹出提示模板)</span>
+				</div>
+				<div class="zhj_transaction">交易明细</div>
+				<div class="zhj_edit">
+					<textarea class="form-control zhj_textarea">						
+					</textarea>
+				</div>
+			</div>
+			
+	<!--我的发布-->		
+			<div class="zhj_Releases">
+				<div class="zhj_myRelease">我的发布</div>
+				<div class="zhj_Modular">
+					<div class="zhj_ModularImg">
+						<img src="../images/gg5.jpeg" alt="" />
+					</div>
+					<div class="zhj_Title">
+						标题
+					</div>
+					<div class="zhj_price">
+						价格
+					</div>
+				</div>
+				
+				<div class="zhj_Modular">
+					<div class="zhj_ModularImg">
+						<img src="../images/gg3.jpeg" alt="" />
+					</div>
+					<div class="zhj_Title">
+						标题
+					</div>
+					<div class="zhj_price">
+						价格
+					</div>
+				</div>
+				
+				<div class="zhj_ModularUp">
+					<i class="	glyphicon glyphicon-plus"></i>
+					<span>
+						添加发布
+					</span>
+				</div>				
+			</div>
+			
+			
+		<!--购买记录-->	
+			<div class="zhj_purchase">
+				<div class="zhj_mypurchase">购买记录</div>
+				<div class="zhj_purchaseModule">
+					<div class="zhj_purchaseModules">
+						<img src="../images/gg4.jpeg" alt="" />
+					</div>
+					<div class="zhj_purchaseTitle">
+						标题
+					</div>
+					<div class="zhj_purchaseprice">
+						价格
+					</div>
+				</div>
+				
+				<div class="zhj_purchaseModule">
+					<div class="zhj_purchaseModules">
+						<img src="../images/gg6.jpeg" alt="" />
+					</div>
+					<div class="zhj_purchaseTitle">
+						标题
+					</div>
+					<div class="zhj_purchaseprice">
+						价格
+					</div>
+				</div>				
+			</div>
+			<footer>
+			<ul>
+				<li class="fl">
+					<a href="">联系我们 </a>|
+					<a href="">关于我们 </a>|
+					<a href="">咖芒招聘 </a>|
+					<a href="">咖芒新闻</a>
+				<>
+				<li class="fr">Copyright Huaban.com 2016 | 浙B2-20110282 浙ICP备05049240<>
+			</ul>
+		</footer>
+			
+		</div>
+		
+	<!--提现-->	
+		<div class="zhj_Withdrawals">
+			<div class="zhj_wisWith">
+				<div class="zhj_Wrong">
+					<i class="glyphicon glyphicon-remove cuo"></i>
+				</div>
+				
+				<div class="zhj_Withdrawal">
+					提现
+				</div>
+				<div class="zhj_Amounts">
+					提现金额
+					<span>(不低于100元)</span>
+				</div>
+				<div class="zhj_money">
+					<span>￥</span>
+					<input type="text" class="form-control priceInp"/>
+					<span>当前可提现金额：￥0元</span>
+				</div>
+				
+				<div class="zhj_account">
+					支付宝账户
+					<span>(输入您的或者信任的支付宝帐号)</span>
+				</div>
+				<div class="zhj_Alipay">
+					<input type="text" class="form-control AlipayInp"/>
+				</div>
+								
+				<div class="zhj_phone">
+					手机号
+				</div>
+				<div class="zhj_tel">
+					<input type="tel" class="form-control telInp"/>
+				</div>	
+				
+				<div class="zhj_Code">
+					手机验证码
+				</div>
+				<div class="zhj_Codes">
+					<input type="text" class="form-control codesInp"/>
+						<input type="button" class="btn btn-primary codebtn" value="输入验证码"/>
+				</div>
+				
+				<div class="zhj_Verification">
+					美思密码
+				</div>
+				<div class="zhj_Verifications">
+					<input type="text" class="form-control VerificationInp"/>
+				</div>	
+				
+				<div class="zhj_Notice">
+					<span>
+						用户须知
+					</span>
+					<span>
+						当前只支持提现到支付宝帐号，我们会在7个工作日转入到您的帐号。
+					</span>
+				</div>
+				
+				<div class="zhj_Button">
+					<input type="button" class="btn btn-primary cancel" value="取消"/>
+					<input type="button" class="btn btn-primary beSure" value="确定"/>
+				</div>
+				
+				
+				
+			</div>
+		</div>
+		
+		
+		<script src="comment.js "></script>
 	</body>
 </html>
