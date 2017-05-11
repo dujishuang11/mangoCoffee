@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../node_modules/jquery/dist/jquery.js"></script>
+	</head>
+	<body>
+		
+	</body>
+	<script>
+		
+		var ar = {
+			'1':'a',
+			'2':'b'
+		}
+		
+		console.log(ar)
+		
+		$.ajax({
+			type:"get",
+			url:"http://localhost:3000/personal/list",
+			async:true,
+			success:function(e){
+				console.log(e)
+			}
+		});
+	</script>
+</html>
