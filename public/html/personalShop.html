@@ -3,18 +3,16 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-		
+		<link rel="stylesheet" type="text/css" href="../stylesheets/rester.css"/>
 		<link rel="stylesheet" type="text/css" href="../stylesheets/footer.css"/>
 		<link rel="stylesheet" type="text/css" href="../stylesheets/personalShop.css"/>
 		<link rel="stylesheet" type="text/css" href="../stylesheets/nav.css"/>
-		<link rel="stylesheet" type="text/css" href="../stylesheets/rester.css"/>
+		<link rel="stylesheet" type="text/css" href="../stylesheets/bootstrap-select.css"/>
+		
 		<link rel="stylesheet" type="text/css" href="../../node_modules/bootstrap/dist/css/bootstrap.css"/>
 		<script src="../../node_modules/angular/angular.js"></script>
 		<script src="../../node_modules/jquery/dist/jquery.js"></script>
 		<script src="../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
-		<!--<link rel="stylesheet" type="text/css" href="../stylesheets/bootstrap-select.min.css"/>
-		<script src="../javascripts/bootstrap-select.min.js"></script>-->
-		<link rel="stylesheet" type="text/css" href="../stylesheets/bootstrap-select.css"/>
 		<script src="../javascripts/bootstrap-select.js"></script>
 		<script src="../javascripts/personalShop.js"></script>
 		<script src="../javascripts/common.js"></script>
@@ -78,7 +76,7 @@
 					<div class="yu_linea">
 						<div class="yu_fileda fl">
 							<lable>昵称</lable><br />
-							<input name="name" type="text" class="yu_nickname" placeholder="请输入您的昵称" />
+							<input name="name" value="" type="text" id="yu_nickname" class="yu_nickname" placeholder="请输入您的昵称" />
 						</div>
 						<div class="yu_filedb fl">
 							<lable>设计领域</lable><br />
@@ -105,11 +103,11 @@
 					<div class="yu_lineb">
 						<div class="yu_truename fl">
 							<lable>真实姓名</lable><br />
-							<input name="name" type="text" class="yu_tname" placeholder="请输入您的真实姓名" />
+							<input name="name" type="text" value="" id="yu_tname" class="yu_tname" placeholder="请输入您的真实姓名" />
 						</div>
 						<div class="yu_getemail fl">
 							<lable>邮箱</lable><br />
-							<input name="name" type="text" class="yu_email fl" placeholder="请输入您的邮箱地址" />
+							<input name="name" type="email" class="yu_email fl" placeholder="请输入您的邮箱地址" />
 						</div>
 					</div>
 					<div class="yu_linec">
@@ -200,11 +198,6 @@
 							<input name="name" type="text" class="yu_qikyes fl" placeholder="请输入企业密钥" />
 						</div>
 					</div>
-					
-					
-					
-					
-					
 				</div>
 				
 				

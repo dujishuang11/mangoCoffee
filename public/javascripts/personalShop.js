@@ -25,6 +25,23 @@ window.addEventListener("load",function(){
     });
 })
 	*/
+	
+	
+
+	
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 //下拉多选
 	 $('.selectpicker').selectpicker({
@@ -75,11 +92,20 @@ window.addEventListener("load",function(){
 		if(off){
 			$("#yu-submit").attr("disabled",true);
 			off=false;
+			console.log("aa")
 		}else{
 			$("#yu-submit").removeAttr("disabled");
 			off=true;
+			//
+			$("#yu-submit").click(function(){
+				var  nickname_val=$("#yu_nickname").val();
+				if(nickname_val==''){
+					alert("请输入您的昵称")
+				}
+			})
 		}
 	})
+	
 	
 	
 	
