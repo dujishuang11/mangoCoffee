@@ -107,22 +107,22 @@
 						</div>
 						<div class="yu_getemail fl">
 							<lable>邮箱</lable><br />
-							<input name="name" type="email" class="yu_email fl" placeholder="请输入您的邮箱地址" />
+							<input name="name" type="email" id="yu_email" class="yu_email fl" placeholder="请输入您的邮箱地址" />
 						</div>
 					</div>
 					<div class="yu_linec">
 						<div class="yu_telephone fl">
 							<lable>联系方式</lable><br />
-							<input name="name" type="text" class="yu_telhao" placeholder="请输入真实有效的手机号" />
+							<input name="name" type="text" id="yu_telhao" class="yu_telhao" placeholder="请输入真实有效的手机号" />
 						</div>
 						<div class="yu_qq fl">
 							<lable>QQ</lable><br />
-							<input name="name" type="text" class="yu_qqhao" placeholder="请输入真实有效的QQ号" />
+							<input name="name" type="text" id="yu_qqhao" class="yu_qqhao" placeholder="请输入真实有效的QQ号" />
 						</div>
 					</div>
 					<div class="yu_lined">
 						<lable>个人介绍</lable><br />
-						<textarea  class="yu_person" name="" rows="" cols=""placeholder="请务必填写客观描述，比如您的职业经理，参与的项目，取得的成就、奖项等。"></textarea>
+						<textarea  class="yu_person" id="yu_person" name="" rows="" cols=""placeholder="请务必填写客观描述，比如您的职业经理，参与的项目，取得的成就、奖项等。"></textarea>
 					</div>
 					<div class="yu_chioces">
 						<button class="yu_ger fl" id="geren_single">个人</button>
@@ -136,7 +136,7 @@
 								<img src="../images/hhou.png" class="yu_imghead"  alt="" />
 							</div>
 							<div class="yu_ontp fl cur">
-								<input class="on_tpfil cur" type="file">
+								<input class="on_tpfil cur" id="on_tpfil" type="file">
 								<input type="button" value="上传头像" class="btn btn-info yu_ontpbt cur"/>
 							</div>
 							
@@ -145,7 +145,7 @@
 							<lable >上传个人作品（不少于5个）：&nbsp;</lable>
 							<div class="yuon_diy fl">
 								<div class="yuhan_img ">
-							        <input multiple class="yuh_pic cur" type="file">
+							        <input class="yuh_pic cur" id="yuh_pic" type="file">
 							        <img src="../images/onImg.png" class="han_imgg cur">
 							    </div>
 							</div>
@@ -154,60 +154,98 @@
 						<div class="yu_detail">
 							<div class="yu_adress fl">
 								<lable>地址</lable><br />
-								<input name="name" type="text" class="yu_ads" placeholder="请输入您的地址" />
+								<input name="name" type="text" class="yu_ads" id="yu_ads" placeholder="请输入您的地址" />
 							</div>
 							<div class="yu_shenfen fl">
 								<lable>身份证号</lable><br />
-								<input name="name" type="text" class="yu_idhao" placeholder="请输入真实的身份证号码" />
+								<input name="name" type="text" class="yu_idhao" id="yu_idhao" placeholder="请输入真实的身份证号码" />
 							</div>
 						</div>
 						<div class="yu_idnums">
 							<lable>身份证照片：&nbsp;</lable>
 							<div class="yu_idzhengs fl cur">
-								<input type="file" class="yu_sfzzheng cur" />
+								<input type="file" class="yu_sfzzheng cur" id="yu_sfzzheng" />
 								<button class="yu_sfzzbt cur">上传身份证正面照</button>
 							</div>
 							<div class="yu_idfans fl cur">
-								<input type="file" class="yu_sfzfan cur" />
+								<input type="file" class="yu_sfzfan cur" id="yu_sfzfan" />
 								<button class="yu_sfzfbt cur">上传身份证反面照</button>
 							</div>
-							<p class="yu_idxys fl">为了保证您和雇主的合法权益，我们需要您提供身份证信息，请务必上传真实有效的身份证扫描件。我们会为您保密，并承诺不用于其它用途。</p>
+							<p class="yu_idxys fl">为了保证您和雇主的合法权益，我们需要您提供身份证信息，请务必上传真实有效的身份证扫描件。
+		我们会为您保密，并承诺不用于其它用途。</p>
 						</div>
+						
+						<!--审核-->
+						<div class="gr_sh">
+							<div class="yu_rekuang">
+								<input type="checkbox" name="Pages" value="Job" id="Job" >
+								<label for="Job" class="yu_lab cur" id="yu_lab">我保证作品的原创性，上传的图片没有法律纠纷，我对因虚假资料或图片版权引起的法律纠纷负全部责任。</label>
+							</div>
+							<div class="button_u">
+								<button class="btn btn-danger yu-submit" id="yu-submit" disabled="disabled">提交审核</button>
+							</div>
+						</div>
+						
 					</div>
 					
 					<!--团队-->
 					<div class="yu_aboutTeam" id="yu_aboutTeam">
 						<div class="yu_teamName " id="yu_teamkey">
 							<lable>团队名称：</lable>
-							<input name="name" type="text" class="yu_tName fl" placeholder="请输入团队名称" />
+							<input name="name" type="text" class="yu_tName fl" id="yu_tName" placeholder="请输入团队名称" />
 						</div>
 						<div class="yu_teamkey " id="yu_teamkey">
 							<lable>团队密钥：</lable>
-							<input name="name" type="text" class="yu_tkyes fl" placeholder="请输入团队密钥" />
+							<input name="name" type="text" class="yu_tkyes fl" id="yu_tkyes" placeholder="请输入团队密钥" />
 						</div>
+						<!--审核-->
+						<div class="team_sh">
+							<div class="yu_rekuangt">
+								<input type="checkbox" name="Pages" value="Jobt" id="Jobt" >
+								<label for="Jobt" class="yu_labt cur" id="yu_labt">我保证作品的原创性，上传的图片没有法律纠纷，我对因虚假资料或图片版权引起的法律纠纷负全部责任。</label>
+							</div>
+							<div class="button_ut">
+								<button class="btn btn-danger yu-submitt" id="yu-submitt" disabled="disabled">提交审核</button>
+							</div>
+						</div>
+						
 					</div>
 					
 					<!--企业密钥-->
 					<div class="yu_aboutQiye" id="yu_aboutQiye">
 						<div class="yu_qiyeName " id="yu_qiyeName">
 							<lable>企业名称：</lable>
-							<input name="name" type="text" class="yu_qName fl" placeholder="请输入企业名称" />
+							<input name="name" type="text" class="yu_qName fl" id="yu_qName" placeholder="请输入企业名称" />
 						</div>
 						<div class="yu_qiyekey " id="yu_qiyekey">
 							<lable>企业密钥：</lable>
-							<input name="name" type="text" class="yu_qikyes fl" placeholder="请输入企业密钥" />
+							<input name="name" type="text" class="yu_qikyes fl" id="yu_qikyes" placeholder="请输入企业密钥" />
 						</div>
+						<!--审核-->
+						<div class="qiye_sh">
+							<div class="yu_rekuangq">
+								<input type="checkbox" name="Pages" value="Jobq" id="Jobq" >
+								<label for="Jobq" class="yu_labq cur" id="yu_labq">我保证作品的原创性，上传的图片没有法律纠纷，我对因虚假资料或图片版权引起的法律纠纷负全部责任。</label>
+							</div>
+							<div class="button_uq">
+								<button class="btn btn-danger yu-submitq" id="yu-submitq" disabled="disabled">提交审核</button>
+							</div>
+						</div>
+						
+						
 					</div>
+					
+					
 				</div>
 				
 				
-				<div class="yu_rekuang">
+				<!--<div class="yu_rekuang">
 					<input type="checkbox" name="Pages" value="Job" id="Job" >
 					<label for="Job" class="yu_lab cur" id="yu_lab">我保证作品的原创性，上传的图片没有法律纠纷，我对因虚假资料或图片版权引起的法律纠纷负全部责任。</label>
 				</div>
 				<div class="button_u">
 					<button class="btn btn-danger yu-submit" id="yu-submit" disabled="disabled">提交审核</button>
-				</div>
+				</div>-->
 			</div>
 		</div>
 		<div class="footer">
