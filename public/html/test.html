@@ -4,26 +4,103 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<script src="../../node_modules/jquery/dist/jquery.js"></script>
+		<script src="../javascripts/jquery.base64.js"></script>
 	</head>
 	<body>
-		
+		<img src="" alt="" />
 	</body>
 	<script>
 		
-		var ar = {
-			'1':'a',
-			'2':'b'
-		}
+//		var ar = {
+//			'1':'a',
+//			'2':'b'
+//		}
+//		
+//		console.log(ar)
+		var ip = 'localhost:3000'
 		
-		console.log(ar)
+		//根据商铺名字查询信息
+//		$.ajax({
+//			type:"get",
+//			url:'http://'+ip+'/personal/list',
+//			async:true,
+//			data:{
+//				shopName:'笑笑12321321'
+//			},
+//			success:function(e){
+//				console.log(e)
+//			}
+//		});
+
+		//删除指定商户的整条信息
+//		$.ajax({
+//			type:"post",
+//			url:'http://'+ip+'/personal/shop_del',
+//			async:true,
+//			data:{
+//				shopUid:'7'
+//			},
+//			success:function(e){
+//				console.log(e)
+//			}
+//		});
 		
+		//注册商铺信息
+//		$.ajax({
+//			type:"post",
+//			url:'http://'+ip+'/personal/shop_register',
+//			async:true,
+//			data:{
+//				shopName:'学校',
+//				shopType:'摄影师',
+//				realName:'孙亚龙',
+//				email:'249842959@qq.com',
+//				phone:'17600022763',
+//				qq:'249842959',
+//				briefIntroduction:'专业摄影，国际摄影二等奖',
+//				portrait:'1111',
+//				works:'',
+//				address:'北京市大兴区',
+//				userID:'140622198711260037',
+//				idPhoto:'',
+//				secretKey:'',
+//				examine:0
+//			},
+//			success:function(e){
+//				console.log(e)
+////				$('img')[0].src = $.base64.atob(e.result[0].portrait)
+//			}
+//		});
+		
+		
+		//提交审核店铺接口 (就是决定该条信息是否通过审核的接口)
 		$.ajax({
 			type:"post",
-			url:"http://localhost:3000/personal/shop_register",
+			url:'http://'+ip+'/personal/examine',
 			async:true,
+			data:{
+				examine:'3',
+				shopName:'笑笑'
+			},
 			success:function(e){
 				console.log(e)
 			}
 		});
+
+		
+		//查看 审核中的店铺信息 || 审核成功的店铺信息  || 审核失败的店铺信息
+		
+//		$.ajax({
+//			type:"get",
+//			url:'http://'+ip+'/personal/auditStatus',
+//			async:true,
+//			data:{
+//				auditStatus:'2' //0审核中的信息 1审核成功的信息 2审核失败的信息
+//			},
+//			success:function(e){
+//				console.log(e)
+//			}
+//		});
+		
 	</script>
 </html>

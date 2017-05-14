@@ -88,25 +88,201 @@ window.addEventListener("load",function(){
 	
 //点击协议
 	var off=false;
-	$("#yu_lab").click(function(){
-		if(off){
-			$("#yu-submit").attr("disabled",true);
-			off=false;
-			console.log("aa")
-		}else{
-			$("#yu-submit").removeAttr("disabled");
-			off=true;
-			//
-			$("#yu-submit").click(function(){
-				var  nickname_val=$("#yu_nickname").val();
-				if(nickname_val==''){
-					alert("请输入您的昵称")
-				}
-			})
-		}
-	})
+//	$("#yu_lab").click(function(){
+//		if(off){
+//			$("#yu-submit").attr("disabled",true);
+//			off=false;
+//			console.log("aa")
+//		}else{
+//			$("#yu-submit").removeAttr("disabled");
+//			off=true;
+//			//
+//			$("#yu-submit").click(function(){
+//				var  nickname_val=$("#yu_nickname").val();
+//				if(nickname_val==''){
+//					alert("请输入您的昵称")
+//				}
+//			})
+//		}
+//	})
 	
 	
+	//kabosu
+	
+//	$("#yu-submit").removeAttr("disabled");
+	
+	function getObjectURL(file) {
+        var url = null;
+        if (window.createObjectURL != undefined) {
+            url = window.createObjectURL(file)
+        } else if (window.URL != undefined) {
+            url = window.URL.createObjectURL(file)
+        } else if (window.webkitURL != undefined) {
+            url = window.webkitURL.createObjectURL(file)
+        }
+        return url
+    };
+	
+	var lxm_works = [];
+	var photo_obj;
+	var lxm_idpic_top;
+	var lxm_idpic_bottom;
+//	 $('.on_tpfil').onload = function (e) {
+//                  console.log("成功读取....");
+//          }
+//	$('.on_tpfil').each(function(){
+       
+       $('.on_tpfil').change(function(evt){
+       		var max_size=102400;
+            var finput = $(this);   
+            var files = evt.target.files; // 获得文件对象  
+            var output = [];
+            for (var i = 0, f; f = files[i]; i++){  
+            	//检查文件大小
+                if(f.size > max_size){   
+                    alert("上传的图片不能超过100KB!");   
+                    $(this).val('');   
+                }else{
+                	photo_obj = this.files[0]
+//              	console.log(evt.target.result)
+            		var fileReader = new FileReader();
+					fileReader.readAsDataURL(this.files[0]);
+					fileReader.onload = function(event) {
+						var result = event.target.result; //返回的dataURL
+						console.log($.base64.btoa(result))
+//						$('.yu_imgon span').css('display','block')
+						$('.yu_imgon img')[0].src = result
+					}
+					
+//		            $('.yu_imgon span').click(function(){
+//		            	$('.yu_imgon span').css('display','none')
+//		            	$('.yu_imgon img')[0].src = '../images/hhou.png'
+//		            	photo_obj = ''
+//		            	console.log(photo_obj)
+//		            })
+                }
+            }
+        });
+//      $(".wyh_teamthings").on("change",".yuh_pic",function() {
+
+        $('.yuh_pic').change(function(e){
+//      	alert(1)
+
+			var files = e.target.files;
+			var max_size=204800;
+			
+			for (var i = 0, f; f = files[i]; i++){
+				if(f.size > max_size){   
+                    alert("上传的图片不能超过200KB!");   
+                    $(this).val('');   
+                }else{
+//              	console.log()
+					var index = $(this).index('.han_imgg')
+					var result;
+                	var fileReader = new FileReader();
+					fileReader.readAsDataURL(this.files[0]);
+					fileReader.onload = function(event) {
+						result = event.target.result; //返回的dataURL
+						lxm_works.push(result)
+						$('.han_imgg').eq(index-1).attr('src',result)
+						$('.han_imgg').eq(index-1).css('position','relative')
+						$('.han_imgg').eq(index-1).css('z-index','9')
+						$('.yuhan_img_remover span').eq(index).css('display','block')
+//						console.log(result)
+//						$(this).siblings('img').attr('src',result)
+//						console.log(index)
+						console.log(big_obj)
+					}
+//					console.log($(this).parent().children('img').attr('src'))
+
+					var html = '<div class="yuhan_img yuhan_img_remover"><input multiple class="yuh_pic cur" type="file"><img src="../images/onImg.png" class="han_imgg cur"><span class="yuhan_img_remove">删除</span>	</div>'
+        			$(this).parent().before(html);	
+					$(this).val('')
+
+//					console.log(result)
+					for(var i = 0; i < $('.yuhan_img_remove').length; i++){
+						$('.yuhan_img_remove')[i].index = i
+						$('.yuhan_img_remove')[i].onclick = function(){
+							this.parentNode.remove()
+							lxm_works.splice(this.index,1)
+							console.log(big_obj)
+//							alert(this.index)
+						}
+					}
+
+                }
+			}
+        })
+        
+        
+        $('.yu_sfzzheng').change(function(evt){
+       		var max_size=102400;
+            var finput = $(this);   
+            var files = evt.target.files; // 获得文件对象  
+            var output = [];
+            for (var i = 0, f; f = files[i]; i++){  
+//          	//检查文件大小
+                if(f.size > max_size){   
+                    alert("上传的图片不能超过100KB!");   
+                    $(this).val('');   
+                }else{
+                	photo_obj = this.files[0]
+//              	console.log(evt.target.result)
+            		var fileReader = new FileReader();
+					fileReader.readAsDataURL(this.files[0]);
+					fileReader.onload = function(event) {
+						var result = event.target.result; //返回的dataURL
+						console.log($.base64.btoa(result))
+						$('.yu_sfzzheng_top')[0].src = result
+					}
+                }
+            }
+        });
+        
+        $('.yu_sfzfan').change(function(evt){
+       		var max_size=102400;
+            var finput = $(this);   
+            var files = evt.target.files; // 获得文件对象  
+            var output = [];
+            for (var i = 0, f; f = files[i]; i++){  
+//          	//检查文件大小
+                if(f.size > max_size){   
+                    alert("上传的图片不能超过100KB!");   
+                    $(this).val('');   
+                }else{
+                	photo_obj = this.files[0]
+//              	console.log(evt.target.result)
+            		var fileReader = new FileReader();
+					fileReader.readAsDataURL(this.files[0]);
+					fileReader.onload = function(event) {
+						var result = event.target.result; //返回的dataURL
+						console.log($.base64.btoa(result))
+						$('.yu_sfzzheng_bottom')[0].src = result
+					}
+                }
+            }
+        });
+        
+//      $("#yu-submit").click(function(){
+//			alert(1)
+//		})
+		console.log($('.yu_rekuang_check').is(':checked'))
+//      if($('.yu_rekuang_check').prop('checked') != false){
+//      	alert(1)
+//      }else{
+//      	alert(2)
+//      }
+        
+//      if($('.yu_rekuang_check').is(':checked') == false) {
+//      	alert(1)
+//		    // do something
+//		}else{
+//			alert(2)
+//		}
+//      $("#yu-submit").removeAttr("disabled");
+        
+        
+//  }); 
 	
 	
 	
