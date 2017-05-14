@@ -203,7 +203,7 @@ router.get('/delete',function(request,response){  //请求参数，响应参数
 		if(err){
 			response.send({flag:2,err});//删除失败
 		}else{
-			response.send({flag:2,result}); //删除成功
+			response.send({flag:1,result}); //删除成功
 		}
 	})
 });

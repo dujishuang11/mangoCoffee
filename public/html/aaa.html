@@ -5,13 +5,71 @@
 		<title></title>
 		<script src="../javascripts/base64.js"></script>
 		<script src="../../node_modules/jquery/dist/jquery.js"></script>
+		<link rel="stylesheet" type="text/css" href="../../node_modules/bootstrap/dist/css/bootstrap.css"/>
+		<script src="../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
 	</head>
 	<body>
 		<input type="file" class="img" /><br />
 		<img style="width: 200px;height: 200px;" src="" alt="" /><br />
 		<!--<input type="file" class="button" /><br />
 		<button class="shang">上传<tton>-->
+			
+			
+		<div class="qiye_sh">
+			<div class="yu_rekuangq">
+				<input type="checkbox" name="Pages" value="Jobq" id="Jobq" >
+				<label for="Jobq" class="yu_labq cur" id="yu_labq">我保证作品的原创性，上传的图片没有法律纠纷，我对因虚假资料或图片版权引起的法律纠纷负全部责任。</label>
+			</div>
+			<div class="button_uq">
+				<button class="btn btn-danger yu-submitq" id="yu-submitq" disabled="disabled">提交审核</button>
+			</div>
+		</div>
+		
+		
+		<br /><br /><br />
+		
+		
 		<script>
+			console.log("kkkk")
+			var off1=false;
+			$("#yu_labq").click(function(){
+				if(off1){
+					$("#yu-submitq").attr("disabled",true);
+					off1=false;
+					console.log("no")
+				}else{
+					$("#yu-submitq").removeAttr("disabled");
+					off1=true;
+					console.log("ok")
+					//
+					
+				}
+			})
+			
+			$("#yu-submitq").click(function(){
+						console.log("0000")
+					    
+					})
+			var off2=false;
+			$("#Jobq").click(function(){
+				if(off2){
+					$("#yu-submitq").attr("disabled",true);
+					off2=false;
+					console.log("no")
+				}else{
+					$("#yu-submitq").removeAttr("disabled");
+					off2=true;
+					console.log("ok")
+					//
+					
+				}
+			})
+			
+			$("#yu-submitq").click(function(){
+						console.log("0000")
+					    
+					})
+			
 			var file;
 		//	var packageSrc = '';
 			var imgSrc = '';
