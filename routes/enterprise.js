@@ -79,10 +79,81 @@ router.post('/enterprise',function(req,res){  //请求参数，响应参数
 	}
 
 
+//根据企业名称查询整条信息
+router.get('/searchq',function(request,response){  //请求参数，响应参数
+	var companyname=request.query.CompanyName;
+	console.log("进入企业查询");
+	console.log(companyname);
+	getUserByName(companyname,function(err,result){
+		if(err){
+			response.send({flag:2,err});  //查不到，失败
+			console.log("chen查不到ggong");
+			
+		}else if(result.length>0){
+			response.send({flag:1,result}); //查询成功
+			console.log("查到了");
+		}else{
+			response.send({flag:3,result}); //失败
+		}
+	})
+});
 
+//查看审核状态 ||       1 通过     2 审核不通过
 
+//查询审核字段
+function getUserBystaus(auditstu,callback){
+	pool.getConnection(function(err,conn){
+		var sql='select * from qiye where qpass = ?';
+		conn.query(sql,[auditstu],function(err,result){
+			console.log('result:'+result);
+			conn.release();
+			callback(err,result);
+		})
+	})
+}
 
+router.get('/auditstausq',function(request,response){  //请求参数，响应参数
+	var conyauditus=request.query.CompanyAudit;
+	console.log("进入企业审核");
+	console.log(conyauditus);
+	getUserBystaus(conyauditus,function(err,result){
+		if(err){
+			response.send(err);  
+		}else if(result){
+			if(result == '' || result == null){
+				response.send({flag:2}); // 审核不通过 2
+			}else if(result != '' || result != null){
+				response.send({flag:1,result}); //审核通过 1
+			}
+		}
+	})
+});
 
+//删除数据(通过团队名称)
+router.get('/deleteq',function(request,response){  //请求参数，响应参数
+	
+	console.log("进入删除")
+	var tconyname=request.query.CompanyName;
+	delChange(tconyname,function(err,result){
+		if(err){
+			response.send({flag:2,err});//删除失败
+		}else{
+			response.send({flag:1,result}); //删除成功
+		}
+	})
+});
+function delChange(b,callback){
+	pool.getConnection(function(err,conn){
+		var del_sql='delete from qiye where qtitle = ?';
+		conn.query(del_sql,[b],function(err,result){  //这里的[a]要跟问号?的顺序相对应，与传的参数a值相对应
+			if(err){
+				return
+			}
+			conn.release();
+			callback(err,result);
+		})
+	})
+}
 
 
 
