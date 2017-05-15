@@ -1,47 +1,5 @@
 window.addEventListener("load",function(){
-//	var select = document.getElementById("test");
-	/*$("#yu_sure").click(function(){
-		
-	    var str = [];
-	    for(i=0;i<$("#test").length;i++){
-	        if($("#test").options[i].selected){
-	            str.push($("#test")[i].value);
-	        }
-	    }
-	    alert(str);
-	})
-	*/
-	
-/*$(function(){
-    $("#btn").click(function() {
-        var all = "";
-        $("#multi-sel option").each(function() {
-            all += $(this).attr("value")+" ";
-            console.log(all)
-        });
-        var sel = $("#multi-sel").val();
-         console.log(sel)
-        alert("多选列表所有的value值:"+all+"，其中被选中的是:"+sel+"。");
-    });
-})
-	*/
-	
-	
 
-	
-
-
-/*	//手机验证	
-	var ttelRex=/^1[34578]\d{9}$/;  //手机号验证
-	$("#yu_telh")[0].addEventListener("input",function(){
-		var tel_val=$("#yu_telhao").val(); //联系方式
-		if(tel_val==""){
-			console.log("请输入手机号")
-	    }else if(!(tel_val.match(ttelRex))){
-	    	console.log("手机号格式不对")
-	    }
-	})*/
-	
 
 //下拉多选
 	 $('.selectpicker').selectpicker({
@@ -88,30 +46,7 @@ window.addEventListener("load",function(){
 	
 //点击协议
 	var off=false;
-//上部分验证
-	function prove(){
-		var telRex=/^1[34578]\d{9}$/;  //手机号验证
-		var emailRex =  /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;//邮箱验证
-		var qqRex=/^\d{5,10}$/;    //qq验证
-		var shenfRex=/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/; //身份证正则
-		var nickname_val=$("#yu_nickname").val(); //昵称
-		var select_val=$("#id_select").val();  //设计领域
-		var truename_val=$("#yu_tname").val(); //真实姓名
-		var email_val=$("#yu_email").val(); //邮箱
-		var tel_val=$("#yu_telhao").val(); //联系方式
-		var qq_val=$("#yu_qqhao").val(); //qq
-		var person_val=$("#yu_person").val(); //个人介绍
-		var headfile_val=$("#on_tpfil").val(); //上传头像
-		var personworks_val=$("#yuh_pic").val(); //个人作品
-		var address_val=$("#yu_ads").val(); //地址
-		var idcard_val=$("#yu_idhao").val(); //身份证号
-		var idpicz_val=$("#yu_sfzzheng").val(); //身份证正面照
-		var idpicf_val=$("#yu_sfzfan").val(); //身份证反面照
-		if(nickname_val==''){
-			alert("请输入昵称")
-		}
-	}
-	
+
 	
 //点击协议----个人
 	var off1=false;
@@ -123,18 +58,6 @@ window.addEventListener("load",function(){
 		}else{
 			$("#yu-submit").removeAttr("disabled");
 			off1=true;
-//<<<<<<< HEAD
-			//
-			$("#yu-submit").click(function(){
-				console.log()
-//				console.log(lxm_idpic_bottom)
-//				console.log(photo_obj)
-//				console.log(lxm_works)
-				var ip = 'localhost:3000'
-				
-//=======
-			
-			
 		}
 	})
 	var off11=false;
@@ -152,7 +75,6 @@ window.addEventListener("load",function(){
 	})
 	// 个人点击审核按钮
 	$("#yu-submit").click(function(){
-//>>>>>>> origin/master
 				var telRex=/^1[34578]\d{9}$/;  //手机号验证
 				var emailRex =  /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;//邮箱验证
     			var qqRex=/^\d{5,10}$/;    //qq验证
@@ -225,7 +147,6 @@ window.addEventListener("load",function(){
 					alert("请上传身份证反面照")
 				}
 			    else{
-<<<<<<< HEAD
 					$.ajax({
 						type:"post",
 						url:'http://'+ip+'/personal/shop_register',
@@ -260,145 +181,6 @@ window.addEventListener("load",function(){
 				}
 			    
 			})
-		}
-	})
-////点击协议----团队
-//	var off2=false;
-//	$("#yu_labt").click(function(){
-//		if(off2){
-//			$("#yu-submitt").attr("disabled",true);
-//			off2=false;
-//			console.log("aa")
-//		}else{
-//			$("#yu-submitt").removeAttr("disabled");
-//			off2=true;
-//			//
-//			$("#yu-submitt").click(function(){
-//				var telRex=/^1[34578]\d{9}$/;  //手机号验证
-//				var emailRex =  /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;//邮箱验证
-//  			var qqRex=/^\d{5,10}$/;    //qq验证
-//				var nickname_val=$("#yu_nickname").val(); //昵称
-//				var select_val=$("#id_select").val();  //设计领域
-//				var truename_val=$("#yu_tname").val(); //真实姓名
-//				var email_val=$("#yu_email").val(); //邮箱
-//				var tel_val=$("#yu_telhao").val(); //联系方式
-//				var qq_val=$("#yu_qqhao").val(); //qq
-//				var person_val=$("#yu_person").val(); //个人介绍
-//				var tname_val=$("#yu_tName").val(); //团队名称
-//				var tkey_val=$("#yu_tkyes").val(); //团队密钥
-//				if(nickname_val==''){
-//					alert("请输入昵称")
-//				}
-//				else if(select_val==""){
-//					alert("请输入设计领域")
-//				}
-//				else if(truename_val==""){
-//					alert("请输入真实姓名")
-//				}
-//				else if(email_val==""){
-//					alert("请输入邮箱")
-//				}
-//				else if(!(email_val.match(emailRex))){
-//			    	alert("邮箱格式输入有误")
-//			    }
-//				else if(tel_val==""){
-//					alert("请输入联系方式")
-//				}
-//				else if((tel_val.match(telRex))){
-//			    	alert("手机号输入有误")
-//			    }
-//				else if(qq_val==""){
-//					alert("请输入QQ")
-//				}
-//				else if(!(qq_val.match(qqRex))){
-//			    	alert("QQ输入有误")
-//			    }
-//				else if(person_val==""){
-//					alert("请输入个人介绍")
-//				}
-//				else if(tname_val==""){
-//					alert("请输入团队名称")
-//				}
-//				else if(tkey_val==""){
-//					alert("请输入团队密钥")
-//				}
-//			    else{
-//					alert("都输入正确");
-//					
-//				}
-//			    
-//			})
-//		}
-//	})
-////点击协议----企业
-//	var off3=false;
-//	$("#yu_labq").click(function(){
-//		if(off3){
-//			$("#yu-submitq").attr("disabled",true);
-//			off3=false;
-//			console.log("aa")
-//		}else{
-//			$("#yu-submitq").removeAttr("disabled");
-//			off3=true;
-//			//
-//			$("#yu-submitq").click(function(){
-//				var telRex=/^1[34578]\d{9}$/;  //手机号验证
-//				var emailRex =  /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;//邮箱验证
-//  			var qqRex=/^\d{5,10}$/;    //qq验证
-//				var nickname_val=$("#yu_nickname").val(); //昵称
-//				var select_val=$("#id_select").val();  //设计领域
-//				var truename_val=$("#yu_tname").val(); //真实姓名
-//				var email_val=$("#yu_email").val(); //邮箱
-//				var tel_val=$("#yu_telhao").val(); //联系方式
-//				var qq_val=$("#yu_qqhao").val(); //qq
-//				var person_val=$("#yu_person").val(); //个人介绍
-//				var qname_val=$("#yu_qName").val(); //企业名称
-//				var qkey_val=$("#yu_qikyes").val(); //企业密钥
-//				if(nickname_val==''){
-//					alert("请输入昵称")
-//				}
-//				else if(select_val==""){
-//					alert("请输入设计领域")
-//				}
-//				else if(truename_val==""){
-//					alert("请输入真实姓名")
-//				}
-//				else if(email_val==""){
-//					alert("请输入邮箱")
-//				}
-//				else if(!(email_val.match(emailRex))){
-//			    	alert("邮箱格式输入有误")
-//			    }
-//				else if(tel_val==""){
-//					alert("请输入联系方式")
-//				}
-//				else if((tel_val.match(telRex))){
-//			    	alert("手机号输入有误")
-//			    }
-//				else if(qq_val==""){
-//					alert("请输入QQ")
-//				}
-//				else if(!(qq_val.match(qqRex))){
-//			    	alert("QQ输入有误")
-//			    }
-//				else if(person_val==""){
-//					alert("请输入个人介绍")
-//				}
-//				else if(qname_val==""){
-//					alert("请输入企业名称")
-//				}
-//				else if(qkey_val==""){
-//					alert("请输入企业密钥")
-//				}
-//			    else{
-//					alert("都输入正确");
-//					
-//				}
-//			    
-//			})
-//		}
-//	})
-//>>>>>>> origin/master
 	
 	function getObjectURL(file) {
         var url = null;
@@ -458,25 +240,6 @@ window.addEventListener("load",function(){
 							}
 						}
 					})
-//              	photo_obj = this.files[0]
-//              	console.log(evt.target.result)
-
-//          		var fileReader = new FileReader();
-//					fileReader.readAsDataURL(this.files[0]);
-//					fileReader.onload = function(event) {
-//						var result = event.target.result; //返回的dataURL
-//						photo_obj = $.base64.btoa(result)
-////						console.log($.base64.btoa(result))
-////						$('.yu_imgon span').css('display','block')
-//						$('.yu_imgon img')[0].src = result
-//					}
-
-//		            $('.yu_imgon span').click(function(){
-//		            	$('.yu_imgon span').css('display','none')
-//		            	$('.yu_imgon img')[0].src = '../images/hhou.png'
-//		            	photo_obj = ''
-//		            	console.log(photo_obj)
-//		            })
                 }
             }
         });
@@ -583,15 +346,6 @@ window.addEventListener("load",function(){
 			                alert("图片不合法");
 			            }
                 	});
-//              	photo_obj = this.files[0]
-//              	console.log(evt.target.result)
-//          		var fileReader = new FileReader();
-//					fileReader.readAsDataURL(this.files[0]);
-//					fileReader.onload = function(event) {
-//						var result = event.target.result; //返回的dataURL
-//						console.log($.base64.btoa(result))
-//						$('.yu_sfzzheng_top')[0].src = result
-//					}
                 }
             }
         });
@@ -625,47 +379,10 @@ window.addEventListener("load",function(){
 			                alert("图片不合法");
 			            }
                 	});
-//              	photo_obj = this.files[0]
-////              	console.log(evt.target.result)
-//          		var fileReader = new FileReader();
-//					fileReader.readAsDataURL(this.files[0]);
-//					fileReader.onload = function(event) {
-//						var result = event.target.result; //返回的dataURL
-//						console.log($.base64.btoa(result))
-//						$('.yu_sfzzheng_bottom')[0].src = result
-//					}
                 }
             }
         });
         
-//      $("#yu-submit").click(function(){
-//			alert(1)
-//		})
-		console.log($('.yu_rekuang_check').is(':checked'))
-//      if($('.yu_rekuang_check').prop('checked') != false){
-//      	alert(1)
-//      }else{
-//      	alert(2)
-//      }
-        
-//      if($('.yu_rekuang_check').is(':checked') == false) {
-//      	alert(1)
-//		    // do something
-//		}else{
-//			alert(2)
-//		}
-//      $("#yu-submit").removeAttr("disabled");
-        
-        
-//  }); 
-	
-	
-=======
-					alert("都输入正确");
-					
-				}
-			})
-	
 	
 	
 	
@@ -836,6 +553,4 @@ window.addEventListener("load",function(){
 	    
 	})
 
->>>>>>> origin/master
-	
 },false)
