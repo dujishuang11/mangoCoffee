@@ -133,8 +133,8 @@ router.get('/auditstausq',function(request,response){  //请求参数，响应�
 router.get('/deleteq',function(request,response){  //请求参数，响应参数
 	
 	console.log("进入删除")
-	var tconyname=request.query.CompanyName;
-	delChange(tconyname,function(err,result){
+	var tconyidd=request.query.Companyid;
+	delChange(tconyidd,function(err,result){
 		if(err){
 			response.send({flag:2,err});//删除失败
 		}else{
@@ -144,7 +144,7 @@ router.get('/deleteq',function(request,response){  //请求参数，响应参数
 });
 function delChange(b,callback){
 	pool.getConnection(function(err,conn){
-		var del_sql='delete from qiye where qtitle = ?';
+		var del_sql='delete from qiye where quid = ?';
 		conn.query(del_sql,[b],function(err,result){  //这里的[a]要跟问号?的顺序相对应，与传的参数a值相对应
 			if(err){
 				return
@@ -156,7 +156,29 @@ function delChange(b,callback){
 }
 
 
-
+//修改数据
+router.post('/changeq',function(req,response){  //请求参数，响应参数
+	console.log("进入修改入驻  >>>");
+	var xqkey=req.body.CompanyKey;//：团队密钥
+	var xqaudit=req.body.CompanyAudit;//：审核
+	var uid = req.body.quid; //获取id
+   	pool.getConnection(function(err,connection){
+		data_sql='update qiye set qkey=?,qpass=? where quid=? ';
+		connection.query(data_sql,[xqkey,xqaudit,uid],function(err,result){
+			console.log(result);
+			if(err){
+				response.send({flag:3});//修改失败
+//				return;
+			}
+			if(result != ''){
+				response.send({flag:1,result});//修改成功
+			}else{
+				response.send({flag:2});//修改失败
+			}
+			connection.release();
+		})
+	})
+});
 
 
 
