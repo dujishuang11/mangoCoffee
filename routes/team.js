@@ -22,16 +22,15 @@ router.all('*', function(req, res, next) {
 });
 
 
-//根据查询团队名称
-function getUserByName(teamname,callback){
+//根据查询团队id名称
+function getUserByName(teamid,callback){
 	pool.getConnection(function(err,conn){
-		var sql='select * from team where ttitle = ?';
-		conn.query(sql,[teamname],function(err,result){
+		var sql='select * from team where tuid = ?';
+		conn.query(sql,[teamid],function(err,result){
 			console.log('result:'+result);
 			conn.release();
 			callback(err,result);
 		})
-		
 	})
 }
 //插入数据
@@ -68,7 +67,8 @@ router.post('/team',function(req,res){  //请求参数，响应参数
 			save(Tavatar,Tname,Taddress,Tleader,Tinformation,Tcard,TcardZheng,TcardFan,Tkey,Twork,Taudit,function(err,result){
 				if(result.insertId>0){
 					console.log("okokok")
-					res.send({flag:1}); //注册成功
+//					res.send({flag:1}); //注册成功
+					res.send(result)
 				}
 				console.log('result:'+result);
 			});
@@ -78,21 +78,19 @@ router.post('/team',function(req,res){  //请求参数，响应参数
 			res.send({flag:3});//注册失败
 		}
 	})
-	
 });
 
 
 
 //根据团队名称查询整条信息
 router.get('/search',function(request,response){  //请求参数，响应参数
-	var teamm=request.query.TeamName;
+	console.log("查id");
+	var teamidd=request.query.Teamid;
 	console.log("sousousosso");
-	console.log(teamm);
-	getUserByName(teamm,function(err,result){
+	getUserByName(teamidd,function(err,result){
 		if(err){
 			response.send({flag:2,err});  //查不到，失败
 			console.log("chen查不到ggong");
-			
 		}else if(result.length>0){
 			response.send({flag:1,result}); //查询成功
 			console.log("查到了");
@@ -136,20 +134,22 @@ router.get('/auditstaus',function(request,response){  //请求参数，响应参
 
 //修改信息(根据团队id来修改)
 
-/*//获取信息列表的id
+//获取信息列表的id
 function getAllUsers(teid,callback){
+	console.log("获取id");
 	pool.getConnection(function(err,conn){
 		var sql='select * from team where tuid = ?';
 //		var us=req.body.aid;
 		conn.query(sql,[teid],function(err,result){
 			console.log('result:'+result);
-			callback(err,result);
+	  		callback(err,result);
 		})
 	})
 }
 //获取修改数据
 router.get('/change',function(request,response){  //请求参数，响应参数
 //	getAllUsers();
+	console.log("<<<进入修改")
 	var tid=request.query.Teamuid;
 	console.log(tid);
 	getAllUsers(tid,function(err,result){
@@ -159,36 +159,26 @@ router.get('/change',function(request,response){  //请求参数，响应参数
 			response.send({flag:1,result}); //获取成功
 		}
 	})
-});*/
+});
 
 //修改数据
 router.post('/change',function(req,response){  //请求参数，响应参数
 	console.log("进入修改入驻  >>>");
-	var xTavatar=req.body.TeamAvatar;//团队头像
-	var xTname=req.body.TeamName; //：团队名称
-	var xTaddress=req.body.TeamAddress;//：地址
-	var xTleader=req.body.TeamLeader;//：团队负责人
-	var xTinformation=req.body.TContactInformation;//：联系方式
-	var xTcard=req.body.IdentityCard;// ：负责人身份证号
-	var xTcardZheng=req.body.IdcardZheng;// ：负责人身份证正面照
-	var xTcardFan=req.body.IdcardFan;// ：负责人身份证反面照
 	var xTkey=req.body.TeamKey;//：团队密钥
-	var xTwork=req.body.TeamWork; //：团队作品
 	var xTaudit=req.body.TeamAudit;//：审核
+	var uid = req.body.tuid; //获取id
    	pool.getConnection(function(err,connection){
-		data_sql='update team set theader=?,taddress=?,tpeople=?,ttel=?,tnumberid=?,tcardzheng=?,tcardfan=?,tkey=?,tworks=?,tpass=? where ttitle=? ';
-		connection.query(data_sql,[xTavatar,xTname,xTaddress,xTleader,xTinformation,xTcard,xTcardZheng,xTcardFan,xTkey,xTwork,xTaudit],function(err,result){
+		data_sql='update team set tkey=?,tpass=? where tuid=? ';
+		connection.query(data_sql,[xTkey,xTaudit,uid],function(err,result){
 			console.log(result);
 			if(err){
-				err={flag:3}; //修改失败
-				response.send(err);
-				return;
+				response.send({flag:3});//修改失败
+//				return;
 			}
 			if(result != ''){
-				err={flag:1};//修改成功
-				response.send(err);
+				response.send({flag:1,result});//修改成功
 			}else{
-				err={flag:2}; //修改失败
+				response.send({flag:2});//修改失败
 			}
 			connection.release();
 		})
@@ -198,7 +188,7 @@ router.post('/change',function(req,response){  //请求参数，响应参数
 router.get('/delete',function(request,response){  //请求参数，响应参数
 	
 	console.log("进入删除")
-	var ttname=request.query.TeamName;
+	var ttname=request.query.teamidd;
 	delChange(ttname,function(err,result){
 		if(err){
 			response.send({flag:2,err});//删除失败
@@ -209,7 +199,7 @@ router.get('/delete',function(request,response){  //请求参数，响应参数
 });
 function delChange(a,callback){
 	pool.getConnection(function(err,conn){
-		var del_sql='delete from team where ttitle = ?';
+		var del_sql='delete from team where tuid = ?';
 		conn.query(del_sql,[a],function(err,result){  //这里的[a]要跟问号?的顺序相对应，与传的参数a值相对应
 			if(err){
 				return

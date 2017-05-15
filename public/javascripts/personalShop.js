@@ -222,7 +222,6 @@ window.addEventListener("load",function(){
 					alert("都输入正确");
 					
 				}
-			    
 			})
 	
 	

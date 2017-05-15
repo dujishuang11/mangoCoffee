@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html ng-app="my">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../node_modules/jquery/dist/jquery.js"></script>
+		<!--<script>
+			angular.module('my',[]).controller('name',function($http){
+			$http.post("http://47.92.145.129:8000/users/nav2", "uid=1", {
+							headers: {
+								'Content-Type': 'application/x-www-form-urlencoded'
+							}
+					}).success(function(response, status) {
+						})
+//			$http({
+//		url:'http://47.92.145.129:8000/users/nav2#uid=1',
+//			method: "post",
+//		
+//			headers: {
+//								'Content-Type': 'application/x-www-form-urlencoded'
+//							}
+//		}).success(function(ad) {
+//			console.log(ad)
+//		})
+			})
+		</script>-->
+		<style type="text/css">
+			/*.yuon_diy{
+				width:100%;
+				height:350px;
+				border:2px dashed #E3E3E3;
+				background: #FAFAFA;
+			}*/
+			.yuhan_img{
+			    position: relative;
+			   border:5px solid #E3E3E3;
+			    width:150px;
+				height:160px;
+				padding:5px;
+				margin:20px; 
+				float: left;
+			}
+			.yuh_pic{
+				width:130px;
+				height:130px;
+				display:block;
+			    opacity:0;
+			    filter:alpha(opacity=0);
+			    position: absolute;
+			    top: 0;
+			    left: 0;
+			    /*z-index: 9;*/
+			}
+			.han_imgg{
+				width:130px;
+				height:130px;
+			}
+			#yuon_diy{
+				width:800px;
+				height:auto;
+				border:3px dotted gray;
+				float: left;
+			}
+			.img{
+				width:130px;
+				height:130px;
+				border:5px solid gainsboro;
+				float: left;
+				margin:20px;
+			}
+			.img img{
+				background-size: cover;
+				width:100%;
+				height:100%;
+			}
+		</style>
+	</head>
+	<body ng-controller="name">
+		<!--<input type="file" id="pickfiles" name="importFile" onchange="setFiles(this)" value="select files" /><br>-->
+<!--<input type="button"  value="注册" />-->
+<!--<span id="progress">0</span>-->
+       <div id="yuon_diy">
+       	<!--5456456-->
+       	<!--<input type="file" id="pickfiles" name="importFile" onchange="setFiles(this)" value="select files" /><br>-->
+       		<div class="yuhan_img" id="yuhan_img">
+		        <input class="yuh_pic cur" id="yuh_pic" type="file" onchange="setFiles(this)">
+		        <img src="../images/onImg.png" class="han_imgg cur">
+		    </div>
+       </div>
+       
+       
+       
+    
+	    
+	    
+	    <!--<div class="yuon_diy fl">
+		    <div class="yuhan_img ">
+		        <input class="yuh_pic cur" id="yuh_pic" type="file" onchange="setFiles(this)">
+		        <img src="../images/onImg.png" class="han_imgg cur">
+		    </div>
+		</div>-->
+	</body>
+	
+	<script>
+//		$.ajax({
+//						type: 'post',
+//						url: 'http:/localhost:8001/users/new',
+//						data:{
+//							image:'183175.jpg'
+//						},
+//						success:function(aa){
+//						console.log(aa)
+//						}
+//						})
+	var files;
+    var fil = '';   
+    var setFiles=function(element){
+    	fil = element.files[0].name
+    	console.log(element.files[0])
+		console.log(element.value)  //获取到选取的图片
+        files=element.files[0];
+        var fd = new FormData();
+        fd.append("uploadedFile", files);
+        
+         $.ajax({
+            url:"http://47.92.145.129:8000/users/chan",
+            type:"post",
+            data:fd,
+            contentType: false,
+            processData: false,
+            success:function(data){
+            	console.log(data)
+            	var arr = ''
+                arr+='<img src="http://47.92.145.129:8000/'+data.nem+'" class="img">'
+               $("#yuhan_img").before(arr);
+            },
+            error:function(){
+                console.log("上传图片错了！");
+            }
+        });
+    }
+//  $.ajax({
+//          url:"http://47.92.145.129:8000/users/ziliao",
+//          type:"post",
+//         
+//          data:{
+//          	'uid':'3',
+//          	'password':'密码',
+//               'images':'头像',
+//               'name':'昵称',
+//         'shoujih':'手机号',
+//         'xingming':'姓名',
+//         'suozaichengs':'所在城市',
+//         'xingbye':'性别'
+//          },
+//          success:function(data){
+//          	console.log(data)
+//              
+//             
+//          },
+//          error:function(){
+//              console.log("上传图片错了！");
+//          }
+//      });
+	</script>
+</html>
