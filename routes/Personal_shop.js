@@ -13,7 +13,6 @@ var pool = mysql.createPool({
 	port:3306
 })
 
-
 //跨域
 router.all('*', function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -112,17 +111,79 @@ router.post('/shop_register',function(req,res){//请求数据　响应数据
 			console.log('未注册')
 			save(shopName,shopType,realName,email,phone,qq,briefIntroduction,portrait,works,address,userID,idPhoto,secretKey,examine,function(err,result){
 ////				if(result.insertId > 0){
-				res.send({flag:1,result:result})
+				res.send({flag:1,shopUid:result.insertId})
 ////				}
 			})
 		}else if(result !='' || result!=null) {
-			res.send({flag:2,result:result})
+			res.send({flag:2})
 			console.log('已有')
 		}else {
 			res.send({flag:3})
 		}
 	})
 })
+
+//提交五副作品接口
+function lxm_works(works,shopUid,callback){
+	pool.getConnection(function(err,con){
+		var sql = 'update settled set works = concat(works,?) where shopUid = ?';
+		con.query(sql,[works,shopUid],function(err,result){
+			if(err){ 
+				console.log("getAllUsers Error:" + err.message);
+				return;
+			}
+			con.release()//释放连接
+			callback(err,result);
+		})
+	})
+}
+
+router.post('/works',function(req,res){
+//	console.log('cat');
+	var works = req.body.works
+	var shopUid = req.body.shopUid
+	lxm_works(works,shopUid,function(err,results){
+		if(err){
+			res.send({flag:2});
+		}else if(results){
+			res.send({flag:1});
+		}
+	})
+})
+
+router.post('/pic',function(req,res){//请求数据　响应数据
+	var form = new formidable.IncomingForm();
+	//创建IncomingForm对象
+	form.uploadDir = "./public/works/";
+	//设置上传文件存放的文件夹，可以使用fs.rename()来设置上传文件的存放位置和文件名
+	//如果fomr.uploadDir不赋值，它默认的位置是c:\user\用户名\AppData\Local\Temp
+	form.parse(req,function(error,fields,files){
+		for(var i in files){
+			var file = files[i];
+			var fName = (new Date()).getTime()
+			switch (file.type) {
+				case "image/jpeg":
+					fName = fName + ".jpg";
+					break;
+				case "image/png":
+					fName = fName + ".png";
+					break;
+				case "image/gif":
+					fName = fName + ".gif"
+					break;
+				case "text/plain":
+					fName = fName + ".txt"
+					break;
+			}
+			var newPath  = "./public/works/" + fName;
+			fs.renameSync(file.path,newPath);//重命名
+			console.log(fName)
+			res.send(fName)
+		}
+	})
+})
+
+
 
 
 //提交审核店铺接口 (就是决定该条信息是否通过审核的接口)

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../javascripts/base64.js"></script>
+		<script src="../../node_modules/jquery/dist/jquery.js"></script>
+	</head>
+	<body>
+		<input type="file" class="img" /><br />
+		<img style="width: 200px;height: 200px;" src="" alt="" /><br />
+		<!--<input type="file" class="button" /><br />
+		<button class="shang">上传<tton>-->
+		<script>
+			var file;
+		//	var packageSrc = '';
+			var imgSrc = '';
+			$('.img').change(function() {
+				file = this.files[0];
+				if(file.size > 153600) {
+					alert("图片过大")
+				} else {
+					var fileReader = new FileReader();
+					fileReader.readAsDataURL(file);
+					fileReader.onload = function(event) {
+						imgSrc = event.target.result; //返回的dataURL  
+						console.log(imgSrc)
+						$('img').attr('src', imgSrc);
+					}
+					var formdata = new FormData();
+					formdata.append("uploadeFile", file);
+					console.log("daodaodao")
+//					$.ajax({
+//						url: "http://47.92.145.129:8000/users/huang",
+//						type: "post",
+//						data: formdata,
+//						contentType: false,
+//						processData: false,
+//						success: function(data) {
+//							console.log(data)
+//							if(data.nem == '正常') {
+//								imgSrc = $.base64.btoa(imgSrc)
+//							}
+//						}
+//					})
+				}
+			})
+		</script>
+	</body>
+</html>

@@ -44,20 +44,6 @@
 					</div>
 					<p class="login">登录</p>
 					<p class="res">注册</p>
-					<!--<div class="user">
-							<img src="images/40x40.jpg" alt="" />
-							<div class="user_list_wrapper">
-								<div class="user_list">
-									<ul>
-										<li><a href="#">我的美思</a></li>
-										<li><a href="#">设置</a></li>
-										<li><a href="#">我的花瓣</a></li>
-										<li><a href="#">退出</a></li>
-									</ul>
-									<div class="user_title"></div>
-								</div>
-							</div>
-						</div>-->
 				</div>
 			</div>
 		</div>
@@ -71,63 +57,60 @@
 				</div>
 				<div class="yuheader_on">
 					<div class="yu_teamphoto fl">
-						<img src="../images/hhou.png" class="yu_imghead"  alt="" />
+						<img src="" class="yu_imghead"  alt="" />
 					</div>
 					<div class="yu_ontp fl cur">
-						<input class="on_tpfil cur" type="file">
+						<input class="on_tpfil cur" type="file" id="headfile">
 						<input type="button" value="上传头像" class="btn btn-info yu_ontpbt cur"/>
 					</div>
-					<!--<input type="file" class="yu_btn fl" value=""/>-->
 				</div><br />
 				
 				<div class="yu_teamm">
 					<div class="yu_teamss fl">
 						<lable>团队名称</lable><br />
-						<input name="name" type="text" class="yu_teamnamee" placeholder="请输入团队名称" />
+						<input name="name" type="text" class="yu_teamnamee" id="yu_teamnamee" placeholder="请输入团队名称" />
 					</div>
 					<div class="yu_teaadds fl">
 						<lable>团队地址</lable><br />
-						<input name="name" type="text" class="yu_address" placeholder="请输入您的地址" />
+						<input name="name" type="text" class="yu_address" id="yu_address" placeholder="请输入您的地址" />
 					</div>
 				</div>
 				<div class="yu_peoplec">
 					<div class="yu_teampeopl fl">
 						<lable>团队负责人</lable><br />
-						<input name="name" type="text" class="yu_peopname" placeholder="请输入该团队负责人" />
+						<input name="name" type="text" class="yu_peopname" id="yu_peopname" placeholder="请输入该团队负责人" />
 					</div>
 					<div class="yu_tells fl">
 						<lable>负责人联系方式</lable><br />
-						<input name="name" type="text" class="yu_telh" placeholder="请填写真实有效的手机号" />
+						<input name="name" type="text" class="yu_telh" id="yu_telh" placeholder="请填写真实有效的手机号" />
 					</div>
 				</div>
 				<div class="wyh_team">
 					<lable >负责人身份证号&nbsp;</lable>
-					<input name="name" type="text" class="yu_teamname" placeholder="请填写真实有效的证件号" />
+					<input name="name" type="text" class="yu_teamname" id="shenfid" placeholder="请填写真实有效的证件号" />
 				</div>
 				<div class="yu_idnum">
 					<lable>团队负责人身份证照片&nbsp;</lable>
 					<div class="yu_idzhengs fl cur">
-						<input type="file" class="yu_sfzzheng cur" />
-						<button class="yu_sfzzbt cur">上传身份证正面照</button>
+						<input type="file" class="yu_sfzzheng cur" id="sfzzfile" />
+						<!--<button class="yu_sfzzbt cur">上传身份证正面照</button>-->
+						<img src="" alt="" class="imgsfz cur" />
+						<p class="sfzztxt cur">上传身份证正面照</p>
 					</div>
 					<div class="yu_idfans fl cur">
-						<input type="file" class="yu_sfzfan cur" />
-						<button class="yu_sfzfbt cur">上传身份证反面照</button>
+						<input type="file" class="yu_sfzfan cur" id="sfzffile"/>
+						<!--<button class="yu_sfzfbt cur">上传身份证反面照</button>-->
+						<img src="" alt="" class="imgsfzf cur" />
+						<p class="sfzftxt cur">上传身份证反面照</p>
 					</div>
 					<p class="yu_idxy fl">为了保证您和雇主的合法权益，我们需要您提供身份证信息，请务必上传真实有效的身份证扫描件。<br />
 我们会为您保密，并承诺不用于其它用途。</p>
 				</div>
-				<!--<div class="wyh_teamthings">
-					<lable >团队作品：&nbsp;</lable>
-					<div class="yuon_diy fl">
-						<input type="file"  value="点击作品上传">
-					</div>
-				</div>-->
 				<div class="wyh_teamthings">
 					<lable >上传团队作品（不少于5个）：&nbsp;</lable>
 					<div class="yuon_diy fl">
 						<div class="yuhan_img ">
-					        <input class="yuh_pic cur" type="file">
+					        <input class="yuh_pic cur" type="file" id="picfile">
 					        <img src="../images/onImg.png" class="han_imgg cur">
 					    </div>
 					</div>

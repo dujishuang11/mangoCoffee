@@ -7,7 +7,7 @@
 		<script src="../javascripts/jquery.base64.js"></script>
 	</head>
 	<body>
-		<img src="" alt="" />
+		<img src="http://47.92.145.129:8000/images/1494839855850.jpg" alt="" />
 	</body>
 	<script>
 		
@@ -74,18 +74,18 @@
 		
 		
 		//提交审核店铺接口 (就是决定该条信息是否通过审核的接口)
-		$.ajax({
-			type:"post",
-			url:'http://'+ip+'/personal/examine',
-			async:true,
-			data:{
-				examine:'3',
-				shopName:'笑笑'
-			},
-			success:function(e){
-				console.log(e)
-			}
-		});
+//		$.ajax({
+//			type:"post",
+//			url:'http://'+ip+'/personal/examine',
+//			async:true,
+//			data:{
+//				examine:'3',
+//				shopName:'笑笑'
+//			},
+//			success:function(e){
+//				console.log(e)
+//			}
+//		});
 
 		
 		//查看 审核中的店铺信息 || 审核成功的店铺信息  || 审核失败的店铺信息
@@ -101,6 +101,32 @@
 //				console.log(e)
 //			}
 //		});
+
+
+
+
+		class A {
+			constructor(e){
+				this.id = e
+			}
+			fna(){
+				console.log(this.id)
+			}
+		}
+		
+		var c = new A(1)
+		
+		class B extends A { //继承A
+			constructor(e){
+				super(e)
+			}
+		}
+		
+		var d = new B(2)
+
+		d.fna()
+
+
 		
 	</script>
 </html>

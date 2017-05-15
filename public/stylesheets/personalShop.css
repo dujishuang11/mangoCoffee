@@ -1,26 +1,9 @@
-/*html,body{
-	width:100%;
-	height:1000px;
-	background: red;
-}*/
 
-/*body{
-	width:100%;
-	height:1000px;
-	background: red;
-}*/
-
-/*导航*/
-.wyh_nav{
-	width:100%;
-	height:80px;
-	background: greenyellow;
-}
 /*内容*/
 .wyh_body{
 	width:100%;
 	height:auto;
-	margin-top:30px;
+	margin-top:98px;
 }
 .yu_muse{
 	text-align: center;
@@ -529,6 +512,7 @@
 	height:auto;
 	display: none;
 	margin-top:30px;
+	/*background: greenyellow;*/
 }
 .yu_teamName{
 	width:100%;
@@ -583,6 +567,39 @@
     outline: 0;
     color:#A9A9A9;
 }
+/*企业*/
+.yu_rekuangt{
+	width:100%;
+	height:30px;
+	margin:25px auto 0;
+	line-height: 30px;
+}
+.yu_labt{
+	font-size:14px;
+	font-weight: normal;
+}
+.button_ut{
+	width:100%;
+	height:70px;
+	margin:0 auto;
+}
+.yu-submitt{
+	display: block;
+	background: #E62B00;
+	width:100px;
+	height:40px;
+	border-radius: 0;
+	margin-top:10px;
+	font-size: 17px;
+}
+.team_sh{
+	width:100%;
+	height:100px;
+	/*background: red;*/
+	margin-top:120px;
+	/*display: none;*/
+}
+
 /*企业密钥*/
 .yu_aboutQiye{
 	width:100%;
@@ -643,8 +660,9 @@
     outline: 0;
     color:#A9A9A9;
 }
+/*个人*/
 .yu_rekuang{
-	width:85%;
+	width:100%;
 	height:30px;
 	margin:25px auto 0;
 	line-height: 30px;
@@ -654,8 +672,8 @@
 	font-weight: normal;
 }
 .button_u{
-	width:85%;
-	height:40px;
+	width:100%;
+	height:70px;
 	margin:0 auto;
 }
 .yu-submit{
@@ -667,7 +685,12 @@
 	margin-top:10px;
 	font-size: 17px;
 }
-
+.gr_sh{
+	width:100%;
+	height:100px;
+	/*background: blue;*/
+	/*display: block;*/
+}
 
 /*kabosu*/
 
@@ -706,3 +729,37 @@
 	height: 80%;
 	/*z-index: 99;*/	
 }
+
+/*企业*/
+.yu_rekuangq{
+	width:100%;
+	height:30px;
+	margin:25px auto 0;
+	line-height: 30px;
+}
+.yu_labq{
+	font-size:14px;
+	font-weight: normal;
+}
+.button_uq{
+	width:100%;
+	height:70px;
+	margin:0 auto;
+}
+.yu-submitq{
+	display: block;
+	background: #E62B00;
+	width:100px;
+	height:40px;
+	border-radius: 0;
+	margin-top:10px;
+	font-size: 17px;
+}
+.qiye_sh{
+	width:100%;
+	height:100px;
+	/*background: red;*/
+	margin-top:120px;
+	/*display: none;*/
+}
+
