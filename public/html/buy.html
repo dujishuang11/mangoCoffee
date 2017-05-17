@@ -12,7 +12,6 @@
 		<script src="../../node_modules/jquery/dist/jquery.js"></script>
 		<script src="../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
 		<script src="../javascripts/buy.js"></script>
-		<script src="../javascripts/common.js"></script>
 	</head>
 	<body>
 		<div class="nav_wrapper nav_bg_a">
@@ -80,7 +79,7 @@
 				<div class="djs-right fr">
 					<div>
 						<span>基础服务</span>
-						<span>数量</span>
+						<span>1</span>
 						<span>价格</span>
 					</div>
 				</div>
@@ -92,18 +91,30 @@
 				<textarea placeholder="填写项目的具体需求" name="" rows="" cols=""></textarea>
 				<div class="djs-claimTitle">支付方式</div>
 				<p>
-					<input type="radio" name="zf" />微信支付
-					<input type="radio" name="zf" />支付宝支付
+					<input type="radio" name="zf" value="微信支付" />微信支付
+					<input type="radio" name="zf" value="支付宝支付" />支付宝支付
 				</p>
 				<div class="djs-button">
-					<button>确认订单</button>
+					<button class="btn btn-primary">确认订单</button>
 					<button>取消</button>
 				</div>
 			</div>
-			
-			
-			
-			
 		</div>
+		
+		<div class="footer">
+			<ul>
+				<li class="fl">
+					<a href="">联系我们 </a>|
+					<a href="">关于我们 </a>|
+					<a href="">咖芒招聘 </a>|
+					<a href="">咖芒新闻</a>
+				</li>
+				<li class="fr">Copyright© Huaban.com 2016 | 浙B2-20110282 浙ICP备05049240</li>
+			</ul>
+		</div>
+		
+		
+		<script src="../javascripts/common.js"></script>
+		<script src="../javascripts/jquery.base64.js"></script>
 	</body>
 </html>

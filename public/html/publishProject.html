@@ -12,7 +12,6 @@
 		<script src="../../node_modules/jquery/dist/jquery.js"></script>
 		<script src="../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
 		<script src="../javascripts/publishProject.js"></script>
-		<script src="../javascripts/common.js"></script>
 	</head>
 	<body>
 		<div class="nav_wrapper nav_bg_a">
@@ -66,12 +65,14 @@
 			<p>发布设计服务</p>
 			
 			<p>上传封面</p>
-			<div class="lhq_pP_img glyphicon glyphicon-plus-sign"></div>
+			<div class="lhq_pP_img glyphicon glyphicon-plus-sign">
+				<input type="file" class="lhq_fff"/>
+			</div>
 			<p>服务名称</p>
 			<input type="text" placeholder="服务名称"/>
 			<p>服务类型</p>
 			<select name="">
-				<option value="1">商标设计注册</option>
+				<!--<option value="1">商标设计注册</option>
 				<option value="2">CI系统设计</option>
 				<option value="3">包装设计</option>
 				<option value="4">工业产品设计</option>
@@ -83,7 +84,7 @@
 				<option value="10">文案</option>
 				<option value="11">UI设计</option>
 				<option value="12">H5网站开发</option>
-				<option value="13">APP开发</option>
+				<option value="13">APP开发</option>-->
 			</select>
 			<p>插入图片/文字</p>
 			<div class="lhq_pP_fwb"></div>
@@ -105,5 +106,9 @@
 				<li class="fr">Copyright© Huaban.com 2016 | 浙B2-20110282 浙ICP备05049240</li>
 			</ul>
 		</div>
+		
+		<script src="../javascripts/common.js"></script>
+		<script src="../javascripts/q1.js"></script>
+		<script src="../javascripts/q2.js"></script>
 	</body>
 </html>

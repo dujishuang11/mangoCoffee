@@ -1,72 +1,76 @@
-window.onload = function() {
-	var indexNav = 0,
-		indexnav = 0;
-	$('.djs-navTop ul li:nth-child(1)').addClass("color");
-	$('.djs-navTop ul li').mouseover(function() {
-		$(this).css('color', '#EA5813');
-	})
-	$('.djs-navTop ul li').mouseout(function() {
-		$(this).css('color', 'black');
-	})
-
-	$('.djs-navBottom ul li').mouseover(function() {
-		$(this).css('color', '#EA5813');
-	})
-	$('.djs-navBottom ul li').mouseout(function() {
-		$(this).css('color', 'black');
-	})
-
-	$('.djs-navBottom ul li').click(function() {
-		console.log($('.djs-navBottom ul li').length)
-		indexnav = $(this).index();
-		$('.djs-navBottom ul li').removeClass("color");
-		$('.djs-navBottom ul li').eq(indexnav).addClass("color");
-	})
-
-	$('.djs-navTop ul li').click(function() {
-		indexNav = $(this).index();
-		$('.djs-navTop ul li').removeClass("color");
-		$('.djs-navTop ul li').eq(indexNav).addClass("color");
-		if(indexNav == 0) {
-			$('.djs-navBottom').css('display', 'none');
-		} else if(indexNav == 1) {
-			$('.djs-navBottom').css('display', 'block');
-			$('.djs-navBottom > ul').css('display', 'none');
-			$('.djs-logo').css('display', 'block');
-		} else if(indexNav == 2) {
-			$('.djs-navBottom').css('display', 'block');
-			$('.djs-navBottom > ul').css('display', 'none');
-			$('.djs-CI').css('display', 'block');
-		} else if(indexNav == 3) {
-			$('.djs-navBottom').css('display', 'block');
-			$('.djs-navBottom > ul').css('display', 'none');
-			$('.djs-BZ').css('display', 'block');
-		} else if(indexNav == 5) {
-			$('.djs-navBottom').css('display', 'block');
-			$('.djs-navBottom > ul').css('display', 'none');
-			$('.djs-SY').css('display', 'block');
-		} else if(indexNav == 6) {
-			$('.djs-navBottom').css('display', 'block');
-			$('.djs-navBottom > ul').css('display', 'none');
-			$('.djs-PM').css('display', 'block');
-		} else if(indexNav == 7) {
-			$('.djs-navBottom').css('display', 'block');
-			$('.djs-navBottom > ul').css('display', 'none');
-			$('.djs-SY').css('display', 'block');
-		} else if(indexNav == 8) {
-			$('.djs-navBottom').css('display', 'block');
-			$('.djs-navBottom > ul').css('display', 'none');
-			$('.djs-ZHSH').css('display', 'block');
-		} else {
-			$('.djs-navBottom').css('display', 'none');
+window.addEventListener('load', function() {
+	//导航
+	var mainclass = '',
+		subclass = '';
+	$.ajax({
+		type: "get",
+		url: "http://47.92.145.129:8000/users/nav",
+		async: true,
+		success: function(data) {
+			$('.djs-navTop ul li').remove()
+			$('.djs-navTop ul').append('<li index="0">全部</li>')
+			console.log(data)
+			var html = ''
+			for(var i = 0; i < data.length; i++) {
+				html += '<li index="' + data[i].uid + '">' + data[i].names + '</li>'
+			}
+			$('.djs-navTop ul').append(html)
+			$('.djs-navTop ul li:nth-child(1)').addClass("color");
 		}
+	});
+
+	$('.djs-navTop ul').delegate('li', 'mouseover', function() {
+		$(this).css('color', '#EA5813');
+	})
+	$('.djs-navTop ul').delegate('li', 'mouseout', function() {
+		$(this).css('color', '#555555');
 	})
 
-	$('.djs-list ul li').mouseover(function() {
-		$(this).css("box-shadow", "0 3px 2px 2px #E9E9E9").css("transform", "translateY(-3px)");
+	$('.djs-navTop ul').delegate('li', 'click', function() {
+		$(this).addClass("color").siblings().removeClass('color');
+		var id = $(this).attr('index');
+		mainclass = $(this).text();
+		if(id > 0) {
+			obtainList(mainclass, subclass)
+		} else {
+			quan()
+		}
+		$.ajax({
+			type: "post",
+			url: "http://47.92.145.129:8000/users/nav2",
+			async: true,
+			data: {
+				uid: id
+			},
+			success: function(data) {
+				//				console.log(data)
+				if(data.length > 0) {
+					$('.djs-navBottom').css('display', 'block')
+					$('.djs-navBottom ul li').remove()
+					var html = ''
+					for(var i = 0; i < data.length; i++) {
+						html += '<li>' + data[i].names + '</li>'
+					}
+					$('.djs-navBottom ul').append(html)
+				} else {
+					$('.djs-navBottom').css('display', 'none')
+				}
+
+			}
+		});
 	})
-	$('.djs-list ul li').mouseout(function() {
-		$(this).css("box-shadow", "none").css("transform", "translateY(0)");
+
+	$('.djs-navBottom ul').delegate('li', 'mouseover', function() {
+		$(this).css('color', '#EA5813');
+	})
+	$('.djs-navBottom ul').delegate('li', 'mouseout', function() {
+		$(this).css('color', '#555555');
+	})
+
+	$('.djs-navBottom ul').delegate('li', 'click', function() {
+		$(this).addClass("color").siblings().removeClass('color');
+		subclass = $(this).text();
+		obtainList(mainclass, subclass)
 	})
 
 	$('.djs-px li:nth-child(1)').mouseover(function() {
@@ -75,6 +79,80 @@ window.onload = function() {
 	$('.djs-px li:nth-child(1)').mouseout(function() {
 		$('.djs-px li:nth-child(1) ul').css("display", "none")
 	})
+
+	$('.djs-list ul').delegate('li', 'mouseover', function() {
+		$(this).css("box-shadow", "0 3px 2px 2px #E9E9E9").css("transform", "translateY(-3px)");
+	})
+	$('.djs-list ul').delegate('li', 'mouseout', function() {
+		$(this).css("box-shadow", "none").css("transform", "translateY(0)");
+	})
+
+	var arrList;
+	var len;
+
+	quan()
+
+	function quan() {
+		$.ajax({
+			url: "http://47.92.145.129:8000/djsList/list",
+			type: "get",
+			success: function(data) {
+				console.log(data)
+				if(data.success == "查无数据"){
+					return;
+				}else{
+					arrList = data.data;
+					num = 1;
+					len = Math.ceil(data.data.length / 12);
+					list(num, len)
+					$('.djs-fy li').remove()
+					$('.djs-fy').append(showPages(1, len))
+				}
+			}
+		})
+	}
+
+	function list(num, len) {
+		console.log(num, len)
+		$('.djs-list ul li').remove()
+		var html = '';
+		for(var i = ((num - 1) * 12); i < (num * 12); i++) {
+			if(i == arrList.length) {
+				break;
+			} else {
+				html += '<li><a href="listDetails.html?' + arrList[i].listid + '"><img src="' + $.base64.atob(arrList[i].cover) + '" alt="" /><p class="djs-title">' + arrList[i].tradename + '</p><div></div><p class="djs-price">' + arrList[i].pricing + '</p></a></li>';
+			}
+		}
+		$('.djs-list ul').append(html)
+	}
+
+	//获取分类列表
+
+	function obtainList(mainclass, subclass) {
+		console.log(mainclass, subclass)
+		var html = '';
+		$.ajax({
+			url: "http://47.92.145.129:8000/djsList/obtainList",
+			type: "get",
+			data: {
+				mainclass: mainclass,
+				subclass: subclass
+			},
+			success: function(data) {
+				console.log(data)
+				if(data.success == "查无数据"){
+					return;
+				}else{
+					arrList = data.data;
+					num = 1;
+					len = Math.ceil(data.data.length / 12);
+					list(num, len)
+					$('.djs-fy li').remove()
+					$('.djs-fy').append(showPages(1, len))
+				}
+			}
+		})
+	}
 
 	//分页
 	function showPages(page, total) {
@@ -102,23 +180,102 @@ window.onload = function() {
 		}
 		return str;
 	}
-	$('.djs-fy').append(showPages(1, 20))
 
-	var num = 0;
+	var num = 1;
 	$('.djs-fy').delegate('li', 'click', function() {
 		$('.djs-fy li').remove()
 
 		if($(this).text() == '上一页') {
 			num--;
-			$('.djs-fy').append(showPages(num, 20))
+			list(num, len)
+			$('.djs-fy').append(showPages(num, len))
 		} else if($(this).text() == '下一页') {
 			num++;
-			$('.djs-fy').append(showPages(num, 20))
+			list(num, len)
+			$('.djs-fy').append(showPages(num, len))
+		} else if($(this).text() == '···') {
+
 		} else {
 			num = Number($(this).text());
-			$('.djs-fy').append(showPages(num, 20))
+			list(num, len)
+			$('.djs-fy').append(showPages(num, len))
 		}
 
 	})
 
-}
+	//点击销量排序
+	$('.djs-px>li>ul>li:nth-child(2)').click(function() {
+		$.ajax({
+			url: "http://47.92.145.129:8000/resume/salespx",
+			type: "get",
+			data: {
+				mainclass: mainclass,
+				subclass: subclass
+			},
+			success: function(data) {
+				console.log(data)
+				if(data.success == "查无数据"){
+					return;
+				}else{
+					arrList = data.data;
+					num = 1;
+					len = Math.ceil(data.data.length / 12);
+					list(num, len)
+					$('.djs-fy li').remove()
+					$('.djs-fy').append(showPages(1, len))
+				}
+			}
+		})
+	})
+	
+	//点击价格排序
+	$('.djs-px>li>ul>li:nth-child(1)').click(function() {
+		$.ajax({
+			url: "http://47.92.145.129:8000/resume/pricepx",
+			type: "get",
+			data: {
+				mainclass: mainclass,
+				subclass: subclass
+			},
+			success: function(data) {
+				console.log(data)
+				if(data.success == "查无数据"){
+					return;
+				}else{
+					arrList = data.data;
+					num = 1;
+					len = Math.ceil(data.data.length / 12);
+					list(num, len)
+					$('.djs-fy li').remove()
+					$('.djs-fy').append(showPages(1, len))
+				}
+			}
+		})
+	})
+	
+	//点击综合排序
+	$('.djs-px>li>ul>li:nth-child(3)').click(function() {
+		$.ajax({
+			url: "http://47.92.145.129:8000/resume/salespx",
+			type: "get",
+			data: {
+				mainclass: mainclass,
+				subclass: subclass
+			},
+			success: function(data) {
+				console.log(data)
+				if(data.success == "查无数据"){
+					return;
+				}else{
+					arrList = data.data;
+					num = 1;
+					len = Math.ceil(data.data.length / 12);
+					list(num, len)
+					$('.djs-fy li').remove()
+					$('.djs-fy').append(showPages(1, len))
+				}
+			}
+		})
+	})
+
+}, false)

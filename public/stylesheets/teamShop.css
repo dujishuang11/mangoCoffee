@@ -1,6 +1,7 @@
 .wyhteam_wrapper{
 	width:100%;
 	height:auto;
+	margin-top:120px;
 }
 .wyhteam_body{
 	width:85%;
@@ -33,12 +34,15 @@
 	width:150px;
 	height:170px;
 	margin-left:30px;
-	border:#E3E3E3 5px solid;
+	background: url(../images/hhou.png) no-repeat;
+	background-size: 100% 100%;
 }
 .yu_imghead{
-	width:100%;
-	height:100%;
-	background-size: 100% 100%;
+	width:150px;
+	height:170px;
+	border:#E3E3E3 5px solid;
+	background-size: cover;
+
 }
 .yu_ontp{ 
     position: relative;
@@ -230,9 +234,37 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 9;
+    /*z-index: -3;*/
 }
-.yu_sfzzbt{
+.imgsfz{
+	width:280px;
+	height:160px;
+	/*position: absolute;
+    top: 0;
+    left: 0;*/
+	/*border:1px solid red;*/
+	background-size: cover;
+	margin-top:10px;
+	border:none;
+	/*z-index: -1;*/
+	/*border:2px dashed #E3E3E3;*/
+}
+/*.yu_idzhengs img{
+	border:none;
+}*/
+.sfzztxt{
+	width:280px;
+	height:160px;
+	color:#969696;
+	font-size: 17px;
+	position: absolute;
+	text-align: center;
+	line-height: 175px;
+    top: 0;
+    z-index: -1;
+    margin-top:10px;
+}
+/*.yu_sfzzbt{
 	width:280px;
 	height:160px;
 	border:none;
@@ -243,7 +275,7 @@
 	font-size: 17px;
 	border:2px dashed #E3E3E3;
 	margin-top:10px;
-}
+}*/
 .yu_idfans{ 
     position: relative;
 }
@@ -256,9 +288,39 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 9;
+    margin-left:25px;
+    margin-top:10px;
+    /*z-index: 3;*/
 }
-.yu_sfzfbt{
+.imgsfzf{
+	width:280px;
+	height:160px;
+	/*position: absolute;
+    top: 0;
+    left: 0;*/
+	/*border:1px solid red;*/
+	background-size: cover;
+	margin-left:25px;
+	margin-top:10px;
+	border:none;
+	/*z-index: -1;*/
+	/*border:2px dashed #E3E3E3;*/
+}
+.sfzftxt{
+	/*background: red;*/
+	width:280px;
+	height:160px;
+	color:#969696;
+	font-size: 17px;
+	position: absolute;
+	text-align: center;
+	line-height: 175px;
+    top: 0;
+    z-index: -1;
+    margin-left:25px;
+	margin-top:10px;
+}
+/*.yu_sfzfbt{
 	width:280px;
 	height:160px;
 	background: #FAFAFA;
@@ -269,7 +331,7 @@
 	border:2px dashed #E3E3E3;
 	margin-left:25px;
 	margin-top:10px;
-}
+}*/
 .yu_idnum{
 	width:100%;
 	height:300px;
@@ -310,7 +372,7 @@
 }
 .yuon_diy{
 	width:100%;
-	height:200px;
+	height:auto;
 	border:2px dashed #E3E3E3;
 	background: #FAFAFA;
 }
@@ -320,7 +382,8 @@
     width:150px;
 	height:160px;
 	padding:5px;
-	margin:20px;
+	margin:20px; 
+	float: left;
 }
 .yuh_pic{
 	width:130px;
@@ -331,15 +394,29 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 9;
+    /*z-index: 9;*/
 }
 .han_imgg{
 	width:130px;
 	height:130px;
 }
+
+.img{
+	width:150px;
+	height:160px;
+	border:5px solid #E3E3E3;
+	padding:5px;
+	margin:15px; 
+	float: left;
+}
+.img img{
+	background-size: cover;
+	width:100%;
+	height:100%;
+}
 .yu_rekuang{
 	width:100%;
-	height:40px;
+	height:auto;
 	line-height: 50px;
 }
 .yu_lab{

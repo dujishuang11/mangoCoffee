@@ -5,6 +5,8 @@ html,body {
 	background-size: cover;
 }
 
+
+
 .lxm_wrapper {
 	width: 85%;
 	height: 100%;
@@ -457,3 +459,6 @@ html,body {
 	border-radius: 3px;
 	z-index: 999;*/
 }
+
+
+/*@media \0screen {body { background: red; }}*/

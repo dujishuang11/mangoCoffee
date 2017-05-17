@@ -5,18 +5,35 @@ if(-[1,]){
 	console.log("这是IE浏览器！");
 } 
 
-$.ajax({
-	type:"get",
-	url:"http://47.92.145.129:8000/users/nav",
-	async:true,
-	success:function(e){
-		var html = ''
-		for(var i = 0; i < e.length; i++){
-			html += '<li><a href="html/commodityList.html?'+e[i].uid+'">'+e[i].names+'</a></li>'
+console.log($('.nav_wrapper').hasClass('nav_bg_a') == true)
+
+if($('.nav_wrapper').hasClass('nav_bg_a') == true){
+	$.ajax({
+		type:"get",
+		url:"http://47.92.145.129:8000/users/nav",
+		async:true,
+		success:function(e){
+			var html = ''
+			for(var i = 0; i < e.length; i++){
+				html += '<li><a href="commodityList.html?'+e[i].uid+'">'+e[i].names+'</a></li>'
+			}
+			$('.nav_hide_list').append(html)
 		}
-		$('.nav_hide_list').append(html)
-	}
-});
+	});
+}else{
+	$.ajax({
+		type:"get",
+		url:"http://47.92.145.129:8000/users/nav",
+		async:true,
+		success:function(e){
+			var html = ''
+			for(var i = 0; i < e.length; i++){
+				html += '<li><a href="html/commodityList.html?'+e[i].uid+'">'+e[i].names+'</a></li>'
+			}
+			$('.nav_hide_list').append(html)
+		}
+	});
+}
 
 $('.search_con').keydown(function(event){
 //	alert(event.keyCode)

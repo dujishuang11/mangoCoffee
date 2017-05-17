@@ -1,6 +1,6 @@
 .djs-wrapper {
 	width: 100%;
-	margin-top: 20px;
+	margin-top: 98px;
 }
 .djs-nav {
 	width: 85%;
@@ -74,6 +74,7 @@
 }
 .djs-list ul {
 	width: 100%;
+	min-height: 500px;
 	overflow: hidden;
 }
 .djs-list ul li {
