@@ -10,15 +10,18 @@
 		<link rel="stylesheet" type="text/css" href="../stylesheets/bootstrap-select.css"/>
 		
 		<link rel="stylesheet" type="text/css" href="../../node_modules/bootstrap/dist/css/bootstrap.css"/>
+
 		<script src="../../node_modules/angular/angular.js"></script>
 		<script src="../../node_modules/jquery/dist/jquery.js"></script>
+		<script src="../javascripts/jquery.base64.js"></script>
+			
 		<script src="../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
 		<script src="../javascripts/bootstrap-select.js"></script>
 		<script src="../javascripts/personalShop.js"></script>
-		<script src="../javascripts/common.js"></script>
+		
 	</head>
 	<body>
-		<div class="nav_wrapper nav_bg_a">
+		<div id="lxm_nav" class="nav_wrapper nav_bg_a">
 			<div class="nav">
 				<div class="nav_logo">
 					<img src="../images/logo.png" alt="" />
@@ -134,6 +137,7 @@
 						<div class="yu_perheader">
 							<div class="yu_imgon fl">
 								<img src="../images/hhou.png" class="yu_imghead"  alt="" />
+								<!--<span>删除</span>-->
 							</div>
 							<div class="yu_ontp fl cur">
 								<input class="on_tpfil cur" id="on_tpfil" type="file">
@@ -141,13 +145,19 @@
 							</div>
 							
 						</div>
-						<div class="wyh_teamthings">
+						
+						<div class="wyh_teamthings" id="kabosu">
 							<lable >上传个人作品（不少于5个）：&nbsp;</lable>
 							<div class="yuon_diy fl">
 								<div class="yuhan_img ">
 							        <input class="yuh_pic cur" id="yuh_pic" type="file">
 							        <img src="../images/onImg.png" class="han_imgg cur">
+							        <!--<span class="yuhan_img_remove">删除</span>-->	
 							    </div>
+							    <!--<div class="yuhan_img ">
+							        <input multiple class="yuh_pic cur" type="file">
+							        <img src="../images/onImg.png" class="han_imgg cur">
+							    </div>-->
 							</div>
 						</div>
 						
@@ -166,13 +176,14 @@
 							<div class="yu_idzhengs fl cur">
 								<input type="file" class="yu_sfzzheng cur" id="yu_sfzzheng" />
 								<button class="yu_sfzzbt cur">上传身份证正面照</button>
+								<img class="yu_sfzzheng_top" src="" alt="" />
 							</div>
 							<div class="yu_idfans fl cur">
 								<input type="file" class="yu_sfzfan cur" id="yu_sfzfan" />
 								<button class="yu_sfzfbt cur">上传身份证反面照</button>
+								<img class="yu_sfzzheng_bottom" src="" alt="" />
 							</div>
-							<p class="yu_idxys fl">为了保证您和雇主的合法权益，我们需要您提供身份证信息，请务必上传真实有效的身份证扫描件。
-		我们会为您保密，并承诺不用于其它用途。</p>
+							<p class="yu_idxys fl">为了保证您和雇主的合法权益，我们需要您提供身份证信息，请务必上传真实有效的身份证扫描件。	我们会为您保密，并承诺不用于其它用途。</p>
 						</div>
 						
 						<!--审核-->
@@ -234,16 +245,14 @@
 								<button class="btn btn-danger yu-submitq" id="yu-submitq" disabled="disabled">提交审核</button>
 							</div>
 						</div>
-						
-						
 					</div>
 					
 					
 				</div>
 				
-				
 				<!--<div class="yu_rekuang">
-					<input type="checkbox" name="Pages" value="Job" id="Job" >
+					<input class="yu_rekuang_check" type="checkbox" name="Pages" value="Job" id="Job" >
+
 					<label for="Job" class="yu_lab cur" id="yu_lab">我保证作品的原创性，上传的图片没有法律纠纷，我对因虚假资料或图片版权引起的法律纠纷负全部责任。</label>
 				</div>
 				<div class="button_u">
@@ -263,4 +272,6 @@
 			</ul>
 		</div>
 	</body>
+	<script src="../javascripts/common.js"></script>
 </html>
+	

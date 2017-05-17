@@ -2,8 +2,6 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
-		<!--<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>-->
 		<title></title>
 		<link rel="stylesheet" type="text/css" href="stylesheets/rester.css"/>
 		<link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.css"/>
@@ -11,17 +9,21 @@
 		<link rel="stylesheet" href="stylesheets/nav.css" />
 		<link rel="stylesheet" href="stylesheets/footer.css" />
 		
-		<!--[if lte IE 8]><script src="javascripts/ie/selectivizr-min.js"></script><![endif]-->
 		<script src="../node_modules/angular/angular.js"></script>
 		<script src="../node_modules/jquery/dist/jquery.js"></script>
 		<script src="javascripts/gVerify.js"></script>
 		<script src="javascripts/layer/layer.js"></script>
 		<script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+		<script src="javascripts/jquery-1.8.0.js"></script>
+		<script src="javascripts/jquery.base64.js"></script>
+		<script src="javascripts/q1.js"></script>
+		<script src="javascripts/q2.js"></script>
+		
 	</head>
 	<body>
 		<!--<div class="lxm_wrapper">-->
 			<!--<a href="https://open.weixin.qq.com/connect/qrconnect?appid=wx946d422a92ca5112&redirect_uri=http://www.kamangchina.com&response_type=code&scope=snsapi_login&state=1#wechat_redirect">点击这里绑定</a>-->
-			<div class="nav_wrapper">
+			<div id="lxm_nav" class="nav_wrapper">
 				<div class="nav">
 					<div class="nav_logo">
 						<img class="lxm_logo" src="images/logo.png" alt="" />
@@ -50,7 +52,7 @@
 									<div class="nav_title"></div>
 								</div>
 							</li>
-							<li class="nav_one"><a href="#">设计师</a></li>
+							<li class="nav_one lxm_shejishi"><a href="#">设计师</a></li>
 						</ul>
 					</div>
 					<div class="nav_right">
@@ -60,20 +62,19 @@
 						</div>
 						<p class="login">登录</p>
 						<p class="res">注册</p>
-						<!--<div class="user">
+						<div class="user" style = 'display: none;'>
 							<img src="images/40x40.jpg" alt="" />
 							<div class="user_list_wrapper">
 								<div class="user_list">
 									<ul>
-										<li><a href="#">我的美思</a></li>
-										<li><a href="#">设置</a></li>
-										<li><a href="#">我的花瓣</a></li>
-										<li><a href="#">退出</a></li>
+										<li class="user_shop"><a href="#">个人开店</a></li>
+										<li class="user_data"><a href="#">个人资料</a></li>
+										<li class="user_out"><a href="#">退出登录</a></li>
 									</ul>
 									<div class="user_title"></div>
 								</div>
 							</div>
-						</div>-->
+						</div>
 					</div>
 				</div>
 			</div>
@@ -100,7 +101,7 @@
 					<div class="login_enter">
 						<!--普通登录-->
 						<div class="login_enter_main" style="display: block;">
-							<input class="lxm_login_one_user" type="text" placeholder="输入手机号或邮箱" />
+							<input class="lxm_login_one_user" type="text" placeholder="输入邮箱号" />
 							<input class="lxm_login_one_pass" type="password" placeholder="密码" />
 							<div class="login_yzm">
 								<div class="yzm_pic" id="v_container" style="width: 100px;height: 50px;"></div>
@@ -111,7 +112,7 @@
 						
 						<!--忘记密码-->
 						<div class="login_enter_forget" style="display: none;">
-							<input type="text" placeholder="输入手机号或邮箱" />
+							<input type="text" placeholder="输入邮箱号" />
 							密保问题
 							<p>
 								<!--密保问题　-->
@@ -135,10 +136,10 @@
 						
 						<!--注册账号-->
 						<div class="login_enter_resgister" style="display: none;">
-							<input type="text" placeholder="输入手机号或邮箱" />
+							<input class="lxm_resgister_num" type="text" placeholder="输入邮箱号" />
 							<button class="resgister_list">注册</button>
 						</div>
-						<a href="#" class="forget_pass">忘记密码</a><a href="#" class="resgister_now">立即注册</a><span class="login_user">还没有账号？</span>
+						<a href="#" style="display: none;" class="forget_pass">忘记密码</a><a href="#" class="resgister_now">立即注册</a><span class="login_user">还没有账号？</span>
 					</div>
 					
 					
@@ -150,11 +151,11 @@
 						<img src="images/logo.png" alt="" />
 						<p></p>
 						<p>欢迎来到咖芒！请完善你的信息</p>
-						<p>账号　17600022763</p>
-						<p>昵称　<input class="resgister_user" type="text" placeholder="昵称" /></p>
+						<p>账号　<span class="lxm_my_num">17600022763</span></p>
+						<p style="display: none;">昵称　<input class="resgister_user" type="text" placeholder="昵称" /></p>
 						<p>密码　<input class="resgister_pass" type="password" placeholder="设定登录密码" /></p>
 						<p>确认密码　<input class="resgister_pass_agin" type="password" placeholder="请再输入一次登录密码" /></p>
-						<p>
+						<p style="display: none;">
 							密保问题　<select class="resgister_problem">
 								<option>我的名字</option>
 								<option>我最喜欢的人</option>
@@ -163,7 +164,7 @@
 								<option>我的大学校名</option>
 							</select>
 						</p>
-						<p>问题答案　<input type="text" class="resgister_Answer" placeholder="输入问题答案" /></p>
+						<p style="display: none;">问题答案　<input type="text" class="resgister_Answer" placeholder="输入问题答案" /></p>
 						<p class="lxm_rules"><input class="resgister_Check" type="checkbox" id="aa" /><label for="aa">我已阅读并接受<a href="#">《咖芒网免责声明》</a></label></p>
 						<button class="register_sub">提交</button>
 						<i class="glyphicon glyphicon-arrow-left resgister_back"></i>
@@ -185,17 +186,6 @@
 				</ul>
 			</div>
 	</body>
-	<script src="javascripts/common.js"></script>
 	<script src="javascripts/index.js"></script>
-	<!--<script type="text/javascript">
-//		alert(1)
-		$.ajax({
-			type:"get",
-			url:"http://47.92.145.129:8000/users/gg",
-//			async:true,
-			success:function(e){
-				console.log(e)
-			}
-		});
-	</script>-->
+	<script src="javascripts/common.js"></script>
 </html>

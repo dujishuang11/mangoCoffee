@@ -4,26 +4,228 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<script src="../../node_modules/jquery/dist/jquery.js"></script>
+		<script src="../javascripts/jquery.base64.js"></script>
 	</head>
 	<body>
-		
+		<!--<img src="http://47.92.145.129:8000/images/1494839855850.jpg" alt="" />-->
 	</body>
 	<script>
-		
-		var ar = {
-			'1':'a',
-			'2':'b'
-		}
-		
-		console.log(ar)
-		
+		//测试各种借口
+//		var ar = {
+//			'1':'a',
+//			'2':'b'
+//		}
+
+// 登录注册 
+		var ip = 'localhost:3000'
+		var ip1 = '47.92.145.129:8000'
+		//登录
+//		$.ajax({
+//			type:"post",
+//			url:'http://'+ip1+'/users/login',
+//			async:true,
+//			data:{
+//				username: 'aaaa1',
+//          	password: '1234'
+//			},
+//			success:function(e){
+//				console.log(e)
+//				if(e.num == 1){
+//					alert('登录成功')
+//				}else if(e.num == 2){
+//					alert('密码错误')
+//				}else if(e.num == 3){
+//					alert('用户名不存在')
+//				}
+//			}
+//		});
+		//注册
 		$.ajax({
 			type:"post",
-			url:"http://localhost:3000/personal/shop_register",
+			url:'http://'+ip1+'/users/register',
 			async:true,
+			data:{
+				username: '249842959@qq.com',
+            	password: '123456aa'
+			},
 			success:function(e){
 				console.log(e)
+				if(e.num == '成功'){
+					alert('注册成功')
+				}else if(e.num == '账户已存在'){
+					alert('账户已存在')
+				}else{
+					alert('失败')
+				}
 			}
 		});
+
+
+
+
+
+
+
+
+
+
+//查看所有商铺
+
+//		$.ajax({
+//			type:"get",
+//			url:'http://'+ip1+'/personal/all',
+//			async:true,
+//			success:function(e){
+//				console.log(e)
+//			}
+//		});
+
+
+//查询设计领域店铺
+
+//		$.ajax({
+//			type:"get",
+//			url:'http://'+ip+'/personal/search',
+//			async:true,
+//			data:{
+//				name:'家居'
+//			},
+//			success:function(e){
+//				console.log(e)
+//			}
+//		});
+
+
+//		
+//		console.log(ar)
+		
+		
+		//根据商铺名字查询信息
+//		$.ajax({
+//			type:"get",
+//			url:'http://'+ip+'/personal/list',
+//			async:true,
+//			data:{
+//				shopName:'笑笑12321321'
+//			},
+//			success:function(e){
+//				console.log(e)
+//			}
+//		});
+
+		//根据申请人ID查询信息
+//		$.ajax({
+//			type:"get",
+//			url:'http://'+ip1+'/personal/people',
+//			async:true,
+//			data:{
+//				Applicant:'2'
+//			},
+//			success:function(e){
+//				console.log(e)
+//			}
+//		});
+
+		//删除指定商户的整条信息
+//		$.ajax({
+//			type:"post",
+//			url:'http://'+ip+'/personal/shop_del',
+//			async:true,
+//			data:{
+//				shopUid:'7'
+//			},
+//			success:function(e){
+//				console.log(e)
+//			}
+//		});
+		
+		//注册商铺信息
+//		$.ajax({
+//			type:"post",
+//			url:'http://'+ip1+'/personal/shop_register',
+//			async:true,
+//			data:{
+//				shopName:'学校',
+//				shopType:'摄影师',
+//				realName:'孙亚龙',
+//				email:'249842959@qq.com',
+//				phone:'17600022763',
+//				qq:'249842959',
+//				briefIntroduction:'专业摄影，国际摄影二等奖',
+//				portrait:'1111',
+//				works:'',
+//				address:'北京市大兴区',
+//				userID:'140622198711260037',
+//				idPhoto:'',
+//				secretKey:'',
+//				examine:0,
+//				Applicant:'2'
+//			},
+//			success:function(e){
+//				console.log(e)
+//				if(e.flag == 1){
+//					alert('注册成功')
+//				}else if(e.flag == 2){
+//					alert('店铺名已被注册')
+//				}
+//			}
+//		});
+		
+		
+		//提交审核店铺接口 (就是决定该条信息是否通过审核的接口)
+//		$.ajax({
+//			type:"post",
+//			url:'http://'+ip+'/personal/examine',
+//			async:true,
+//			data:{
+//				examine:'3',
+//				shopName:'笑笑'
+//			},
+//			success:function(e){
+//				console.log(e)
+//			}
+//		});
+
+		
+		//查看 审核中的店铺信息 || 审核成功的店铺信息  || 审核失败的店铺信息
+		
+//		$.ajax({
+//			type:"get",
+//			url:'http://'+ip+'/personal/auditStatus',
+//			async:true,
+//			data:{
+//				auditStatus:'2' //0审核中的信息 1审核成功的信息 2审核失败的信息
+//			},
+//			success:function(e){
+//				console.log(e)
+//			}
+//		});
+
+
+
+//
+//		class A {
+//			constructor(e){
+//				this.id = e
+//			}
+//			fna(){
+//				console.log(this.id)
+//			}
+//		}
+//		
+//		var c = new A(1)
+//		
+//		class B extends A { //继承A
+//			constructor(e){
+//				super(e)
+//			}
+//		}
+//		
+//		var d = new B(2)
+//
+//		d.fna()
+
+
+		
 	</script>
 </html>

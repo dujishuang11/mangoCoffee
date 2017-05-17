@@ -1,57 +1,5 @@
 window.addEventListener("load",function(){
-//	var select = document.getElementById("test");
-	/*$("#yu_sure").click(function(){
-		
-	    var str = [];
-	    for(i=0;i<$("#test").length;i++){
-	        if($("#test").options[i].selected){
-	            str.push($("#test")[i].value);
-	        }
-	    }
-	    alert(str);
-	})
-	*/
-	
-/*$(function(){
-    $("#btn").click(function() {
-        var all = "";
-        $("#multi-sel option").each(function() {
-            all += $(this).attr("value")+" ";
-            console.log(all)
-        });
-        var sel = $("#multi-sel").val();
-         console.log(sel)
-        alert("多选列表所有的value值:"+all+"，其中被选中的是:"+sel+"。");
-    });
-})
-	*/
-	
-	
 
-	
-
-
-/*	//手机验证	
-	var ttelRex=/^1[34578]\d{9}$/;  //手机号验证
-	$("#yu_telh")[0].addEventListener("input",function(){
-		var tel_val=$("#yu_telhao").val(); //联系方式
-		if(tel_val==""){
-			console.log("请输入手机号")
-	    }else if(!(tel_val.match(ttelRex))){
-	    	console.log("手机号格式不对")
-	    }
-	})*/
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 //下拉多选
 	 $('.selectpicker').selectpicker({
@@ -96,8 +44,14 @@ window.addEventListener("load",function(){
 		$("#qiye_single").css("height","51px").css("border","1px solid #DDDDDD").css("background","white").css("border-bottom","none");
 	})
 	
+<<<<<<< HEAD
 
 	
+=======
+//点击协议
+	var off=false;
+
+>>>>>>> origin/master
 	
 //点击协议----个人
 	var off1=false;
@@ -105,12 +59,10 @@ window.addEventListener("load",function(){
 		if(off1){
 			$("#yu-submit").attr("disabled",true);
 			off1=false;
-			console.log("aa")
+//			console.log("aa")
 		}else{
 			$("#yu-submit").removeAttr("disabled");
 			off1=true;
-			
-			
 		}
 	})
 	var off11=false;
@@ -163,7 +115,7 @@ window.addEventListener("load",function(){
 				else if(tel_val==""){
 					alert("请输入联系方式")
 				}
-				else if((tel_val.match(telRex))){
+				else if(!(tel_val.match(telRex))){
 			    	alert("手机号输入有误")
 			    }
 				else if(qq_val==""){
@@ -175,11 +127,14 @@ window.addEventListener("load",function(){
 				else if(person_val==""){
 					alert("请输入个人介绍")
 				}
-				else if(headfile_val==""){
+				else if(!photo_obj){
 					alert("请上传头像")
 				}
-				else if(personworks_val==""){
+				else if(lxm_works.length<=0){
 					alert("请上传个人作品")
+				}
+				else if(lxm_works.length<4){
+					alert("至少上传五张个人作品")
 				}
 				else if(address_val==""){
 					alert("请填写地址")
@@ -190,18 +145,254 @@ window.addEventListener("load",function(){
 				else if(!(idcard_val.match(shenfRex))){
 			    	alert("身份证号输入有误")
 			    }
-				else if(idpicz_val==""){
+				else if(!lxm_idpic_top){
 					alert("请上传身份证正面照")
 				}
-				else if(idpicf_val==""){
+				else if(!lxm_idpic_bottom){
 					alert("请上传身份证反面照")
 				}
 			    else{
-					alert("都输入正确");
-					
+			    	if(!sessionStorage.userId){
+			    		alert('请先登录')
+			    	}else{
+					$.ajax({
+						type:"post",
+						url:'http://'+ip+'/personal/shop_register',
+						async:true,
+						data:{
+							shopName:nickname_val,
+							shopType:$("#id_select").val().join(','),
+							realName:truename_val,
+							email:email_val,
+							phone:tel_val,
+							qq:qq_val,
+							briefIntroduction:person_val,
+							portrait:photo_obj,
+							works:lxm_works.join('-'),
+							address:address_val,
+							userID:idcard_val,
+							idPhoto:lxm_idpic_top +'-'+ lxm_idpic_bottom,
+							secretKey: '',
+							examine:0,
+							Applicant: sessionStorage.userId //获取登录人ID填写 获取登录人ID填写 获取登录人ID填写
+						},
+						success:function(e){
+							console.log(e)
+							if(e.flag == 1){
+								alert('注册成功')
+							}else if(e.flag == 2){
+								alert('店铺名重复，请修改后重试')
+							}else{
+								alert('注册失败，请重试')
+							}
+						}
+					});
+					}
 				}
+			    
 			})
 	
+	function getObjectURL(file) {
+        var url = null;
+        if (window.createObjectURL != undefined) {
+            url = window.createObjectURL(file)
+        } else if (window.URL != undefined) {
+            url = window.URL.createObjectURL(file)
+        } else if (window.webkitURL != undefined) {
+            url = window.webkitURL.createObjectURL(file)
+        }
+        return url
+    };
+	
+	var lxm_works = [];
+	var photo_obj;
+	var lxm_idpic_top;
+	var lxm_idpic_bottom;
+//	 $('.on_tpfil').onload = function (e) {
+//                  console.log("成功读取....");
+//          }
+//	$('.on_tpfil').each(function(){
+       
+        $('.on_tpfil').change(function(evt){
+       		var max_size=51200;
+            var finput = $(this);   
+            var files = evt.target.files; // 获得文件对象  
+            var output = [];
+            for (var i = 0, f; f = files[i]; i++){  
+            	//检查文件大小
+                if(f.size > max_size){   
+                    alert("上传的图片不能超过50KB!");   
+                    $(this).val('');   
+                }else{
+                	var formdata = new FormData();
+                	var my_pic = this.files[0];
+					formdata.append("uploadeFile",this.files[0]);
+                	$.ajax({
+						url: "http://47.92.145.129:8000/users/huang",
+						type: "post",
+						data: formdata,
+						contentType: false,
+						processData: false,
+						success: function(data) {
+							console.log(data)
+							if(data.nem == '正常') {
+								var fileReader = new FileReader();
+								fileReader.readAsDataURL(my_pic);
+								fileReader.onload = function(event) {
+									var result = event.target.result; //返回的dataURL
+									photo_obj = $.base64.btoa(result)
+//									$('.yu_imgon span').css('display','block')
+									$('.yu_imgon img')[0].src = result
+//									console.log(result)
+								}
+							}else{
+								alert('图片不合法，请重新上传')
+							}
+						}
+					})
+                }
+            }
+        });
+//      $(".wyh_teamthings").on("change",".yuh_pic",function() {
+
+        $('.yuh_pic').change(function(e){
+//      	alert(1)
+			var files = e.target.files;
+			var max_size=102400;
+			
+			for (var i = 0, f; f = files[i]; i++){
+				if(f.size > max_size){   
+                    alert("上传的图片不能超过100KB!");   
+                    $(this).val('');   
+                }else{
+                	
+                	
+                	var fd = new FormData();
+                	fd.append("uploadedFile", this.files[0]);
+                	$.ajax({
+                		type:"post",
+                		url:"http://47.92.145.129:8000/users/chan",
+                		async:true,
+                		data:fd,
+                		contentType: false,
+            			processData: false,
+                		success:function(e){
+                			
+                			console.log(e)
+                			lxm_works.push(e.nem)
+                			console.log(e.nem)
+                			console.log(lxm_works)
+                		},
+                		error:function(){
+			                alert("图片有错");
+			            }
+                	});
+                	
+                	
+					var index = $(this).index('.han_imgg')
+					var result;
+                	var fileReader = new FileReader();
+//              	lxm_works.push(this.files[0])
+					fileReader.readAsDataURL(this.files[0]);
+					fileReader.onload = function(event) {
+						result = event.target.result; //返回的dataURL
+//						lxm_works.push($.base64.btoa(result))
+						$('.han_imgg').eq(index-1).attr('src',result)
+						$('.han_imgg').eq(index-1).css('position','relative')
+						$('.han_imgg').eq(index-1).css('z-index','9')
+						$('.yuhan_img_remover span').eq(index).css('display','none')
+					}
+//					console.log($(this).parent().children('img').attr('src'))
+
+					var html = '<div class="yuhan_img yuhan_img_remover"><input multiple class="yuh_pic cur" type="file"><img src="../images/onImg.png" class="han_imgg cur"><span class="yuhan_img_remove">删除</span></div>'
+        			$(this).parent().before(html);	
+					$(this).val('')
+
+//					console.log(result)
+					for(var i = 0; i < $('.yuhan_img_remove').length; i++){
+						$('.yuhan_img_remove')[i].index = i
+						$('.yuhan_img_remove')[i].onclick = function(){
+							this.parentNode.remove()
+							lxm_works.splice(this.index,1)
+//							console.log(photo_obj)
+//							alert(this.index)
+						}
+					}
+
+                }
+			}
+        })
+        
+        
+        $('.yu_sfzzheng').change(function(evt){
+       		var max_size=102400;
+            var finput = $(this);   
+            var files = evt.target.files; // 获得文件对象  
+            var output = [];
+            for (var i = 0, f; f = files[i]; i++){  
+//          	//检查文件大小
+                if(f.size > max_size){   
+                    alert("上传的图片不能超过100KB!");   
+                    $(this).val('');   
+                }else{
+//              	var formdata = new FormData();
+//              	var my_pic = this.files[0];
+//					formdata.append("uploadeFile",this.files[0]);
+                	var fd = new FormData();
+                	fd.append("uploadedFile", this.files[0]);
+                	$.ajax({
+                		type:"post",
+                		url:"http://47.92.145.129:8000/users/chan",
+                		async:true,
+                		data:fd,
+                		contentType: false,
+            			processData: false,
+                		success:function(e){
+                			console.log(e)
+                			lxm_idpic_top = e.nem
+                			$('.yu_sfzzheng_top')[0].src = 'http://47.92.145.129:8000/'+e.nem
+                		},
+                		error:function(){
+			                alert("图片不合法");
+			            }
+                	});
+                }
+            }
+        });
+        
+        $('.yu_sfzfan').change(function(evt){
+       		var max_size=102400;
+            var finput = $(this);   
+            var files = evt.target.files; // 获得文件对象  
+            var output = [];
+            for (var i = 0, f; f = files[i]; i++){  
+//          	//检查文件大小
+                if(f.size > max_size){   
+                    alert("上传的图片不能超过100KB!");   
+                    $(this).val('');   
+                }else{
+                	var fd = new FormData();
+                	fd.append("uploadedFile", this.files[0]);
+                	$.ajax({
+                		type:"post",
+                		url:"http://47.92.145.129:8000/users/chan",
+                		async:true,
+                		data:fd,
+                		contentType: false,
+            			processData: false,
+                		success:function(e){
+                			console.log(e)
+                			lxm_idpic_bottom = e.nem
+                			$('.yu_sfzzheng_bottom')[0].src = 'http://47.92.145.129:8000/'+e.nem
+                		},
+                		error:function(){
+			                alert("图片不合法");
+			            }
+                	});
+                }
+            }
+        });
+        
 	
 	
 	
@@ -372,5 +563,4 @@ window.addEventListener("load",function(){
 	    
 	})
 
-	
 },false)

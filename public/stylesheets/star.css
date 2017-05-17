@@ -1,9 +1,10 @@
 .djs-wrapper {
 	width: 100%;
+	margin-top: 98px;
 }
 .djs-nav {
 	width: 85%;
-	margin: 20px auto;
+	margin: 0 auto;
 	box-shadow: 0 0 2px 3px #F2F2F2;
 }
 .djs-navTop {
