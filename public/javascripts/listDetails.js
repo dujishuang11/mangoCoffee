@@ -358,6 +358,249 @@ window.addEventListener('load', function() {
 						html+='<img src="../images/icon/叶子.png" alt="" />'
 					}
 					$('.dis-name div').append(html)
+				}else if(salas>980&&salas<=1000){
+					html+='<img src="../images/icon/青芒.png" alt="" />';
+					for(var i=0; i<4; i++){
+						html+='<img src="../images/icon/花.png" alt="" />';
+					}
+					for(var i=0; i<3; i++){
+						html+='<img src="../images/icon/叶子.png" alt="" />'
+					}
+					$('.dis-name div').append(html)
+				}else if(salas>1000&&salas<=1020){
+					html+='<img src="../images/icon/青芒.png" alt="" />';
+					for(var i=0; i<4; i++){
+						html+='<img src="../images/icon/花.png" alt="" />';
+					}
+					for(var i=0; i<4; i++){
+						html+='<img src="../images/icon/叶子.png" alt="" />'
+					}
+					$('.dis-name div').append(html)
+				}else if(salas>1020&&salas<=1040){
+					for(var i=0; i<2; i++){
+						html+='<img src="../images/icon/青芒.png" alt="" />';
+					}
+					$('.dis-name div').append(html)
+				}else if(salas>1040&&salas<=1060){
+					for(var i=0; i<2; i++){
+						html+='<img src="../images/icon/青芒.png" alt="" />';
+					}
+					html+='<img src="../images/icon/叶子.png" alt="" />';
+					$('.dis-name div').append(html)
+				}else if(salas>1060&&salas<=1080){
+					for(var i=0; i<2; i++){
+						html+='<img src="../images/icon/青芒.png" alt="" />';
+					}
+					for(var i=0; i<2; i++){
+						html+='<img src="../images/icon/叶子.png" alt="" />'
+					}
+					$('.dis-name div').append(html)
+				}else if(salas>1080&&salas<=1100){
+					for(var i=0; i<2; i++){
+						html+='<img src="../images/icon/青芒.png" alt="" />';
+					}
+					for(var i=0; i<3; i++){
+						html+='<img src="../images/icon/叶子.png" alt="" />'
+					}
+					$('.dis-name div').append(html)
+				}else if(salas>1100&&salas<=1120){
+					for(var i=0; i<2; i++){
+						html+='<img src="../images/icon/青芒.png" alt="" />';
+					}
+					for(var i=0; i<4; i++){
+						html+='<img src="../images/icon/叶子.png" alt="" />'
+					}
+					$('.dis-name div').append(html)
+				}else if(salas>1120&&salas<=1140){
+					for(var i=0; i<2; i++){
+						html+='<img src="../images/icon/青芒.png" alt="" />';
+					}
+					html+='<img src="../images/icon/花.png" alt="" />';
+					$('.dis-name div').append(html)
+				}else if(salas>1140&&salas<=1160){
+					for(var i=0; i<2; i++){
+						html+='<img src="../images/icon/青芒.png" alt="" />';
+					}
+					html+='<img src="../images/icon/花.png" alt="" />';
+					html+='<img src="../images/icon/叶子.png" alt="" />'
+					$('.dis-name div').append(html)
+				}else if(salas>1160&&salas<=1180){
+					for(var i=0; i<2; i++){
+						html+='<img src="../images/icon/青芒.png" alt="" />';
+					}
+					html+='<img src="../images/icon/花.png" alt="" />';
+					for(var i=0; i<2; i++){
+						html+='<img src="../images/icon/叶子.png" alt="" />'
+					}
+					$('.dis-name div').append(html)
+				}else if(salas>1180&&salas<=1200){
+					for(var i=0; i<2; i++){
+						html+='<img src="../images/icon/青芒.png" alt="" />';
+					}
+					html+='<img src="../images/icon/花.png" alt="" />';
+					for(var i=0; i<3; i++){
+						html+='<img src="../images/icon/叶子.png" alt="" />'
+					}
+					$('.dis-name div').append(html)
+				}else if(salas>1200&&salas<=1220){
+					for(var i=0; i<2; i++){
+						html+='<img src="../images/icon/青芒.png" alt="" />';
+					}
+					html+='<img src="../images/icon/花.png" alt="" />';
+					for(var i=0; i<4; i++){
+						html+='<img src="../images/icon/叶子.png" alt="" />'
+					}
+					$('.dis-name div').append(html)
+				}else if(salas>1220&&salas<=1240){
+					for(var i=0; i<2; i++){
+						html+='<img src="../images/icon/青芒.png" alt="" />';
+					}
+					for(var i=0; i<2; i++){
+						html+='<img src="../images/icon/花.png" alt="" />';
+					}
+					$('.dis-name div').append(html)
+				}else if(salas>1240&&salas<=1260){
+					for(var i=0; i<2; i++){
+						html+='<img src="../images/icon/青芒.png" alt="" />';
+					}
+					for(var i=0; i<2; i++){
+						html+='<img src="../images/icon/花.png" alt="" />';
+					}
+					html+='<img src="../images/icon/叶子.png" alt="" />'
+					$('.dis-name div').append(html)
+				}else if(salas>1260&&salas<=1280){
+					for(var i=0; i<2; i++){
+						html+='<img src="../images/icon/青芒.png" alt="" />';
+					}
+					for(var i=0; i<2; i++){
+						html+='<img src="../images/icon/花.png" alt="" />';
+					}
+					for(var i=0; i<2; i++){
+						html+='<img src="../images/icon/叶子.png" alt="" />'
+					}
+					$('.dis-name div').append(html)
+				}else if(salas>1280&&salas<=1300){
+					for(var i=0; i<2; i++){
+						html+='<img src="../images/icon/青芒.png" alt="" />';
+					}
+					for(var i=0; i<2; i++){
+						html+='<img src="../images/icon/花.png" alt="" />';
+					}
+					for(var i=0; i<3; i++){
+						html+='<img src="../images/icon/叶子.png" alt="" />'
+					}
+					$('.dis-name div').append(html)
+				}else if(salas>1300&&salas<=1320){
+					for(var i=0; i<2; i++){
+						html+='<img src="../images/icon/青芒.png" alt="" />';
+					}
+					for(var i=0; i<2; i++){
+						html+='<img src="../images/icon/花.png" alt="" />';
+					}
+					for(var i=0; i<4; i++){
+						html+='<img src="../images/icon/叶子.png" alt="" />'
+					}
+					$('.dis-name div').append(html)
+				}else if(salas>1320&&salas<=1340){
+					for(var i=0; i<2; i++){
+						html+='<img src="../images/icon/青芒.png" alt="" />';
+					}
+					for(var i=0; i<3; i++){
+						html+='<img src="../images/icon/花.png" alt="" />';
+					}
+					$('.dis-name div').append(html)
+				}else if(salas>1340&&salas<=1360){
+					for(var i=0; i<2; i++){
+						html+='<img src="../images/icon/青芒.png" alt="" />';
+					}
+					for(var i=0; i<3; i++){
+						html+='<img src="../images/icon/花.png" alt="" />';
+					}
+					html+='<img src="../images/icon/叶子.png" alt="" />';
+					$('.dis-name div').append(html)
+				}else if(salas>1360&&salas<=1380){
+					for(var i=0; i<2; i++){
+						html+='<img src="../images/icon/青芒.png" alt="" />';
+					}
+					for(var i=0; i<3; i++){
+						html+='<img src="../images/icon/花.png" alt="" />';
+					}
+					for(var i=0; i<2; i++){
+						html+='<img src="../images/icon/叶子.png" alt="" />'
+					}
+					$('.dis-name div').append(html)
+				}else if(salas>1380&&salas<=1400){
+					for(var i=0; i<2; i++){
+						html+='<img src="../images/icon/青芒.png" alt="" />';
+					}
+					for(var i=0; i<3; i++){
+						html+='<img src="../images/icon/花.png" alt="" />';
+					}
+					for(var i=0; i<3; i++){
+						html+='<img src="../images/icon/叶子.png" alt="" />'
+					}
+					$('.dis-name div').append(html)
+				}else if(salas>1400&&salas<=1420){
+					for(var i=0; i<2; i++){
+						html+='<img src="../images/icon/青芒.png" alt="" />';
+					}
+					for(var i=0; i<3; i++){
+						html+='<img src="../images/icon/花.png" alt="" />';
+					}
+					for(var i=0; i<4; i++){
+						html+='<img src="../images/icon/叶子.png" alt="" />'
+					}
+					$('.dis-name div').append(html)
+				}else if(salas>1420&&salas<=1440){
+					for(var i=0; i<2; i++){
+						html+='<img src="../images/icon/青芒.png" alt="" />';
+					}
+					for(var i=0; i<4; i++){
+						html+='<img src="../images/icon/花.png" alt="" />';
+					}
+					$('.dis-name div').append(html)
+				}else if(salas>940&&salas<=960){
+					for(var i=0; i<2; i++){
+						html+='<img src="../images/icon/青芒.png" alt="" />';
+					}
+					for(var i=0; i<4; i++){
+						html+='<img src="../images/icon/花.png" alt="" />';
+					}
+					html+='<img src="../images/icon/叶子.png" alt="" />'
+					$('.dis-name div').append(html)
+				}else if(salas>960&&salas<=980){
+					for(var i=0; i<2; i++){
+						html+='<img src="../images/icon/青芒.png" alt="" />';
+					}
+					for(var i=0; i<4; i++){
+						html+='<img src="../images/icon/花.png" alt="" />';
+					}
+					for(var i=0; i<2; i++){
+						html+='<img src="../images/icon/叶子.png" alt="" />'
+					}
+					$('.dis-name div').append(html)
+				}else if(salas>980&&salas<=1000){
+					for(var i=0; i<2; i++){
+						html+='<img src="../images/icon/青芒.png" alt="" />';
+					}
+					for(var i=0; i<4; i++){
+						html+='<img src="../images/icon/花.png" alt="" />';
+					}
+					for(var i=0; i<3; i++){
+						html+='<img src="../images/icon/叶子.png" alt="" />'
+					}
+					$('.dis-name div').append(html)
+				}else if(salas>1000&&salas<=1020){
+					for(var i=0; i<2; i++){
+						html+='<img src="../images/icon/青芒.png" alt="" />';
+					}
+					for(var i=0; i<4; i++){
+						html+='<img src="../images/icon/花.png" alt="" />';
+					}
+					for(var i=0; i<4; i++){
+						html+='<img src="../images/icon/叶子.png" alt="" />'
+					}
+					$('.dis-name div').append(html)
 				}
 			}
 		})
