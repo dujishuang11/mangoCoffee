@@ -165,7 +165,8 @@ window.addEventListener("load",function(){
 							userID:idcard_val,
 							idPhoto:lxm_idpic_top +'-'+ lxm_idpic_bottom,
 							secretKey: '',
-							examine:0
+							examine:0,
+							Applicant: '' //获取登录人ID填写 获取登录人ID填写 获取登录人ID填写
 						},
 						success:function(e){
 							console.log(e)
