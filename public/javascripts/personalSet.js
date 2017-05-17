@@ -17,7 +17,7 @@ window.addEventListener('load',function(){
 //		  	  $(".zhj_touEdits i").attr("class","glyphicon glyphicon-menu-down");
 //		  	  $(".emailShow i").attr("class","glyphicon glyphicon-menu-down");
 //		  	  $(".telShow i").attr("class","glyphicon glyphicon-menu-down");
-//		  }		    
+//		  }
        })
 
     

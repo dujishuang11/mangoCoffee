@@ -3,7 +3,7 @@
 	height:auto;
 	/***********/
 	margin: 0 auto;
-	margin-top: 20px;
+	margin-top: 98px;
 	background:#FFFFFF;
 	clear: both;
 	/*overflow: hidden;*/
@@ -105,6 +105,7 @@
 	background: #F7F7F7;
 	margin-right: 8%;
 	position: relative;
+
 	/*overflow: hidden;*/
 }
 .lhq_recruitDetails_img>.lhq_recruitDetails_img_one{
@@ -118,6 +119,7 @@
 	position: absolute;
 	overflow: hidden;
 	border: 5px solid #E6E6E6;
+	z-index:1;
 }
 	.lhq_recruitDetails_img>.lhq_recruitDetails_img_one>img{
 		width: 132px;
@@ -126,6 +128,7 @@
 		position: absolute;
 		left: -1px;
 		top: -1px;
+		z-index:1;	
 	}
 
 .lhq_recruitDetails_img>input:nth-child(2){
