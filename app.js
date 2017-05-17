@@ -7,6 +7,9 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var lhqnews = require('./routes/lhqnews')
+var lhqresume = require('./routes/lhqresume')
+var tixian = require('./routes/zTxianH');
 var djsList = require('./routes/djsList');
 var personal = require('./routes/personal_shop');//商品列表
 
@@ -30,6 +33,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/lhqnews',lhqnews);
+app.use('/resume',lhqresume);
+app.use('/tixian',tixian);
+//app.use('/qianbao',qianbao);
 app.use('/djsList', djsList);
 app.use('/personal',personal);
 app.use('/tenter',team);//团队入驻
@@ -53,9 +60,8 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-app.listen("1998",function(){ //设置端口
-	console.log("serve start ......")
-})
+  app.listen('9664',function(){
+//	   console.log('server start .......')
+  }) 
 
 module.exports = app;

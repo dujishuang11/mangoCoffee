@@ -8,64 +8,71 @@
 		<link rel="stylesheet" type="text/css" href="../stylesheets/footer.css"/>
 		<link rel="stylesheet" type="text/css" href="../stylesheets/newList.css"/>
 		<link rel="stylesheet" type="text/css" href="../stylesheets/fenye.css"/>
+		<link rel="stylesheet" type="text/css" href="../stylesheets/nav.css"/>
 		<script src="../../node_modules/angular/angular.js"></script>
 		<script src="../../node_modules/jquery/dist/jquery.js"></script>
 		<script src="../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
 		<script src="../javascripts/newList.js"></script>
+		<script src="../javascripts/common.js"></script>
 	</head>
 	<body>
+			<div class="nav_wrapper nav_bg_a">
+			<div class="nav">
+				<div class="nav_logo">
+					<img src="../images/logo.png" alt="" />
+				</div>
+				<div class="nav_list">
+					<ul class="nav_color_a">
+						<li class="nav_one">
+							<a href="#">首页</a>
+						</li>
+						<li class="nav_one">
+							<a href="#">设计服务</a><i class="glyphicon glyphicon-triangle-bottom"></i>
+							<div class="nav_hide">
+								<ul class="nav_hide_list"></ul>
+								<div class="nav_title"></div>
+							</div>
+						</li>
+						<li class="nav_one">
+							<a href="#">设计师</a>
+						</li>
+					</ul>
+				</div>
+				<div class="nav_right">
+					<div class="nav_search">
+						<input class="search_con" type="text" placeholder="搜索设计服务" />
+						<i class="glyphicon glyphicon-search"></i>
+					</div>
+					<p class="login">登录</p>
+					<p class="res">注册</p>
+					<!--<div class="user">
+							<img src="images/40x40.jpg" alt="" />
+							<div class="user_list_wrapper">
+								<div class="user_list">
+									<ul>
+										<li><a href="#">我的美思</a></li>
+										<li><a href="#">设置</a></li>
+										<li><a href="#">我的花瓣</a></li>
+										<li><a href="#">退出</a></li>
+									</ul>
+									<div class="user_title"></div>
+								</div>
+							</div>
+						</div>-->
+				</div>
+			</div>
+		</div>
 		<div class="lhq_newList">
 			
 			<p>咖芒新闻</p>
-			<ul>
-				<li>
-					<a href="javascript:;">
-						<span>新闻标题</span>
-						<span>发布时间</span>
-					</a>
-				</li>
-				<li>
-					<a href="javascript:;">
-						<span>新闻标题</span>
-						<span>发布时间</span>
-					</a>
-				</li>
-				<li>
-					<a href="javascript:;">
-						<span>新闻标题</span>
-						<span>发布时间</span>
-					</a>
-				</li>
-				<li>
-					<a href="javascript:;">
-						<span>新闻标题</span>
-						<span>发布时间</span>
-					</a>
-				</li>
-				<li>
-					<a href="javascript:;">
-						<span>新闻标题</span>
-						<span>发布时间</span>
-					</a>
-				</li>
-				<li>
-					<a href="javascript:;">
-						<span>新闻标题</span>
-						<span>发布时间</span>
-					</a>
-				</li>
-				
+			<ul class="lhq_newlist_ul">
+			
+			
 			</ul>
-			<div class="newlist_right">
-				<p><span>1</span><span>2</span></p>
-				<p><span>3</span><span>4</span></p>
-				<p><span>5</span><span>6</span></p>
-				<p><span>7</span><span>8</span></p>
-			</div>
 		</div>
 		<div class="djs-fy">
 				
-			</div>	
+		</div>	
 		<div class="footer">
 			<ul>
 				<li class="fl">
@@ -77,6 +84,5 @@
 				<li class="fr">Copyright© Huaban.com 2016 | 浙B2-20110282 浙ICP备05049240</li>
 			</ul>
 		</div>
-
 	</body>
 </html>
