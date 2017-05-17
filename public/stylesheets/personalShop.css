@@ -762,4 +762,20 @@
 	margin-top:120px;
 	/*display: none;*/
 }
+<<<<<<< HEAD
+.xieyi{
+	font-size: 14px;
+	color:blue;
+	height:auto;
+	/*line-height: 50px;*/
+	width:auto;
+	display: block;
+	float: right;
+	margin-right:280px;
+}
+.xieyi:hover { 
+	color:blue; 
+} 
+=======
 
+>>>>>>> origin/master

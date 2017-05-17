@@ -1,7 +1,7 @@
 window.addEventListener("load",function(){
 	
 	var ip="localhost:1998"; //ip地址
-	
+	var aip="47.92.145.129:8000"; //ip地址
 	
 	
 	
@@ -35,30 +35,50 @@ window.addEventListener("load",function(){
 		var qtelVal=$("#yu_qitel").val(); //企业联系电话
 		var qtelRex=/^1[34578]\d{9}$/;  //手机号验证
 		var qpicVal=$("#fileid").val(); //企业营业执照
-//		if(tpfileVal==""){
-//			alert("请上传头像！")
-//		}else 
-//		if(qnameVal==""){
-//			alert("请填写企业名称！")
-//		}
-//		else if(qadsVal==""){
-//			alert("请填写企业地址！")
-//		}
-//		else if(qpeonameVal==""){
-//			alert("请填写企业负责人！")
-//		}
-//		else if(qtelVal==""){
-//			alert("请填写负责人联系方式！")
-//		}
-//		else if(!(qtelVal.match(qtelRex))){
-//	    	alert("手机号格式不对")
-//	    }
-//		else if(qpicVal==""){
-//			alert("请企业营业执照！")
-//		}
-//		else{
-//			alert("审核通过")
-//		}
+		if(tpfileVal==""){
+			alert("请上传头像！")
+		}else 
+		if(qnameVal==""){
+			alert("请填写企业名称！")
+		}
+		else if(qadsVal==""){
+			alert("请填写企业地址！")
+		}
+		else if(qpeonameVal==""){
+			alert("请填写企业负责人！")
+		}
+		else if(qtelVal==""){
+			alert("请填写负责人联系方式！")
+		}
+		else if(!(qtelVal.match(qtelRex))){
+	    	alert("手机号格式不对")
+	    }
+		else if(qpicVal==""){
+			alert("请企业营业执照！")
+		}
+		else{
+			console.log("审核通过")
+			//申请入驻表
+			$.ajax({
+				type:"post",
+				url:"http://"+aip+"/qenter/enterprise",
+				async:true,
+				data:{
+					CorporateHead: imgSrcheader,//企业头像
+					CompanyName:qnameVal,   //：企业名称
+					CompanyAddress:qadsVal,  //：地址
+					CompanyLeader: qpeonameVal , //：企业负责人
+					CompanyInformation:qtelVal,   //：联系方式
+					CompanyKey: "", //：企业密钥
+					CompanyWork:imgSrczheng,   //：企业营业执行照
+					CompanyAudit:"",   //：企业审核
+					nameuid:"1"  //登录人uid
+				},
+				success:function(data){
+					console.log(data)
+				}
+			});
+		}
 		
 		
 		//申请入驻表
@@ -176,7 +196,40 @@ window.addEventListener("load",function(){
 		
 	
 //上传企业营业执照
-	var fileZ;
+
+	$('#sfzzfile').change(function(evt){
+   		var max_size=102400;
+        var finput = $(this);   
+        var files = evt.target.files; // 获得文件对象  
+        var output = [];
+        for (var i = 0, f; f = files[i]; i++){  
+//          	//检查文件大小
+            if(f.size > max_size){   
+                alert("上传的图片不能超过100KB!");   
+                $(this).val('');   
+            }else{
+            	var fd = new FormData();
+            	fd.append("uploadedFile", this.files[0]);
+            	$.ajax({
+            		type:"post",
+            		url:"http://47.92.145.129:8000/users/chan",
+            		async:true,
+            		data:fd,
+            		contentType: false,
+        			processData: false,
+            		success:function(e){
+            			console.log(e)
+            			imgSrczheng = e.nem
+            			$('.imgsfz')[0].src = 'http://47.92.145.129:8000/'+e.nem
+            		},
+            		error:function(){
+		                alert("图片不合法");
+		            }
+            	});
+            }
+        }
+    });
+	/*var fileZ;
 	var imgSrczheng = '';
 	$('#sfzzfile').change(function() {
 		fileZ = this.files[0];
@@ -207,7 +260,7 @@ window.addEventListener("load",function(){
 //				}
 //			})
 		}
-	})
+	})*/
 	
 	
 	

@@ -4,12 +4,15 @@
 1、在 nav_wrapper 加 class nav_bg_a 默认没有class
 2、在 nav_list 下的第一个UL 把class nav_color_f 改为 nav_color_a  默认为 nav_color_f
 
+<script src="../javascripts/gVerify.js"></script>
+<script src="../javascripts/layer/layer.js"></script>
+引入两个js
 
 
 <div id="lxm_nav" class="nav_wrapper">
 				<div class="nav">
 					<div class="nav_logo">
-						<img class="lxm_logo" src="images/logo.png" alt="" />
+						<img class="lxm_logo" src="../images/logo.png" alt="" />
 					</div>
 					<div class="nav_list">
 						<ul class="nav_color_f">
@@ -69,8 +72,8 @@
 					
 					<!--第三方-->
 					<div class="other_mode">
-						<div class="tencent"><img src="images/QQ-1.png" alt="" /></div>
-						<div class="WeChat"><img src="images/wx-1.png" alt="" /></div>
+						<div class="tencent"><img src="../images/QQ-1.png" alt="" /></div>
+						<div class="WeChat"><img src="../images/wx-1.png" alt="" /></div>
 					</div>
 					
 					<!--标题-->
