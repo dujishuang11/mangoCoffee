@@ -376,7 +376,18 @@
 	font-size: 17px;
 }
 
-
+.xieyi{
+	font-size: 14px;
+	color:blue;
+	height:auto;
+	line-height: 50px;
+	width:auto;
+	display: block;
+	margin-right:280px;
+}
+.xieyi:hover { 
+	color:blue; 
+} 
 
 
 
