@@ -162,7 +162,7 @@ router.get('/change',function(request,response){  //请求参数，响应参数
 });
 
 //修改数据
-router.post('/change',function(req,response){  //请求参数，响应参数
+router.post('/tdetailPass',function(req,response){  //请求参数，响应参数
 	console.log("进入修改入驻  >>>");
 	var xTkey=req.body.TeamKey;//：团队密钥
 	var xTaudit=req.body.TeamAudit;//：审核
@@ -210,14 +210,86 @@ function delChange(a,callback){
 	})
 }
 
+//根据登录者id查询名称信息
+function getUserByName(nameidd,callback){
+	pool.getConnection(function(err,conn){
+		var sql='select * from team where nameuid = ?';
+		conn.query(sql,[nameidd],function(err,result){
+			console.log('result:'+result);
+			conn.release();
+			callback(err,result);
+		})
+	})
+}
+//删除数据(通过团队名称)
+router.get('/chauid',function(request,response){  //请求参数，响应参数
+	
+	console.log("")
+	var ttname=request.query.teamidd;
+	delChange(ttname,function(err,result){
+		if(err){
+			response.send({flag:2,err});//删除失败
+		}else{
+			response.send({flag:1,result}); //删除成功
+		}
+	})
+});
 
 
+//获取信息列表
+	function tgetAllUsers(callback){
+		pool.getConnection(function(err,connection){
+			var sql = 'select * from team';
+			connection.query(sql,function(err,result){
+				if(err){
+					console.log('getAllUsers Error:'+err.message);
+					return;
+				}
+				connection.release();//释放链接
+				callback(err,result);
+			})
+		})
+	}
+	
+	router.get('/tlist', function(request,response){
+			tgetAllUsers(function(err,results){
+				if(err){
+					response.send({flag:2,err})
+				}else if(results){
+					response.send({flag:1,results})
+				}
+			})
+	})
 
 
+//查看详情
 
+	function getdetail(teamId,callback){
+		pool.getConnection(function(err,connection){
+			var sql = 'select * from team where tuid = ?';
+			connection.query(sql,[teamId],function(err,result){
+				if(err){
+					console.log('getAllUsers Error:'+err.message);
+					return;
+				}
+				connection.release();//释放链接
+				callback(err,result);
+			})
+		})
+	}
+	
+	router.get('/tlistDetail', function(request,response){
+		var teamId = request.query.teamId;
+			getdetail(teamId,function(err,results){
+				if(err){
+					response.send({flag:2,err})
+				}else if(results){
+					response.send({flag:1,results})
+				}
+			})
+	})
 
-
-
+	
 
 
 

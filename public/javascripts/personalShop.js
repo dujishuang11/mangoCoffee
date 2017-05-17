@@ -96,29 +96,7 @@ window.addEventListener("load",function(){
 		$("#qiye_single").css("height","51px").css("border","1px solid #DDDDDD").css("background","white").css("border-bottom","none");
 	})
 	
-//上部分验证
-	function prove(){
-		var telRex=/^1[34578]\d{9}$/;  //手机号验证
-		var emailRex =  /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;//邮箱验证
-		var qqRex=/^\d{5,10}$/;    //qq验证
-		var shenfRex=/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/; //身份证正则
-		var nickname_val=$("#yu_nickname").val(); //昵称
-		var select_val=$("#id_select").val();  //设计领域
-		var truename_val=$("#yu_tname").val(); //真实姓名
-		var email_val=$("#yu_email").val(); //邮箱
-		var tel_val=$("#yu_telhao").val(); //联系方式
-		var qq_val=$("#yu_qqhao").val(); //qq
-		var person_val=$("#yu_person").val(); //个人介绍
-		var headfile_val=$("#on_tpfil").val(); //上传头像
-		var personworks_val=$("#yuh_pic").val(); //个人作品
-		var address_val=$("#yu_ads").val(); //地址
-		var idcard_val=$("#yu_idhao").val(); //身份证号
-		var idpicz_val=$("#yu_sfzzheng").val(); //身份证正面照
-		var idpicf_val=$("#yu_sfzfan").val(); //身份证反面照
-		if(nickname_val==''){
-			alert("请输入昵称")
-		}
-	}
+
 	
 	
 //点击协议----个人
