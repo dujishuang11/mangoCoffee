@@ -38,6 +38,7 @@ var judge1 = $('body').hasClass('lxm_despair') == true
 var judge2 = $('.nav_wrapper').hasClass('nav_bg_a') == true
 
 if(judge1){
+	$('.lxm_Agreement').attr('href','Agreement.html')
 	$('.lxm_firsthtml').attr('href','../index.html')
 	$('.lxm_shejishi a').attr('href','star.html')
 	$('.user_shop a').attr('href','personalShop.html')
@@ -55,6 +56,7 @@ if(judge1){
 		}
 	});
 }else{
+	$('.lxm_Agreement').attr('href','html/Agreement.html')
 	$('.lxm_shejishi a').attr('href','html/star.html')
 	$('.lxm_firsthtml').attr('href','index.html')
 	$('.user_shop a').attr('href','html/personalShop.html')
