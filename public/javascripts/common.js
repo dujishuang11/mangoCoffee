@@ -37,7 +37,7 @@ console.log($('body').hasClass('lxm_despair') == true)
 var judge1 = $('body').hasClass('lxm_despair') == true
 var judge2 = $('.nav_wrapper').hasClass('nav_bg_a') == true
 
-if(judge1){
+if(judge2){
 	$('.lxm_Agreement').attr('href','Agreement.html')
 	$('.lxm_firsthtml').attr('href','../index.html')
 	$('.lxm_shejishi a').attr('href','star.html')
