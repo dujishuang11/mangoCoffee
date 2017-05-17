@@ -929,3 +929,11 @@
 
 
 /*@media \0screen {body { background: red; }}*/
+
+.login_user {
+	font-size: 14px;
+}
+
+.resgister_now {
+	font-size: 14px;
+}
