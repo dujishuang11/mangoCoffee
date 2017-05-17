@@ -1,8 +1,8 @@
 .lhq_pP{
 	width: 85%;
 	height: auto;
-	margin: 0 auto;
-	margin-top: 20px;
+	margin: 98px auto 0;
+	/*margin-top: 20px;*/
 	background: #FFFFFF;
 }
 .lhq_pP>p:nth-child(1){
@@ -38,6 +38,16 @@
 	margin-top: 5px;
 	cursor: pointer;
 }
+.lhq_pP_img>input {
+	/*display: none;*/
+	width: 100px;
+	height: 30px;
+	text-align: center;
+	line-height: 20px;
+	font-size: 14px;
+	display: block;
+}
+
 .lhq_pP>p:nth-child(4){
 	width: 100%;
 	font-size:15px;
