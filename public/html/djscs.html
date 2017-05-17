@@ -54,9 +54,9 @@
 			$('.button').change(function() {
 				file = this.files[0];
 				console.log(file)
-//				if(file.size > 204800) {
-//					alert("压缩包文件过大")
-//				} else {
+				if(file.size > 204800) {
+					alert("压缩包文件过大")
+				} else {
 					var formdata = new FormData();
 					formdata.append("uploadeFile", file);
 					console.log(formdata)
@@ -73,7 +73,7 @@
 							}
 						}
 					})
-//				}
+				}
 
 			})
 
@@ -90,7 +90,8 @@
 						pricing: "￥100/张",
 						uid: 2,
 						salas: 20,
-						package: packageSrc
+						package: packageSrc,
+						original:1
 					},
 					success: function(data) {
 						console.log(data)
@@ -203,6 +204,26 @@
 //				type: "get",
 //				data: {
 //					mainclass: 'CI系统设计',
+//					subclass: ''
+//				},
+//				success: function(data) {
+//					console.log(data)
+//				}
+//			})
+			
+//			$.ajax({
+//				url: "http://47.92.145.129:8000/djsList/original",
+//				type: "get",
+//				success: function(data) {
+//					console.log(data)
+//				}
+//			})
+//			
+//			$.ajax({
+//				url: "http://47.92.145.129:8000/djsList/originalClass",
+//				type: "get",
+//				data: {
+//					mainclass: '商标注册',
 //					subclass: ''
 //				},
 //				success: function(data) {

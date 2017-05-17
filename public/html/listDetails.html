@@ -12,7 +12,6 @@
 		<script src="../../node_modules/jquery/dist/jquery.js"></script>
 		<script src="../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
 		<script src="../javascripts/listDetails.js"></script>
-		<script src="../javascripts/common.js"></script>
 	</head>
 	<body>
 		<div class="nav_wrapper nav_bg_a">
@@ -81,15 +80,18 @@
 						<span class="fl">成交</span>
 						<span class="fr">1</span>
 					</div>
-					<a class="buy">购买</a>
+					<button class="btn btn-primary buy">购&#x3000;买</button>
 				</div>
 				<div class="djs-introduce">
 					<div class="djs-data">
-						<img class="fl" src="" alt="" />
+						<img class="fl" src="../images/40x40.jpg" alt="" />
 						<div class="fl dis-name">
 							<p>设计师名称</p>
 							<div>
-								<span class="glyphicon glyphicon-edit"></span>聊天
+								<!--<img src="../images/icon/黄芒果.png" alt="" />
+								<img src="../images/icon/黄芒果.png" alt="" />
+								<img src="../images/icon/黄芒果.png" alt="" />
+								<img src="../images/icon/黄芒果.png" alt="" />-->
 							</div>
 						</div>
 					</div>
@@ -97,15 +99,24 @@
 						设计师个人介绍
 					</div>
 				</div>
-				<!--<div class="djs-flow">
-					<p>购买流程</p>
-					<div>勾选服务项目进行购买后，填写需求订单，等待设计师确认；设计师确认订单后，需要您再次确认并付款；您的付款将托管在美思平台，只有项目结束后得双方同意后，款项才会转到服务方账号。</div>
+				<div class="djs-flow">
+					<p>资源分享</p>
+					<!--<div>勾选服务项目进行购买后，填写需求订单，等待设计师确认；设计师确认订单后，需要您再次确认并付款；您的付款将托管在美思平台，只有项目结束后得双方同意后，款项才会转到服务方账号。</div>
 					<p>还有疑问</p>
 					<div>
 						<a href="javascript;">查看帮助文档 </a>|
 						<a href="javascript;">联系客服</a>
-					</div>
-				</div>-->
+					</div>-->
+					<div class='bdsharebuttonbox share'>
+		 
+            <a href='#' class='bds_qzone' data-cmd='qzone' title='分享到QQ空间'></a>
+            <a href='#' class='bds_tsina' data-cmd='tsina' title='分享到新浪微博'></a>
+            <a href='#' class='bds_tqq' data-cmd='tqq' title='分享到腾讯微博'></a>
+            <a href='#' class='bds_renren' data-cmd='renren' title='分享到人人网'></a>
+            <a href='#' class='bds_weixin' data-cmd='weixin' title='分享到微信'></a>
+            <a href="#" class="bds_more" data-cmd="more"></a> 
+        </div>
+				</div>
 			</div>
 		</div>
 		<div class="footer">
@@ -119,5 +130,29 @@
 				<li class="fr">Copyright© Huaban.com 2016 | 浙B2-20110282 浙ICP备05049240</li>
 			</ul>
 		</div>
+		
+		
+		<script src="../javascripts/jquery-1.8.0.js"></script>
+		<script src="../javascripts/q1.js"></script>
+		<script src="../javascripts/q2.js"></script>
+		<script src="../javascripts/common.js"></script>
+		
+		<script>
+			window._bd_share_config = {
+				"common": {
+					"bdSnsKey": {},
+					"bdText": "欢迎来到咖芒网",
+					"bdDesc": "欢迎来电：010-53301013",
+					"bdUrl": "http://www.bjdjgj.com",
+					"bdMini": "2",
+					"bdMiniList": false,
+					"bdPic": "",
+					"bdStyle": "0",
+					"bdSize": "24"
+				},
+				"share": {}
+			};
+			with(document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion=' + ~(-new Date() / 36e5)];
+		</script>
 	</body>
 </html>
