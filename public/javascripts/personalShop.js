@@ -44,14 +44,10 @@ window.addEventListener("load",function(){
 		$("#qiye_single").css("height","51px").css("border","1px solid #DDDDDD").css("background","white").css("border-bottom","none");
 	})
 	
-<<<<<<< HEAD
 
 	
-=======
-//点击协议
-	var off=false;
+//	var off=false;
 
->>>>>>> origin/master
 	
 //点击协议----个人
 	var off1=false;
