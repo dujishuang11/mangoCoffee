@@ -147,6 +147,9 @@ window.addEventListener("load",function(){
 					alert("请上传身份证反面照")
 				}
 			    else{
+			    	if(!sessionStorage.userId){
+			    		alert('请先登录')
+			    	}else{
 					$.ajax({
 						type:"post",
 						url:'http://'+ip+'/personal/shop_register',
@@ -166,7 +169,7 @@ window.addEventListener("load",function(){
 							idPhoto:lxm_idpic_top +'-'+ lxm_idpic_bottom,
 							secretKey: '',
 							examine:0,
-							Applicant: '' //获取登录人ID填写 获取登录人ID填写 获取登录人ID填写
+							Applicant: sessionStorage.userId //获取登录人ID填写 获取登录人ID填写 获取登录人ID填写
 						},
 						success:function(e){
 							console.log(e)
@@ -179,6 +182,7 @@ window.addEventListener("load",function(){
 							}
 						}
 					});
+					}
 				}
 			    
 			})
