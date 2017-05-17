@@ -3,7 +3,7 @@
 	height: auto;
 	margin: 0 auto;
 	
-	margin-top: 80px;
+	margin-top: 20px;
 	overflow: hidden;
 	background: #FFFFFF;
 }
@@ -56,6 +56,7 @@
 	display: block;
 	border-bottom: 1px solid #C1C1C1;
 	background:#F7F7F7;
+	font-size: 14px;
 }
 .lhq_recruitList>ul>li:last-child>a{
 	border-bottom: 0px solid #C1C1C1;

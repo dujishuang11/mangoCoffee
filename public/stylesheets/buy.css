@@ -1,6 +1,6 @@
 .djs-wrapper {
 	width: 85%;
-	margin: 0 auto;
+	margin: 98px auto 0;
 }
 .djs-title {
 	width: 100%;
@@ -103,6 +103,9 @@
 	margin: 10px auto 0;
 	font-size: 14px;
 }
+.djs-claim p input {
+	margin-left: 10px;
+}
 .djs-button {
 	width: 80%;
 	margin: 20px auto 0;
@@ -119,10 +122,6 @@
 	border: none;
 	float: right;
 	border-radius: 5px;
-}
-.djs-button button:nth-child(1) {
-	background: #C0A75E;
-	color: white;
 }
 .djs-button button:nth-child(2) {
 	background: white;

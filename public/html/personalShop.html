@@ -4,22 +4,71 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<link rel="stylesheet" type="text/css" href="../stylesheets/rester.css"/>
-		<link rel="stylesheet" type="text/css" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"/>
 		<link rel="stylesheet" type="text/css" href="../stylesheets/footer.css"/>
 		<link rel="stylesheet" type="text/css" href="../stylesheets/personalShop.css"/>
+		<link rel="stylesheet" type="text/css" href="../stylesheets/nav.css"/>
+		<link rel="stylesheet" type="text/css" href="../stylesheets/bootstrap-select.css"/>
+		
+		<link rel="stylesheet" type="text/css" href="../../node_modules/bootstrap/dist/css/bootstrap.css"/>
+
 		<script src="../../node_modules/angular/angular.js"></script>
 		<script src="../../node_modules/jquery/dist/jquery.js"></script>
-		<script src="../javascripts/bootstrap-select.min.js"></script>
+		<script src="../javascripts/jquery.base64.js"></script>
+			
 		<script src="../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
-		<link rel="stylesheet" type="text/css" href="../stylesheets/bootstrap-select.min.css"/>
+		<script src="../javascripts/bootstrap-select.js"></script>
 		<script src="../javascripts/personalShop.js"></script>
+		
 	</head>
 	<body>
-		<div class="wyh_content">
-			<!--导航栏-->
-			<div class="wyh_nav">
-				
+		<div id="lxm_nav" class="nav_wrapper nav_bg_a">
+			<div class="nav">
+				<div class="nav_logo">
+					<img src="../images/logo.png" alt="" />
+				</div>
+				<div class="nav_list">
+					<ul class="nav_color_a">
+						<li class="nav_one">
+							<a href="#">首页</a>
+						</li>
+						<li class="nav_one">
+							<a href="#">设计服务</a><i class="glyphicon glyphicon-triangle-bottom"></i>
+							<div class="nav_hide">
+								<ul class="nav_hide_list"></ul>
+								<div class="nav_title"></div>
+							</div>
+						</li>
+						<li class="nav_one">
+							<a href="#">设计师</a>
+						</li>
+					</ul>
+				</div>
+				<div class="nav_right">
+					<div class="nav_search">
+						<input class="search_con" type="text" placeholder="搜索设计服务" />
+						<i class="glyphicon glyphicon-search"></i>
+					</div>
+					<p class="login">登录</p>
+					<p class="res">注册</p>
+					<!--<div class="user">
+							<img src="images/40x40.jpg" alt="" />
+							<div class="user_list_wrapper">
+								<div class="user_list">
+									<ul>
+										<li><a href="#">我的美思</a></li>
+										<li><a href="#">设置</a></li>
+										<li><a href="#">我的花瓣</a></li>
+										<li><a href="#">退出</a></li>
+									</ul>
+									<div class="user_title"></div>
+								</div>
+							</div>
+						</div>-->
+				</div>
 			</div>
+		</div>
+		
+		<div class="wyh_content">
 			<!--内容-->
 			<div class="wyh_body">
 				<div class="yu_muse">
@@ -30,12 +79,11 @@
 					<div class="yu_linea">
 						<div class="yu_fileda fl">
 							<lable>昵称</lable><br />
-							<input name="name" type="text" class="yu_nickname" placeholder="请输入您的昵称" />
+							<input name="name" value="" type="text" id="yu_nickname" class="yu_nickname" placeholder="请输入您的昵称" />
 						</div>
 						<div class="yu_filedb fl">
 							<lable>设计领域</lable><br />
-							<!--<label for="id_select"></label>-->
-							<select id="id_select" class="selectpicker bla bla bli " multiple data-live-search="true" >
+							<select id="id_select" class="selectpicker bla bla bli topp" multiple data-live-search="true" >
 							    <option>UI设计师</option>
 							    <option>平面设计师</option>
 							    <option>摄影师</option>
@@ -58,29 +106,26 @@
 					<div class="yu_lineb">
 						<div class="yu_truename fl">
 							<lable>真实姓名</lable><br />
-							<input name="name" type="text" class="yu_tname" placeholder="请输入您的真实姓名" />
+							<input name="name" type="text" value="" id="yu_tname" class="yu_tname" placeholder="请输入您的真实姓名" />
 						</div>
-						<div class="yu_gettel fl">
-							<lable>手机验证码</lable><br />
-							<div class="yu_telnumber">
-								<input name="name" type="text" class="yu_tel fl" placeholder="请输入您的手机验证码" />
-								<button class="yu_gaintel fl">获取验证码</button>
-							</div>
+						<div class="yu_getemail fl">
+							<lable>邮箱</lable><br />
+							<input name="name" type="email" id="yu_email" class="yu_email fl" placeholder="请输入您的邮箱地址" />
 						</div>
 					</div>
 					<div class="yu_linec">
 						<div class="yu_telephone fl">
 							<lable>联系方式</lable><br />
-							<input name="name" type="text" class="yu_telhao" placeholder="请输入真实有效的手机号" />
+							<input name="name" type="text" id="yu_telhao" class="yu_telhao" placeholder="请输入真实有效的手机号" />
 						</div>
 						<div class="yu_qq fl">
 							<lable>QQ</lable><br />
-							<input name="name" type="text" class="yu_qqhao" placeholder="请输入真实有效的QQ号" />
+							<input name="name" type="text" id="yu_qqhao" class="yu_qqhao" placeholder="请输入真实有效的QQ号" />
 						</div>
 					</div>
 					<div class="yu_lined">
 						<lable>个人介绍</lable><br />
-						<textarea  class="yu_person" name="" rows="" cols=""placeholder="请务必填写客观描述，比如您的职业经理，参与的项目，取得的成就、奖项等。"></textarea>
+						<textarea  class="yu_person" id="yu_person" name="" rows="" cols=""placeholder="请务必填写客观描述，比如您的职业经理，参与的项目，取得的成就、奖项等。"></textarea>
 					</div>
 					<div class="yu_chioces">
 						<button class="yu_ger fl" id="geren_single">个人</button>
@@ -91,76 +136,139 @@
 					<div id="peopl_gr" class="peopl_gr">
 						<div class="yu_perheader">
 							<div class="yu_imgon fl">
-								<!--<img src="" alt="" />-->
+								<img src="../images/hhou.png" class="yu_imghead"  alt="" />
+								<!--<span>删除</span>-->
 							</div>
-							<input type="file" value="删" class="on_photo fl"/>
+							<div class="yu_ontp fl cur">
+								<input class="on_tpfil cur" id="on_tpfil" type="file">
+								<input type="button" value="上传头像" class="btn btn-info yu_ontpbt cur"/>
+							</div>
+							
 						</div>
-						<div class="wyh_teamthings">
+						
+						<div class="wyh_teamthings" id="kabosu">
 							<lable >上传个人作品（不少于5个）：&nbsp;</lable>
 							<div class="yuon_diy fl">
-								<input type="file"  value="点击作品上传">
+								<div class="yuhan_img ">
+							        <input class="yuh_pic cur" id="yuh_pic" type="file">
+							        <img src="../images/onImg.png" class="han_imgg cur">
+							        <!--<span class="yuhan_img_remove">删除</span>-->	
+							    </div>
+							    <!--<div class="yuhan_img ">
+							        <input multiple class="yuh_pic cur" type="file">
+							        <img src="../images/onImg.png" class="han_imgg cur">
+							    </div>-->
 							</div>
 						</div>
 						
 						<div class="yu_detail">
 							<div class="yu_adress fl">
 								<lable>地址</lable><br />
-								<input name="name" type="text" class="yu_ads" placeholder="请输入您的地址" />
+								<input name="name" type="text" class="yu_ads" id="yu_ads" placeholder="请输入您的地址" />
 							</div>
 							<div class="yu_shenfen fl">
 								<lable>身份证号</lable><br />
-								<input name="name" type="text" class="yu_idhao" placeholder="请输入真实的身份证号码" />
+								<input name="name" type="text" class="yu_idhao" id="yu_idhao" placeholder="请输入真实的身份证号码" />
 							</div>
 						</div>
 						<div class="yu_idnums">
 							<lable>身份证照片：&nbsp;</lable>
 							<div class="yu_idzhengs fl cur">
-								<!--<img src="" alt="" />-->
-								身份证正面
+								<input type="file" class="yu_sfzzheng cur" id="yu_sfzzheng" />
+								<button class="yu_sfzzbt cur">上传身份证正面照</button>
+								<img class="yu_sfzzheng_top" src="" alt="" />
 							</div>
 							<div class="yu_idfans fl cur">
-								<!--<img src="" alt="" />-->
-								身份证反面
+								<input type="file" class="yu_sfzfan cur" id="yu_sfzfan" />
+								<button class="yu_sfzfbt cur">上传身份证反面照</button>
+								<img class="yu_sfzzheng_bottom" src="" alt="" />
 							</div>
-							<p class="yu_idxys fl">为了保证您和雇主的合法权益，我们需要您提供身份证信息，请务必上传真实有效的身份证扫描件。
-		我们会为您保密，并承诺不用于其它用途。</p>
+							<p class="yu_idxys fl">为了保证您和雇主的合法权益，我们需要您提供身份证信息，请务必上传真实有效的身份证扫描件。	我们会为您保密，并承诺不用于其它用途。</p>
 						</div>
+						
+						<!--审核-->
+						<div class="gr_sh">
+							<div class="yu_rekuang">
+								<input type="checkbox" name="Pages" value="Jobg" id="Jobg" >
+								<label for="Jobg" class="yu_lab cur" id="yu_lab">我保证作品的原创性，上传的图片没有法律纠纷，我对因虚假资料或图片版权引起的法律纠纷负全部责任。</label>
+							</div>
+							<div class="button_u">
+								<button class="btn btn-danger yu-submit" id="yu-submit" disabled="disabled">提交审核</button>
+							</div>
+						</div>
+						
 					</div>
 					
 					<!--团队-->
-					<div class="yu_teamkey " id="yu_teamkey">
-						<lable>团队密钥：</lable>
-						<input name="name" type="text" class="yu_tkyes fl" placeholder="请输入团队密钥" />
+					<div class="yu_aboutTeam" id="yu_aboutTeam">
+						<div class="yu_teamName " id="yu_teamkey">
+							<lable>团队名称：</lable>
+							<input name="name" type="text" class="yu_tName fl" id="yu_tName" placeholder="请输入团队名称" />
+						</div>
+						<div class="yu_teamkey " id="yu_teamkey">
+							<lable>团队密钥：</lable>
+							<input name="name" type="text" class="yu_tkyes fl" id="yu_tkyes" placeholder="请输入团队密钥" />
+						</div>
+						<!--审核-->
+						<div class="team_sh">
+							<div class="yu_rekuangt">
+								<input type="checkbox" name="Pages" value="Jobt" id="Jobt" >
+								<label for="Jobt" class="yu_labt cur" id="yu_labt">我保证作品的原创性，上传的图片没有法律纠纷，我对因虚假资料或图片版权引起的法律纠纷负全部责任。</label>
+							</div>
+							<div class="button_ut">
+								<button class="btn btn-danger yu-submitt" id="yu-submitt" disabled="disabled">提交审核</button>
+							</div>
+						</div>
+						
 					</div>
+					
 					<!--企业密钥-->
-					<div class="yu_qiyekey " id="yu_qiyekey">
-						<lable>企业密钥：</lable>
-						<input name="name" type="text" class="yu_qikyes fl" placeholder="请输入企业密钥" />
+					<div class="yu_aboutQiye" id="yu_aboutQiye">
+						<div class="yu_qiyeName " id="yu_qiyeName">
+							<lable>企业名称：</lable>
+							<input name="name" type="text" class="yu_qName fl" id="yu_qName" placeholder="请输入企业名称" />
+						</div>
+						<div class="yu_qiyekey " id="yu_qiyekey">
+							<lable>企业密钥：</lable>
+							<input name="name" type="text" class="yu_qikyes fl" id="yu_qikyes" placeholder="请输入企业密钥" />
+						</div>
+						<!--审核-->
+						<div class="qiye_sh">
+							<div class="yu_rekuangq">
+								<input type="checkbox" name="Pages" value="Jobq" id="Jobq" >
+								<label for="Jobq" class="yu_labq cur" id="yu_labq">我保证作品的原创性，上传的图片没有法律纠纷，我对因虚假资料或图片版权引起的法律纠纷负全部责任。</label>
+							</div>
+							<div class="button_uq">
+								<button class="btn btn-danger yu-submitq" id="yu-submitq" disabled="disabled">提交审核</button>
+							</div>
+						</div>
 					</div>
+					
+					
 				</div>
 				
-				
-				<div class="yu_rekuang">
-					<input type="checkbox" name="Pages" value="Job" id="Job" >
+				<!--<div class="yu_rekuang">
+					<input class="yu_rekuang_check" type="checkbox" name="Pages" value="Job" id="Job" >
+
 					<label for="Job" class="yu_lab cur" id="yu_lab">我保证作品的原创性，上传的图片没有法律纠纷，我对因虚假资料或图片版权引起的法律纠纷负全部责任。</label>
 				</div>
 				<div class="button_u">
 					<button class="btn btn-danger yu-submit" id="yu-submit" disabled="disabled">提交审核</button>
-				</div>
-				
-				<footer>
-					<ul>
-						<li class="fl">
-							<a href="">联系我们 </a>|
-							<a href="">关于我们 </a>|
-							<a href="">咖芒招聘 </a>|
-							<a href="">咖芒新闻</a>
-						</li>
-						<li class="fr">Copyright Huaban.com 2016 | 浙B2-20110282 浙ICP备05049240</li>
-					</ul>
-				</footer>
+				</div>-->
 			</div>
-			
+		</div>
+		<div class="footer">
+			<ul>
+				<li class="fl">
+					<a href="">联系我们 </a>|
+					<a href="">关于我们 </a>|
+					<a href="">咖芒招聘 </a>|
+					<a href="">咖芒新闻</a>
+				</li>
+				<li class="fr">Copyright Huaban.com 2016 | 浙B2-20110282 浙ICP备05049240</li>
+			</ul>
 		</div>
 	</body>
+	<script src="../javascripts/common.js"></script>
 </html>
+	

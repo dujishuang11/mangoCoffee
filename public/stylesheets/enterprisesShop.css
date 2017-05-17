@@ -1,11 +1,7 @@
 .wyhteam_wrapper{
 	width:100%;
 	height:auto;
-}
-.nav{
-	width:100%;
-	height:100px;
-	background: chocolate;
+	margin-top:120px;
 }
 .wyhteam_body{
 	width:85%;
@@ -31,21 +27,40 @@
 .yuheader_on{
 	width:100%;
 	height:170px;
-	margin:20px auto;
+	margin:20px auto 0;
 }
 .yu_teamphoto{
 	width:150px;
 	height:170px;
 	margin-left:30px;
-	border:#CCCCCC 7px solid;
-}
-.yu_teamphoto img{
-	width:100%;
-	height:100%;
+	background: url(../images/hhou.png) no-repeat;
 	background-size: 100% 100%;
 }
-.yu_btn{
-	margin:60px 0 0 50px;
+.yu_imghead{
+	width:100%;
+	height:100%;
+	border:#E3E3E3 5px solid;
+	background-size: 100% 100%;
+}
+.yu_ontp{ 
+    position: relative;
+    margin:60px 0 0 50px;
+}
+.on_tpfil{
+	width:90px;
+	height:35px;
+	display:block;
+    opacity:0;
+    filter:alpha(opacity=0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    background: green;
+}
+.yu_ontpbt{
+	width:90px;
+	height:35px;
 }
 /*yu_line11*/
 .yu_qiye{
@@ -68,17 +83,21 @@
 .yu_qyname{
 	width:97%;
 	height: 45px;
-	background-color: #fafafa;
+	/*background-color: #fafafa;*/
     border: 1px solid #ddd;
     border-radius: 1px;
     display: inline-block;
     padding: 4px 10px;
     box-shadow: none;
     font-family: inherit;
-    font-size: inherit;
+    font-size: 14px;
     font-weight: inherit;
     resize: none;
     outline: 0;
+    color:#A9A9A9;
+}
+.yu_qyname,.yu_ads,.yu_qypeoname,.yu_qitel::-webkit-input-placeholder{
+	font-size: 14px;
 }
 .yu_qiyeads{
 	width:50%;
@@ -96,18 +115,19 @@
 .yu_ads{
 	width:97%;
 	height: 45px;
-	background-color: #fafafa;
+	/*background-color: #fafafa;*/
     border: 1px solid #ddd;
     border-radius: 1px;
     display: inline-block;
     padding: 4px 10px;
     box-shadow: none;
     font-family: inherit;
-    font-size: inherit;
+    font-size: 14px;
     font-weight: inherit;
     resize: none;
     outline: 0;
     margin-left:3%;
+    color:#A9A9A9;
 }
 /*yu_line22*/
 .yu_qiyepeo{
@@ -130,17 +150,18 @@
 .yu_qypeoname{
 	width:97%;
 	height: 45px;
-	background-color: #fafafa;
+	/*background-color: #fafafa;*/
     border: 1px solid #ddd;
     border-radius: 1px;
     display: inline-block;
     padding: 4px 10px;
     box-shadow: none;
     font-family: inherit;
-    font-size: inherit;
+    font-size: 14px;
     font-weight: inherit;
     resize: none;
     outline: 0;
+    color:#A9A9A9;
 }
 .yu_qytel{
 	width:50%;
@@ -158,20 +179,20 @@
 .yu_qitel{
 	width:97%;
 	height: 45px;
-	background-color: #fafafa;
     border: 1px solid #ddd;
     border-radius: 1px;
     display: inline-block;
     padding: 4px 10px;
     box-shadow: none;
     font-family: inherit;
-    font-size: inherit;
+    font-size: 14px;
     font-weight: inherit;
     resize: none;
     outline: 0;
     margin-left:3%;
+    color:#A9A9A9;
 }
-.yu_idnum .yu_idzheng{
+/*.yu_idnum .yu_idzheng{
 	width:320px;
 	height:175px;
 	background: #FAFAFA;
@@ -182,7 +203,62 @@
 	border:2px dashed #E3E3E3;
 	margin-top:10px;
 	margin-left:120px;
+}*/
+.yu_idzhengs{ 
+    position: relative;
 }
+.yu_sfzzheng{
+	width:320px;
+	height:175px;
+	display:block;
+    opacity:0;
+    filter:alpha(opacity=0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+}
+.imgsfz{
+	width:320px;
+	height:175px;
+	/*position: absolute;
+    top: 0;
+    left: 0;*/
+	/*border:1px solid red;*/
+	background-size: cover;
+	margin-top:10px;
+	margin-left:120px;
+	border:none;
+	/*z-index: -1;*/
+	/*border:2px dashed #E3E3E3;*/
+}
+.sfzztxt{
+	width:320px;
+	height:175px;
+	color:#969696;
+	font-size: 17px;
+	position: absolute;
+	text-align: center;
+	line-height: 188px;
+    top: 0;
+    z-index: -1;
+    margin-top:10px;
+	margin-left:120px;
+}
+/*.yu_sfzzbt{
+	width:320px;
+	height:175px;
+	background: white;
+	line-height: 160px;
+	text-align: center;
+	color:#969696;
+	font-size: 17px;
+	border:2px dashed #E3E3E3;
+	margin-top:10px;
+	margin-left:120px;
+	
+	outline: none;
+}*/
 .yu_idnum{
 	width:100%;
 	height:240px;
@@ -206,7 +282,7 @@
 	font-size: 15px;
 	margin-top:25px;
 }
-.wyh_teamthings{
+/*.wyh_teamthings{
 	width:100%;
 	height:240px;
 	margin:0 auto;
@@ -226,7 +302,54 @@
 	height:150px;
 	border:2px dashed #E3E3E3;
 	background: #FAFAFA;
+}*/
+
+/*.wyh_teamthings{
+	width:100%;
+	height:260px;
+	margin:0 auto;
+	padding:15px 0;
 }
+.wyh_teamthings lable{
+	width:100%;
+	height:40px;
+	color: #999;
+    font-size: 16px;
+    line-height: 40px;
+    float: left;
+    display: block;
+}
+.yuon_diy{
+	width:100%;
+	height:200px;
+	border:2px dashed #E3E3E3;
+	background: #FAFAFA;
+}
+.yuhan_img{
+    position: relative;
+   border:5px solid #E3E3E3;
+    width:150px;
+	height:160px;
+	padding:5px;
+	margin:20px;
+}
+.yuh_pic{
+	width:130px;
+	height:130px;
+	display:block;
+    opacity:0;
+    filter:alpha(opacity=0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+}
+.han_imgg{
+	width:130px;
+	height:130px;
+}*/
+
+
 .yuon_diy input{
 	/*text-align: center;
 	line-height: 150px;
@@ -236,8 +359,9 @@
 }
 .yu_rekuang{
 	width:100%;
-	height:30px;
-	line-height: 30px;
+	height:40px;
+	line-height: 50px;
+	margin-top:20px;
 }
 .yu_lab{
 	font-size:14px;

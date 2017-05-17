@@ -1,6 +1,6 @@
 .djs-wrapper {
 	width: 85%;
-	margin: 0 auto;
+	margin: 98px auto 0;
 	overflow: hidden;
 }
 .djs-content {
@@ -34,11 +34,15 @@
 }
 .djs-Content {
 	width: 100%;
+	min-height: 500px;
 	margin-top: 20px;
+}
+.djs-Content img {
+	width: 100%;
 }
 
 .djs-right {
-	width: 28%;
+	width: 29%;
 	float: right;
 }
 .djs-price {
