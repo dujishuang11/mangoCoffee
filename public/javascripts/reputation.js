@@ -23,9 +23,10 @@ window.addEventListener('load', function() {
 			url: "http://47.92.145.129:8000/djsList/issueList",
 			type: "get",
 			data: {
-				uid: sessionStorage.userId
+				uid: 2
 			},
 			success: function(data) {
+				console.log(data)
 				salas = 0
 				html = ''
 				for(var i = 0; i < data.data.length; i++) {
