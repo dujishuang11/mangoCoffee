@@ -40,25 +40,25 @@
 //			}
 //		});
 		//注册
-		$.ajax({
-			type:"post",
-			url:'http://'+ip1+'/users/register',
-			async:true,
-			data:{
-				username: '249842959@qq.com',
-            	password: '123456aa'
-			},
-			success:function(e){
-				console.log(e)
-				if(e.num == '成功'){
-					alert('注册成功')
-				}else if(e.num == '账户已存在'){
-					alert('账户已存在')
-				}else{
-					alert('失败')
-				}
-			}
-		});
+//		$.ajax({
+//			type:"post",
+//			url:'http://'+ip1+'/users/register',
+//			async:true,
+//			data:{
+//				username: '249842959@qq.com',
+//          	password: '123456aa'
+//			},
+//			success:function(e){
+//				console.log(e)
+//				if(e.num == '成功'){
+//					alert('注册成功')
+//				}else if(e.num == '账户已存在'){
+//					alert('账户已存在')
+//				}else{
+//					alert('失败')
+//				}
+//			}
+//		});
 
 
 
@@ -224,7 +224,17 @@
 //		var d = new B(2)
 //
 //		d.fna()
-
+//		$.ajax({
+//		type:"post",
+//		url:'http://'+ip1+'/users/gerenaing',
+//		async:true,
+//		data:{
+//			uid:10
+//		},
+//		success:function(e){
+//			console.log(e)	
+//		}
+//	})	
 
 		
 	</script>
