@@ -155,8 +155,53 @@ router.get('/qb', function(req, response) { //第一个请求参数，第二个�
 	})
 })
 
-//插入钱包信息
-   
+//根据用户名查询用户
+   function getUserByName(qusename,callback){
+   	  pool.getConnection(function(err,conn){
+   	  	var sql = 'select * from qianbao where qUserId = ?';
+   	  	conn.query(sql,[qusename],function(err,result){
+   	  		 if(err){         //如果报错
+   	  		  	console.log(err.message);          //把报错的 地方打印
+   	  		  	return;
+   	  		  }
+   	  		  conn.release(); //释放连接
+   	  		  callback(err,result) 	  		  
+   	  	  })
+   	  })
+   }
+///插入钱包初始数据
+   router.post('/crqb', function(req, response) { //一请求 二响应参数给前台传数据
+	var qmoneys = req.body.qMoney;
+	var qbid =req.body.qUserId;
+    getUserByName(qbid,function(err, result) {
+			console.log('注册成功');
+			if(result==''||result==null){
+			chaQb(qmoneys,qbid,function(err, result) {
+				console.log('注册成功');
+				response.send({
+					flag: 1,
+					result: result
+				})               
+		  })  
+			}else{
+
+				response.send({flag:2,result:result})
+			}
+		})
+	
+})
+
+//插入钱包初始数据
+function chaQb(qbm,qbi,callback) {
+	pool.getConnection(function(err, conn) {
+		var sql = 'insert into qianbao(qMoney,qUserId) value(?,?)';
+		conn.query(sql, [qbm, qbi], function(err, result) {
+			
+			conn.release(); //释放连接
+			callback(err, result)
+		})
+	})
+}
 
 
 //修改钱包信息
