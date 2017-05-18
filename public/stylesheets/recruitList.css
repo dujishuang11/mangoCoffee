@@ -37,9 +37,66 @@
 	margin-top: 40px;
 	background: #333333;
 }
+.lhq_recruitList>.lhq_zpfl{
+	width: 100%;
+	height: 140px;
+	overflow: hidden;
+
+}
+
+.lhq_zpfl_one{
+	width: 90%;
+	height: 60px;
+	margin: 0 auto;
+	overflow: hidden;
+	margin-top: 20px;
+	
+}
+.lhq_zpfl_one>span{
+	width:auto;
+	height: 50px;
+	display: block;
+	float: left;
+	text-align: center;
+	line-height: 50px;
+	padding-left: 4%;
+	padding-right: 4%;
+	margin-right: 1.85%;
+	margin-top: 5px;
+	font-size: 16px;
+	cursor: pointer;
+	box-shadow: 0px 0px 2px 2px #C0C0C0;
+	
+}
+.lhq_zpfl_two{
+	width: 90%;
+	height: 50px;
+	margin: 0 auto;
+	margin-top: 10px;
+	background: #F7F7F7;
+}
+.lhq_zpfl_two>span{
+	width: 25%;
+	height:50px;
+	text-align: center;
+	line-height: 50px;
+	font-size: 14px;
+	display: block;
+	float: left;
+}
+
+.lhq_zpfl_one>span>i{
+	font-style: normal;
+}
+.lhq_zpfl_one>span:last-child{
+	margin-right: 0%;
+}
+.lhq_zpfl_one>span:first-child{
+	margin-left: 2%;
+}
 .lhq_recruitList>ul{
 	width: 100%;
-	min-height: 500px;
+	min-height: 400px;
 	margin-top: 20px;
 }
 .lhq_recruitList>ul>li{
@@ -53,48 +110,25 @@
 	height: 60px;
 	display: block;
 	border-bottom: 1px solid #C1C1C1;
-	background:#F7F7F7;
+	background:#FFFFFF;
 	font-size: 14px;
-	position: relative;
 }
 .lhq_recruitList>ul>li:last-child>a{
 	border-bottom: 0px solid #C1C1C1;
 }
 .lhq_recruitList>ul>li>a:hover{
-	background: #FFFFFF;
+	background: #F7F7F7;
 	box-shadow: 1px 1px 3px 2px #C0C0C0;
 	transform: translateY(-5px);
 	transition:0.1s;
 	color: #777777;
 	font-size: 15px;
 }
-.lhq_recruitList>ul>li>a>span:nth-child(1){
-	width: auto;
+.lhq_recruitList>ul>li>a>span{
+	width: 25%;
 	height: 60px;
-	line-height: 60px;
+	display: block;
 	float: left;
-	display: block;
-	position: absolute;
-	top: 0;
-	left: 30px;
-}
-.lhq_recruitList>ul>li>a>span:nth-child(2){
-	width: auto;
-	height: 60px;
+	text-align: center;
 	line-height: 60px;
-	float: left;
-	display: block;
-	position: absolute;
-	left: 45%;
-	top: 0;
-}
-.lhq_recruitList>ul>li>a>span:nth-child(3){
-	width: auto;
-	height: 60px;
-	line-height: 60px;
-	float: right;
-	display: block;
-	position: absolute;
-	top: 0;
-	right: 30px;
 }
