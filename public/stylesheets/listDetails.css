@@ -68,22 +68,24 @@
 	color: #C1C1C1;
 	font-size: 16px;
 }
-.djs-price a {
+.djs-price button {
 	width: 100%;
 	height: 40px;
 	margin: 20px 0;
-	display: block;
+	font-weight: bold;
+	font-size: 16px;
+	/*display: block;
 	text-align: center;
 	line-height: 40px;
 	font-size: 16px;
 	border: none;
 	background: blue;
 	color: white;
-	border-radius: 10px;
+	border-radius: 10px;*/
 }
-.djs-price a:hover {
+/*.djs-price a:hover {
 	text-decoration: none;
-}
+}*/
 .djs-introduce {
 	width: 100%;
 	margin-top: 20px;
@@ -110,20 +112,14 @@
 	font-weight: bold;
 }
 .djs-data .dis-name div {
-	width: 65px;
+	width: 100%;
 	height: 30px;
 	margin: 5px;
-	text-align: center;
-	line-height: 30px;
-	background: #EDEDED;
-	font-size: 14px;
 }
-.djs-data .dis-name div span {
-	margin-right: 5px;
-}
-.djs-data .dis-name div:hover {
-	background: #E0E0E0;
-	color: white;
+.djs-data .dis-name div img {
+	width: 20px;
+	height: 20px;
+	background: rgba(0,0,0,0);
 }
 .djs-material {
 	width: 100%;
@@ -145,21 +141,4 @@
 .djs-flow div {
 	width: 100%;
 	margin-top: 20px;
-	padding-bottom: 20px;
-	font-size: 14px;
-	color: #555555;
-	border-bottom: 1px solid #DDDDDD;
-}
-.djs-flow p:nth-child(3) {
-	margin-top: 20px;
-}
-.djs-flow div:nth-child(4) {
-	border: none;
-}
-.djs-flow div:nth-child(4) a {
-	color: #C0A75E;
-	font-size: 16px;
-}
-.djs-flow div:nth-child(4) a:hover {
-	text-decoration: none;
 }

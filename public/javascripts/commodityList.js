@@ -9,7 +9,6 @@ window.addEventListener('load', function() {
 		success: function(data) {
 			$('.djs-navTop ul li').remove()
 			$('.djs-navTop ul').append('<li index="0">全部</li>')
-			console.log(data)
 			var html = ''
 			for(var i = 0; i < data.length; i++) {
 				html += '<li index="' + data[i].uid + '">' + data[i].names + '</li>'
@@ -43,7 +42,6 @@ window.addEventListener('load', function() {
 				uid: id
 			},
 			success: function(data) {
-				//				console.log(data)
 				if(data.length > 0) {
 					$('.djs-navBottom').css('display', 'block')
 					$('.djs-navBottom ul li').remove()
@@ -98,9 +96,9 @@ window.addEventListener('load', function() {
 			type: "get",
 			success: function(data) {
 				console.log(data)
-				if(data.success == "查无数据"){
+				if(data.success == "查无数据") {
 					return;
-				}else{
+				} else {
 					arrList = data.data;
 					num = 1;
 					len = Math.ceil(data.data.length / 12);
@@ -129,7 +127,6 @@ window.addEventListener('load', function() {
 	//获取分类列表
 
 	function obtainList(mainclass, subclass) {
-		console.log(mainclass, subclass)
 		var html = '';
 		$.ajax({
 			url: "http://47.92.145.129:8000/djsList/obtainList",
@@ -140,9 +137,9 @@ window.addEventListener('load', function() {
 			},
 			success: function(data) {
 				console.log(data)
-				if(data.success == "查无数据"){
+				if(data.success == "查无数据") {
 					return;
-				}else{
+				} else {
 					arrList = data.data;
 					num = 1;
 					len = Math.ceil(data.data.length / 12);
@@ -214,9 +211,9 @@ window.addEventListener('load', function() {
 			},
 			success: function(data) {
 				console.log(data)
-				if(data.success == "查无数据"){
+				if(data.success == "查无数据") {
 					return;
-				}else{
+				} else {
 					arrList = data.data;
 					num = 1;
 					len = Math.ceil(data.data.length / 12);
@@ -227,7 +224,7 @@ window.addEventListener('load', function() {
 			}
 		})
 	})
-	
+
 	//点击价格排序
 	$('.djs-px>li>ul>li:nth-child(1)').click(function() {
 		$.ajax({
@@ -239,9 +236,9 @@ window.addEventListener('load', function() {
 			},
 			success: function(data) {
 				console.log(data)
-				if(data.success == "查无数据"){
+				if(data.success == "查无数据") {
 					return;
-				}else{
+				} else {
 					arrList = data.data;
 					num = 1;
 					len = Math.ceil(data.data.length / 12);
@@ -252,7 +249,7 @@ window.addEventListener('load', function() {
 			}
 		})
 	})
-	
+
 	//点击综合排序
 	$('.djs-px>li>ul>li:nth-child(3)').click(function() {
 		$.ajax({
@@ -264,9 +261,34 @@ window.addEventListener('load', function() {
 			},
 			success: function(data) {
 				console.log(data)
-				if(data.success == "查无数据"){
+				if(data.success == "查无数据") {
 					return;
-				}else{
+				} else {
+					arrList = data.data;
+					num = 1;
+					len = Math.ceil(data.data.length / 12);
+					list(num, len)
+					$('.djs-fy li').remove()
+					$('.djs-fy').append(showPages(1, len))
+				}
+			}
+		})
+	})
+
+	//点击原创设计
+	$('.djs-px>li:nth-child(3)').click(function() {
+		$.ajax({
+			url: "http://47.92.145.129:8000/djsList/originalClass",
+			type: "get",
+			data: {
+				mainclass: mainclass,
+				subclass: subclass
+			},
+			success: function(data) {
+				console.log(data)
+				if(data.success == "查无数据") {
+					return;
+				} else {
 					arrList = data.data;
 					num = 1;
 					len = Math.ceil(data.data.length / 12);

@@ -38,7 +38,7 @@ window.addEventListener("load", function() {
 			lhqfyhan(num)
 			$('.djs-fy').append(showPages(num, lhqzy))
 		} else if($(this).text() == '···'){
-			
+			return
 		} else {
 			num = Number($(this).text());
 			$('.djs-fy').append(showPages(num, lhqzy))
@@ -46,6 +46,31 @@ window.addEventListener("load", function() {
 		}
 
 	})
+	
+	$('.lhq_zpfl_one').delegate("span",'click',function(){
+		var lhq_zpfl = $(this).html();
+		$.ajax({
+			type: 'get',
+			url:'http://47.92.145.129:8000/resume/lhqsearch',
+			async: true,
+			data:{
+				Workarea:lhq_zpfl
+			},
+			success: function(data) {
+					console.log(data)
+			}
+		})
+	})
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	var lhqzy = '';
 	var lhqnewsarr = [];
 	//查询
@@ -71,7 +96,7 @@ window.addEventListener("load", function() {
 			if(i == lhqnewsarr.length){
 				break;
 			}else{
-				html += '<li><a href="recruitDetails.html?' + lhqnewsarr[i].newId + '"><span>' + lhqnewsarr[i].title + '</span><span>' + lhqnewsarr[i].newTime + '</span></a></li>'
+				html += '<li><a href="recruitDetails.html?' + lhqnewsarr[i].resumeId + '"><span>' + lhqnewsarr[i].Workarea + '</span><span>' + lhqnewsarr[i].JobTitle + '</span><span>' + lhqnewsarr[i].HandsOnBackground + '</span><span>' + lhqnewsarr[i].FBtime + '</span></a></li>'
 			}
 		}
 		$('.lhq_rlist_ul').append(html)

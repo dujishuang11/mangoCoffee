@@ -100,7 +100,7 @@ router.post('/meyp', function(request,response){
 //获取招聘列表详情
 	function getzpxq(resumeId,callback){
 		pool.getConnection(function(err,connection){//getConnection获取链接
-			var sql = 'select * from resume where RPublisherId = ?';
+			var sql = 'select * from resume where resumeId = ?';
 			connection.query(sql,[resumeId],function(err,result){
 				if(err){
 					console.log('getAllUsers Error:'+err.message);
@@ -110,6 +110,7 @@ router.post('/meyp', function(request,response){
 				callback(err,result);
 			})
 		})
+		
 	}
 	
 	router.get('/zpxq', function(request,response){
@@ -123,7 +124,34 @@ router.post('/meyp', function(request,response){
 				}
 			})
 	})
-
+//*************************************************
+//获取发布人简历列表
+	function getzpxq(RPublisherId,callback){
+		pool.getConnection(function(err,connection){//getConnection获取链接
+			var sql = 'select * from resume where RPublisherId = ?';
+			connection.query(sql,[RPublisherId],function(err,result){
+				if(err){
+					console.log('getAllUsers Error:'+err.message);
+					return;
+				}
+				connection.release();//释放链接
+				callback(err,result);
+			})
+		})
+		
+	}
+	
+	router.get('/fbrxx', function(request,response){
+		
+		var RPublisherId = request.query.RPublisherId;
+			getzpxq(RPublisherId,function(err,results){
+				if(err){
+					response.send(err)
+				}else if(results){
+					response.send(results)
+				}
+			})
+	})
 
 //*******************************************************************
 //删除简历
@@ -292,7 +320,30 @@ router.get('/pricepx', function(request, response) {
 	})
 })
 
-
+//按地址分类
+function getNewlistSearch(keyword,callback){
+	pool.getConnection(function(err, connection) {
+		var sql = "select * from resume where Workarea like ?";
+		connection.query(sql, ["%"+keyword+"%"], function(err, result) {
+			console.log("内容："+result)
+			if(err) {
+				console.log("getAllUsers Error:" + err.message);
+				return;
+			}
+			connection.release(); //释放链接
+			callback(err, result)
+		})
+	})
+}
+router.get('/lhqsearch', function(request, response) {
+	var keyword = request.query.Workarea;
+	getNewlistSearch(keyword, function(err, result) {
+		console.log("result:" + result)
+		if(result){
+			response.send({success:1,data:result})
+		}
+	})
+})
 
 
 
