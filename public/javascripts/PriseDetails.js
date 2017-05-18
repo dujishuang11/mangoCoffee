@@ -11,15 +11,15 @@ window.addEventListener("load",function(){
 			async: true,
 			success: function(data) {
 				console.log(data);
-				console.log(data.results[0].ttitle);
+				console.log(data.results[0].qtitle);
 				var html='';
 				for(var i=0;i<data.results.length;i++){
-					if(data.results[i].tpass==0){
-						data.results[i].tpass="未审核"
+					if(data.results[i].qpass==0){
+						data.results[i].qpass="未审核"
 					}else{
-						data.results[i].tpass="已审核"
+						data.results[i].qpass="已审核"
 					}
-					html+='<li id="cloum"><a href="ExhiDetails.html?' + data.results[i].tuid + '"><span>' + data.results[i].ttitle + '</span><span>' + data.results[i].taddress + '</span><span>' + data.results[i].tpeople + '</span><span><button class="btn btn-info" id="tpaa" >'+data.results[i].tpass+'</button>'
+					html+='<li id="cloum"><a href="PriDetails.html?' + data.results[i].quid + '"><span>' + data.results[i].qtitle + '</span><span>' + data.results[i].qaddress + '</span><span>' + data.results[i].qpeople + '</span><span><button class="btn btn-info" id="tpaa" >'+data.results[i].qpass+'</button>'
 				}
 				$("#app_cont").append(html)
 			}
