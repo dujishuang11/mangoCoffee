@@ -77,7 +77,7 @@ window.addEventListener('load', function() {
 					}
 					$('.dis-name div').append(html)
 				} else if(salas > 80 && salas <= 100) {
-					html += '<img src="../images/icon/花.png" alt="" />'
+					html += '<img src="../images/icon/flower.png" alt="" />'
 					$('.dis-name div').append(html)
 				} else if(salas > 100 && salas <= 120) {
 					html += '<img src="../images/icon/flower.png" alt="" />'
