@@ -13,6 +13,7 @@
 .footer ul li {
 	color: #999999;
 	line-height: 40px;
+	list-style: none;
 }
 .footer ul a {
 	color: #999999;

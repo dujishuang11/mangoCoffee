@@ -71,7 +71,7 @@ window.addEventListener("load", function() {
 			if(i == lhqnewsarr.length){
 				break;
 			}else {
-				html += '<li><a href="newDetails.html?' + lhqnewsarr[i].newId + '"><span>' + lhqnewsarr[i].title + '</span><span>' + lhqnewsarr[i].newTime + '</span></a></li>'
+				html += '<li><a href="newDetails.html?' + lhqnewsarr[i].newId + '"><span>' + lhqnewsarr[i].title + '</span><span>系统公告</span><span>' + lhqnewsarr[i].newTime + '</span></a></li>'
 			}
 		}
 		$('.lhq_newlist_ul').append(html)
