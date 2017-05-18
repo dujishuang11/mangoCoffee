@@ -2,7 +2,22 @@ window.addEventListener('load', function() {
 	$('.lhq_button').on('click', function() {
 		$('.lhq_file').click();
 	})
+	
+	$('.lhq_zbjl_center_three').on('click',function(){
+		console.log($('.lhq_threebox').html())
+	})
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	//邮箱正则
 	var sb_yx = true;
 	var youxiangRex = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
@@ -133,7 +148,7 @@ window.addEventListener('load', function() {
 					},
 					success: function(data){
 						console.log(data)
-						location.href = 'personalData.html';
+						location.href = 'personalData.html?2';
 					}
 				})
 			}

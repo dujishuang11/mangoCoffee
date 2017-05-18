@@ -54,10 +54,10 @@ router.post('/package', function(request, response) {
 	})
 })
 
-function getAddList(cover, tradename, mainclass, subclass, content, pricing, uid, salas, package, callback) {
+function getAddList(cover, tradename, mainclass, subclass, content, pricing, uid, salas, package,original, callback) {
 	pool.getConnection(function(err, connection) {
-		var sql = 'insert into list (cover, tradename, mainclass, subclass, content, pricing, uid, salas, package) values (?,?,?,?,?,?,?,?,?)';
-		connection.query(sql, [cover, tradename, mainclass, subclass, content, pricing, uid, salas, package], function(err, result) {
+		var sql = 'insert into list (cover, tradename, mainclass, subclass, content, pricing, uid, salas, package,original) values (?,?,?,?,?,?,?,?,?,?)';
+		connection.query(sql, [cover, tradename, mainclass, subclass, content, pricing, uid, salas, package,original], function(err, result) {
 			if(err) {
 				console.log("getAllUsers Error:" + err.message);
 				return;
@@ -78,9 +78,10 @@ router.post('/addList', function(request, response) {
 		pricing = request.body.pricing,
 		uid = request.body.uid,
 		salas = request.body.salas,
-		package = request.body.package;
+		package = request.body.package,
+		original = request.body.original;
 
-	getAddList(cover, tradename, mainclass, subclass, content, pricing, uid, salas, package, function(err, results) {
+	getAddList(cover, tradename, mainclass, subclass, content, pricing, uid, salas, package,original, function(err, results) {
 		if(err) {
 			response.send(err)
 		} else if(results.insertId > 0) {
@@ -556,5 +557,119 @@ router.get('/pricepx', function(request, response) {
 		}
 	})
 })
+
+//获取原创列表
+function getOriginal(callback) {
+	pool.getConnection(function(err, connection) {
+		var sql = 'select * from list where original = 1';
+		connection.query(sql, function(err, result) {
+			if(err) {
+				console.log("getAllUsers Error:" + err.message);
+				return;
+			}
+			connection.release(); //释放链接
+			callback(err, result);
+		})
+	})
+}
+
+router.get('/original', function(request, response) {
+	console.log("原创列表进入成功》》》》》")
+	getOriginal(function(err, result) {
+		console.log("result:" + result)
+		if(result.length > 0) {
+			response.send({
+					success: "success",
+					data: result
+				}) //列表分类不存在
+		} else if(result.length == 0) {
+			response.send({
+					success: "查无数据"
+				}) //列表获取成功
+		} else if(err) {
+			response.send({
+					err: err
+				}) //列表获取错误
+		} else {
+			response.send({
+					success: 3
+				}) //列表获取错误
+		}
+	})
+
+})
+
+//获取原创分类列表
+function getOriginalClass(mainclass, subclass, callback) {
+	pool.getConnection(function(err, connection) {
+		var sql = 'select * from list where original = 1 and mainclass = ? or subclass = ?';
+		connection.query(sql, [mainclass, subclass], function(err, result) {
+			if(err) {
+				console.log("getAllUsers Error:" + err.message);
+				return;
+			}
+			connection.release(); //释放链接
+			callback(err, result);
+		})
+	})
+}
+
+router.get('/originalClass', function(request, response) {
+	console.log("原创分类列表进入成功》》》》》")
+	var mainclass = request.query.mainclass,
+		subclass = request.query.subclass;
+	getOriginalClass(mainclass, subclass, function(err, result) {
+		console.log("result:" + result)
+		if(result.length > 0) {
+			response.send({
+					success: "success",
+					data: result
+				}) //列表分类不存在
+		} else if(result.length == 0) {
+			response.send({
+					success: "查无数据"
+				}) //列表获取成功
+		} else if(err) {
+			response.send({
+					err: err
+				}) //列表获取错误
+		} else {
+			response.send({
+					success: 3
+				}) //列表获取错误
+		}
+	})
+})
+
+//插入钱包信息
+ function qcun(qmoney,qid,callback) {
+	pool.getConnection(function(err, conn) {
+		var sql = 'update qianbao set qMoney = qMoney+ ? where qUserId = ?';
+		conn.query(sql, [qmoney,qid], function(err, result) {
+			if(err) {
+				return;
+			}
+			conn.release();
+			callback(err, result)
+		})
+	})
+}
+
+router.post('/qbc', function(req, response) { //一请求 二响应参数给前台传数据
+	console.log('into.....');
+	var qmoney = req.body.qMoney;
+	var qid = req.body.qUserId;
+	console.log(qmoney);
+	console.log(qid);
+	
+	qcun(qmoney,qid,function(err, result) {
+			console.log('注册成功');
+			response.send({
+					flag: 1,
+					result: result
+				})                  
+		})
+})
+
 
 module.exports = router;
