@@ -14,11 +14,13 @@
 	top: 0;
 	left: 0;
 	z-index: 9999;
+	
 }
 
 
 .nav_bg_a {
 	background: white;
+	border-bottom: 1px #666 solid;
 }
 
 .nav_bg_a .login {
@@ -276,10 +278,21 @@
 	height: 195px;
 	/*background: blue;*/
 	position: absolute;
+	z-index: 99999;
 	top: 50%;
-	right: 0;
+	left: -110px;
 	display: none;
 	cursor: pointer;
+}
+
+.nav_bg_a .user_list {
+	border: 1px #000 solid;
+}
+
+.nav_bg_a .user_title {
+	border: 1px #000 solid;
+	border-right: none;
+	border-bottom: none;
 }
 
 .user_list {
