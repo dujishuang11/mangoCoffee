@@ -44,8 +44,9 @@ window.addEventListener("load",function(){
 		$("#qiye_single").css("height","51px").css("border","1px solid #DDDDDD").css("background","white").css("border-bottom","none");
 	})
 	
-//点击协议
-	var off=false;
+
+	
+//	var off=false;
 
 	
 //点击协议----个人
@@ -147,6 +148,9 @@ window.addEventListener("load",function(){
 					alert("请上传身份证反面照")
 				}
 			    else{
+			    	if(!sessionStorage.userId){
+			    		alert('请先登录')
+			    	}else{
 					$.ajax({
 						type:"post",
 						url:'http://'+ip+'/personal/shop_register',
@@ -165,7 +169,8 @@ window.addEventListener("load",function(){
 							userID:idcard_val,
 							idPhoto:lxm_idpic_top +'-'+ lxm_idpic_bottom,
 							secretKey: '',
-							examine:0
+							examine:0,
+							Applicant: sessionStorage.userId //获取登录人ID填写 获取登录人ID填写 获取登录人ID填写
 						},
 						success:function(e){
 							console.log(e)
@@ -178,6 +183,7 @@ window.addEventListener("load",function(){
 							}
 						}
 					});
+					}
 				}
 			    
 			})

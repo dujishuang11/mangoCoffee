@@ -27,6 +27,7 @@
 	height: 600px;
 	float: left;
 	background: #F7F7F7;
+	margin-top: 78px;
 	border-top: 2px solid #DDDDDD;
 }
 .zhj_personTop{
@@ -172,7 +173,6 @@
 }
 .zhj_authentication span{
 	font-size: 15px;
-	/*color: rgba(0,0,0,0.7);*/
 	margin-left: 2%;
 }
 .zhj_notCertified{
@@ -189,7 +189,6 @@
 }
 .zhj_notCertified span{
 	font-size: 15px;
-	/*color: rgba(0,0,0,0.7);*/
 	margin-left: 2%;
 }
 .zhj_myType{
@@ -203,21 +202,21 @@
 	height: 50px;
 	text-align: center;
 	line-height: 50px;
-	/*color: rgba(0,0,0,0.6);*/
 	font-size: 18px;
 	cursor: pointer;
 	float: left;
 }
 .zhj_wallet{
 	width: 85%;
-	min-height:100%;
+	height:100%;
 	margin: 0 auto;
 	border: 1px solid #DDDDDD;
 	background: white;
 	margin-top: 1%;
 	display: none;
-	padding-bottom: 2%;
+	padding-bottom: 5%;
 	overflow: auto;
+	/*border-bottom: 0px;*/
 }
 .zhj_walletTex{
 	width: 100%;
@@ -248,7 +247,6 @@
 }
 .zhj_Amount span{
 	float: left;
-	/*color: black;*/
 	font-size: 15px;
 	margin-left: 1%;
 	margin-top: 0.5%;
@@ -270,6 +268,7 @@
 	width:100%;
 	height:100%;
 	margin-left: 2%;
+	/*margin-bottom: 5%;*/
 }
 .textAll{
 	width: 90%;
@@ -280,16 +279,21 @@
 	text-indent: 2%;
 	border-bottom: 1px solid #CCCCCC;
 	float: left;
-	background: rgba(208,208,208,0.6);
+	background: rgba(208,208,208,0.4);
 }
 .textAll span{
+	display:inline-block;
 	float: left;
 }
+.zhjname{
+	width: 150px;
+	text-align: center;
+}
 .zhbT{
-	margin-left: 5%;
+	margin-left:1%;
 }
 .zhjd{
-	margin-left:16%;
+	margin-left:17.4%;
 }
 .allList{
 	width: 90%;
@@ -312,7 +316,7 @@
 	/*border-bottom: 1px solid #CCCCCC;*/
 }
 .jine:hover{
-	background:rgba(208,208,208,0.5);
+	background:rgba(208,208,208,0.4);
 	cursor: pointer;
 }
 .jine span{
@@ -320,7 +324,7 @@
 }
 .allje{
    display:block;
-   width: 10%;
+   width: 12%;
    text-align: center;
    text-indent:6px;
 }
@@ -329,7 +333,6 @@
 	height: 30px;
 	margin-top: 0.5%;
 	background: #CCCCCC;
-	margin-left: 1.3%;
 }
 .allLine2{
 	margin-left:4%;	
@@ -342,20 +345,19 @@
 }
 .allNumb{
 	display: inline-block;
-	width: 16%;
+	width: 20%;
 	text-align: center;
 	/*margin-left: 8%;*/
 }
 .alljindu{
 	display: inline-block;
-	width: 30%;
-	/*margin-left: 4%;*/
+	width: 26%;
 	font-size: 15px;
 	color: #555555;
 	text-align: center;
 }
 .zhj_Btn{
-	width: 10%;
+	width: 8%;
 	height: 35px;
 	line-height: 35px;
 	background: skyblue;
@@ -370,7 +372,7 @@
 
 .zhj_Releases{
 	width: 85%;
-	height: auto;
+	min-height: 100%;
 	margin: 0 auto;
 	margin-top: 1%;
 	border: 1px solid #DDDDDD;
@@ -460,7 +462,7 @@
 /*购买记录*/
 .zhj_purchase{
 	width: 85%;
-	height: auto;
+	min-height: 100%;
 	border: 1px solid #DDDDDD;
 	margin: 0 auto;
 	margin-top: 1%;
@@ -486,6 +488,7 @@
 	margin-left: 2%;
 	border: 1px solid #797979;
 	border-radius:2px;
+	margin-top: 1%;
 }
 .zhj_purchaseModules{
 	width: 100%;
@@ -536,12 +539,13 @@ body,html{
 	top: 0;
 	left: 0;
 	display: none;
+	z-index: 9999999;
 }
 .zhj_wisWith{
 	width: 50%;
-	height: 500px;
+	height: 550px;
 	margin: 0 auto;
-	background: white;
+	background:#F7F7F7;
 	margin-top: 5%;
 	position: relative;
 	padding: 0% 2% 2% 2% ;
@@ -621,6 +625,16 @@ body,html{
 	height: 50px;
 	position: relative;
 }
+.datazhb{
+	width: 200px;
+	display: block;
+	font-size: 15px;
+	position: absolute;
+	right: 2%;
+	top: 14%;	
+	display: none;
+}
+
 .AlipayInp{
 	width: 100%;
 	float: left;
@@ -687,6 +701,16 @@ body,html{
 	float: left;
 	border-radius: 0;
 	background: #FAFAFA;
+	position: relative;
+}
+.datapas{
+	width: 200px;
+	display: block;
+	font-size: 15px;
+	position: absolute;
+	right:0%;
+	top: 14%;
+	display: none;
 }
 .zhj_Notice{
 	width: 100%;
@@ -747,7 +771,7 @@ body,html{
 }
 .zhj_resume{
 	width: 85%;
-	height: auto;
+	min-height:100%;
 	margin: 0 auto;
 	margin-top: 1%;
 	border: 1px solid #DDDDDD;
@@ -798,6 +822,9 @@ body,html{
 	line-height: 50px;
 	padding-left:2%;
 	border-bottom: 1px #DDDDDD solid;
+}
+.resumeAll:hover{
+	background: rgba(208,208,208,0.4);
 }
 .resumeAll_left{
 	color: #555555;
@@ -882,6 +909,8 @@ body,html{
 	height: auto;
 	float: left;
 }
+
+
 
 
 
