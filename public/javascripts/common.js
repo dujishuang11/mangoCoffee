@@ -130,6 +130,14 @@ $('.nav_list > ul').find('.nav_one').click(function(){
 /**********************************************/
 
 
+$('.lxm_tuandui').click(function(){
+	location.href = 'html/teamShop.html'
+})
+
+$('.lxm_qiye').click(function(){
+	location.href = 'html/enterprisesShop.html'
+})
+
 
 var lxm_on = true;
 var lxm_on_two = true;
