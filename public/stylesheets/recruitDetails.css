@@ -16,6 +16,8 @@
 	font-size: 20px;
 	font-weight: 600;
 	color: #777777;
+	letter-spacing: 4px;
+	position: relative;
 	}
 
 .lhq_recruitDetails_center{
@@ -242,31 +244,46 @@ width: 100%;
 	clear: both;
 	text-indent: 2em;
 }
-.lhq_zwpj>p{
-	margin-top: 20px;
-}
-.lhq_zwpj>li{
-	margin-top: 20px;
-}
-.lhq_gzxmjy>p{
-	margin-top: 20px;
-}
-.lhq_gzxmjy>li{
-	margin-top: 20px;
-}
-.lhq_gzjl>p{
-	margin-top: 20px;
-}
-.lhq_gzjl>li{
-	margin-top: 20px;
-}
-.lhq_zyjn>p{
-	margin-top: 20px;
-}
-.lhq_zyjn>ol>li{
-	margin-top: 20px;
+
+
+
+.lhq_ottf>ol>li{
+	margin-top: 15px;
 }
 
-.lhq_zyjn>ul>li{
-	margin-top: 20px;
+.lhq_ottf>ul>li{
+	margin-top: 15px;
+}
+.lhq_ottf>p{
+	margin-top: 15px;
+}
+.lhq_fhzplb{
+	width: 120px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	color:#48484C;
+	position: absolute;
+	top:20px;
+	left:4%;
+	cursor: pointer;
+}
+
+.lhq_fhzplb>span{
+	display: block;
+	float: left;
+	width: auto;
+	line-height: 30px;
+	letter-spacing: 0px;
+	color: #777777;
+}
+.lhq_fhzplb_i{
+	font-style: normal;
+	font-size: 14px;
+	line-height: 30px;
+	display: block;
+	font-weight: normal;
+	float: left;
+	letter-spacing: 2px;
+	color: #777777;
 }

@@ -7,7 +7,7 @@ window.addEventListener('load', function() {
 			url: ""+ip+"/djsList/issueList",
 			async: true,
 			data: {
-				uid:1
+				uid:sessionStorage.userId
 			},
 			success: function(data) {
 				console.log(data)
@@ -59,7 +59,7 @@ window.addEventListener('load', function() {
 			url: ""+ip+"/djsList/issueList",
 			async: true,
 			data: {
-				uid:1
+				uid: sessionStorage.userId
 			},
 			success: function(data) {
 				$(".allFB").children().remove();
@@ -159,7 +159,7 @@ window.addEventListener('load', function() {
 	$(".allJls").delegate(".resumeBtnT","click",function(){
 		console.log($(this).attr("id"))
 		var tiaoId=$(this).attr("id");
-		location.href="recruitDetails.html?"+tiaoId
+		location.href="I_want_to_apply.html?"+tiaoId
 	})	
 	
 //点击删除	

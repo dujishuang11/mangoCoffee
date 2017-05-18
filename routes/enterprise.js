@@ -156,15 +156,16 @@ function delChange(b,callback){
 }
 
 
+
 //修改数据
-router.post('/changeq',function(req,response){  //请求参数，响应参数
+router.post('/qdetailPass',function(req,response){  //请求参数，响应参数
 	console.log("进入修改入驻  >>>");
-	var xqkey=req.body.CompanyKey;//：团队密钥
-	var xqaudit=req.body.CompanyAudit;//：审核
-	var uid = req.body.quid; //获取id
+	var xTkey=req.body.qiyKey;//：团队密钥
+	var xTaudit=req.body.qiyAudit;//：审核
+	var qquid = req.body.quid; //获取id
    	pool.getConnection(function(err,connection){
 		data_sql='update qiye set qkey=?,qpass=? where quid=? ';
-		connection.query(data_sql,[xqkey,xqaudit,uid],function(err,result){
+		connection.query(data_sql,[xTkey,xTaudit,qquid],function(err,result){
 			console.log(result);
 			if(err){
 				response.send({flag:3});//修改失败
@@ -180,7 +181,59 @@ router.post('/changeq',function(req,response){  //请求参数，响应参数
 	})
 });
 
+//获取信息列表
+	function qgetAllUsers(callback){
+		pool.getConnection(function(err,connection){
+			var sql = 'select * from qiye';
+			connection.query(sql,function(err,result){
+				if(err){
+					console.log('qgetAllUsers Error:'+err.message);
+					return;
+				}
+				connection.release();//释放链接
+				callback(err,result);
+			})
+		})
+	}
+	
+	router.get('/qlist', function(request,response){
+			qgetAllUsers(function(err,results){
+				if(err){
+					response.send({flag:2,err})
+				}else if(results){
+					response.send({flag:1,results})
+				}
+			})
+	})
 
+//查看详情
+
+	function getdetail(qiyId,callback){
+		pool.getConnection(function(err,connection){
+			var sql = 'select * from qiye where quid = ?';
+			connection.query(sql,[qiyId],function(err,result){
+				if(err){
+					console.log('getAllUsers Error:'+err.message);
+					return;
+				}
+				connection.release();//释放链接
+				callback(err,result);
+			})
+		})
+	}
+	
+	router.get('/qlistDetail', function(request,response){
+		var qiyId = request.query.qiyId;
+			getdetail(qiyId,function(err,results){
+				if(err){
+					response.send({flag:2,err})
+				}else if(results){
+					response.send({flag:1,results})
+				}
+			})
+	})
+
+	
 
 
 

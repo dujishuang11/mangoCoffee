@@ -16,6 +16,8 @@
 	font-size: 20px;
 	font-weight: 600;
 	color: #777777;
+	letter-spacing: 5px;
+	position: relative;
 	}
 
 .lhq_recruitDetails_center{
@@ -253,3 +255,44 @@
 	padding-left: 20px;
 	padding-right: 20px;	
 }*/
+
+
+.span12>p{
+	margin-top: 15px;
+}
+.span12>ul>li{
+	margin-top: 15px;
+}
+.span12>ol>li{
+	margin-top: 15px;
+}
+.lhq_fhzplb{
+	width: 120px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	color:#48484C;
+	position: absolute;
+	top:20px;
+	left:4%;
+	cursor: pointer;
+}
+
+.lhq_fhzplb>span{
+	display: block;
+	float: left;
+	width: auto;
+	line-height: 30px;
+	letter-spacing: 0px;
+	color: #777777;
+}
+.lhq_fhzplb_i{
+	font-style: normal;
+	font-size: 14px;
+	line-height: 30px;
+	display: block;
+	font-weight: normal;
+	float: left;
+	letter-spacing: 2px;
+	color: #777777;
+}
