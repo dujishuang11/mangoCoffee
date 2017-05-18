@@ -1,7 +1,6 @@
-window.addEventListener('load',function(){
+window.addEventListener('load', function() {
 	//导航
-	var mainclass = '',
-		subclass = '';
+	var mainclass = '';
 	$.ajax({
 		type: "get",
 		url: "http://47.92.145.129:8000/users/nav",
@@ -31,47 +30,47 @@ window.addEventListener('load',function(){
 		var id = $(this).attr('index');
 		mainclass = $(this).text();
 		if(id > 0) {
-			obtainList(mainclass, subclass)
+			obtainList(mainclass)
 		} else {
 			quan()
 		}
-		$.ajax({
-			type: "post",
-			url: "http://47.92.145.129:8000/users/nav2",
-			async: true,
-			data: {
-				uid: id
-			},
-			success: function(data) {
-				//				console.log(data)
-				if(data.length > 0) {
-					$('.djs-navBottom').css('display', 'block')
-					$('.djs-navBottom ul li').remove()
-					var html = ''
-					for(var i = 0; i < data.length; i++) {
-						html += '<li>' + data[i].names + '</li>'
-					}
-					$('.djs-navBottom ul').append(html)
-				} else {
-					$('.djs-navBottom').css('display', 'none')
-				}
-
-			}
-		});
+//		$.ajax({
+//			type: "post",
+//			url: "http://47.92.145.129:8000/users/nav2",
+//			async: true,
+//			data: {
+//				uid: id
+//			},
+//			success: function(data) {
+//				//				console.log(data)
+//				if(data.length > 0) {
+//					$('.djs-navBottom').css('display', 'block')
+//					$('.djs-navBottom ul li').remove()
+//					var html = ''
+//					for(var i = 0; i < data.length; i++) {
+//						html += '<li>' + data[i].names + '</li>'
+//					}
+//					$('.djs-navBottom ul').append(html)
+//				} else {
+//					$('.djs-navBottom').css('display', 'none')
+//				}
+//
+//			}
+//		});
 	})
 
-	$('.djs-navBottom ul').delegate('li', 'mouseover', function() {
-		$(this).css('color', '#EA5813');
-	})
-	$('.djs-navBottom ul').delegate('li', 'mouseout', function() {
-		$(this).css('color', '#555555');
-	})
-
-	$('.djs-navBottom ul').delegate('li', 'click', function() {
-		$(this).addClass("color").siblings().removeClass('color');
-		subclass = $(this).text();
-		obtainList(mainclass, subclass)
-	})
+//	$('.djs-navBottom ul').delegate('li', 'mouseover', function() {
+//		$(this).css('color', '#EA5813');
+//	})
+//	$('.djs-navBottom ul').delegate('li', 'mouseout', function() {
+//		$(this).css('color', '#555555');
+//	})
+//
+//	$('.djs-navBottom ul').delegate('li', 'click', function() {
+//		$(this).addClass("color").siblings().removeClass('color');
+//		subclass = $(this).text();
+//		obtainList(mainclass)
+//	})
 
 	$('.djs-px li:nth-child(1)').mouseover(function() {
 		$('.djs-px li:nth-child(1) ul').css("display", "block")
@@ -80,16 +79,16 @@ window.addEventListener('load',function(){
 		$('.djs-px li:nth-child(1) ul').css("display", "none")
 	})
 
-	$('.djs-list ul').delegate('li', 'mouseover', function() {
+	$('.djs-list ul').delegate('.djs-List', 'mouseover', function() {
 		$(this).css("box-shadow", "0 3px 2px 2px #E9E9E9").css("transform", "translateY(-3px)");
 	})
-	$('.djs-list ul').delegate('li', 'mouseout', function() {
+	$('.djs-list ul').delegate('.djs-List', 'mouseout', function() {
 		$(this).css("box-shadow", "none").css("transform", "translateY(0)");
 	})
-	
+
 	var arrList;
 	var len;
-
+	var project = [];
 	quan()
 
 	function quan() {
@@ -98,15 +97,15 @@ window.addEventListener('load',function(){
 			type: "get",
 			success: function(data) {
 				console.log(data)
-				if(data.success == "查无数据"){
-					return;
-				}else{
-					arrList = data.data;
+				if(data.flag == 1) {
+					arrList = data.results;
 					num = 1;
-					len = Math.ceil(data.data.length / 12);
-					list(num, len)
+					len = Math.ceil(data.results.length / 12);
 					$('.djs-fy li').remove()
 					$('.djs-fy').append(showPages(1, len))
+					list(num, len)
+				} else {
+					return;
 				}
 			}
 		})
@@ -114,87 +113,63 @@ window.addEventListener('load',function(){
 
 	function list(num, len) {
 		console.log(num, len)
-//		$('.djs-list ul li').remove()
-//		var html = '';
-//		for(var i = ((num - 1) * 12); i < (num * 12); i++) {
-//			if(i == arrList.length) {
-//				break;
-//			} else {
-//				html += '<li><a href="personalSet.html?'+arrList[i].+'">
-//							<div class="djs-top">
-//								<img src="" alt="" />
-//								<div class="djs-text fl">
-//									<p class="djs-name">设计师名称</p>
-//									<div>
-//										<span class="djs-num">4</span>
-//										<span>个设计服务</span>
-//									</div>
-//									<ul class="djs-category">
-//										<li>插画师</li>
-//										<li>平面设计师</li>
-//										<li>UI设计师</li>
-//									</ul>
-//								</div>
-//							</div>
-//							<div class="djs-bottom">资深插画师、漫画师，日常为女儿创作育儿漫画，并连载于育儿周刊。服务过淘宝、海尔、星河集团、湖北卫视等知名企业与机构。还积极参与社会活动，为公益机构绘制漫画筹集善款。其他更多优秀原创作品案例详见作者花瓣原创画板</div>
-//						</a>
-//					</li>';
-//			}
-//		}
-//		$('.djs-list ul').append(html)
-	}
-
-	//获取分类列表
-
-	function obtainList(mainclass, subclass) {
-		console.log(mainclass, subclass)
+		var now = 0;
+		$('.djs-list ul li').remove()
 		var html = '';
-		$.ajax({
-			url: "http://47.92.145.129:8000/djsList/obtainList",
-			type: "get",
-			data: {
-				mainclass: mainclass,
-				subclass: subclass
-			},
-			success: function(data) {
-				console.log(data)
-				if(data.success == "查无数据"){
-					return;
-				}else{
-					arrList = data.data;
-					num = 1;
-					len = Math.ceil(data.data.length / 12);
-					list(num, len)
-					$('.djs-fy li').remove()
-					$('.djs-fy').append(showPages(1, len))
-				}
+		for(var i = ((num - 1) * 12); i < (num * 12); i++) {
+			if(i == arrList.length) {
+				break;
+			} else {
+				$.ajax({
+					url: "http://47.92.145.129:8000/djsList/issueList",
+					type: "get",
+					data: {
+						uid: arrList[i].Applicant
+					},
+					success: function(data) {
+						console.log(data.data.length)
+						if(now < arrList.length) {
+							djsList(now, data.data.length)
+							now++
+						}
+					}
+				})
 			}
-		})
+		}
 	}
-	
+
+	function djsList(i, data) {
+		$('.djs-list ul').append('<li class="djs-List"><a href="personalSet.html?' + arrList[i].Applicant + '"><div class = "djs-top"><img src = "' + $.base64.atob(arrList[i].portrait) + '" alt = ""/><div class = "djs-text fl"><p class = "djs-name">' + arrList[i].shopName + '</p><div><span class = "djs-num">' + data + '</span><span>个设计服务 </span></div><ul class="djs-category"></ul></div></div><div class = "djs-bottom">' + arrList[i].briefIntroduction + '</div></a></li>');
+		var shopType = arrList[i].shopType.split(",")
+		console.log(shopType)
+		for(var j = 0; j < shopType.length; j++) {
+			$(".djs-category").append("<li>" + shopType[j] + "</li>")
+		}
+	}
+
 	//获取分类列表
 
-	function obtainList(mainclass, subclass) {
-		console.log(mainclass, subclass)
+	function obtainList(mainclass) {
+		console.log(mainclass)
 		var html = '';
+		var now = 0;
 		$.ajax({
-			url: "http://47.92.145.129:8000/djsList/obtainList",
+			url: "http://47.92.145.129:8000/personal/search",
 			type: "get",
 			data: {
-				mainclass: mainclass,
-				subclass: subclass
+				name: mainclass
 			},
 			success: function(data) {
 				console.log(data)
-				if(data.success == "查无数据"){
+				if(data.flag == 2) {
 					return;
-				}else{
-					arrList = data.data;
+				} else {
+					arrList = data;
 					num = 1;
-					len = Math.ceil(data.data.length / 12);
-					list(num, len)
+					len = Math.ceil(data.length / 12);
 					$('.djs-fy li').remove()
 					$('.djs-fy').append(showPages(1, len))
+					list(num, len)
 				}
 			}
 		})
@@ -248,4 +223,4 @@ window.addEventListener('load',function(){
 		}
 
 	})
-},false)
+}, false)

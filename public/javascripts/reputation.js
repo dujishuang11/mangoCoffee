@@ -1,4 +1,4 @@
-window.addEventListener('load', favicon() {
+window.addEventListener('load', function() {
 	var uid = location.href.split('?')[1]
 
 	if(uid) {

@@ -45,23 +45,20 @@
 }
 .djs-px > li {
 	padding: 20px 40px 15px 0;
+	cursor: pointer;
+	float: left;
+	margin-right: 20px;
+	position: relative;
+	font-size: 16px;
 }
-.djs-px > li > ul {
-	width: 140%;
-	background: white;
-	display: none;
-}
-.djs-px > li > ul > li {
-	width: 100%;
-	padding: 10px 0;
-	text-align: center;
-}
+
 .djs-list {
 	width: 85%;
 	margin: 0 auto;
 }
 .djs-list > ul {
 	width: 100%;
+	min-height: 310px;
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
@@ -109,11 +106,14 @@
 }
 .djs-list > ul > li .djs-top .djs-text .djs-category li {
 	margin-right: 10px;
+	font-size: 14px;
+	float: left;
 }
 .djs-list > ul > li .djs-bottom {
 	width: 100%;
 	padding: 20px;
 	border-top: 1px solid #F3F3F3;
+	font-size: 14px;
 }
 
 .color {
