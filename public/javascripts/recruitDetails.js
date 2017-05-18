@@ -2,7 +2,10 @@ window.addEventListener('load',function(){
 	$('.lhq_button').on('click',function(){
 		$('.lhq_file').click();
 	})
-	
+		$('.lhq_fhzplb_i').text('咖芒招聘');
+		$('.lhq_fhzplb').click(function(){
+			location.href='recruitList.html'
+		})
 	var lhq_zpxq = location.href.split('?')[1]
 	console.log(lhq_zpxq)
 	$.ajax({
