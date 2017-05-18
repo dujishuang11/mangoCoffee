@@ -47,7 +47,7 @@ router.post('/enterprise',function(req,res){  //请求参数，响应参数
 	getUserByName(Qname,function(err,result){ 
 		if(result==''||result==null){
 			console.log('insert into mysql');
-			save(Qavatar,Qname,Qaddress,Qleader,Qinformation,Qkey,Qwork,Qaudit,function(err,result){
+			save(Qavatar,Qname,Qaddress,Qleader,Qinformation,Qwork,Qkey,Qaudit,function(err,result){
 				if(result.insertId>0){
 					console.log("okokok")
 					res.send({flag:1}); //注册成功
@@ -64,10 +64,10 @@ router.post('/enterprise',function(req,res){  //请求参数，响应参数
 });
 
 //插入数据
-	function save(qavatar,qname,qaddress,qleader,qinformation,qkey,qwork,qaudit,callback){
+	function save(qavatar,qname,qaddress,qleader,qinformation,qwork,qkey,qaudit,callback){
 		pool.getConnection(function(err,connection){
 			var sql='insert into qiye (quid,qheader,qtitle,qaddress,qpeople,qtel,qimg,qkey,qpass) values (0,?,?,?,?,?,?,?,?)';
-			connection.query(sql,[qavatar,qname,qaddress,qleader,qinformation,qkey,qwork,qaudit],function(err,result){
+			connection.query(sql,[qavatar,qname,qaddress,qleader,qinformation,qwork,qkey,qaudit],function(err,result){
 				if(err){
 					console.log('insertUser_Sql Error:'+ err.message);
 					return;

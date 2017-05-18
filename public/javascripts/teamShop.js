@@ -2,7 +2,7 @@ window.addEventListener("load",function(){
 	
 	
 	var ip="localhost:1998"; //ip地址
-	
+	var aip="47.92.145.129:8000"; //ip地址
 
 	
 	
@@ -45,42 +45,41 @@ window.addEventListener("load",function(){
 		var tadsVal=$("#yu_address").val(); //团队地址
 		var peonameVal=$("#yu_peopname").val(); //团队负责人
 		var telVal=$("#yu_telh").val(); //负责人电话
-//		if(headVal==""){
-//			alert("您还未上传头像！")
-//		}
-//		else if(teanameVal==""){
-//			alert("请填写团队名称！")
-//		}
-//		else if(tadsVal==""){
-//			alert("请填写团队地址！")
-//		}
-//		else if(peonameVal==""){
-//			alert("请填写团队负责人！")
-//		}
-//		else if(telVal==""){
-//			alert("请填写联系方式！")
-//		}
-//		else if(!(telVal.match(ttelRex))){
-//	    	alert("手机号格式不对")
-//	    }
-//		else if(shenfVal==''){
-//			alert("请填写身份证号！")
-//		}
-//		else if(!(shenfVal.match(shenfRex))){
-//	    	alert("身份证号格式不对");
-//	    }
-//		else if(sfzzVal==""){
-//			alert("请上传身份证正面照！")
-//		}else if(picVal==""){
-//			alert("请上传不少于5张作品！")
-//		}
-//		else{
-//			console.log("审核通过");
-//		}
-	//团队申请入驻表
-			/*$.ajax({
+		if(headVal==""){
+			alert("您还未上传头像！")
+		}
+		else if(teanameVal==""){
+			alert("请填写团队名称！")
+		}
+		else if(tadsVal==""){
+			alert("请填写团队地址！")
+		}
+		else if(peonameVal==""){
+			alert("请填写团队负责人！")
+		}
+		else if(telVal==""){
+			alert("请填写联系方式！")
+		}
+		else if(!(telVal.match(ttelRex))){
+	    	alert("手机号格式不对")
+	    }
+		else if(shenfVal==''){
+			alert("请填写身份证号！")
+		}
+		else if(!(shenfVal.match(shenfRex))){
+	    	alert("身份证号格式不对");
+	    }
+		else if(sfzzVal==""){
+			alert("请上传身份证正面照！")
+		}else if(picVal==""){
+			alert("请上传不少于5张作品！")
+		}
+		else{
+			console.log("审核通过");
+//团队申请入驻表
+			$.ajax({
 				type:"post",
-				url:"http://"+ip+"/tenter/team",
+				url:"http://"+aip+"/tenter/team",
 				async:true,
 				data:{
 					TeamAvatar: imgSrcheader,//团队头像
@@ -93,15 +92,18 @@ window.addEventListener("load",function(){
 					IdcardFan:imgSrcfan,  //身份证正面照
 					TeamKey: "", //：团队密钥
 					TeamWork:arr,   //：团队作品
-					TeamAudit:""   //：审核
+					TeamAudit:"0"  , //：审核，默认不通过字段为0
+					nameuid:"1"  //登录人uid
 				},
 				success:function(data){
 					console.log(data)
 					sessionStorage.setItem('uidt',data.insertId)
 				}
-			});*/
-		
-		$.ajax({
+			});
+		}
+	
+	//团队申请入驻表	
+		/*$.ajax({
 			type:"post",
 			url:"http://"+ip+"/tenter/team",
 			async:true,
@@ -122,7 +124,7 @@ window.addEventListener("load",function(){
 				console.log(data)
 				sessionStorage.setItem('uidt',data.insertId)
 			}
-		});
+		});*/
 			
 		//查询id名称
 		/*$.ajax({
@@ -155,9 +157,9 @@ window.addEventListener("load",function(){
 	//	
 	
 	//过去随机数（字母数字+时间戳+uid）
-	    var timestamp = Date.parse(new Date()); //获取当前时间戳
-		var dom=Math.random().toString(36).substr(2);
-		var rand=timestamp+dom;
+//	    var timestamp = Date.parse(new Date()); //获取当前时间戳
+//		var dom=Math.random().toString(36).substr(2);
+//		var rand=timestamp+dom;
 //		console.log(rand);
 
 
@@ -385,7 +387,7 @@ window.addEventListener("load",function(){
         var fd = new FormData();
         fd.append("uploadedFile", files);
         //鉴别黄图
-        /*$.ajax({
+        $.ajax({
 			url: "http://47.92.145.129:8000/users/huang",
 			type: "post",
 			data: fd,
@@ -397,7 +399,7 @@ window.addEventListener("load",function(){
 //						imgSrcfan = $.base64.btoa(imgSrcfan)
 				}
 			}
-		})*/
+		})
          $.ajax({
             url:"http://47.92.145.129:8000/users/chan",
             type:"post",
