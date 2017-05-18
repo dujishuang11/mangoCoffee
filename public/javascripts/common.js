@@ -42,10 +42,10 @@ var judge2 = $('.nav_wrapper').hasClass('nav_bg_a') == true
 
 if(judge2){
 	$('.lxm_Agreement').attr('href','Agreement.html')
-	$('.lxm_firsthtml').attr('href','../index.html')
+	$('.lxm_first_nav').attr('href','../index.html')
 	$('.lxm_shejishi a').attr('href','star.html')
 	$('.user_shop a').attr('href','personalShop.html')
-	$('.user_data a').attr('href','personalSet.html')
+	$('.user_data a').attr('href','personalData.html')
 	$.ajax({
 		type:"get",
 		url:"http://47.92.145.129:8000/users/nav",
@@ -61,9 +61,9 @@ if(judge2){
 }else{
 	$('.lxm_Agreement').attr('href','html/Agreement.html')
 	$('.lxm_shejishi a').attr('href','html/star.html')
-	$('.lxm_firsthtml').attr('href','index.html')
+	$('.lxm_first_nav').attr('href','index.html')
 	$('.user_shop a').attr('href','html/personalShop.html')
-	$('.user_data a').attr('href','html/personalSet.html')
+	$('.user_data a').attr('href','html/personalData.html')
 	$.ajax({
 		type:"get",
 		url:"http://47.92.145.129:8000/users/nav",
@@ -129,6 +129,14 @@ $('.nav_list > ul').find('.nav_one').click(function(){
 
 /**********************************************/
 
+
+$('.lxm_tuandui').click(function(){
+	location.href = 'html/teamShop.html'
+})
+
+$('.lxm_qiye').click(function(){
+	location.href = 'html/enterprisesShop.html'
+})
 
 
 var lxm_on = true;

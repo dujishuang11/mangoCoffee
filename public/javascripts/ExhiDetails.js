@@ -3,7 +3,7 @@ window.addEventListener('load',function(){
 	var ip='localhost:1998'; //ip地址
 	var aip="47.92.145.129:8000"; //ip地址
 	var teamIdd = location.href.split('?')[1];
-	console.log(teamIdd);
+//	console.log(teamIdd);
 
 	$.ajax({
 		type: 'get',
@@ -19,20 +19,15 @@ window.addEventListener('load',function(){
 			html+='<li><span>团队名称</span><div>' + data.results[0].ttitle + '</div></li><li><span>团队头像</span><div><img src="' + data.results[0].theader + '" alt="" /></div></li><li><span>地址</span><div>' + data.results[0].taddress + '</div></li><li><span>团队负责人</span><div>' + data.results[0].tpeople + '</div></li><li><span>联系方式</span><div>' + data.results[0].ttel + '</div></li><li><span>负责人身份证号</span><div>' + data.results[0].tnumberid + '</div></li><li><span>负责人身份证正面照</span><div><img src="http://47.92.145.129:8000/' + data.results[0].tcardzheng + '" alt="" /></div></li><li><span>负责人身份证反面照</span><div><img src="http://47.92.145.129:8000/' + data.results[0].tcardfan + '" alt="" /></div></li><li><span id="tkeys">团队密钥</span><div>' + data.results[0].tkey + '</div></li><li><div><span>上传作品</span>' + data.results[0].tworks + '</div></li><li><span id="tstaus">审核状态</span><div>' + data.results[0].tpass + '</div></li>'
 			$("#app_cont").append(html);
 			sessionStorage.uid=data.results[0].tuid
-//			sessionStorage.uid=data.results[0].tkey
-//			sessionStorage.uid=data.results[0].tpass
-			console.log(sessionStorage.uid)
-//			$("#yes_pass").click(function(){
+//			console.log(sessionStorage.uid)
 		
 		}
 	})
-//	console.log(data.results[0].ttitle)
 	//点击审核通过
 	//过去随机数（字母数字+时间戳+uid）
 	    var timestamp = Date.parse(new Date()); //获取当前时间戳
 		var dom=Math.random().toString(36).substr(2);
 		var rand=timestamp+dom;
-		console.log(rand);
 	
 	
 	

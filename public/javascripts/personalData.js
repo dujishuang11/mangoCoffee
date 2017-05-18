@@ -7,7 +7,7 @@ window.addEventListener('load', function() {
 			url: ""+ip+"/djsList/issueList",
 			async: true,
 			data: {
-				uid:1
+				uid:sessionStorage.userId
 			},
 			success: function(data) {
 				console.log(data)
@@ -59,7 +59,7 @@ window.addEventListener('load', function() {
 			url: ""+ip+"/djsList/issueList",
 			async: true,
 			data: {
-				uid:1
+				uid: sessionStorage.userId
 			},
 			success: function(data) {
 				$(".allFB").children().remove();
