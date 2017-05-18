@@ -1,4 +1,4 @@
-window.addEventListener('load', favicon() {
+window.addEventListener('load', function() {
 	var uid = location.href.split('?')[1]
 
 	if(uid) {
@@ -23,9 +23,10 @@ window.addEventListener('load', favicon() {
 			url: "http://47.92.145.129:8000/djsList/issueList",
 			type: "get",
 			data: {
-				uid: sessionStorage.userId
+				uid: 2
 			},
 			success: function(data) {
+				console.log(data)
 				salas = 0
 				html = ''
 				for(var i = 0; i < data.data.length; i++) {
