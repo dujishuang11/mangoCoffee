@@ -51,7 +51,7 @@
 						<p class="login">登录</p>
 						<p class="res">注册</p>
 						<div class="user" style = 'display: none;'>
-							<img src="images/40x40.jpg" alt="" />
+							<img src="../images/40x40.jpg" alt="" />
 							<div class="user_list_wrapper">
 								<div class="user_list">
 									<ul>
@@ -136,7 +136,7 @@
 					
 					<!--注册列表-->
 					<div class="resgister" style="display: none;">
-						<img src="images/logo.png" alt="" />
+						<img src="../images/logo.png" alt="" />
 						<p></p>
 						<p>欢迎来到咖芒！请完善你的信息</p>
 						<p>账号　<span class="lxm_my_num">17600022763</span></p>
