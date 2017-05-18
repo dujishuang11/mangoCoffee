@@ -9,6 +9,8 @@
 引入两个js
 
 
+登录成功后会在sessionStorage 存入 userID 字段  也就是登录人ID
+
 <div id="lxm_nav" class="nav_wrapper">
 				<div class="nav">
 					<div class="nav_logo">
