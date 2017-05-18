@@ -11,7 +11,7 @@ window.addEventListener('load',function(){
 		var nText = $(".nText").val();
 		if(nText.match(nickName)){
 		   $(".nickNText").css('display','block');
-		$(".nickNText").text("用户名正确")   
+		$(".nickNText").text("")   
 		}else{
 			$(".nickNText").css('display','block');
 		$(".nickNText").html("用户名不匹配")   
@@ -22,15 +22,20 @@ window.addEventListener('load',function(){
    var userName = /[\u4e00-\u9fa5]/;
 	$(".addText").focus(function(){		
 		$(".addTex").css("display","block");
-		$(".addTex").text('地址精确到市哦！')
+		$(".addTex").text('地址精确到区哦！')
 		
 	})
 	
 	$(".addText").blur(function(){
 		var addText = $(".addText").val();
 		if(addText.match(userName)){
+			if(addText.length>4){			
 			$(".addTex").css("display","block");
-			$(".addTex").text('地址正确！')
+			$(".addTex").text('')
+			}else{
+				$(".addTex").css("display","block");
+			    $(".addTex").text('地址不详细！')
+			}
 		}else{
 			$(".addTex").css("display","block");
 			$(".addTex").text('地址不正确！')
@@ -49,7 +54,7 @@ var regExp = /^1[3'/4578]\d{9}$/;
 		var telText= $(".telText").val();
 		if(telText.match(regExp)){
 		   $(".telTex").css("display","block");
-		   $(".telTex").text('手机号正确');
+		   $(".telTex").text('');
 		}else{
 		   $(".telTex").css("display","block");
 		   $(".telTex").text('手机号不正确');
@@ -67,7 +72,7 @@ var regExp = /^1[3'/4578]\d{9}$/;
 		var pasText = $(".pasText").val();
 		if(pasText.match(pasExp)){
 			$(".passO").css("display","block");
-	 	    $(".passO").text("密码正确哦！");
+	 	    $(".passO").text("");
 		}else{
 			$(".passO").css("display","block");
 	 	    $(".passO").text("密码不正确哦！");
@@ -84,7 +89,7 @@ var regExp = /^1[3'/4578]\d{9}$/;
 		if($(".pasText").val() == $(".newTwoText").val() ){
 			 if(newTwoText.match(pasExp)){
 			$(".passTwo").css("display","block");
-	 	    $(".passTwo").text("密码正确哦！");
+	 	    $(".passTwo").text("");
 		}else{
 			$(".passTwo").css("display","block");
 	 	    $(".passTwo").text("密码不正确哦！");
@@ -107,7 +112,7 @@ var regExp = /^1[3'/4578]\d{9}$/;
 		var beSureText = $(".beSureText").val();
 		if(beSureText.match(pasExp)){
 			$(".passThree").css("display","block");
-	 	    $(".passThree").text("密码正确哦！");
+	 	    $(".passThree").text("");
 		}else{
 			$(".passThree").css("display","block");
 	 	    $(".passThree").text("密码不正确哦！");
@@ -211,6 +216,7 @@ $('.img').change(function() {
 							},
 							success: function(data) {
 								console.log(data);
+								console.log(data[0].images)
 							}
 						})		
 					}else{
@@ -224,9 +230,7 @@ $('.img').change(function() {
 			}
 		}else{
 			alert("用户名不对")
-		}
-		
-		
+		}				
 	})
 	
 	
