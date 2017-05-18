@@ -61,7 +61,7 @@ window.addEventListener("load",function(){
 			//申请入驻表
 			$.ajax({
 				type:"post",
-				url:"http://"+ip+"/qenter/enterprise",
+				url:"http://"+aip+"/qenter/enterprise",
 				async:true,
 				data:{
 					CorporateHead: imgSrcheader,//企业头像
