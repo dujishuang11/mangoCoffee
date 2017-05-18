@@ -18,7 +18,7 @@
 					</div>
 					<div class="nav_list">
 						<ul class="nav_color_f">
-							<li class="nav_one lxm_nav_first"><a href="#">首页</a></li>
+							<li class="nav_one lxm_nav_first"><a class="lxm_first_nav" href="#">首页</a></li>
 							<li class="nav_one">
 								<a href="#">设计服务</a><i class="glyphicon glyphicon-triangle-bottom"></i>
 								<div class="nav_hide">
