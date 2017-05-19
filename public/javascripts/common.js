@@ -280,26 +280,30 @@ $('.resgister_back').click(function(){
 })
 
 $('.resgister_remove').click(function(){
-	$('.login_wrapper').css('opacity','0')
-	$('.login_wrapper').css('z-index','-1')
+//	$('.login_wrapper').css('opacity','0')
+//	$('.login_wrapper').css('z-index','-1')
+	$('.login_wrapper').css('display','none')
 })
 
 $('.login_remove').click(function(){
-	$('.login_wrapper').css('opacity','0')
-	$('.login_wrapper').css('z-index','-1')
+//	$('.login_wrapper').css('opacity','0')
+//	$('.login_wrapper').css('z-index','-1')
+	$('.login_wrapper').css('display','none')
 })
 
 $('.login').click(function(){
-	$('.login_wrapper').css('opacity','1')
-	$('.login_wrapper').css('z-index','9999')
+//	$('.login_wrapper').css('opacity','1')
+//	$('.login_wrapper').css('z-index','9999')
+	$('.login_wrapper').css('display','block')
 	if($('.resgister_now').text() == '立即登录'){
 		$('.resgister_now').click()*2
 	}
 })
 
 $('.res').click(function(){
-	$('.login_wrapper').css('opacity','1')
-	$('.login_wrapper').css('z-index','9999')
+//	$('.login_wrapper').css('opacity','1')
+//	$('.login_wrapper').css('z-index','9999')
+	$('.login_wrapper').css('display','block')
 	$('.resgister_now').click()
 })
 
@@ -346,8 +350,9 @@ $('.lxm_login_one').click(function(){
 					if(e.num == 1){
 						layer.msg('登录成功');
 						sessionStorage.userId = e.uid
-						$('.login_wrapper').css('opacity','0')
-						$('.login_wrapper').css('z-index','-1')
+//						$('.login_wrapper').css('opacity','0')
+//						$('.login_wrapper').css('z-index','-1')
+						$('.login_wrapper').css('display','none')
 						$('.lxm_login_one_user').val('')
 						$('.lxm_login_one_pass').val('')
 						$('.lxm_login_one_yzm').val('')
@@ -362,7 +367,6 @@ $('.lxm_login_one').click(function(){
 							success:function(e){
 								console.log(e)
 								console.log(e[0].images)
-								
 								$('.login').css('display','none')
 								$('.res').css('display','none')
 								$('.user').css('display','block')
