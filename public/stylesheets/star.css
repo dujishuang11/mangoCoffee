@@ -27,6 +27,7 @@
 	margin: 0 15px 5px 0;
 	float: left;
 	cursor:pointer;
+	line-height: 30px;
 }
 
 .djs-navBottom {
@@ -45,31 +46,43 @@
 }
 .djs-px > li {
 	padding: 20px 40px 15px 0;
+	cursor: pointer;
+	float: left;
+	margin-right: 20px;
+	position: relative;
+	font-size: 16px;
 }
-.djs-px > li > ul {
-	width: 140%;
-	background: white;
-	display: none;
-}
-.djs-px > li > ul > li {
-	width: 100%;
-	padding: 10px 0;
-	text-align: center;
-}
+
 .djs-list {
 	width: 85%;
 	margin: 0 auto;
 }
 .djs-list > ul {
 	width: 100%;
-	display: flex;
-	justify-content: space-between;
+	min-height: 310px;
 	flex-wrap: wrap;
 }
 .djs-list > ul > li {
 	width: 49%;
 	margin-top: 20px;
 	background: white;
+	float: left;
+	transition: .3s;
+	-ms-transition: .3s;/*IE*/
+	-moz-transition: .3s; /* Firefox 4 */
+	-webkit-transition: .3s; /* Safari 和 Chrome */
+	-o-transition: .3s; /* Opera */
+}
+.djs-list > ul > li:hover {
+	box-shadow: 0 3px 2px 2px #E9E9E9;
+	transform: translateY(-3px);
+	-ms-transform: translateY(-3px);/*IE*/
+	-moz-transform: translateY(-3px); /* Firefox 4 */
+	-webkit-transform: translateY(-3px); /* Safari 和 Chrome */
+	-o-transform: translateY(-3px); /* Opera */
+}
+.djs-list > ul > li:nth-child(2n) {
+	float: right;
 }
 .djs-list > ul > li a {
 	width: 100%;
@@ -85,7 +98,6 @@
 .djs-list > ul > li .djs-top img {
 	width: 150px;
 	height: 150px;
-	background: blue;
 	float: left;
 }
 .djs-list > ul > li .djs-top .djs-text {
@@ -109,11 +121,14 @@
 }
 .djs-list > ul > li .djs-top .djs-text .djs-category li {
 	margin-right: 10px;
+	font-size: 14px;
+	float: left;
 }
 .djs-list > ul > li .djs-bottom {
 	width: 100%;
 	padding: 20px;
 	border-top: 1px solid #F3F3F3;
+	font-size: 14px;
 }
 
 .color {

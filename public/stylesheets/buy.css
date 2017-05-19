@@ -69,6 +69,7 @@
 
 .djs-claim {
 	width: 100%;
+	min-height: 210px;
 	background: white;
 	border-top: 1px solid #EDEDED;
 }

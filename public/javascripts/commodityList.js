@@ -78,13 +78,6 @@ window.addEventListener('load', function() {
 		$('.djs-px li:nth-child(1) ul').css("display", "none")
 	})
 
-	$('.djs-list ul').delegate('li', 'mouseover', function() {
-		$(this).css("box-shadow", "0 3px 2px 2px #E9E9E9").css("transform", "translateY(-3px)");
-	})
-	$('.djs-list ul').delegate('li', 'mouseout', function() {
-		$(this).css("box-shadow", "none").css("transform", "translateY(0)");
-	})
-
 	var arrList;
 	var len;
 
