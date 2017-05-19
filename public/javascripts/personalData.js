@@ -7,7 +7,7 @@ window.addEventListener('load', function() {
 			url: ""+ip+"/djsList/issueList",
 			async: true,
 			data: {
-				uid:sessionStorage.userId
+				uid:sessionStorage.uid
 			},
 			success: function(data) {
 				console.log(data)
@@ -19,6 +19,7 @@ window.addEventListener('load', function() {
 					fbTxt+='<div class="zhj_Modular"><div class="zhj_ModularImg"><img src="'+$.base64.atob(data.data[i].cover)+'" alt="" /></div><div class="zhj_Title">'+data.data[i].tradename+'</div><div class="zhj_price">'+data.data[i].pricing+'</div></div>'
 				}
 				$(".allFB").append(fbTxt);
+				$(".allFB").append('<a href="publishProject.html"><div class="zhj_jiajia"><img src="../images/onImg.png" alt="" /></div></a>');
 				}		
 		  }		
 		})
@@ -59,9 +60,10 @@ window.addEventListener('load', function() {
 			url: ""+ip+"/djsList/issueList",
 			async: true,
 			data: {
-				uid: sessionStorage.userId
+				uid:sessionStorage.uid
 			},
 			success: function(data) {
+				console.log(data)
 				$(".allFB").children().remove();
 				var fbTxt=''
 				console.log(data);	
@@ -91,7 +93,7 @@ window.addEventListener('load', function() {
 			url: ""+ip+"/djsList/buyList",
 			async: true,
 			data: {
-				purchaserid:10
+				purchaserid:sessionStorage.uid
 			},
 			success: function(data) {				
 				console.log(data);
@@ -140,7 +142,7 @@ window.addEventListener('load', function() {
 		url: ""+ip+"/resume/fbrxx",
 		async: true,
 		data: {
-			RPublisherId:2
+			RPublisherId:sessionStorage.uid
 		},
 		success: function(data) {
 			console.log(data)
@@ -211,7 +213,7 @@ window.addEventListener('load', function() {
 		url: ""+ip+"/tixian/qianbao",
 		async: true,
 		data: {
-			TuseId:2
+			TuseId:sessionStorage.uid
 		},
 		success: function(data) {
 			console.log(data);
@@ -230,7 +232,7 @@ window.addEventListener('load', function() {
 	})
 	
 	
-//插入初始钱包钱数	
+//插入初始钱包钱数	   点击头像名字实现效果
 $(".zhj_personTopName").click(function(){
 	$.ajax({
 		type: "post",
@@ -238,7 +240,7 @@ $(".zhj_personTopName").click(function(){
 		async: true,
 		data: {
 			qMoney:0,
-			qUserId:2
+			qUserId:sessionStorage.uid
 		},
 		success: function(data) {
 			console.log(data);
@@ -248,22 +250,23 @@ $(".zhj_personTopName").click(function(){
 	
 	
 
-//获取钱包钱数
+//获取钱包钱数  
 $.ajax({
 		type: "get",
 		url: ""+ip+"/tixian/qb",
 		async: true,
 		data: {
-			qUserId:2
+			qUserId:sessionStorage.uid
 		},
 		success: function(data) {
+			console.log(data)
 			console.log(data[0].qMoney);
 			$(".inputTxt").val(data[0].qMoney);
 		   }
         })
 
 
-//修改钱包    点击购买时
+//修改钱包    点击购买时   测试版点击 钱包里的弹出提示模板几个字
 $(".qianb").click(function(){
 	$.ajax({
 			type: "post",
@@ -271,7 +274,7 @@ $(".qianb").click(function(){
 			async: true,
 			data: {
 				qMoney:1000,
-				qUserId:2
+				qUserId:sessionStorage.uid
 				},
 				success:function(data) {
 					console.log(data);
@@ -323,7 +326,7 @@ $(".qianb").click(function(){
 			url: ""+ip+"/tixian/qianbao",
 			async: true,
 			data: {
-				TuseId:2
+				TuseId:sessionStorage.uid
 			},
 			success: function(data) {
 			$.ajax({
@@ -331,7 +334,7 @@ $(".qianb").click(function(){
 			url: ""+ip+"/tixian/qb",
 			async: true,
 			data: {
-				qUserId: 2
+				qUserId:sessionStorage.uid
 			},
 			success: function(data) {
 			console.log(data);
@@ -353,7 +356,7 @@ $(".qianb").click(function(){
 											tMoney: newM,
 											baoBao: zhb,
 											speed: 0,
-											TuseId: 2
+											TuseId:sessionStorage.uid
 										},
 										success: function(data) {
 											$(".priceInp").val("");
@@ -394,6 +397,28 @@ $(".qianb").click(function(){
 		   }
 		})
 	})
+	
+	
+	$(".zhj_personReset").click(function(){
+		location.href="personalSet.html"
+	})
+	
+	$(".zhj_personShop").click(function(){
+		location.href="personalShop.html"
+	})
+	
+	$(".zhj_shop").click(function(){
+		location.href="personalShop.html"
+	})
+	
+	$(".zhj_reset").click(function(){
+		location.href="personalSet.html"
+	})
+	
+	
+	
+	
+	
 	
 	
 }, false);
