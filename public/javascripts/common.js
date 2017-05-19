@@ -67,6 +67,7 @@ var judge1 = $('body').hasClass('lxm_despair') == true
 var judge2 = $('.nav_wrapper').hasClass('nav_bg_a') == true
 
 if(judge2){
+//	$('.lxm_rules label a').attr('href','')
 	$('.lxm_Agreement').attr('href','Agreement.html')
 	$('.lxm_first_nav').attr('href','../index.html')
 	$('.lxm_shejishi a').attr('href','star.html')
