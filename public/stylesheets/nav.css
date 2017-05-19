@@ -1,26 +1,18 @@
-
-
-
-/*@media (max-width: 991px){
-	
-}
-@media (max-width: 767px){
-	
-}*/
-
 .nav_wrapper {
 	width: 100%;
 	position: fixed;
 	top: 0;
 	left: 0;
 	z-index: 9999;
-
 }
-
 
 .nav_bg_a {
 	background: white;
     box-shadow: inset 0 0 0 .1em rgba(255, 255, 255, .2);
+	-ms-box-shadow: inset 0 0 0 .1em rgba(255, 255, 255, .2);
+	-moz-box-shadow: inset 0 0 0 .1em rgba(255, 255, 255, .2); /* Firefox 4 */
+	-webkit-box-shadow: inset 0 0 0 .1em rgba(255, 255, 255, .2); /* Safari 和 Chrome */
+	-o-box-shadow: inset 0 0 0 .1em rgba(255, 255, 255, .2); /* Opera */
 }
 
 .nav_bg_a .login {
@@ -88,9 +80,13 @@
 	width: 30%;
 	position: absolute;
 	top: 50%;
-	top: 20%\0;
 	left: 50%;
 	transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%); /* Firefox 4 */
+	-webkit-transform: translate(-50%,-50%); /* Safari 和 Chrome */
+	-o-transform: translate(-50%,-50%); /* Opera */
+	
 	/*margin-top: -50%;*/
 	/*margin-left: -50%;*/
 	/*height: 50%;*/
@@ -112,12 +108,9 @@
 	cursor: pointer;
 	position: relative;
 	list-style: none;
-	/*border-bottom: 1px #000 solid;*/
-	/*border-bottom: 1px #C0A75E solid;*/
 }
 
 .nav_list ul li i {
-	/*color: white;*/
 	margin-left: 10px;
 	font-size: 12px;
 }
@@ -181,6 +174,10 @@
 	margin-left: 15px;
 	cursor: pointer;
 	transition: .5s;
+	-ms-transition: .5s;
+	-moz-transition: .5s; /* Firefox 4 */
+	-webkit-transition: .5s; /* Safari 和 Chrome */
+	-o-transition: .5s; /* Opera */
 }
 
 .login {
@@ -262,6 +259,10 @@
 	top: -8px;
 	left: 32.8%;
 	transform: translateX(-50%) rotate(45deg);
+	-ms-transform: translateX(-50%) rotate(45deg);
+	-moz-transform: translateX(-50%) rotate(45deg); /* Firefox 4 */
+	-webkit-transform: translateX(-50%) rotate(45deg); /* Safari 和 Chrome */
+	-o-transform: translateX(-50%) rotate(45deg); /* Opera */
 }
 
 .nav_list > ul li:nth-child(2):hover .nav_hide {
@@ -348,6 +349,10 @@
 	top: -8px;
 	left: 86%;
 	transform: translateX(-50%) rotate(45deg);
+	-ms-transform: translateX(-50%) rotate(45deg);
+	-moz-transform: translateX(-50%) rotate(45deg); /* Firefox 4 */
+	-webkit-transform: translateX(-50%) rotate(45deg); /* Safari 和 Chrome */
+	-o-transform: translateX(-50%) rotate(45deg); /* Opera */
 }
 
 /*@media screen and (max-width: 1200px) {
@@ -398,6 +403,10 @@
 		margin-left: 5px;
 		cursor: pointer;
 		transition: .5s;
+		-ms-transition: .5s;
+		-moz-transition: .5s; /* Firefox 4 */
+		-webkit-transition: .5s; /* Safari 和 Chrome */
+		-o-transition: .5s; /* Opera */
 	}
 }
 
@@ -424,6 +433,10 @@
 		margin-left: 0;
 		cursor: pointer;
 		transition: .5s;
+		-ms-transition: .5s;
+		-moz-transition: .5s; /* Firefox 4 */
+		-webkit-transition: .5s; /* Safari 和 Chrome */
+		-o-transition: .5s; /* Opera */
 	}
 	
 	.nav_list ul li:nth-child(3) {
@@ -454,6 +467,10 @@
 		margin-left: 0;
 		cursor: pointer;
 		transition: .5s;
+		-ms-transition: .5s;
+		-moz-transition: .5s; /* Firefox 4 */
+		-webkit-transition: .5s; /* Safari 和 Chrome */
+		-o-transition: .5s; /* Opera */
 	}
 	
 	.nav_list ul li:nth-child(2) {
@@ -488,6 +505,10 @@
 		margin-left: 0;
 		cursor: pointer;
 		transition: .5s;
+		-ms-transition: .5s;
+		-moz-transition: .5s; /* Firefox 4 */
+		-webkit-transition: .5s; /* Safari 和 Chrome */
+		-o-transition: .5s; /* Opera */
 	}
 	
 	.nav_list ul li:nth-child(1) {
@@ -525,7 +546,7 @@
 	width: 100%;
 	height: 100%;
 	background: rgba(0,0,0,.5);
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 }
@@ -537,8 +558,12 @@
 	margin-left: 30%;
 	position: absolute;
 	top: 50%;
-	top: 20%\0;
+	/*top: 20%\0;*/
 	transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-moz-transform: translateY(-50%); /* Firefox 4 */
+	-webkit-transform: translateY(-50%); /* Safari 和 Chrome */
+	-o-transform: translateY(-50%); /* Opera */
 	border-radius: 5px;
 }
 
@@ -552,6 +577,10 @@
 	width: 140px;
 	margin-left: 50%;
 	transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-moz-transform: translateX(-50%); /* Firefox 4 */
+	-webkit-transform: translateX(-50%); /* Safari 和 Chrome */
+	-o-transform: translateX(-50%); /* Opera */
 }
 
 .tencent {
@@ -571,6 +600,10 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%); /* Firefox 4 */
+	-webkit-transform: translate(-50%,-50%); /* Safari 和 Chrome */
+	-o-transform: translate(-50%,-50%); /* Opera */
 	/*height: 40px;*/
 }
 
@@ -590,6 +623,10 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%); /* Firefox 4 */
+	-webkit-transform: translate(-50%,-50%); /* Safari 和 Chrome */
+	-o-transform: translate(-50%,-50%); /* Opera */
 	/*height: 40px;*/
 }
 
@@ -751,6 +788,10 @@
 	height: 70px;
 	margin-left: 50%;
 	transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-moz-transform: translateX(-50%); /* Firefox 4 */
+	-webkit-transform: translateX(-50%); /* Safari 和 Chrome */
+	-o-transform: translateX(-50%); /* Opera */
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
@@ -807,6 +848,10 @@
 .resgister p:nth-child(10) {
 	margin-left: 50%;
 	transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-moz-transform: translateX(-50%); /* Firefox 4 */
+	-webkit-transform: translateX(-50%); /* Safari 和 Chrome */
+	-o-transform: translateX(-50%); /* Opera */	
 }
 
 .resgister p:nth-child(10) input {
@@ -829,7 +874,15 @@
 	outline: none;
     background: linear-gradient( #E53E49, #D43636);
     box-shadow: inset 0 1px 0 rgba(255,255,255,.08),0 1px 0 rgba(255,255,255,.3);
+    -ms-box-shadow: inset 0 1px 0 rgba(255,255,255,.08),0 1px 0 rgba(255,255,255,.3);
+	-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.08),0 1px 0 rgba(255,255,255,.3); /* Firefox 4 */
+	-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.08),0 1px 0 rgba(255,255,255,.3); /* Safari 和 Chrome */
+	-o-box-shadow: inset 0 1px 0 rgba(255,255,255,.08),0 1px 0 rgba(255,255,255,.3); /* Opera */
     text-shadow: 0 -1px 0 rgba(0,0,0,.1);
+    -ms-text-shadow: 0 -1px 0 rgba(0,0,0,.1);
+	-moz-text-shadow: 0 -1px 0 rgba(0,0,0,.1); /* Firefox 4 */
+	-webkit-text-shadow: 0 -1px 0 rgba(0,0,0,.1); /* Safari 和 Chrome */
+	-o-text-shadow: 0 -1px 0 rgba(0,0,0,.1); /* Opera */
     color: #fff;
     border: 1px solid #C90000;
     margin-top: 10px;
@@ -842,6 +895,10 @@
 	background: linear-gradient( #F45D68, #E54646);
     color: #fff;
     box-shadow: inset 0 1px 0 rgba(255,255,255,.08),0 1px 0 rgba(255,255,255,.1);
+    -ms-box-shadow: inset 0 1px 0 rgba(255,255,255,.08),0 1px 0 rgba(255,255,255,.1);
+	-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.08),0 1px 0 rgba(255,255,255,.1); /* Firefox 4 */
+	-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.08),0 1px 0 rgba(255,255,255,.1); /* Safari 和 Chrome */
+	-o-box-shadow: inset 0 1px 0 rgba(255,255,255,.08),0 1px 0 rgba(255,255,255,.1); /* Opera */
     border: 1px solid #C90000;
 }
 
@@ -863,6 +920,10 @@
     -webkit-user-select: none;
     user-select: none;
     text-shadow: 0 1px 0 rgba(255,255,255,.5);
+    -ms-box-shadow: 0 1px 0 rgba(255,255,255,.5);
+	-moz-box-shadow: 0 1px 0 rgba(255,255,255,.5); /* Firefox 4 */
+	-webkit-box-shadow: 0 1px 0 rgba(255,255,255,.5); /* Safari 和 Chrome */
+	-o-box-shadow: 0 1px 0 rgba(255,255,255,.5); /* Opera */
     text-align: center;
     outline: none;
     margin-left: 6px;
@@ -873,6 +934,10 @@
     color: #444;
     background: linear-gradient(#FFF, #F7F7F7);
     box-shadow: inset 0 1px 0 white,0 1px 0 rgba(255,255,255,.05);
+    -ms-box-shadow: inset 0 1px 0 white,0 1px 0 rgba(255,255,255,.05);
+	-moz-box-shadow: inset 0 1px 0 white,0 1px 0 rgba(255,255,255,.05); /* Firefox 4 */
+	-webkit-box-shadow: inset 0 1px 0 white,0 1px 0 rgba(255,255,255,.05); /* Safari 和 Chrome */
+	-o-box-shadow: inset 0 1px 0 white,0 1px 0 rgba(255,255,255,.05); /* Opera */
     border: 1px solid #CCC;
 }
 
@@ -937,6 +1002,10 @@
     border-radius: 3px;
     width: 250px;
     box-shadow: inset 0 1px 2px rgba(0,0,0,.05);
+    -ms-box-shadow: inset 0 1px 2px rgba(0,0,0,.05);
+	-moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.05); /* Firefox 4 */
+	-webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.05); /* Safari 和 Chrome */
+	-o-box-shadow: inset 0 1px 2px rgba(0,0,0,.05); /* Opera */
     font-size: 14px;
     text-indent: .8em;
     
