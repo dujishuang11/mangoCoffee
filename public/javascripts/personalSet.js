@@ -128,7 +128,7 @@ $.ajax({
 	url: ""+ip+"/users/gerenaing",
 	async: true,
 	data: {
-		uid:6
+		uid:sessionStorage.uid
 	},
 	success: function(data) {
 		console.log(data);
@@ -205,7 +205,7 @@ $('.img').change(function() {
 							url: ""+ip+"/users/ziliao",
 							async: true,
 							data: {
-								uid:6,
+								uid:sessionStorage.uid,
 								name:nText,
 								suozaichengs:addText,
 								images:imgSrc,

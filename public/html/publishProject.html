@@ -2,16 +2,23 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<title>咖芒网</title>
+		<link href="../images/logo.png" rel="shortcut icon"/>
 		<link rel="stylesheet" type="text/css" href="../../node_modules/bootstrap/dist/css/bootstrap.css"/>
 		<link rel="stylesheet" type="text/css" href="../stylesheets/rester.css"/>
 		<link rel="stylesheet" type="text/css" href="../stylesheets/footer.css"/>
 		<link rel="stylesheet" type="text/css" href="../stylesheets/publishProject.css"/>
 		<link rel="stylesheet" type="text/css" href="../stylesheets/nav.css"/>
-		<script src="../../node_modules/angular/angular.js"></script>
 		<script src="../../node_modules/jquery/dist/jquery.js"></script>
+		<script src="../javascripts/gVerify.js"></script>
+		<script src="../javascripts/layer/layer.js"></script>
 		<script src="../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
 		<script src="../javascripts/publishProject.js"></script>
+		<!--[if lt IE 10]-->
+    	<script src="../javascripts/jquery.1.4.4.min.js"></script>
+    	<!--[endif]-->
 	</head>
 	<body>
 		<div id="lxm_nav" class="nav_wrapper nav_bg_a">
@@ -21,8 +28,8 @@
 					</div>
 					<div class="nav_list">
 						<ul class="nav_color_a">
-							<li class="nav_one"><a class="lxm_first_nav" href="#">首页</a></li>
-							<li class="nav_one lxm_nav_first">
+							<li class="nav_one lxm_nav_first"><a class="lxm_first_nav" href="#">首页</a></li>
+							<li class="nav_one">
 								<a href="#">设计服务</a><i class="glyphicon glyphicon-triangle-bottom"></i>
 								<div class="nav_hide">
 									<ul class="nav_hide_list">
@@ -70,7 +77,11 @@
 				</div>
 			</div>
 			<!--<p class="inter">咖芒网</p>-->
+<<<<<<< HEAD
 			<div class="login_wrapper" style="opacity: 0; z-index: -1;">
+=======
+			<div class="login_wrapper" style="display: none;z-index: 99999;">
+>>>>>>> origin/master
 				<div class="login_con">
 					<p>用第三方帐号登录咖芒</p>
 					<i class="glyphicon glyphicon-remove login_remove"></i>
@@ -95,7 +106,11 @@
 							<input class="lxm_login_one_user" type="text" placeholder="输入邮箱号" />
 							<input class="lxm_login_one_pass" type="password" placeholder="密码" />
 							<div class="login_yzm">
+<<<<<<< HEAD
 								<div class="yzm_pic" id="v_container" style="width: 100px;height: 50px;"></div>
+=======
+								<div class="yzm_pic" id="lxm_said" style="width: 100px;height: 50px; text-align: center; line-height: 50px; background: url(../images/login_yanzheng.jpg) no-repeat;background-size: cover;font-size: 20px;letter-spacing: 3px;"></div>
+>>>>>>> origin/master
 								<input class="lxm_login_one_yzm" type="text" placeholder="请输入验证码" />
 							</div>
 							<button class="lxm_login_one">登录</button>
@@ -169,13 +184,19 @@
 			<p>发布设计服务</p>
 			
 			<p>上传封面</p>
-			<div class="lhq_pP_img glyphicon glyphicon-plus-sign">
+			<!--<div class="lhq_pP_img glyphicon glyphicon-plus-sign">
 				<input type="file" class="lhq_fff"/>
+			</div>-->
+			<div class="lhq_bjt ">
+				
 			</div>
+			<input type="file" class="lhm"/>
+			
 			<p>服务名称</p>
-			<input type="text" placeholder="服务名称"/>
+			<input type="text" placeholder="服务名称" class="lhq_fwmc"/>
 			<p>服务类型</p>
-			<select name="">
+			<p class="lhq_dsc">
+				<select name="" class="select_onelhq">
 				<!--<option value="1">商标设计注册</option>
 				<option value="2">CI系统设计</option>
 				<option value="3">包装设计</option>
@@ -189,17 +210,40 @@
 				<option value="11">UI设计</option>
 				<option value="12">H5网站开发</option>
 				<option value="13">APP开发</option>-->
-			</select>
+				</select>
+				
+				<select name="" class="select_twolhq">
+					
+				</select>
+			</p>
+			
 			<p>插入图片/文字</p>
-			<div class="lhq_pP_fwb"></div>
+			<!--<div class="lhq_pP_fwb">
+				
+			</div>-->
+			<div class="wyh_teamthings">
+					<div class="yuon_diy fl">
+					    <div class="yuhan_img" id="yuhan_img">
+					        <input class="yuh_pic cur" id="yuh_pic" type="file" >
+					        <img src="../images/onImg.png" class="han_imgg cur">
+					    </div>
+					</div>
+				</div>
+			<div class="ts_ysb">上传压缩包</div>
+			<div class="lhq_ysb">
+				<button class="lhq_scysb">点击上传</button>
+				<input type="file" name="" id="" value="" accept="aplication/zip" class="ysb_input" style="display: none;"/>
+			</div>
+				
+				
 			<p>定价/单位</p>
-			<input type="text" placeholder="定价"/>
+			<input type="text" placeholder="定价" class="lhq_dj"/>
 			<p>
-				<button class="btn btn-primary">发布</button>
+				<button class="btn btn-primary lhq_fbb">发布</button>
 				<button>取消</button>
 			</p>
 		</div>
-			<div class="footer">
+		<div class="footer">
 			<ul>
 				<li class="fl">
 					<a href="">联系我们 </a>|
@@ -213,6 +257,10 @@
 		
 		<script src="../javascripts/gVerify.js"></script>
 		<script src="../javascripts/common.js"></script>
+<<<<<<< HEAD
 		
+=======
+		<script src="../javascripts/jquery.base64.js"></script>
+>>>>>>> origin/master
 	</body>
 </html>
