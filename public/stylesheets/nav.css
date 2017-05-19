@@ -867,12 +867,18 @@
 .resgister p:nth-child(10) label {
 	/*line-height: 24px;*/
 	margin-top: 20px;
+	font-size: 14px;
 	/*float: left;*/
+}
+
+.resgister p:nth-child(10) label a {
+	color: #337AC6;
 }
 
 .resgister .register_sub {
 	width: 54px;
 	height: 30px;
+	font-size: 14px;
 	outline: none;
 	background: #E53E49;
     background: linear-gradient( #E53E49, #D43636);
