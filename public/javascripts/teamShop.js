@@ -82,7 +82,7 @@ window.addEventListener("load",function(){
 	    	}else{
 				$.ajax({
 					type:"post",
-					url:"http://"+aip+"/tenter/team",
+					url:"http://"+ip+"/tenter/team",
 					async:true,
 					data:{
 						TeamAvatar: imgSrcheader,//团队头像
