@@ -851,7 +851,7 @@
 	-ms-transform: translateX(-50%);
 	-moz-transform: translateX(-50%); /* Firefox 4 */
 	-webkit-transform: translateX(-50%); /* Safari 和 Chrome */
-	-o-transform: translateX(-50%); /* Opera */
+	-o-transform: translateX(-50%); /* Opera */	
 }
 
 .resgister p:nth-child(10) input {
@@ -874,7 +874,15 @@
 	outline: none;
     background: linear-gradient( #E53E49, #D43636);
     box-shadow: inset 0 1px 0 rgba(255,255,255,.08),0 1px 0 rgba(255,255,255,.3);
+    -ms-box-shadow: inset 0 1px 0 rgba(255,255,255,.08),0 1px 0 rgba(255,255,255,.3);
+	-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.08),0 1px 0 rgba(255,255,255,.3); /* Firefox 4 */
+	-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.08),0 1px 0 rgba(255,255,255,.3); /* Safari 和 Chrome */
+	-o-box-shadow: inset 0 1px 0 rgba(255,255,255,.08),0 1px 0 rgba(255,255,255,.3); /* Opera */
     text-shadow: 0 -1px 0 rgba(0,0,0,.1);
+    -ms-text-shadow: 0 -1px 0 rgba(0,0,0,.1);
+	-moz-text-shadow: 0 -1px 0 rgba(0,0,0,.1); /* Firefox 4 */
+	-webkit-text-shadow: 0 -1px 0 rgba(0,0,0,.1); /* Safari 和 Chrome */
+	-o-text-shadow: 0 -1px 0 rgba(0,0,0,.1); /* Opera */
     color: #fff;
     border: 1px solid #C90000;
     margin-top: 10px;
@@ -887,6 +895,10 @@
 	background: linear-gradient( #F45D68, #E54646);
     color: #fff;
     box-shadow: inset 0 1px 0 rgba(255,255,255,.08),0 1px 0 rgba(255,255,255,.1);
+    -ms-box-shadow: inset 0 1px 0 rgba(255,255,255,.08),0 1px 0 rgba(255,255,255,.1);
+	-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.08),0 1px 0 rgba(255,255,255,.1); /* Firefox 4 */
+	-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.08),0 1px 0 rgba(255,255,255,.1); /* Safari 和 Chrome */
+	-o-box-shadow: inset 0 1px 0 rgba(255,255,255,.08),0 1px 0 rgba(255,255,255,.1); /* Opera */
     border: 1px solid #C90000;
 }
 
@@ -908,6 +920,10 @@
     -webkit-user-select: none;
     user-select: none;
     text-shadow: 0 1px 0 rgba(255,255,255,.5);
+    -ms-box-shadow: 0 1px 0 rgba(255,255,255,.5);
+	-moz-box-shadow: 0 1px 0 rgba(255,255,255,.5); /* Firefox 4 */
+	-webkit-box-shadow: 0 1px 0 rgba(255,255,255,.5); /* Safari 和 Chrome */
+	-o-box-shadow: 0 1px 0 rgba(255,255,255,.5); /* Opera */
     text-align: center;
     outline: none;
     margin-left: 6px;
@@ -918,6 +934,10 @@
     color: #444;
     background: linear-gradient(#FFF, #F7F7F7);
     box-shadow: inset 0 1px 0 white,0 1px 0 rgba(255,255,255,.05);
+    -ms-box-shadow: inset 0 1px 0 white,0 1px 0 rgba(255,255,255,.05);
+	-moz-box-shadow: inset 0 1px 0 white,0 1px 0 rgba(255,255,255,.05); /* Firefox 4 */
+	-webkit-box-shadow: inset 0 1px 0 white,0 1px 0 rgba(255,255,255,.05); /* Safari 和 Chrome */
+	-o-box-shadow: inset 0 1px 0 white,0 1px 0 rgba(255,255,255,.05); /* Opera */
     border: 1px solid #CCC;
 }
 
@@ -982,6 +1002,10 @@
     border-radius: 3px;
     width: 250px;
     box-shadow: inset 0 1px 2px rgba(0,0,0,.05);
+    -ms-box-shadow: inset 0 1px 2px rgba(0,0,0,.05);
+	-moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.05); /* Firefox 4 */
+	-webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.05); /* Safari 和 Chrome */
+	-o-box-shadow: inset 0 1px 2px rgba(0,0,0,.05); /* Opera */
     font-size: 14px;
     text-indent: .8em;
     
