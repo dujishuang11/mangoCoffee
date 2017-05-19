@@ -2,24 +2,25 @@
 <html>
 	<head>		
 		<meta charset="UTF-8">
-		<title></title>
+		<meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<title>咖芒网</title>
+		<link href="../images/logo.png" rel="shortcut icon"/>
 		<link rel="stylesheet" type="text/css" href="../../node_modules/bootstrap/dist/css/bootstrap.css"/>
 		<link rel="stylesheet" type="text/css" href="../stylesheets/rester.css"/>
 		<link rel="stylesheet" type="text/css" href="../stylesheets/footer.css"/>
 		<link rel="stylesheet" type="text/css" href="../stylesheets/personalSet.css"/>
 		<link rel="stylesheet" href="../stylesheets/nav.css" />
-		<script src="../../node_modules/angular/angular.js"></script>
 		<script src="../../node_modules/jquery/dist/jquery.js"></script>
 		<script src="../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
-		<script src="../javascripts/personalSet.js"></script>	
-		
+		<script src="../javascripts/personalSet.js"></script>
 		<script src="../javascripts/gVerify.js"></script>
 		<script src="../javascripts/layer/layer.js"></script>
-		<script src="../javascripts/jquery-1.8.0.js"></script>
-		<script src="../javascripts/q1.js"></script>
-		<script src="../javascripts/q2.js"></script>
+			
 		
-		
+	<!--[if lt IE 10]>-->
+    <script src="../javascripts/jquery.1.4.4.min.js"></script>
+    <!--<![endif]-->
 	</head>
 	<body>
 		<div id="lxm_nav" class="nav_wrapper nav_bg_a">
@@ -78,7 +79,7 @@
 				</div>
 			</div>
 			<!--<p class="inter">咖芒网</p>-->
-			<div class="login_wrapper" style="opacity: 0; z-index: -1;">
+			<div class="login_wrapper" style="display: none;z-index: 99999;">
 				<div class="login_con">
 					<p>用第三方帐号登录咖芒</p>
 					<i class="glyphicon glyphicon-remove login_remove"></i>
@@ -196,9 +197,13 @@
 				<div class="headImg">
 					<img class="upImg"/>
 				</div>
-				<div class="inputFile">
+				<div class="upFileImg">
+					<div class="inputFile">
 					<input type="file" class="img"/>
-				</div>				
+				</div>	
+					<img src="../images/onImg.png" alt="" />
+				</div>
+							
 			</div>
 			
 			<div class="sex">
@@ -243,10 +248,10 @@
 		<div class="footer">
 			<ul>
 				<li class="fl">
-					<a href="">联系我们 </a>|
-					<a href="">关于我们 </a>|
-					<a href="">咖芒招聘 </a>|
-					<a href="">咖芒新闻</a>
+					<a href="javascript:;">联系我们 </a>|
+					<a href="javascript:;">关于我们 </a>|
+					<a href="recruitList.html">咖芒招聘 </a>|
+					<a href="newList.html">咖芒新闻</a>
 				<li class="fr">Copyright Huaban.com 2016 | 浙B2-20110282 浙ICP备05049240<>
 			</ul>
 		</div>	
