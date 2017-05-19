@@ -1,4 +1,4 @@
-var verifyCode = new GVerify("v_container");
+//var verifyCode = new GVerify("v_container");
 var ip = '47.92.145.129:8000'
 var cc = 'ZGF0YTppbWFnZS9wbmc7YmFzZTY0LGlWQk9SdzBLR2dvQUFBQU5TVWhFVWdBQUFFQUFBQUJBQ0FZQUFBQ3FhWEhlQUFBR3hrbEVRVlI0WHRWYmJWTGNOaGlXMXZtVHNET2xKK2ptSDBUS05Kd2djSUxTRXdST1VIS0N3Z215bkNEYkV4Uk9rT1VFQ1JNcnliOXNUMUFZN09HUGpUclBqdXlSdGZKYWx1UWwxUXd6d0hyMThlajlmTjdYbEF3OEpwUEo5ck5uejE2UFJxTlhVc29KcFhTaWx0dzNscDdqYnlubGdsS0tuL25kM2QzMVlyRzRHWEtMZElqSkdXT3ZDQ0Z2Q0NIN2xGTDg3ajJrbEo4SUlmT3lMTSsvZmZ1MjhKNm81WXZSQU1CTmo4ZmpOMUxLbzlCRHR4MVNnVEhOOC93eWxtUUVBNkFPL2djaDVJUVFzaDM3aGxybWcxcE1zeXc3RHdVaUNBREcyQnRLNlhTREJ6Znh1Q25MOHZqcjE2OFh2c0I3QWJDenN6TjU4dVRKZStpNDc4S1J2emN2aXVMWXgwYjBCbUIzZC9jd1NSSWNmbFBpN29xVmx6VDBBb0F4OW81U0NsMy9ZWWVVY2lxRWVPdTZRV2NBR0dQdkthVkhyaE0vNW5OU3lwa1E0dGhsRDA0QURIVjRLZVUvMkNTbDlCZVh6Zlo1eGhXRVRnQmlIbDVLZVVrSXVjanovTUowWDNDblcxdGJoNFNRUTBycGIzME91eVp1NkpTRXRRQzhlUEZpT2hxTjRPT0RocFR5cjdJc1QxMnROTHhNa2lTbmxGSkVrMEhqNGVIaC9NdVhMNjEycXhVQVplMy9EbHFka0Z2Y2FKcW15emkvNytDY3c4M0N4Ly9VOTd2NjgyVlovdDRXSzFnQlVINytZNGlyVS9wOUtJUkFMTjhZTDErK2ZDMmxiTVFRU0g0K2YvNThaVDZyOG9xTFFEdHhVeFRGbmswQ3JRQnd6ajhFQmptM09LQjVlTTc1bngwaE0wTGMwelJOejNVZ0FBSUFDcFNFZVpxbUJ5YkFLd0F3eHBETUlORHhIcWJJS1FQM3dUVkpRdEtUNS9tQmJpaGpxS1JORlJvQXFNVG1lNGpvRTBLdTBqU3R4VnNkL3FQR0F6Z0JDMTRnei9NOUhRVE9PYVRndGRNRWxvZHNjellBNEp5ZkVrSWdwdDVEU3Jtbml6NWpESWYzNVFRYVlxdU1JdFF6Wkp5bGFZcHpMa2NOUUl6YmwxSmVDeUhxdzhaUUp5bmxzUkJpVm0yWU1mYUpVdnByQUFJM1daWTlyeVNyQm9BeGRrSXBmUmN3TWI3YVFEZnc5cGRiZ1QwUVF1eFYrNG9SbStpZzZnQjg3NnVuRnJBT0twK3ZYQ25zU2ZBb2l1SjU1Y0ppcUlFTzZoSUE1V2JnOTRPR3J2OHhOcXB0cGdZMjFyd1ZxRXNBWW9nVjVrblROTFpLVldyUXNBT2NjeGwwVTRTUUtrU3VKQ0RFVXRkN01RQUlqaWVxaVUzL0hRT0FTZzJvc3Y3L2hpS3FERmJ0QW1PSnF0cFhkQlhBdkZtVy9VeGpSRmhEM2hRaDVEWk4wNXAraStGYWRkdENZd1EvMVlSSWU0VVFOV3ZFR0p1RnByUkR6S2tCY0VZWlk4aTBZaEVRQ3lIRTgycUJHSzVRZDRHWWwzTU9kWTFDeUFKY1NFQlFmRzNhRGt2azVoMWdTU25mQ2lGUWQxaU95T0tQS2E4Z0FURUNvQm9IVzhMaG93cW02UHNtVlIzRy9Rb1NFT3hUTFZLd3dzV3BVQnRKU0JlN0F5N2hSSS8vMWUwUHdrb1BBb0J5aVkzZ0JmOVRwWEp3ZlNBK0cwd3dHQ1JLNlN6THNxbEptQTRnK3ZXZERRWkFHd2k2dEtoWUFSRmtLMmZJT1FjcFc5dUJHUEdLUHNlZ0FDZ1FHb2FzendFaVphaHJsNFFSUkRkRzlNSUVMS3ppOTd3WTRXclhTa3BnTzd5Wm9EVUlMSTFnVkRlSXlNMW14R3liQUR1TS85dllZUFA1SGthMGo1QXQzV0RNUU9pNkxNdERHLzJzZ2lJRVhPQUxVUUd5RGRRQVVPcStiSnNqU1JMc040UVIwbDMyTWhBSzVnR1ZybC9uZWI1dkszbU54Mk1Zc3BxSGM3eWlVMXNIaUlvSDVwRkFPSXVTRElFTHRCMCtRaStCdGVZZkVZU0RHT253YlpabEUvUG1WUkdrNzYyM0NRZUtKV2Y2aHlxTlI5ZFlWMkRWS25ETGRGaEZXU0ZNYTUycmE1WTdpbG9aTzI4UXJ2Z3NoSE9vR093Z1NnemxiaUZFdzZBTkdiV1ppWmE2UEM4amJsSmlxTDMxSmtYTlZEVkcrdHRsSUdPdFdSRzRPb25aS3lBeXN6VWxrcUZGMWE3ejQvT1ZJbWZmYkZNdjRIaXp1SllTV0RRU3RBc0ZVeFg2MmdLZFp6QkxZNjVXdGNIVGJmRDJLMnhXcElCemp0SzZpMGRvZUMydjRxaUZwL095SVYwM3ZlNXoweGIwaUdqdHhWRXMxc08zTmlhSkZVMzJCTVJuRHlzeGkyK0RSTVAzRDVCUXVXRFI2RU53b2ZkdGJyU3RSYVlyUXpRQmlFNnJ1U0NnVjZJY0RHRURzR3IrZFUxU2FHNnlHaFhkaW02Q3RHZ0RRMitHN0dqanZTMks0cFZ6a3hRV2RCRXBsMXY2RVo3cDNTWlhiVHBXMWZneFFmQnVsS3cyM1RmS2VzekRtbXZib2xYem1jNWU0WkNFNHpIQmNEazg5dWNFZ0FJaHVOQzVLVUJjRDk4TEFEejhmN0FKWFRydnBRTDZsNVIzUU51YVM5eTlxVXZIT3JkbFdSNzFmWUhLV1FYMGs2aThIeUFNd2RYN2dIWlZGTVdSYXp1K3ZvQVhBSnFIUUFxTXN0VmpTWU56RGFJTjFTQUF0QVFLTHlUZ1oxTkE0RDBFdkRpNVVranRLejdCQUZRTEtxb2E3VEZvaUJpaTFJYXUwV3RDeUN6UDgxbm9HNk5yYzRHK0tKclBvL0ZTdlVPTWw2ZURxamc0dEpRU2hSRDBIS3k4ZkJHNjEyZ1MwTFlSU01iVHAwLzNreVFCS0NCT3R0VnI5TGIrZ0VYMStueFpscC91NysvbnNXNjZiWC8vQWEyTU5FdUFVRVhQQUFBQUFFbEZUa1N1UW1DQw=='
 
@@ -6,26 +6,29 @@ var cc = 'ZGF0YTppbWFnZS9wbmc7YmFzZTY0LGlWQk9SdzBLR2dvQUFBQU5TVWhFVWdBQUFFQUFBQU
 
 
 var code;
+function createCode() {
+	//首先默认code为空字符串
+	code = '';
+	//设置长度，这里看需求，我这里设置了4
+	var codeLength = 4;
+	var codeV = document.getElementById('lxm_said');
+	//设置随机字符
+	var random = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z');
+	//循环codeLength 我设置的4就是循环4次
+	for(var i = 0; i < codeLength; i++) {
+		//设置随机数范围,这设置为0 ~ 36
+		var index = Math.floor(Math.random() * 36);
+		//字符串拼接 将每次随机的字符 进行拼接
+		code += random[index];
+	}
+	//将拼接好的字符串赋值给展示的Value
+	codeV.innerHTML = code;
+}
+createCode()
 
-		function createCode() {
-			//首先默认code为空字符串
-			code = '';
-			//设置长度，这里看需求，我这里设置了4
-			var codeLength = 4;
-			var codeV = document.getElementById('v_container');
-			//设置随机字符
-			var random = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z');
-			//循环codeLength 我设置的4就是循环4次
-			for(var i = 0; i < codeLength; i++) {
-				//设置随机数范围,这设置为0 ~ 36
-				var index = Math.floor(Math.random() * 36);
-				//字符串拼接 将每次随机的字符 进行拼接
-				code += random[index];
-			}
-			//将拼接好的字符串赋值给展示的Value
-			codeV.value = code;
-		}
-
+$('#lxm_said').click(function(){
+	createCode()	
+})
 
 if(-[1,]){
 	console.log("这不是IE浏览器！"); 
@@ -312,7 +315,8 @@ var phone = /(^0{0,1}1[3|4|5|6|7|8|9][0-9]{9}$)/; //手机号
 var email = /^[_\.0-9a-z-]+@([0-9a-z][0-9a-z-]+\.){1,4}[a-z]{2,3}$/; //邮箱
 
 $('.lxm_login_one').click(function(){
-	var lxm_yzm = verifyCode.validate($('.lxm_login_one_yzm').val());
+	console.log(code)
+//	var lxm_yzm = code($('.lxm_login_one_yzm').val());
 	if($('.lxm_login_one_user').val() == ''){
 		layer.msg('请输入邮箱');
 	}else if(!email.test($('.lxm_login_one_user').val())){
@@ -324,8 +328,9 @@ $('.lxm_login_one').click(function(){
 	}else if($('.lxm_login_one_yzm').val() == ''){
 		layer.msg('请输入验证码');
 	}else{
-		if(!lxm_yzm){
+		if($('.lxm_login_one_yzm').val().toUpperCase() != code){
 			layer.msg('验证码错误，请重新输入');
+			createCode()
 			$('.lxm_login_one_yzm').val('')
 		}else{
 			$.ajax({
@@ -376,6 +381,8 @@ $('.lxm_login_one').click(function(){
 						
 					}else if(e.num == 2){
 						layer.msg('密码错误');
+						createCode()
+						$('.lxm_login_one_yzm').val('')
 						$('.lxm_login_one_pass').val('')
 					}else if(e.num == 3){
 						layer.msg('账号不存在');
