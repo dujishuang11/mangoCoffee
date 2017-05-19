@@ -221,6 +221,8 @@ $('.resgister_list').click(function(){
 	}else if(!email.test($('.lxm_resgister_num').val())){
 		layer.msg('请输入正确的邮箱号');
 	}else{
+		$('.resgister_pass').val('')
+		$('.resgister_pass_agin').val('')
 		$('.resgister').css('display','block')
 		$('.lxm_my_num').text($('.lxm_resgister_num').val())
 	}
@@ -255,14 +257,13 @@ $('.register_sub').click(function(){
 						if(e.num == '成功'){
 							layer.msg('注册成功');
 							sessionStorage.userId = e.xinxi[0].uid
-							
 							if(e.xinxi[0].images == '1.jpg'){
 								$('.user img').attr('src',$.base64.atob(cc))
 							}else{
 								$('.user img').attr('src',$.base64.atob(e[0].images))
 							}
-							$('.login_wrapper').css('opacity','0')
-							$('.login_wrapper').css('z-index','-1')
+							$('.login_wrapper').css('display','none')
+							$('.register').css('display','none')
 							$('.login').css('display','none')
 							$('.res').css('display','none')
 							$('.user').css('display','block')				
@@ -299,6 +300,7 @@ $('.login').click(function(){
 //	$('.login_wrapper').css('opacity','1')
 //	$('.login_wrapper').css('z-index','9999')
 	$('.login_wrapper').css('display','block')
+	$('.resgister').css('display','none')
 	if($('.resgister_now').text() == '立即登录'){
 		$('.resgister_now').click()*2
 	}
@@ -309,6 +311,8 @@ $('.res').click(function(){
 //	$('.login_wrapper').css('z-index','9999')
 	$('.login_wrapper').css('display','block')
 	$('.resgister_now').click()
+	$('.resgister').css('display','none')
+	$('.lxm_resgister_num').val('')
 })
 
 $('.lxm_login_two').click(function(){
