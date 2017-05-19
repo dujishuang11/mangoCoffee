@@ -7,7 +7,7 @@ window.addEventListener('load', function() {
 			url: ""+ip+"/djsList/issueList",
 			async: true,
 			data: {
-				uid:sessionStorage.userId
+				uid:sessionStorage.uid
 			},
 			success: function(data) {
 				console.log(data)
@@ -19,6 +19,7 @@ window.addEventListener('load', function() {
 					fbTxt+='<div class="zhj_Modular"><div class="zhj_ModularImg"><img src="'+$.base64.atob(data.data[i].cover)+'" alt="" /></div><div class="zhj_Title">'+data.data[i].tradename+'</div><div class="zhj_price">'+data.data[i].pricing+'</div></div>'
 				}
 				$(".allFB").append(fbTxt);
+				$(".allFB").append('<a href="publishProject.html"><div class="zhj_jiajia"><img src="../images/onImg.png" alt="" /></div></a>');
 				}		
 		  }		
 		})
@@ -59,7 +60,7 @@ window.addEventListener('load', function() {
 			url: ""+ip+"/djsList/issueList",
 			async: true,
 			data: {
-				uid: sessionStorage.userId
+				uid:sessionStorage.uid
 			},
 			success: function(data) {
 				$(".allFB").children().remove();
@@ -68,7 +69,7 @@ window.addEventListener('load', function() {
 				if(data.success=="查无数据"){
 					return
 				}else{
-					for(var i=0;i<data.data.length;i++){
+				  for(var i=0;i<data.data.length;i++){
 					fbTxt+='<div class="zhj_Modular"><div class="zhj_ModularImg"><img src="'+$.base64.atob(data.data[i].cover)+'" alt="" /></div><div class="zhj_Title">'+data.data[i].tradename+'</div><div class="zhj_price">'+data.data[i].pricing+'</div></div>'
 				}
 				$(".allFB").append(fbTxt);
@@ -394,6 +395,28 @@ $(".qianb").click(function(){
 		   }
 		})
 	})
+	
+	
+	$(".zhj_personReset").click(function(){
+		location.href="personalSet.html"
+	})
+	
+	$(".zhj_personShop").click(function(){
+		location.href="personalShop.html"
+	})
+	
+	$(".zhj_shop").click(function(){
+		location.href="personalShop.html"
+	})
+	
+	$(".zhj_reset").click(function(){
+		location.href="personalSet.html"
+	})
+	
+	
+	
+	
+	
 	
 	
 }, false);
