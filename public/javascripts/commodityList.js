@@ -1,4 +1,66 @@
 window.addEventListener('load', function() {
+	var fenlei = location.href.split('?');
+	
+	if(fenlei == 1){
+		mainclass = '商标设计注册';
+//		$('.djs-navTop ul li').eq(fenlei+1).addClass("color")
+		zilei(fenlei)
+		obtainList(mainclass, subclass)
+	}else if(fenlei == 2){
+		mainclass = 'CI系统设计';
+		zilei(fenlei)
+		obtainList(mainclass, subclass)
+	}else if(fenlei == 3){
+		mainclass = '包装设计';
+		zilei(fenlei)
+		obtainList(mainclass, subclass)
+	}else if(fenlei == 4){
+		mainclass = '工业产品设计';
+		zilei(fenlei)
+		obtainList(mainclass, subclass)
+	}else if(fenlei == 5){
+		mainclass = '商业展示设计';
+		zilei(fenlei)
+		obtainList(mainclass, subclass)
+	}else if(fenlei == 6){
+		mainclass = '平面设计';
+		zilei(fenlei)
+		obtainList(mainclass, subclass)
+	}else if(fenlei == 7){
+		mainclass = '摄影';
+		zilei(fenlei)
+		obtainList(mainclass, subclass)
+	}else if(fenlei == 8){
+		mainclass = '字画手绘';
+		zilei(fenlei)
+		obtainList(mainclass, subclass)
+	}else if(fenlei == 9){
+		mainclass = '营销策划';
+		zilei(fenlei)
+		obtainList(mainclass, subclass)
+	}else if(fenlei == 10){
+		mainclass = '文案';
+		zilei(fenlei)
+		obtainList(mainclass, subclass)
+	}else if(fenlei == 11){
+		mainclass = 'UI设计';
+		zilei(fenlei)
+		obtainList(mainclass, subclass)
+	}else if(fenlei == 12){
+		mainclass = 'H5网站开发';
+		zilei(fenlei)
+		obtainList(mainclass, subclass)
+	}else if(fenlei == 13){
+		mainclass = 'APP开发';
+		zilei(fenlei)
+		obtainList(mainclass, subclass)
+	}else {
+		quan()
+	}
+	
+	
+	
+	
 	//导航
 	var mainclass = '',
 		subclass = '';
@@ -14,7 +76,7 @@ window.addEventListener('load', function() {
 				html += '<li index="' + data[i].uid + '">' + data[i].names + '</li>'
 			}
 			$('.djs-navTop ul').append(html)
-			$('.djs-navTop ul li:nth-child(1)').addClass("color");
+//			$('.djs-navTop ul li:nth-child(1)').addClass("color");
 		}
 	});
 
@@ -34,6 +96,10 @@ window.addEventListener('load', function() {
 		} else {
 			quan()
 		}
+		zilei(id)
+	})
+	
+	function zilei(id){
 		$.ajax({
 			type: "post",
 			url: "http://47.92.145.129:8000/users/nav2",
@@ -56,7 +122,7 @@ window.addEventListener('load', function() {
 
 			}
 		});
-	})
+	}
 
 	$('.djs-navBottom ul').delegate('li', 'mouseover', function() {
 		$(this).css('color', '#EA5813');
@@ -81,7 +147,7 @@ window.addEventListener('load', function() {
 	var arrList;
 	var len;
 
-	quan()
+	
 
 	function quan() {
 		$.ajax({
