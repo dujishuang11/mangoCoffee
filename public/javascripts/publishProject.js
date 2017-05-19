@@ -1,7 +1,7 @@
 window.addEventListener('load',function(){
 	//点击获取封面
 	$('.lhq_pP_img').on('click',function(){
-		console.log('1234th')
+//		console.log('1234th')
 		$('.lhq_fff').click();
 	})
 	
