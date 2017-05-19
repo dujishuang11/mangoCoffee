@@ -36,8 +36,6 @@
 	margin-left:30px;
 	background: url(../images/hhou.png) no-repeat;
 	background-size: 100% 100%;
-	/*border:1px solid #E3E3E3;*/
-	
 }
 
 .yu_imghead{
@@ -68,6 +66,17 @@
 .yu_ontpbt{
 	width:90px;
 	height:35px;
+}
+.cron_yu{
+	font-size: 14px;
+	color:orangered;
+	width:170px;
+	height:40px;
+	line-height: 40px;
+	position: absolute;
+	top:36px;
+	left:-6px;
+	/*background: dodgerblue;*/
 }
 /*yu_line11*/
 .yu_teamm{

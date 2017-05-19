@@ -2,7 +2,10 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<title>咖芒网</title>
+		<link href="../images/logo.png" rel="shortcut icon"/>
 		<link rel="stylesheet" type="text/css" href="../../node_modules/bootstrap/dist/css/bootstrap.css"/>
 		<link rel="stylesheet" type="text/css" href="../stylesheets/rester.css"/>
 		<link rel="stylesheet" type="text/css" href="../stylesheets/footer.css"/>
@@ -11,12 +14,10 @@
 		<script src="../../node_modules/jquery/dist/jquery.js"></script>
 		<script src="../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
 		<script src="../javascripts/enterprisesShop.js"></script>
-		
-		<script src="../javascripts/layer/layer.js"></script>
 		<script src="../javascripts/gVerify.js"></script>
-		<script src="../javascripts/jquery-1.8.0.js"></script>
+		<script src="../javascripts/layer/layer.js"></script>
 		<!--[if lt IE 10]-->
-    	<script src="../javascripts/jquery.1.4.4.min.js"></script>
+    	<!--<script src="../javascripts/jquery.1.4.4.min.js"></script>-->
     	<!--[endif]-->
 		
 	</head>
@@ -188,6 +189,7 @@
 					<div class="yu_ontp fl cur">
 						<input class="on_tpfil cur" type="file" id="headfile">
 						<input type="button" value="上传头像" class="btn btn-info yu_ontpbt cur"/>
+						<div class="cron_yu">(*图片大小不大于150kb)</div>
 					</div>
 					<!--<div class="yu_teamphoto fl">
 						<img src="../images/hhou.png" class="yu_imghead" alt="" />
@@ -219,7 +221,7 @@
 					</div>
 				</div>
 				<div class="yu_idnum">
-					<lable>企业营业执照：&nbsp;</lable>
+					<lable>企业营业执照&nbsp;<span style="color:orangered; font-size: 14px;">(*每张图片大小不大于100kb)</span>：&nbsp;</lable>
 					<div class="yu_idzhengs fl cur">
 						<input type="file" class="yu_sfzzheng cur" id="sfzzfile" />
 						<img src="" alt="" class="imgsfz cur" />
