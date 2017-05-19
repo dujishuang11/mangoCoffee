@@ -2,17 +2,22 @@
 <html>
 	<head>		
 		<meta charset="UTF-8">
-		<title></title>
+		<meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<title>咖芒网</title>
+		<link href="../images/logo.png" rel="shortcut icon"/>
 		<link rel="stylesheet" type="text/css" href="../../node_modules/bootstrap/dist/css/bootstrap.css"/>
 		<link rel="stylesheet" type="text/css" href="../stylesheets/rester.css"/>
 		<link rel="stylesheet" type="text/css" href="../stylesheets/footer.css"/>
 		<link rel="stylesheet" type="text/css" href="../stylesheets/personalSet.css"/>
 		<link rel="stylesheet" href="../stylesheets/nav.css" />
-		<script src="../../node_modules/angular/angular.js"></script>
 		<script src="../../node_modules/jquery/dist/jquery.js"></script>
 		<script src="../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
 		<script src="../javascripts/personalSet.js"></script>	
 		
+	<!--[if lt IE 10]>-->
+    <script src="../javascripts/jquery.1.4.4.min.js"></script>
+    <!--<![endif]-->
 		<script src="../javascripts/gVerify.js"></script>
 		<script src="../javascripts/layer/layer.js"></script>
 		<script src="../javascripts/jquery-1.8.0.js"></script>
@@ -196,9 +201,13 @@
 				<div class="headImg">
 					<img class="upImg"/>
 				</div>
-				<div class="inputFile">
+				<div class="upFileImg">
+					<div class="inputFile">
 					<input type="file" class="img"/>
-				</div>				
+				</div>	
+					<img src="../images/onImg.png" alt="" />
+				</div>
+							
 			</div>
 			
 			<div class="sex">
