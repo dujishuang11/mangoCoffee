@@ -15,9 +15,10 @@ window.addEventListener('load', function() {
 			success: function(data) {
 				console.log(data)
 				uid = data.data[0].uid;
+//				var img = data.data[0].content.split('+')
 				$('.djs-returnTitle').text(data.data[0].mainclass)
 				$('.djs-content>p').text(data.data[0].tradename)
-				$('.djs-Content').text(data.data[0].content)
+				$('.djs-Content').html(data.data[0].content)
 				$('.djs-price>p').text(data.data[0].pricing)
 				personalData(uid)
 				reputation(uid)

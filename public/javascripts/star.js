@@ -34,56 +34,13 @@ window.addEventListener('load', function() {
 		} else {
 			quan()
 		}
-		//		$.ajax({
-		//			type: "post",
-		//			url: "http://47.92.145.129:8000/users/nav2",
-		//			async: true,
-		//			data: {
-		//				uid: id
-		//			},
-		//			success: function(data) {
-		//				//				console.log(data)
-		//				if(data.length > 0) {
-		//					$('.djs-navBottom').css('display', 'block')
-		//					$('.djs-navBottom ul li').remove()
-		//					var html = ''
-		//					for(var i = 0; i < data.length; i++) {
-		//						html += '<li>' + data[i].names + '</li>'
-		//					}
-		//					$('.djs-navBottom ul').append(html)
-		//				} else {
-		//					$('.djs-navBottom').css('display', 'none')
-		//				}
-		//
-		//			}
-		//		});
 	})
-
-	//	$('.djs-navBottom ul').delegate('li', 'mouseover', function() {
-	//		$(this).css('color', '#EA5813');
-	//	})
-	//	$('.djs-navBottom ul').delegate('li', 'mouseout', function() {
-	//		$(this).css('color', '#555555');
-	//	})
-	//
-	//	$('.djs-navBottom ul').delegate('li', 'click', function() {
-	//		$(this).addClass("color").siblings().removeClass('color');
-	//		subclass = $(this).text();
-	//		obtainList(mainclass)
-	//	})
 
 	$('.djs-px li:nth-child(1)').mouseover(function() {
 		$('.djs-px li:nth-child(1) ul').css("display", "block")
 	})
 	$('.djs-px li:nth-child(1)').mouseout(function() {
 		$('.djs-px li:nth-child(1) ul').css("display", "none")
-	})
-
-	$('.djs-list ul').delegate('.djs-List', 'mouseover', function() {
-		$(this).css("box-shadow", "0 3px 2px 2px #E9E9E9").css("transform", "translateY(-3px)");
-	})
-	$('.djs-list ul').delegate('.djs-List', 'mouseout', function() {
-		$(this).css("box-shadow", "none").css("transform", "translateY(0)");
 	})
 
 	var arrList;
@@ -143,7 +100,7 @@ window.addEventListener('load', function() {
 
 	function djsList(i, data) {
 		console.log(i, data)
-		$('.djs-list>ul').append('<li class="djs-List"><a href="personalSet.html?' + arrList[i].Applicant + '"><div class = "djs-top"><img src = "' + $.base64.atob(arrList[i].portrait) + '" alt = ""/><div class = "djs-text fl"><p class = "djs-name">' + arrList[i].shopName + '</p><div><span class = "djs-num">' + data + '</span><span>个设计服务 </span></div><ul class="djs-category"></ul></div></div><div class = "djs-bottom">' + arrList[i].briefIntroduction + '</div></a></li>');
+		$('.djs-list>ul').append('<li class="djs-List"><a href="personalData.html?' + arrList[i].Applicant + '"><div class = "djs-top"><img src = "' + $.base64.atob(arrList[i].portrait) + '" alt = ""/><div class = "djs-text fl"><p class = "djs-name">' + arrList[i].shopName + '</p><div><span class = "djs-num">' + data + '</span><span>个设计服务 </span></div><ul class="djs-category"></ul></div></div><div class = "djs-bottom">' + arrList[i].briefIntroduction + '</div></a></li>');
 		var shopType = arrList[i].shopType.split(",")
 		for(var j = 0; j < shopType.length; j++) {
 			$(".djs-category").eq(i).append("<li>" + shopType[j] + "</li>")

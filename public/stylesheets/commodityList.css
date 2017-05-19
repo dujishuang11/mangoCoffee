@@ -85,6 +85,18 @@
 	background: white;
 	float: left;
 	transition: .3s;
+	-ms-transition: .3s;/*IE*/
+	-moz-transition: .3s; /* Firefox 4 */
+	-webkit-transition: .3s; /* Safari 和 Chrome */
+	-o-transition: .3s; /* Opera */
+}
+.djs-list ul li:hover {
+	box-shadow: 0 3px 2px 2px #E9E9E9;
+	transform: translateY(-3px);
+	-ms-transform: translateY(-3px);/*IE*/
+	-moz-transform: translateY(-3px); /* Firefox 4 */
+	-webkit-transform: translateY(-3px); /* Safari 和 Chrome */
+	-o-transform: translateY(-3px); /* Opera */
 }
 .djs-list ul li a {
 	width: 100%;

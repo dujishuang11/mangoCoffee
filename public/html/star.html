@@ -2,17 +2,27 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<title>咖芒网</title>
+		<link href="../images/logo.png" rel="shortcut icon"/>
 		<link rel="stylesheet" type="text/css" href="../../node_modules/bootstrap/dist/css/bootstrap.css"/>
 		<link rel="stylesheet" type="text/css" href="../stylesheets/rester.css"/>
 		<link rel="stylesheet" type="text/css" href="../stylesheets/footer.css"/>
 		<link rel="stylesheet" type="text/css" href="../stylesheets/star.css"/>
 		<link rel="stylesheet" type="text/css" href="../stylesheets/nav.css"/>
 		<link rel="stylesheet" type="text/css" href="../stylesheets/fenye.css"/>
-		<script src="../../node_modules/angular/angular.js"></script>
 		<script src="../../node_modules/jquery/dist/jquery.js"></script>
 		<script src="../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
 		<script src="../javascripts/star.js"></script>
+		
+		<!--[if lt IE 10]-->
+    	<script src="../javascripts/jquery.1.4.4.min.js"></script>
+    	<!--[endif]-->
+    	
+    	<!--[if lt IE 10]>
+    	<script src="static/js/jquery-1.4.4.min.js"></script>
+   		<![endif]-->
 	</head>
 	<body>
 		<div id="lxm_nav" class="nav_wrapper nav_bg_a">
@@ -22,8 +32,8 @@
 					</div>
 					<div class="nav_list">
 						<ul class="nav_color_a">
-							<li class="nav_one"><a href="#">首页</a></li>
-							<li class="nav_one">
+							<li class="nav_one"><a class="lxm_first_nav" href="#">首页</a></li>
+							<li class="nav_one lxm_nav_first">
 								<a href="#">设计服务</a><i class="glyphicon glyphicon-triangle-bottom"></i>
 								<div class="nav_hide">
 									<ul class="nav_hide_list">
@@ -44,7 +54,7 @@
 									<div class="nav_title"></div>
 								</div>
 							</li>
-							<li class="nav_one lxm_shejishi lxm_nav_first"><a href="#">设计师</a></li>
+							<li class="nav_one lxm_shejishi"><a href="#">设计师</a></li>
 						</ul>
 					</div>
 					<div class="nav_right">
@@ -96,7 +106,7 @@
 							<input class="lxm_login_one_user" type="text" placeholder="输入邮箱号" />
 							<input class="lxm_login_one_pass" type="password" placeholder="密码" />
 							<div class="login_yzm">
-								<div class="yzm_pic" id="v_container" style="width: 100px;height: 50px;"></div>
+								<div class="yzm_pic" id="lxm_said" style="width: 100px;height: 50px; text-align: center; line-height: 50px; background: url(../images/login_yanzheng.jpg) no-repeat;background-size: cover;font-size: 20px;letter-spacing: 3px;"></div> 
 								<input class="lxm_login_one_yzm" type="text" placeholder="请输入验证码" />
 							</div>
 							<button class="lxm_login_one">登录</button>

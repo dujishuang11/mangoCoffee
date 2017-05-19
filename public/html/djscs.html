@@ -50,7 +50,8 @@
 				}
 
 			})
-
+			
+			var packageSrc = '';
 			$('.button').change(function() {
 				file = this.files[0];
 				console.log(file)
@@ -68,9 +69,9 @@
 						processData: false,
 						success: function(data) {
 							console.log(data)
-							if(data.fName) {
-								packageSrc = "../images/listImages/" + data.fName;
-							}
+//							if(data.fName) {
+//								packageSrc = "../images/listImages/" + data.fName;
+//							}
 						}
 					})
 				}
@@ -83,13 +84,13 @@
 					type: "post",
 					data: {
 						cover: imgSrc,
-						tradename: "艺术摄影",
-						mainclass: "摄影",
-						subclass: "艺术摄影",
+						tradename: "商标",
+						mainclass: "商标设计注册",
+						subclass: "商标注册",
 						content: "ertyuiodfghjklcvbnm,fghjkrtyui",
 						pricing: "￥100/张",
-						uid: 10,
-						salas: 100,
+						uid: 2,
+						salas: 3000,
 						package: packageSrc,
 						original:1
 					},
