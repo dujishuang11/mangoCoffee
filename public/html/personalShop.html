@@ -9,20 +9,12 @@
 		<link rel="stylesheet" type="text/css" href="../stylesheets/nav.css"/>
 		<link rel="stylesheet" type="text/css" href="../stylesheets/bootstrap-select.css"/>
 		<link rel="stylesheet" type="text/css" href="../../node_modules/bootstrap/dist/css/bootstrap.css"/>
-		<script src="../../node_modules/angular/angular.js"></script>
 		<script src="../../node_modules/jquery/dist/jquery.js"></script>
-		
 		<script src="../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
-		
 		<script src="../javascripts/personalShop.js"></script>
-		
 		<script src="../javascripts/gVerify.js"></script>
 		<script src="../javascripts/layer/layer.js"></script>
 		<script src="../javascripts/jquery-1.8.0.js"></script>
-		
-		
-		<script src="../javascripts/q1.js"></script>
-		<script src="../javascripts/q2.js"></script>
 		<script src="../javascripts/bootstrap-select.js"></script>
 		<script src="../javascripts/jquery.base64.js"></script>
 	</head>
@@ -83,7 +75,7 @@
 				</div>
 			</div>
 			<!--<p class="inter">咖芒网</p>-->
-			<div class="login_wrapper" style="opacity: 0; z-index: -1;">
+			<div class="login_wrapper" style="display: none;z-index: 99999;">
 				<div class="login_con">
 					<p>用第三方帐号登录咖芒</p>
 					<i class="glyphicon glyphicon-remove login_remove qwe"></i>
@@ -179,9 +171,9 @@
 				</div>
 			</div>
 		
-		<div class="wyh_content">
+		<div class="wyh_content" style="background: #FAFAFA; margin-top:0;">
 			<!--内容-->
-			<div class="wyh_body">
+			<div class="wyh_body" >
 				<div class="yu_muse">
 					<img src="../images/logo.png" alt="" />
 					<h1>申请入驻咖芒</h1>
@@ -350,7 +342,7 @@
 							<div class="yu_rekuangq">
 								<input type="checkbox" name="Pages" value="Jobq" id="Jobq" >
 								<label for="Jobq" class="yu_labq cur" id="yu_labq">我保证作品的原创性，上传的图片没有法律纠纷，我对因虚假资料或图片版权引起的法律纠纷负全部责任。</label>
-								<a href="Agreement.html" class="xieyi">详情查看《用户服务协议》</a>
+								<a href="Agreement.html" class="xieyi" target="_blank">详情查看《用户服务协议》</a>
 							</div>
 							<div class="button_uq">
 								<button class="btn btn-danger yu-submitq" id="yu-submitq" disabled="disabled">提交审核</button>

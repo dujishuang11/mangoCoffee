@@ -8,7 +8,6 @@
 		<link rel="stylesheet" type="text/css" href="../stylesheets/footer.css"/>
 		<link rel="stylesheet" type="text/css" href="../stylesheets/enterprisesShop.css"/>
 		<link rel="stylesheet" type="text/css" href="../stylesheets/nav.css"/>
-		<script src="../../node_modules/angular/angular.js"></script>
 		<script src="../../node_modules/jquery/dist/jquery.js"></script>
 		<script src="../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
 		<script src="../javascripts/enterprisesShop.js"></script>
@@ -77,7 +76,7 @@
 				</div>
 			</div>
 			<!--<p class="inter">咖芒网</p>-->
-			<div class="login_wrapper" style="opacity: 0; z-index: -1;">
+			<div class="login_wrapper" style="display: none;z-index: 99999;">
 				<div class="login_con">
 					<p>用第三方帐号登录咖芒</p>
 					<i class="glyphicon glyphicon-remove login_remove"></i>
@@ -246,7 +245,7 @@
 					<input type="checkbox" name="Pages" value="Job" id="Job">
 					<label for="Job" class="yu_lab cur" id="yu_lab">我保证作品的原创性，上传的图片没有法律纠纷，我对因虚假资料或图片版权引起的法律纠纷负全部责任。</label>
 					
-					<a href="Agreement.html" class="xieyi fr">详情查看《用户服务协议》</a>
+					<a href="Agreement.html" class="xieyi fr" target="_blank">详情查看《用户服务协议》</a>
 				</div>
 				<div class="button_u">
 					<button class="btn btn-danger yu-submit" id="yu-submit" disabled="disabled">提交审核</button>
