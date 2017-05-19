@@ -1,6 +1,46 @@
 window.addEventListener('load', function() {
 	var ip = "http://47.92.145.129:8000"   //ip地址
+
+   var uid = location.href.split('?')[1]
+	function img(){
+		$.ajax({
+			type: "post",
+			url: ""+ip+"/users/gerenaing",
+			async: true,
+			data: {
+				uid:uid
+			},
+			success: function(data) {
+				console.log(data);
+				$(".zhj_personTopName").text(data[0].name);
+				$(".upImg").attr('src',$.base64.atob(data[0].images))
+			}
+		})
 	
+	}
+	function imgben(){
+		$.ajax({
+			type: "post",
+			url: ""+ip+"/users/gerenaing",
+			async: true,
+			data: {
+				uid:sessionStorage.uid
+			},
+			success: function(data) {
+				console.log(data);
+				$(".zhj_personTopName").text(data[0].name);
+				$(".upImg").attr('src',$.base64.atob(data[0].images))
+			}
+		})
+	
+	}
+    if(uid){
+    	img()
+    }else{
+    	imgben();
+    }
+
+
 // 初始我的发布
      $.ajax({
 			type: "get",
