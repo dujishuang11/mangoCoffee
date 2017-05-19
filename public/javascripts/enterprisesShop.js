@@ -59,25 +59,29 @@ window.addEventListener("load",function(){
 		else{
 			console.log("审核通过")
 			//申请入驻表
-			$.ajax({
-				type:"post",
-				url:"http://"+aip+"/qenter/enterprise",
-				async:true,
-				data:{
-					CorporateHead: imgSrcheader,//企业头像
-					CompanyName:qnameVal,   //：企业名称
-					CompanyAddress:qadsVal,  //：地址
-					CompanyLeader: qpeonameVal , //：企业负责人
-					CompanyInformation:qtelVal,   //：联系方式
-					CompanyKey: "", //：企业密钥
-					CompanyWork:imgSrczheng,   //：企业营业执行照
-					CompanyAudit:"",   //：企业审核
-					nameuid:"1"  //登录人uid
-				},
-				success:function(data){
-					console.log(data)
-				}
-			});
+			if(!sessionStorage.userId){
+	    		alert('请先登录')
+	    	}else{
+				$.ajax({
+					type:"post",
+					url:"http://"+aip+"/qenter/enterprise",
+					async:true,
+					data:{
+						CorporateHead: imgSrcheader,//企业头像
+						CompanyName:qnameVal,   //：企业名称
+						CompanyAddress:qadsVal,  //：地址
+						CompanyLeader: qpeonameVal , //：企业负责人
+						CompanyInformation:qtelVal,   //：联系方式
+						CompanyKey: "", //：企业密钥
+						CompanyWork:imgSrczheng,   //：企业营业执行照
+						CompanyAudit:"",   //：企业审核
+						nameuid:"1"  //登录人uid
+					},
+					success:function(data){
+						console.log(data)
+					}
+				});
+			}
 		}
 		
 		

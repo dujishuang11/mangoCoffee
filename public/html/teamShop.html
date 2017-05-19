@@ -8,7 +8,6 @@
 		<link rel="stylesheet" type="text/css" href="../stylesheets/footer.css"/>
 		<link rel="stylesheet" type="text/css" href="../stylesheets/teamShop.css"/>
 		<link rel="stylesheet" type="text/css" href="../stylesheets/nav.css"/>
-		<script src="../../node_modules/angular/angular.js"></script>
 		<script src="../../node_modules/jquery/dist/jquery.js"></script>
 		<script src="../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
 		<script src="../javascripts/teamShop.js"></script>
@@ -16,8 +15,8 @@
 		<script src="../javascripts/layer/layer.js"></script>
 		<script src="../javascripts/gVerify.js"></script>
 		<script src="../javascripts/jquery-1.8.0.js"></script>
-		<script src="../javascripts/q1.js"></script>
-		<script src="../javascripts/q2.js"></script>
+		<!--<script src="../javascripts/q1.js"></script>
+		<script src="../javascripts/q2.js"></script>-->
 		
 		
 		
@@ -79,7 +78,7 @@
 				</div>
 			</div>
 			<!--<p class="inter">咖芒网</p>-->
-			<div class="login_wrapper" style="opacity: 0; z-index: -1;">
+			<div class="login_wrapper" style="display: none;z-index: 99999;">
 				<div class="login_con">
 					<p>用第三方帐号登录咖芒</p>
 					<i class="glyphicon glyphicon-remove login_remove"></i>
@@ -104,7 +103,8 @@
 							<input class="lxm_login_one_user" type="text" placeholder="输入邮箱号" />
 							<input class="lxm_login_one_pass" type="password" placeholder="密码" />
 							<div class="login_yzm">
-								<div class="yzm_pic" id="v_container" style="width: 100px;height: 50px;"></div>
+								
+<div class="yzm_pic" id="lxm_said" style="width: 100px;height: 50px; text-align: center; line-height: 50px; background: url(../images/login_yanzheng.jpg) no-repeat;background-size: cover;font-size: 20px;letter-spacing: 3px;"></div> 
 								<input class="lxm_login_one_yzm" type="text" placeholder="请输入验证码" />
 							</div>
 							<button class="lxm_login_one">登录</button>
@@ -216,33 +216,24 @@
 					<input name="name" type="text" class="yu_teamname" id="shenfid" placeholder="请填写真实有效的证件号" />
 				</div>
 				<div class="yu_idnum">
-					<lable>团队负责人身份证照片&nbsp;</lable>
+					<lable>团队负责人身份证照片：&nbsp;</lable>
 					<div class="yu_idzhengs fl cur">
 						<input type="file" class="yu_sfzzheng cur" id="sfzzfile" />
-						<!--<button class="yu_sfzzbt cur">上传身份证正面照</button>-->
-						<img src="" alt="" class="imgsfz cur" />
-						<p class="sfzztxt cur">上传身份证正面照</p>
+						<button class="sfzztxt cur">上传身份证正面照</button>
+						<img class="imgsfz" src="" alt="" />
+						
 					</div>
 					<div class="yu_idfans fl cur">
-						<input type="file" class="yu_sfzfan cur" id="sfzffile"/>
-						<!--<button class="yu_sfzfbt cur">上传身份证反面照</button>-->
-						<img src="" alt="" class="imgsfzf cur" />
-						<p class="sfzftxt cur">上传身份证反面照</p>
+						<input type="file" class="yu_sfzfan cur" id="sfzffile" />
+						<button class="yu_sfzfbt cur">上传身份证反面照</button>
+						<img class="imgsfzf" src="" alt="" />
+						
 					</div>
-					<p class="yu_idxy fl">为了保证您和雇主的合法权益，我们需要您提供身份证信息，请务必上传真实有效的身份证扫描件。<br />
-我们会为您保密，并承诺不用于其它用途。</p>
+					<p class="yu_idxys fl">为了保证您和雇主的合法权益，我们需要您提供身份证信息，请务必上传真实有效的身份证扫描件。	我们会为您保密，并承诺不用于其它用途。</p>
 				</div>
 				<div class="wyh_teamthings">
 					<lable >上传团队作品（不少于5个）：&nbsp;</lable>
 					<div class="yuon_diy fl">
-						<!--<div class="yuhan_img ">
-					        <input class="yuh_pic cur" type="file" id="picfile">
-					        <img src="../images/onImg.png" class="han_imgg cur">
-					    </div>-->
-					    <!--<div class="yuhan_img ">
-					        <input class="yuh_pic cur" id="yuh_pic" type="file" onchange="setFiles(this)">
-					        <img src="../images/onImg.png" class="han_imgg cur">
-					    </div>-->
 					    <div class="yuhan_img" id="yuhan_img">
 					        <input class="yuh_pic cur" id="yuh_pic" type="file" >
 					        <img src="../images/onImg.png" class="han_imgg cur">
@@ -253,7 +244,7 @@
 				<div class="yu_rekuang">
 					<input type="checkbox" name="Pages" value="Job" id="Job" >
 					<label for="Job" class="yu_lab cur" id="yu_lab">我保证作品的原创性，上传的图片没有法律纠纷，我对因虚假资料或图片版权引起的法律纠纷负全部责任。</label>
-					<a href="Agreement.html" class="xieyi">详情查看《用户服务协议》</a>
+					<a href="Agreement.html" class="xieyi" target="_blank">详情查看《用户服务协议》</a>
 				</div>
 				<div class="button_u">
 					<button class="btn btn-danger yu-submit" id="yu-submit" disabled="disabled">提交审核</button>

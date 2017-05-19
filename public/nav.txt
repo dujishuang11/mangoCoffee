@@ -9,6 +9,16 @@
 引入两个js
 
 
+
+<div class="yzm_pic" id="lxm_said" style="width: 100px;height: 50px; text-align: center; line-height: 50px; background: url(images/login_yanzheng.jpg) no-repeat;background-size: cover;font-size: 20px;letter-spacing: 3px;"></div> ///////////////////////////验证
+
+
+<div class="login_wrapper" style="display: none;z-index: 99999;"> ///////////覆盖
+
+
+
+
+
 登录成功后会在sessionStorage 存入 userID 字段  也就是登录人ID
 
 <div id="lxm_nav" class="nav_wrapper">

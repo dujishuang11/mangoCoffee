@@ -77,29 +77,33 @@ window.addEventListener("load",function(){
 		else{
 			console.log("审核通过");
 //团队申请入驻表
-			$.ajax({
-				type:"post",
-				url:"http://"+aip+"/tenter/team",
-				async:true,
-				data:{
-					TeamAvatar: imgSrcheader,//团队头像
-					TeamName:teanameVal,   //：团队名称
-					TeamAddress:tadsVal,  //：地址
-					TeamLeader: peonameVal , //：团队负责人
-					TContactInformation:telVal,   //：联系方式
-					IdentityCard:shenfVal ,  // ：负责人身份证号
-					IdcardZheng:imgSrczheng,  //身份证正面照
-					IdcardFan:imgSrcfan,  //身份证正面照
-					TeamKey: "", //：团队密钥
-					TeamWork:arr,   //：团队作品
-					TeamAudit:"0"  , //：审核，默认不通过字段为0
-					nameuid:"1"  //登录人uid
-				},
-				success:function(data){
-					console.log(data)
-					sessionStorage.setItem('uidt',data.insertId)
-				}
-			});
+			if(!sessionStorage.userId){
+	    		alert('请先登录')
+	    	}else{
+				$.ajax({
+					type:"post",
+					url:"http://"+aip+"/tenter/team",
+					async:true,
+					data:{
+						TeamAvatar: imgSrcheader,//团队头像
+						TeamName:teanameVal,   //：团队名称
+						TeamAddress:tadsVal,  //：地址
+						TeamLeader: peonameVal , //：团队负责人
+						TContactInformation:telVal,   //：联系方式
+						IdentityCard:shenfVal ,  // ：负责人身份证号
+						IdcardZheng:imgSrczheng,  //身份证正面照
+						IdcardFan:imgSrcfan,  //身份证正面照
+						TeamKey: "", //：团队密钥
+						TeamWork:arr,   //：团队作品
+						TeamAudit:"0"  , //：审核，默认不通过字段为0
+						nameuid:"1"  //登录人uid
+					},
+					success:function(data){
+						console.log(data)
+						sessionStorage.setItem('uidt',data.insertId)
+					}
+				});
+			}
 		}
 	
 	//团队申请入驻表	
@@ -229,6 +233,7 @@ window.addEventListener("load",function(){
 					}
 				}
 			})
+		
 		}
 	})
 	
@@ -410,8 +415,7 @@ window.addEventListener("load",function(){
             	console.log(data)
             	$("#yuhan_img").before('<img src="http://47.92.145.129:8000/'+data.nem+'" class="img">');
                 arr+='<img src="http://47.92.145.129:8000/'+data.nem+'" class="img">'
-               
-               sessionStorage.setItem("arr",arr);
+                sessionStorage.setItem("arr",arr);
             },
             error:function(){
                 console.log("上传图片错了！");

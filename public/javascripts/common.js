@@ -4,6 +4,32 @@ var cc = 'ZGF0YTppbWFnZS9wbmc7YmFzZTY0LGlWQk9SdzBLR2dvQUFBQU5TVWhFVWdBQUFFQUFBQU
 
 //sessionStorage.img = cc;
 
+
+var code;
+function createCode() {
+	//首先默认code为空字符串
+	code = '';
+	//设置长度，这里看需求，我这里设置了4
+	var codeLength = 4;
+	var codeV = document.getElementById('lxm_said');
+	//设置随机字符
+	var random = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z');
+	//循环codeLength 我设置的4就是循环4次
+	for(var i = 0; i < codeLength; i++) {
+		//设置随机数范围,这设置为0 ~ 36
+		var index = Math.floor(Math.random() * 36);
+		//字符串拼接 将每次随机的字符 进行拼接
+		code += random[index];
+	}
+	//将拼接好的字符串赋值给展示的Value
+	codeV.innerHTML = code;
+}
+createCode()
+
+$('#lxm_said').click(function(){
+	createCode()	
+})
+
 if(-[1,]){
 	console.log("这不是IE浏览器！"); 
 }else{ 
@@ -111,12 +137,12 @@ $('.nav_search i').hover(function(){
 
 $('.lxm_nav_first').css('border-bottom','2px #C0A75E solid')
 //style.borderBottom = '2px #C0A75E solid'
-$('.nav_list > ul').find('.nav_one').click(function(){
-	var index = $(this).index('.nav_one')
-	$('.nav_one').eq(index).css('border-bottom','2px #C0A75E solid')
-	$('.nav_one').eq(index).siblings('.nav_one').css('border-bottom','none')
-//	alert(index)
-})
+//$('.nav_list > ul').find('.nav_one').click(function(){
+//	var index = $(this).index('.nav_one')
+//	$('.nav_one').eq(index).css('border-bottom','2px #C0A75E solid')
+//	$('.nav_one').eq(index).siblings('.nav_one').css('border-bottom','none')
+////	alert(index)
+//})
 
 
 
@@ -254,26 +280,30 @@ $('.resgister_back').click(function(){
 })
 
 $('.resgister_remove').click(function(){
-	$('.login_wrapper').css('opacity','0')
-	$('.login_wrapper').css('z-index','-1')
+//	$('.login_wrapper').css('opacity','0')
+//	$('.login_wrapper').css('z-index','-1')
+	$('.login_wrapper').css('display','none')
 })
 
 $('.login_remove').click(function(){
-	$('.login_wrapper').css('opacity','0')
-	$('.login_wrapper').css('z-index','-1')
+//	$('.login_wrapper').css('opacity','0')
+//	$('.login_wrapper').css('z-index','-1')
+	$('.login_wrapper').css('display','none')
 })
 
 $('.login').click(function(){
-	$('.login_wrapper').css('opacity','1')
-	$('.login_wrapper').css('z-index','9999')
+//	$('.login_wrapper').css('opacity','1')
+//	$('.login_wrapper').css('z-index','9999')
+	$('.login_wrapper').css('display','block')
 	if($('.resgister_now').text() == '立即登录'){
 		$('.resgister_now').click()*2
 	}
 })
 
 $('.res').click(function(){
-	$('.login_wrapper').css('opacity','1')
-	$('.login_wrapper').css('z-index','9999')
+//	$('.login_wrapper').css('opacity','1')
+//	$('.login_wrapper').css('z-index','9999')
+	$('.login_wrapper').css('display','block')
 	$('.resgister_now').click()
 })
 
@@ -287,8 +317,10 @@ $('.lxm_login_two').click(function(){
 var pass = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,21}$/; //密码 6-20位 由数字 字母组成
 var phone = /(^0{0,1}1[3|4|5|6|7|8|9][0-9]{9}$)/; //手机号
 var email = /^[_\.0-9a-z-]+@([0-9a-z][0-9a-z-]+\.){1,4}[a-z]{2,3}$/; //邮箱
+
 $('.lxm_login_one').click(function(){
-	var lxm_yzm = verifyCode.validate($('.lxm_login_one_yzm').val());
+	console.log(code)
+//	var lxm_yzm = code($('.lxm_login_one_yzm').val());
 	if($('.lxm_login_one_user').val() == ''){
 		layer.msg('请输入邮箱');
 	}else if(!email.test($('.lxm_login_one_user').val())){
@@ -300,8 +332,9 @@ $('.lxm_login_one').click(function(){
 	}else if($('.lxm_login_one_yzm').val() == ''){
 		layer.msg('请输入验证码');
 	}else{
-		if(!lxm_yzm){
+		if($('.lxm_login_one_yzm').val().toUpperCase() != code){
 			layer.msg('验证码错误，请重新输入');
+			createCode()
 			$('.lxm_login_one_yzm').val('')
 		}else{
 			$.ajax({
@@ -317,8 +350,9 @@ $('.lxm_login_one').click(function(){
 					if(e.num == 1){
 						layer.msg('登录成功');
 						sessionStorage.userId = e.uid
-						$('.login_wrapper').css('opacity','0')
-						$('.login_wrapper').css('z-index','-1')
+//						$('.login_wrapper').css('opacity','0')
+//						$('.login_wrapper').css('z-index','-1')
+						$('.login_wrapper').css('display','none')
 						$('.lxm_login_one_user').val('')
 						$('.lxm_login_one_pass').val('')
 						$('.lxm_login_one_yzm').val('')
@@ -333,7 +367,6 @@ $('.lxm_login_one').click(function(){
 							success:function(e){
 								console.log(e)
 								console.log(e[0].images)
-								
 								$('.login').css('display','none')
 								$('.res').css('display','none')
 								$('.user').css('display','block')
@@ -352,6 +385,8 @@ $('.lxm_login_one').click(function(){
 						
 					}else if(e.num == 2){
 						layer.msg('密码错误');
+						createCode()
+						$('.lxm_login_one_yzm').val('')
 						$('.lxm_login_one_pass').val('')
 					}else if(e.num == 3){
 						layer.msg('账号不存在');

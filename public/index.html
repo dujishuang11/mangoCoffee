@@ -2,14 +2,17 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<title>咖芒网</title>
+		<link href="images/logo.png" rel="shortcut icon"/>
+	
 		<link rel="stylesheet" type="text/css" href="stylesheets/rester.css"/>
 		<link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.css"/>
 		<link rel="stylesheet" type="text/css" href="stylesheets/index.css"/>
 		<link rel="stylesheet" href="stylesheets/nav.css" />
 		<link rel="stylesheet" href="stylesheets/footer.css" />
 		
-		<script src="../node_modules/angular/angular.js"></script>
 		<script src="../node_modules/jquery/dist/jquery.js"></script>
 		<script src="javascripts/gVerify.js"></script>
 		<script src="javascripts/layer/layer.js"></script>
@@ -79,7 +82,7 @@
 				</div>
 			</div>
 			<!--<p class="inter">咖芒网</p>-->
-			<div class="login_wrapper" style="opacity: 0; z-index: -1;">
+			<div class="login_wrapper" style="display: none;z-index: 99999;">
 				<div class="login_con">
 					<p>用第三方帐号登录咖芒</p>
 					<i class="glyphicon glyphicon-remove login_remove"></i>
@@ -104,7 +107,7 @@
 							<input class="lxm_login_one_user" type="text" placeholder="输入邮箱号" />
 							<input class="lxm_login_one_pass" type="password" placeholder="密码" />
 							<div class="login_yzm">
-								<div class="yzm_pic" id="v_container" style="width: 100px;height: 50px;"></div>
+								<div class="yzm_pic" id="lxm_said" style="width: 100px;height: 50px; text-align: center; line-height: 50px; background: url(images/login_yanzheng.jpg) no-repeat;background-size: cover;font-size: 20px;letter-spacing: 3px;-webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none;cursor: pointer;"></div>
 								<input class="lxm_login_one_yzm" type="text" placeholder="请输入验证码" />
 							</div>
 							<button class="lxm_login_one">登录</button>
