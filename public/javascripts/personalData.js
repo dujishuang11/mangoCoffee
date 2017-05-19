@@ -69,7 +69,7 @@ window.addEventListener('load', function() {
 				if(data.success=="查无数据"){
 					return
 				}else{
-				  for(var i=0;i<data.data.length;i++){
+					for(var i=0;i<data.data.length;i++){
 					fbTxt+='<div class="zhj_Modular"><div class="zhj_ModularImg"><img src="'+$.base64.atob(data.data[i].cover)+'" alt="" /></div><div class="zhj_Title">'+data.data[i].tradename+'</div><div class="zhj_price">'+data.data[i].pricing+'</div></div>'
 				}
 				$(".allFB").append(fbTxt);
