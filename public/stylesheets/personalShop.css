@@ -762,7 +762,6 @@
 	margin-top:120px;
 	/*display: none;*/
 }
-<<<<<<< HEAD
 .xieyi{
 	font-size: 14px;
 	color:blue;
@@ -776,6 +775,12 @@
 .xieyi:hover { 
 	color:blue; 
 } 
-=======
-
->>>>>>> origin/master
+.qwe {
+    position: absolute !important;
+    top: 15px   !important;
+    right: 20px  !important;
+    font-size: 20px  !important;
+    cursor: pointer !important;
+    color: red !important;
+    
+}
