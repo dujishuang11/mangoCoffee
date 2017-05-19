@@ -27,6 +27,7 @@
 	margin: 0 15px 5px 0;
 	float: left;
 	cursor:pointer;
+	line-height: 30px;
 }
 
 .djs-navBottom {
