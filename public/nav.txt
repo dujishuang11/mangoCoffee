@@ -13,6 +13,9 @@
 <div class="yzm_pic" id="lxm_said" style="width: 100px;height: 50px; text-align: center; line-height: 50px; background: url(images/login_yanzheng.jpg) no-repeat;background-size: cover;font-size: 20px;letter-spacing: 3px;"></div> ///////////////////////////—È÷§
 
 
+<div class="login_wrapper" style="display: none;z-index: 99999;"> ///////////∏≤∏«
+
+
 
 
 
