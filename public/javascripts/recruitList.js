@@ -103,9 +103,11 @@ window.addEventListener("load", function() {
 	}
 	
 	
-	$('.lhq_ypbutton').on('click',function(){
-		location.href='I_want_to_apply.html'
+	$('.lhq_ypbutton').click(function(){
+			location.href='I_want_to_apply.html'
 	})
+	
+	
 	
 	
 })
