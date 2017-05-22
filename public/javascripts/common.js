@@ -86,6 +86,55 @@ if(judge2){
 	$('.search_now').click(function(){
 		location.href = '../html/commodityList.html?'+$('.search_con').val()+''
 	})
+	
+	$('.register_sub').click(function(){
+			if($('.resgister_pass').val() == ''){
+				layer.msg('请输入密码');
+			}else if(!pass.test($('.resgister_pass').val())){
+				layer.msg('密码长度为6-20位，由数字字母组成');
+			}else if($('.resgister_pass_agin').val() == ''){
+				layer.msg('请再次输入密码');
+			}else if($('.resgister_pass_agin').val() != $('.resgister_pass').val()){
+				layer.msg('两次输入密码不同');
+			}else if($('.resgister_Check').is(':checked') == false){
+				layer.msg('请阅读协议');
+			}else{
+				$.ajax({
+					type:"post",
+					url:'http://'+ip+'/users/register',
+					async:true,
+					data:{
+						username: $('.lxm_resgister_num').val(),
+		            	password: $('.resgister_pass').val()
+					},
+					success:function(e){
+						console.log(e)
+						if(e.num == '成功'){
+							layer.msg('注册成功');
+							sessionStorage.userId = e.xinxi[0].uid
+							location.href = ''
+							if(e.xinxi[0].images == '1.jpg'){
+								$('.user img').attr('src',$.base64.atob(cc))
+							}else{
+								$('.user img').attr('src',$.base64.atob(e[0].images))
+							}
+							$('.login_wrapper').css('display','none')
+							$('.register').css('display','none')
+							$('.login').css('display','none')
+							$('.res').css('display','none')
+							$('.user').css('display','block')
+							location.href = 'personalSet.html'
+						}else if(e.num == '账户已存在'){
+							layer.msg('账户已存在');
+						}else{
+							layer.msg('注册失败');
+						}
+					}
+				});
+		//		console.log($(".resgister_problem").find("option:selected").text(),$('.resgister_user').val(),$('.resgister_pass').val(),$('.resgister_Answer').val())
+			}
+		})
+	
 }else{
 	$('.lxm_Agreement').attr('href','html/Agreement.html')
 	$('.lxm_shejishi a').attr('href','html/star.html')
@@ -107,6 +156,57 @@ if(judge2){
 	$('.search_now').click(function(){
 		location.href = 'html/commodityList.html?'+$('.search_con').val()+''
 	})
+	
+	
+	$('.register_sub').click(function(){
+			if($('.resgister_pass').val() == ''){
+				layer.msg('请输入密码');
+			}else if(!pass.test($('.resgister_pass').val())){
+				layer.msg('密码长度为6-20位，由数字字母组成');
+			}else if($('.resgister_pass_agin').val() == ''){
+				layer.msg('请再次输入密码');
+			}else if($('.resgister_pass_agin').val() != $('.resgister_pass').val()){
+				layer.msg('两次输入密码不同');
+			}else if($('.resgister_Check').is(':checked') == false){
+				layer.msg('请阅读协议');
+			}else{
+				$.ajax({
+					type:"post",
+					url:'http://'+ip+'/users/register',
+					async:true,
+					data:{
+						username: $('.lxm_resgister_num').val(),
+		            	password: $('.resgister_pass').val()
+					},
+					success:function(e){
+						console.log(e)
+						if(e.num == '成功'){
+							layer.msg('注册成功');
+							sessionStorage.userId = e.xinxi[0].uid
+							location.href = ''
+							if(e.xinxi[0].images == '1.jpg'){
+								$('.user img').attr('src',$.base64.atob(cc))
+							}else{
+								$('.user img').attr('src',$.base64.atob(e[0].images))
+							}
+							$('.login_wrapper').css('display','none')
+							$('.register').css('display','none')
+							$('.login').css('display','none')
+							$('.res').css('display','none')
+							$('.user').css('display','block')
+							location.href = 'html/personalSet.html'
+						}else if(e.num == '账户已存在'){
+							layer.msg('账户已存在');
+						}else{
+							layer.msg('注册失败');
+						}
+					}
+				});
+		//		console.log($(".resgister_problem").find("option:selected").text(),$('.resgister_user').val(),$('.resgister_pass').val(),$('.resgister_Answer').val())
+			}
+		})
+	
+	
 }
 
 //$('.search_con').keydown(function(event){
@@ -227,55 +327,7 @@ $('.resgister_list').click(function(){
 	}
 })
 
-$('.register_sub').click(function(){
-		//	alert(1)	
-//		else if($('.resgister_Answer').val() == ''){
-//				layer.msg('请输入答案');
-//			}
-			if($('.resgister_pass').val() == ''){
-				layer.msg('请输入密码');
-			}else if(!pass.test($('.resgister_pass').val())){
-				layer.msg('密码长度为6-20位，由数字字母组成');
-			}else if($('.resgister_pass_agin').val() == ''){
-				layer.msg('请再次输入密码');
-			}else if($('.resgister_pass_agin').val() != $('.resgister_pass').val()){
-				layer.msg('两次输入密码不同');
-			}else if($('.resgister_Check').is(':checked') == false){
-				layer.msg('请阅读协议');
-			}else{
-				$.ajax({
-					type:"post",
-					url:'http://'+ip+'/users/register',
-					async:true,
-					data:{
-						username: $('.lxm_resgister_num').val(),
-		            	password: $('.resgister_pass').val()
-					},
-					success:function(e){
-						console.log(e)
-						if(e.num == '成功'){
-							layer.msg('注册成功');
-							sessionStorage.userId = e.xinxi[0].uid
-							if(e.xinxi[0].images == '1.jpg'){
-								$('.user img').attr('src',$.base64.atob(cc))
-							}else{
-								$('.user img').attr('src',$.base64.atob(e[0].images))
-							}
-							$('.login_wrapper').css('display','none')
-							$('.register').css('display','none')
-							$('.login').css('display','none')
-							$('.res').css('display','none')
-							$('.user').css('display','block')				
-						}else if(e.num == '账户已存在'){
-							layer.msg('账户已存在');
-						}else{
-							layer.msg('注册失败');
-						}
-					}
-				});
-		//		console.log($(".resgister_problem").find("option:selected").text(),$('.resgister_user').val(),$('.resgister_pass').val(),$('.resgister_Answer').val())
-			}
-		})
+		
 
 
 
@@ -327,20 +379,22 @@ var email = /^[_\.0-9a-z-]+@([0-9a-z][0-9a-z-]+\.){1,4}[a-z]{2,3}$/; //邮箱
 
 $('.lxm_login_one').click(function(){
 	console.log(code)
+	$('.lxm_login_one').attr('disabled','disabled')
+	
 //	var lxm_yzm = code($('.lxm_login_one_yzm').val());
 	if($('.lxm_login_one_user').val() == ''){
-		layer.msg('请输入邮箱');
+		layer.msg('请输入邮箱',{time:1000});
 	}else if(!email.test($('.lxm_login_one_user').val())){
-		layer.msg('请输入正确的邮箱');
+		layer.msg('请输入正确的邮箱',{time:1000});
 	}else if($('.lxm_login_one_pass').val() == ''){
-		layer.msg('请输入密码');
+		layer.msg('请输入密码',{time:1000});
 	}else if(!pass.test($('.lxm_login_one_pass').val())){
-		layer.msg('密码长度为6-20位，由数字字母组成');
+		layer.msg('密码长度为6-20位，由数字字母组成',{time:1000});
 	}else if($('.lxm_login_one_yzm').val() == ''){
-		layer.msg('请输入验证码');
+		layer.msg('请输入验证码',{time:1000});
 	}else{
 		if($('.lxm_login_one_yzm').val().toUpperCase() != code){
-			layer.msg('验证码错误，请重新输入');
+			layer.msg('验证码错误，请重新输入',{time:1000});
 			createCode()
 			$('.lxm_login_one_yzm').val('')
 		}else{
@@ -355,7 +409,7 @@ $('.lxm_login_one').click(function(){
 				success:function(e){
 					console.log(e)
 					if(e.num == 1){
-						layer.msg('登录成功');
+						layer.msg('登录成功',{time:1000});
 						sessionStorage.userId = e.uid
 //						$('.login_wrapper').css('opacity','0')
 //						$('.login_wrapper').css('z-index','-1')
@@ -391,18 +445,21 @@ $('.lxm_login_one').click(function(){
 						
 						
 					}else if(e.num == 2){
-						layer.msg('密码错误');
+						layer.msg('密码错误',{time:1000});
 						createCode()
 						$('.lxm_login_one_yzm').val('')
 						$('.lxm_login_one_pass').val('')
 					}else if(e.num == 3){
-						layer.msg('账号不存在');
+						layer.msg('账号不存在',{time:1000});
 					}
 				}
 			});
 //			console.log($('.lxm_login_one_user').val(),$('.lxm_login_one_pass').val())
 		}
 	}
+	setInterval(function(){
+		$('.lxm_login_one').removeAttr("disabled")
+	},3000)
 })
 
 $('.user_out').click(function(){
