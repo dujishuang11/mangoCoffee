@@ -5,15 +5,15 @@
 2、在 nav_list 下的第一个UL 把class nav_color_f 改为 nav_color_a  默认为 nav_color_f
 
 
+
+<p>使用邮箱号登录咖芒</p> ////////103行附近 替换
+
+
+
+
+
 <p class="lxm_rules"><input class="resgister_Check" type="checkbox" id="aa" /><label for="aa">我已阅读并接受<a class="lxm_Agreement" href="#" target="_blank">《咖芒网免责声明》</a></label></p>
 ///////////////重要的
-
-
-
-
-
-
-
 
 
 <script src="../javascripts/gVerify.js"></script>
