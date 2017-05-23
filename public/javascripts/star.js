@@ -31,6 +31,7 @@ window.addEventListener('load', function() {
 		mainclass = $(this).text();
 		if(id > 0) {
 			obtainList(mainclass)
+			
 		} else {
 			quan()
 		}
@@ -90,9 +91,13 @@ window.addEventListener('load', function() {
 				uid: arrList[i].Applicant
 			},
 			success: function(data) {
-				console.log(data, data.data.length)
-				if(i < arrList.length) {
-					djsList(i, data.data.length)
+				console.log(data)
+				if(data.success == "查无数据"){
+					return;
+				}else {
+					if(i < arrList.length) {
+						djsList(i, data.data.length)
+					}
 				}
 			}
 		})
@@ -100,7 +105,7 @@ window.addEventListener('load', function() {
 
 	function djsList(i, data) {
 		console.log(i, data)
-		$('.djs-list>ul').append('<li class="djs-List"><a href="personalData.html?' + arrList[i].Applicant + '"><div class = "djs-top"><img src = "' + $.base64.atob(arrList[i].portrait) + '" alt = ""/><div class = "djs-text fl"><p class = "djs-name">' + arrList[i].shopName + '</p><div><span class = "djs-num">' + data + '</span><span>个设计服务 </span></div><ul class="djs-category"></ul></div></div><div class = "djs-bottom">' + arrList[i].briefIntroduction + '</div></a></li>');
+		$('.djs-list>ul').append('<li class="djs-List"><a href="personalData2.html?' + arrList[i].Applicant + '"><div class = "djs-top"><img src = "' + $.base64.atob(arrList[i].portrait) + '" alt = ""/><div class = "djs-text fl"><p class = "djs-name">' + arrList[i].shopName + '</p><div><span class = "djs-num">' + data + '</span><span>个设计服务 </span></div><ul class="djs-category"></ul></div></div><div class = "djs-bottom">' + arrList[i].briefIntroduction + '</div></a></li>');
 		var shopType = arrList[i].shopType.split(",")
 		for(var j = 0; j < shopType.length; j++) {
 			$(".djs-category").eq(i).append("<li>" + shopType[j] + "</li>")

@@ -1,6 +1,8 @@
 .djs-wrapper {
 	width: 100%;
 	margin-top: 98px;
+	position: relative;
+	overflow: hidden;
 }
 .djs-nav {
 	width: 85%;

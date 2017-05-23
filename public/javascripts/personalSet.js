@@ -1,5 +1,7 @@
 window.addEventListener('load',function(){
      var ip = "http://47.92.145.129:8000"   //ip地址
+     var uid = location.href.split('?')[1]
+     
 //  用户名
     var nickName = /^[\u4e00-\u9fa5a-zA-Z0-9_]+$/;
     $(".nText").focus(function(){
@@ -123,7 +125,38 @@ var regExp = /^1[3'/4578]\d{9}$/;
 		
 })
 	
-$.ajax({
+	
+function person(){
+	$.ajax({
+	type: "post",
+	url: ""+ip+"/users/gerenaing",
+	async: true,
+	data: {
+		uid:uid
+	},
+	success: function(data) {
+		console.log(data);
+		$(".nText").val(data[0].name);
+		$(".addText").val(data[0].suozaichengs);
+		$(".telText").val(data[0].shoujih);
+		$(".pasText").val(data[0].password);
+		$(".newTwoText").val(data[0].password);
+		$(".beSureText").val(data[0].password);
+		$(".upImg").attr('src',$.base64.atob(data[0].images))
+//		console.log(data[0].xingbye)
+		if(data[0].xingbye=="女"){
+			$(".girl").attr("checked","checked")
+		}else if(data[0].xingbye=="男"){
+			$(".boy").attr("checked","checked")
+		}else if(data[0].xingbye=="保密"){
+			$(".Preservation").attr("checked","checked")
+		}
+	}
+   })
+}
+	
+function person2(){
+	$.ajax({
 	type: "post",
 	url: ""+ip+"/users/gerenaing",
 	async: true,
@@ -148,7 +181,15 @@ $.ajax({
 			$(".Preservation").attr("checked","checked")
 		}
 	}
-})
+   })
+}
+
+   if(uid){
+   	  person()
+   }else{
+   	  person2()
+   }
+	
 	
 var file;
 var packageSrc = '';
@@ -185,8 +226,55 @@ $('.img').change(function() {
 })
 
 	
-	$(".baoCun").click(function(){
-	var obj = document.getElementsByClassName("zhj_sex");
+	function upperson(){
+		var obj = document.getElementsByClassName("zhj_sex");
+    	for(var i=0;i<obj.length;i++){
+      	 	 if(obj[i].checked){
+           		var abc = obj[i].value;
+       		 }
+   		}
+		var nText = $(".nText").val();
+		var addText = $(".addText").val();
+		var telText= $(".telText").val();
+		var pasText = $(".pasText").val();
+		if(nText.match(nickName)){
+			if(addText.match(userName)){
+				if(telText.match(regExp)){
+					if(pasText.match(pasExp)){
+						$.ajax({
+							type: "post",
+							url: ""+ip+"/users/ziliao",
+							async: true,
+							data: {
+								uid:uid,
+								name:nText,
+								suozaichengs:addText,
+								images:imgSrc,
+								xingbye:abc,
+								shoujih:telText,
+								password:pasText
+							},
+							success: function(data) {
+								console.log(data);
+								console.log(data[0].images)
+							}
+						})		
+					}else{
+						alert("密码不对")
+					}
+				}else{
+					alert("手机号不对")
+				}
+			}else{
+				alert("地址不对")
+			}
+		}else{
+			alert("用户名不对")
+		}	
+	}
+	
+	function upperson2(){
+		var obj = document.getElementsByClassName("zhj_sex");
     	for(var i=0;i<obj.length;i++){
       	 	 if(obj[i].checked){
            		var abc = obj[i].value;
@@ -229,7 +317,15 @@ $('.img').change(function() {
 			}
 		}else{
 			alert("用户名不对")
-		}				
+		}	
+	}
+	
+	$(".baoCun").click(function(){
+		if(uid){
+			upperson()
+		}else{
+			upperson2()
+		}
 	})
 	
 	

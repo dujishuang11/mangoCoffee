@@ -30,4 +30,13 @@ window.addEventListener('load', function() {
 			$('.djs-name span:last-child').text() //卖家姓名
 		}
 	})
+	
+	
+	$('.djs-qr').click(function(){
+		if(sessionStorage.userId){
+			
+		}else {
+			alert("您还没有登陆，请先登陆")
+		}
+	})
 })
