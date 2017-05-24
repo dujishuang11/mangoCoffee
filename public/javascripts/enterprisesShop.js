@@ -2,35 +2,6 @@ window.addEventListener("load",function(){
 	
 	var ip="localhost:1998"; //ip地址
 	var aip="47.92.145.129:8000"; //ip地址
-//	var browser={
-//	    versions:function(){
-//	        var u = navigator.userAgent, app = navigator.appVersion;
-//	        return {
-//	            trident: u.indexOf('Trident') > -1, //IE内核
-//	            presto: u.indexOf('Presto') > -1, //opera内核
-//	            webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
-//	            gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1,//火狐内核
-//	            mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
-//	            ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
-//	            android: u.indexOf('Android') > -1 || u.indexOf('Adr') > -1, //android终端
-//	            iPhone: u.indexOf('iPhone') > -1 , //是否为iPhone或者QQHD浏览器
-//	            iPad: u.indexOf('iPad') > -1, //是否iPad
-//	            webApp: u.indexOf('Safari') == -1, //是否web应该程序，没有头部与底部
-//	            weixin: u.indexOf('MicroMessenger') > -1, //是否微信 （2015-01-22新增）
-//	            qq: u.match(/\sQQ/i) == " qq" //是否QQ
-//	        };
-//	    }(),
-//	    language:(navigator.browserLanguage || navigator.language).toLowerCase()
-//	}
-	//判断是否IE内核
-//	if(browser.versions.trident){ 
-//		alert("is IE"); 
-//	}
-//	//判断是否webKit内核
-//	if(browser.versions.webKit){ alert("is webKit"); }
-//	//判断是否移动端
-//	if(browser.versions.mobile||browser.versions.android||browser.versions.ios){ alert("移动端"); }
-	
 //点击协议
 	var off=false;
 	$("#yu_lab").click(function(){
@@ -52,6 +23,15 @@ window.addEventListener("load",function(){
 			offo=true;
 		}
 	})
+	//弹框函数
+	function click_sure(){
+		$(".yuhan_ok").click(function(){
+			$(".yu_pop-up").css("display","none");
+		})
+		$(".yu_login_remove").click(function(){
+			$(".yu_pop-up").css("display","none");
+		})
+	}
 //点击审核
 	$("#yu-submit").click(function(){
 		var tpfileVal=$("#headfile").val(); //上传头像
@@ -62,28 +42,41 @@ window.addEventListener("load",function(){
 		var qtelRex=/^1[34578]\d{9}$/;  //手机号验证
 		var qpicVal=$("#fileid").val(); //企业营业执照
 		if(tpfileVal==""){
-			alert("请上传头像！")
-		}else 
-		if(qnameVal==""){
-			alert("请填写企业名称！")
+			$(".yu_pop-up").css("display","block");
+			$(".pop_up_content").html("请上传头像");
+			click_sure();
+		}
+		else if(qnameVal==""){
+			$(".yu_pop-up").css("display","block");
+			$(".pop_up_content").html("请填写企业名称");
+			click_sure();
 		}
 		else if(qadsVal==""){
-			alert("请填写企业地址！")
+			$(".yu_pop-up").css("display","block");
+			$(".pop_up_content").html("请填写企业地址");
+			click_sure();
 		}
 		else if(qpeonameVal==""){
-			alert("请填写企业负责人！")
+			$(".yu_pop-up").css("display","block");
+			$(".pop_up_content").html("请填写企业负责人");
+			click_sure();
 		}
 		else if(qtelVal==""){
-			alert("请填写负责人联系方式！")
+			$(".yu_pop-up").css("display","block");
+			$(".pop_up_content").html("请填写负责人联系方式");
+			click_sure();
 		}
 		else if(!(qtelVal.match(qtelRex))){
-	    	alert("手机号格式不对")
+	    	$(".yu_pop-up").css("display","block");
+			$(".pop_up_content").html("手机号格式不对");
+			click_sure();
 	    }
 		else if(qpicVal==""){
-			alert("请企业营业执照！")
+			$(".yu_pop-up").css("display","block");
+			$(".pop_up_content").html("请企业营业执照");
+			click_sure();
 		}
 		else{
-			console.log("审核通过")
 			//申请入驻表
 			if(!sessionStorage.userId){
 	    		alert('请先登录')
@@ -93,43 +86,92 @@ window.addEventListener("load",function(){
 					url:"http://"+aip+"/qenter/enterprise",
 					async:true,
 					data:{
-						CorporateHead: imgSrcheader,//企业头像
+//						CorporateHead: imgSrcheader,//企业头像
 						CompanyName:qnameVal,   //：企业名称
 						CompanyAddress:qadsVal,  //：地址
 						CompanyLeader: qpeonameVal , //：企业负责人
 						CompanyInformation:qtelVal,   //：联系方式
 						CompanyKey: "", //：企业密钥
 						CompanyWork:imgSrczheng,   //：企业营业执行照
-						CompanyAudit:"",   //：企业审核
-						nameuid:"1"  //登录人uid
+						CompanyAudit:0,   //：企业审核
+						nameuid:sessionStorage.userId  //登录人uid
+//						nameuid:"11"  //登录人uid
 					},
 					success:function(data){
 						console.log(data)
+						console.log("审核通过")
+						if(data.flag=="企业已注册"){
+//							alert("您已经注册过")
+							$(".yu_pop-up").css("display","block");
+							$(".pop_up_content").html("企业已经注册过");
+							click_sure();
+//							location.reload()
+						}
+						else if(data.flag=="团队已注册"){
+//							alert("team您已经注册过")
+							$(".yu_pop-up").css("display","block");
+							$(".pop_up_content").html("团队已经注册过");
+							click_sure();
+//							location.reload()
+						}
+						else if(data.flag=="个人已注册"){
+//							alert("team您已经注册过")
+							$(".yu_pop-up").css("display","block");
+							$(".pop_up_content").html("个人已经注册过");
+							click_sure();
+//							location.reload()
+						}
+						else if(data.flag==1){
+							console.log("可以注册")
+//							过去随机数（字母数字+时间戳+uid）
+						    var timestamp = Date.parse(new Date()); //获取当前时间戳
+							var dom=Math.random().toString(36).substr(2);
+							var rand=timestamp+dom;
+							$("#yu_Popup_window").css("display","block");
+							$("#yu_Popup_window_keys").html(rand+sessionStorage.userId);
+							$("#yu_Popup_window_btn").click(function(){
+							//修改审核状态和密钥
+								$.ajax({
+									type:"post",
+									url: "http://"+aip+"/qenter/qdetailPass",
+									async:true,
+									data:{
+										qiyKey: rand+sessionStorage.userId, //：团队密钥（时间戳+uid)
+										qiyAudit:"1", //：审核状态
+										quid:sessionStorage.userId 
+									},
+									success:function(data){
+										console.log(data)
+										$("#yu_Popup_window").css("display","none");
+										location.reload()
+//										$("#headfile,#yu_qyname,#yu_ads,#yu_qypeoname,#yu_qitel,#fileid").val('');
+									}
+								})	
+							})
+						}
+//						
+						
 					}
 				});
 			}
 		}
 		
-		
-		//申请入驻表
-		/*$.ajax({
-			type:"post",
-			url:"http://"+ip+"/qenter/enterprise",
+		/*console.log("获取密钥");
+		//查询企业名称
+		$.ajax({
+			type:"get",
+			url:"http://"+ip+"/qenter/searchkeys",
 			async:true,
 			data:{
-				CorporateHead: imgSrcheader,//企业头像
-				CompanyName:qnameVal,   //：企业名称
-				CompanyAddress:"北京大兴",  //：地址
-				CompanyLeader: "王钰涵" , //：企业负责人
-				CompanyInformation:"13693013340",   //：联系方式
-				CompanyKey: "", //：企业密钥
-				CompanyWork:imgSrczheng,   //：企业营业执行照
-				CompanyAudit:""   //：企业审核
+				companykeyss:'11'  //登录人uid
 			},
 			success:function(data){
 				console.log(data)
+//						console.log(data.result[0].tuid)
 			}
 		});*/
+		
+		
 		//查询企业名称
 		/*$.ajax({
 					type:"get",
@@ -168,29 +210,143 @@ window.addEventListener("load",function(){
 			}
 		});*/
 		
-		
-//过去随机数（时间戳+uid）
-	/*var timestamp = Date.parse(new Date()); //获取当前时间戳
-	console.log(timestamp+"25");
-//修改信息
-	$.ajax({
-		type:"post",
-		url:"http://"+ip+"/qenter/changeq",
-		async:true,
-		data:{
-			CompanyKey: timestamp+"11", //：企业密钥（时间戳+uid)
-			CompanyAudit:"1",
-			quid:"1"//：审核状态
-		},
-		success:function(data){
-			console.log(data)
-		}
-	});*/
-	
 	
 })
-	
+
+
 //上传头像
+	var fileH;
+	var imgSrcheader = '';
+	$('#headfile').change(function() {
+		tops.style.top = 0
+		fileH = this.files[0];
+		console.log(fileH)
+		var formdata = new FormData();
+		formdata.append("uploadeFile", fileH);
+		$.ajax({
+			url: "http://47.92.145.129:8000/yanzhengs/huang",
+			type: "post",
+			data: formdata,
+			contentType: false,
+			processData: false,
+			success: function(data) {
+				console.log(data)
+				sessionStorage.nem=data.nem;
+				console.log(sessionStorage.nem)
+				if(data.nem == '正常') {
+					formdata = $.base64.btoa(formdata)
+					console.log(formdata);
+				}
+			}
+		})
+	})
+	$('#clipBtn').click(function() {
+		tops.style.top = '-100%'
+	})
+	$("#clipArea").photoClip({
+		width: 200,
+		height: 200,
+		file: "#headfile",
+		view: "#view",
+		ok: "#clipBtn",
+		loadStart: function() {
+			console.log("照片读取中");
+		},
+		loadComplete: function() {
+			console.log("照片读取完成");
+		},
+		clipFinish: function(dataURL) {
+			console.log(dataURL);
+			$('.yu_imghead').attr('src', dataURL);
+			if(sessionStorage.nem){
+				$.ajax({
+					type:"post",
+					url:"http://"+aip+"/qenter/enterprise",
+					async:true,
+					data:{
+						CorporateHead: dataURL    //企业头像
+					},
+					success:function(e){
+						console.log(e)
+						if(sessionStorage.nem=="正常"){
+							console.log("ok")
+						}else{
+							console.log("no")
+						}
+						console.log("aaaaaaaaok")
+					}
+				})
+			}else{
+				console.log("没有nem")
+			}
+		}
+	});
+	
+//上传企业营业执照
+	$('#sfzzfile').change(function(evt){
+   		var max_size=102400;
+        var finput = $(this);   
+        var files = evt.target.files; // 获得文件对象  
+        var output = [];
+        for (var i = 0, f; f = files[i]; i++){  
+//          	//检查文件大小
+            if(f.size > max_size){   
+//              alert("上传的图片不能超过100KB!"); 
+                $(".yu_pop-up").css("display","block");
+				$(".pop_up_content").html("上传的图片不能超过100KB");
+				click_sure();
+                $(this).val('');   
+            }else{
+            	var fd = new FormData();
+            	fd.append("uploadedFile", this.files[0]);
+            	$.ajax({
+            		type:"post",
+            		url:"http://47.92.145.129:8000/yanzhengs/shenfene",
+            		async:true,
+            		data:fd,
+            		contentType: false,
+        			processData: false,
+            		success:function(e){
+            			console.log(e);
+            			imgSrczheng = e.lu;
+            			console.log(imgSrczheng)
+						if(e.nem!="营业执照"){
+//							alert("请上传有效证件");
+							$(".yu_pop-up").css("display","block");
+							$(".pop_up_content").html("请上传有效证件");
+							click_sure();
+						}else{
+							console.log("是营业执照")
+							$('.imgsfz')[0].src = 'http://47.92.145.129:8000/'+e.lu;
+						}
+            			
+            		},
+            		error:function(){
+//		                alert("图片不合法");
+		                $(".yu_pop-up").css("display","block");
+							$(".pop_up_content").html("图片不合法");
+							click_sure();
+		            }
+            	});
+            }
+        }
+    });
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+/*//上传头像
 	var fileH;
 	var imgSrcheader = '';
 	$('#headfile').change(function() {
@@ -200,6 +356,7 @@ window.addEventListener("load",function(){
 		} else {
 		var fileReader = new FileReader();
 		fileReader.readAsDataURL(fileH);
+		console.log(fileH)
 		fileReader.onload = function(event) {
 			imgSrcheader = event.target.result; //返回的dataURL  
 			console.log(imgSrcheader)
@@ -208,57 +365,24 @@ window.addEventListener("load",function(){
 		var formdata = new FormData();
 		formdata.append("uploadeFile", fileH);
 		console.log("上传头像成功")
-//			$.ajax({
-//				url: "http://47.92.145.129:8000/users/huang",
-//				type: "post",
-//				data: formdata,
-//				contentType: false,
-//				processData: false,
-//				success: function(data) {
-//					console.log(data)
-//					if(data.nem == '正常') {
-//						imgSrcheader = $.base64.btoa(imgSrcheader)
-//					}
-//				}
-//			})
+			$.ajax({
+				url: "http://47.92.145.129:8000/users/huang",
+				type: "post",
+				data: formdata,
+				contentType: false,
+				processData: false,
+				success: function(data) {
+					console.log(data)
+					if(data.nem == '正常') {
+						imgSrcheader = $.base64.btoa(imgSrcheader)
+					}
+				}
+			})
 		}
 	})
-		
+		*/
 	
-//上传企业营业执照
 
-	$('#sfzzfile').change(function(evt){
-   		var max_size=102400;
-        var finput = $(this);   
-        var files = evt.target.files; // 获得文件对象  
-        var output = [];
-        for (var i = 0, f; f = files[i]; i++){  
-//          	//检查文件大小
-            if(f.size > max_size){   
-                alert("上传的图片不能超过100KB!");   
-                $(this).val('');   
-            }else{
-            	var fd = new FormData();
-            	fd.append("uploadedFile", this.files[0]);
-            	$.ajax({
-            		type:"post",
-            		url:"http://47.92.145.129:8000/users/chan",
-            		async:true,
-            		data:fd,
-            		contentType: false,
-        			processData: false,
-            		success:function(e){
-            			console.log(e)
-            			imgSrczheng = e.nem
-            			$('.imgsfz')[0].src = 'http://47.92.145.129:8000/'+e.nem
-            		},
-            		error:function(){
-		                alert("图片不合法");
-		            }
-            	});
-            }
-        }
-    });
 	/*var fileZ;
 	var imgSrczheng = '';
 	$('#sfzzfile').change(function() {

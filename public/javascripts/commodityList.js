@@ -10,7 +10,6 @@ window.addEventListener('load', function() {
 			url: "http://47.92.145.129:8000/users/nav",
 			async: true,
 			success: function(data) {
-				console.log("nav" + data)
 				$('.djs-navTop ul li').remove()
 				$('.djs-navTop ul').append('<li index="0">全部</li>')
 				var html = ''
@@ -24,7 +23,7 @@ window.addEventListener('load', function() {
 	}
 	
 	var fenlei = location.href.split('?')[1];
-	console.log("fenlei" + fenlei)
+
 
 	if(fenlei == 1) {
 		mainclass = '商标设计注册';
@@ -117,10 +116,38 @@ window.addEventListener('load', function() {
 		});
 		zilei(fenlei)
 		obtainList(mainclass, subclass)
-	} else {
+	} else if(fenlei == 0) {
+		$(document).ajaxComplete(function() {
+			$('.djs-navTop ul li').eq(Number(fenlei)).addClass("color");
+		});
 		quan()
+	}else {
+		$(document).ajaxComplete(function() {
+			$('.djs-navTop ul li').eq(0).addClass("color");
+		});
+		searchList(decodeURI(fenlei))
 	}
 	
+
+	function searchList(fenlei){
+		$.ajax({
+			type: "get",
+			url: "http://47.92.145.129:8000/djsList/searchList",
+			async: true,
+			data: {
+				search: fenlei
+			},
+			success: function(data) {
+				console.log(data)
+				arrList = data.data;
+				num = 1;
+				len = Math.ceil(data.data.length / 12);
+				list(num, len)
+				$('.djs-fy li').remove()
+				$('.djs-fy').append(showPages(1, len))
+			}
+		});
+	}
 
 	$('.djs-navTop ul').delegate('li', 'mouseover', function() {
 		$(this).css('color', '#EA5813');
@@ -133,7 +160,7 @@ window.addEventListener('load', function() {
 		$(this).addClass("color").siblings().removeClass('color');
 		var id = $(this).attr('index');
 		location.href = "commodityList.html?"+id;
-		console.log("id" + id)
+
 		mainclass = $(this).text();
 		if(id > 0) {
 			obtainList(mainclass, subclass)
@@ -196,7 +223,6 @@ window.addEventListener('load', function() {
 			url: "http://47.92.145.129:8000/djsList/list",
 			type: "get",
 			success: function(data) {
-				console.log(data)
 				if(data.success == "查无数据") {
 					return;
 				} else {
@@ -212,7 +238,6 @@ window.addEventListener('load', function() {
 	}
 
 	function list(num, len) {
-		console.log(num, len)
 		$('.djs-list ul li').remove()
 		var html = '';
 		for(var i = ((num - 1) * 12); i < (num * 12); i++) {
@@ -237,7 +262,6 @@ window.addEventListener('load', function() {
 				subclass: subclass
 			},
 			success: function(data) {
-				console.log(data)
 				if(data.success == "查无数据") {
 					alert("此分类暂时没有数据")
 					return;
@@ -312,7 +336,6 @@ window.addEventListener('load', function() {
 				subclass: subclass
 			},
 			success: function(data) {
-				console.log(data)
 				if(data.success == "查无数据") {
 					return;
 				} else {
@@ -337,7 +360,6 @@ window.addEventListener('load', function() {
 				subclass: subclass
 			},
 			success: function(data) {
-				console.log(data)
 				if(data.success == "查无数据") {
 					return;
 				} else {
@@ -362,7 +384,6 @@ window.addEventListener('load', function() {
 				subclass: subclass
 			},
 			success: function(data) {
-				console.log(data)
 				if(data.success == "查无数据") {
 					return;
 				} else {
@@ -387,7 +408,6 @@ window.addEventListener('load', function() {
 				subclass: subclass
 			},
 			success: function(data) {
-				console.log(data)
 				if(data.success == "查无数据") {
 					return;
 				} else {

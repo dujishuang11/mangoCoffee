@@ -2,30 +2,14 @@ window.addEventListener('load', function() {
 	var ip = "http://47.92.145.129:8000"   //ip地址
 
 //个人资料
-   var uid = location.href.split('?')[1]
-	function img(){
-		$.ajax({
-			type: "post",
-			url: ""+ip+"/users/gerenaing",
-			async: true,
-			data: {
-				uid:uid
-			},
-			success: function(data) {
-				console.log(data);
-				$(".zhj_personTopName").text(data[0].name);
-				$(".upImg").attr('src',$.base64.atob(data[0].images))
-			}
-		})
-	
-	}
+
 	function imgben(){
 		$.ajax({
 			type: "post",
 			url: ""+ip+"/users/gerenaing",
 			async: true,
 			data: {
-				uid:sessionStorage.uid
+				uid:10
 			},
 			success: function(data) {
 				console.log(data);
@@ -35,36 +19,11 @@ window.addEventListener('load', function() {
 		})
 	
 	}
-    if(uid){
-    	img()
-    }else{
-    	imgben();
-    }
+    imgben();
 
 
 // 初始我的发布
-     function fb(){
-     	$.ajax({
-			type: "get",
-			url: ""+ip+"/djsList/issueList",
-			async: true,
-			data: {
-				uid:uid
-			},
-			success: function(data) {
-				console.log(data)
-				if(data.success=="查无数据"){
-					return
-				}else{
-				var fbTxt=''		
-				for(var i=0;i<data.data.length;i++){
-					fbTxt+='<a href="listDetails.html?'+data.data[i].listid+'"><div class="zhj_Modular"><div class="zhj_ModularImg"><img src="'+$.base64.atob(data.data[i].cover)+'" alt="" /></div><div class="zhj_Title">'+data.data[i].tradename+'</div><div class="zhj_price">'+data.data[i].pricing+'</div></div></a>'
-				}
-				$(".allFB").append(fbTxt);
-				}		
-		  }		
-		})
-     }
+
      
      function fbb(){
      	$.ajax({
@@ -72,7 +31,7 @@ window.addEventListener('load', function() {
 			url: ""+ip+"/djsList/issueList",
 			async: true,
 			data: {
-				uid:sessionStorage.uid
+				uid:10
 			},
 			success: function(data) {
 				console.log(data)
@@ -84,16 +43,12 @@ window.addEventListener('load', function() {
 					fbTxt+='<a href="listDetails.html?'+data.data[i].listid+'"><div class="zhj_Modular"><div class="zhj_ModularImg"><img src="'+$.base64.atob(data.data[i].cover)+'" alt="" /></div><div class="zhj_Title">'+data.data[i].tradename+'</div><div class="zhj_price">'+data.data[i].pricing+'</div></div></a>'
 				}
 				$(".allFB").append(fbTxt);
+//              $('.allFB').append('<a href="publishProject.html"><div class="zhj_jiajia"><img src="../images/onImg.png" alt="" /></div></a>');				
 				}		
 		  }		
 		})
      }
-
-    if(uid){
-    	fb()
-    }else{
-    	fbb()
-    }
+    fbb()
 
 
 	$(".zhj_reset").hover(function() {
@@ -125,62 +80,9 @@ window.addEventListener('load', function() {
 		$(".zhj_purchase").css("display", "none");
 		$(".zhj_resume").css("display", "none");
 		
-//我的发布       
+//我的发布            
 
-	   function fb(){
-     	$.ajax({
-			type: "get",
-			url: ""+ip+"/djsList/issueList",
-			async: true,
-			data: {
-				uid:uid
-			},
-			success: function(data) {
-				console.log(data)
-				if(data.success=="查无数据"){
-					return
-				}else{
-				var fbTxt=''		
-				for(var i=0;i<data.data.length;i++){
-					fbTxt+='<div class="zhj_Modular"><div class="zhj_ModularImg"><img src="'+$.base64.atob(data.data[i].cover)+'" alt="" /></div><div class="zhj_Title">'+data.data[i].tradename+'</div><div class="zhj_price">'+data.data[i].pricing+'</div></div>'
-				}
-				$(".allFB").append(fbTxt);
-				$(".allFB").append('<a href="publishProject.html"><div class="zhj_jiajia"><img src="../images/onImg.png" alt="" /></div></a>');
-				}		
-		  }		
-		})
-     }
-     
-     function fbb(){
-     	$.ajax({
-			type: "get",
-			url: ""+ip+"/djsList/issueList",
-			async: true,
-			data: {
-				uid:sessionStorage.uid
-			},
-			success: function(data) {
-				console.log(data)
-				if(data.success=="查无数据"){
-					return
-				}else{
-				var fbTxt=''		
-				for(var i=0;i<data.data.length;i++){
-					fbTxt+='<div class="zhj_Modular"><div class="zhj_ModularImg"><img src="'+$.base64.atob(data.data[i].cover)+'" alt="" /></div><div class="zhj_Title">'+data.data[i].tradename+'</div><div class="zhj_price">'+data.data[i].pricing+'</div></div>'
-				}
-				$(".allFB").append(fbTxt);
-				$(".allFB").append('<a href="publishProject.html"><div class="zhj_jiajia"><img src="../images/onImg.png" alt="" /></div></a>');
-				}		
-		  }		
-		})
-     }
-
-    if(uid){
-    	fb()
-    }else{
-    	fbb()
-    }
-		 
+   	   fbb()		 
 	})
 
 	$(".zhj_Release").eq(1).click(function() {
@@ -190,49 +92,13 @@ window.addEventListener('load', function() {
 		$(".zhj_resume").css("display", "none");
 		
 //购买记录		
-        function gmjl(){
-        	$.ajax({
-			type: "get",
-			url: ""+ip+"/djsList/buyList",
-			async: true,
-			data: {
-				purchaserid:uid
-			},
-			success: function(data) {				
-				console.log(data);
-				if(data.success=="查无数据"){
-					return
-				}else{
-					$(".allJL").children().remove();
-				for(var i=0;i<data.data.length;i++){
-				$.ajax({
-				type: "get",
-				url: ""+ip+"/djsList/listDetails",
-				async: true,
-				data: {
-					listId:data.data[i].commodityid
-				},
-				success: function(data) {									
-					var JlTxt='';						
-					for(var i=0;i<data.data.length;i++){
-					JlTxt+='<div class="zhj_purchaseModule"><div class="zhj_purchaseModules"><img src="'+$.base64.atob(data.data[i].cover)+'" alt="" /></div><div class="zhj_purchaseTitle">'+data.data[i].tradename+'</div><div class="zhj_purchaseprice">'+data.data[i].pricing+'</div></div>'
-				}
-				$(".allJL").append(JlTxt);
-				}
-			  })
-			}
-		  }			
-		}
-	   })
-     }
-        
          function gmjl2(){
         	$.ajax({
 			type: "get",
 			url: ""+ip+"/djsList/buyList",
 			async: true,
 			data: {
-				purchaserid:sessionStorage.uid
+				purchaserid:10
 			},
 			success: function(data) {				
 				console.log(data);
@@ -248,10 +114,11 @@ window.addEventListener('load', function() {
 				data: {
 					listId:data.data[i].commodityid
 				},
-				success: function(data) {									
+				success: function(data) {
+					console.log(data)
 					var JlTxt='';						
 					for(var i=0;i<data.data.length;i++){
-					JlTxt+='<div class="zhj_purchaseModule"><div class="zhj_purchaseModules"><img src="'+$.base64.atob(data.data[i].cover)+'" alt="" /></div><div class="zhj_purchaseTitle">'+data.data[i].tradename+'</div><div class="zhj_purchaseprice">'+data.data[i].pricing+'</div></div>'
+					JlTxt+='<div class="zhj_purchaseModule"><div class="zhj_purchaseModules"><img src="'+$.base64.atob(data.data[i].cover)+'" alt="" /></div><div class="zhj_purchaseTitle">'+data.data[i].tradename+'</div><div class="zhj_purchaseprice">下载</div></div>'
 				}
 				$(".allJL").append(JlTxt);
 				}
@@ -261,13 +128,8 @@ window.addEventListener('load', function() {
 		}
 	   })
      }
-        
-        if(uid){
-        	gmjl()
-        }else{
-        	gmjl2()
-        }    
-					
+               
+       gmjl2()					
 	})
 
 	$(".zhj_Release").eq(2).click(function() {
@@ -283,29 +145,7 @@ window.addEventListener('load', function() {
 		$(".zhj_purchase").css("display", "none");
 		$(".zhj_resume").css("display", "block");
 		
-//我的简历	
-
-   function jl(){
-   	    $.ajax({
-		type: "get",
-		url: ""+ip+"/resume/fbrxx",
-		async: true,
-		data: {
-			RPublisherId:uid
-		},
-		success: function(data) {
-			console.log(data)
-			$(".allJls").children().remove();
-		   var Jltext ='';
-           console.log(data);
-           for(var i=0;i<data.length;i++){
-           	 Jltext+='<div class="resumeAll"><div class="resumeAll_left">'+data[i].Fullname+'</div><div class="resumeAll_line"></div><div class="resumeAll_nickName">'+data[i].JobTitle+'</div><div class="resumeBtnO" id='+data[i].resumeId+'>删除</div><div class="resumeBtnT" id='+data[i].resumeId+'>编辑</div></div>'
-           }
-           $(".allJls").append(Jltext);
-		}
-	  })
-   }
-      
+//我的简历	      
       function jl2(){
    	    $.ajax({
 		type: "get",
@@ -327,14 +167,8 @@ window.addEventListener('load', function() {
 	  })
    }
    
-     if(uid){
-     	jl()
-     }else{
      	jl2()
-     }
-   
-   
-				
+     	
 	})
 	
 //点击编辑	
@@ -388,31 +222,6 @@ window.addEventListener('load', function() {
 	})
 
 //提现交易明细
-   function txmx(){
-   	  $.ajax({
-		type: "get",
-		url: ""+ip+"/tixian/qianbao",
-		async: true,
-		data: {
-			TuseId:uid
-		},
-		success: function(data) {
-			console.log(data);
-			var html = '';
-			for(var i = 0; i < data.length; i++) {
-				if(data[i].speed==0){					
-					data[i].speed="审核不通过";
-				}else{
-					data[i].speed="审核已通过";
-				}
-												
-				html += '<div class="jine"><span class="allje">' + data[i].tMoney + '</span><span class="allLine"></span><span class="allNumb">' + data[i].baoBao + '</span><span class="allLine2"></span><span class="alljindu">'+data[i].speed+'</span></div>'					
-			}
-			$(".allList").append(html);			
-		}
-	  })
-   }
-	
 	 function txmx2(){
    	  $.ajax({
 		type: "get",
@@ -437,31 +246,12 @@ window.addEventListener('load', function() {
 		}
 	  })
    }
-	 
-	 if(uid){
-	 	txmx()
-	 }else{
+	
 	 	txmx2()
-	 }
 	
 	
 //插入初始钱包钱数	   点击头像名字实现效果
 $(".zhj_personTopName").click(function(){
-	function crqbb(){
-		$.ajax({
-		type: "post",
-		url: ""+ip+"/tixian/crqb",
-		async: true,
-		data: {
-			qMoney:0,
-			qUserId:uid
-		},
-		success: function(data) {
-			console.log(data);
-		   }
-        })
-	}
-	
 	function crqbb2(){
 		$.ajax({
 		type: "post",
@@ -476,42 +266,20 @@ $(".zhj_personTopName").click(function(){
 		   }
         })
 	}
-	
-	if(uid){
-		crqbb()
-	}else{
 		crqbb2()
-	}
-	
 	
 })
 	
 	
 
 //获取钱包钱数  
-function hqqb(){
-	$.ajax({
-		type: "get",
-		url: ""+ip+"/tixian/qb",
-		async: true,
-		data: {
-			qUserId:uid
-		},
-		success: function(data) {
-			console.log(data)
-			console.log(data[0].qMoney);
-			$(".inputTxt").val(data[0].qMoney);
-		   }
-        })
-}
-
 function hqqb2(){
 	$.ajax({
 		type: "get",
 		url: ""+ip+"/tixian/qb",
 		async: true,
 		data: {
-			qUserId:sessionStorage.uid
+			qUserId:10
 		},
 		success: function(data) {
 			console.log(data)
@@ -520,33 +288,11 @@ function hqqb2(){
 		   }
         })
 }
-
-    if(uid){
-    	hqqb()
-    }else{
-    	hqqb2()
-    }
-  
-
+    
+    hqqb2()
 
 //修改钱包    点击购买时   测试版点击 钱包里的弹出提示模板几个字
 $(".qianb").click(function(){
-	
-	function xiuqb(){
-		$.ajax({
-			type: "post",
-			url: ""+ip+"/tixian/qbc",
-			async: true,
-			data: {
-				qMoney:1000,
-				qUserId:uid
-				},
-				success:function(data) {
-					console.log(data);
-				}
-		 })
-	 }
-	
 	function xiuqb2(){
 		$.ajax({
 			type: "post",
@@ -562,12 +308,7 @@ $(".qianb").click(function(){
 		 })
 	 }
 	
-	   if(uid){
-	   	 xiuqb()
-	   }else{
 	   	xiuqb2()
-	   }
-	
 		
      })
 
@@ -610,86 +351,6 @@ $(".qianb").click(function(){
 		var newM = $(".priceInp").val();
 		var zhb = $(".AlipayInp").val();
 		var kmPas = $(".VerificationInp").val();
-		
-		function allqd(){
-			$.ajax({
-			type: "get",
-			url: ""+ip+"/tixian/qianbao",
-			async: true,
-			data: {
-				TuseId:uid
-			},
-			success: function(data) {
-			$.ajax({
-			type: "get",
-			url: ""+ip+"/tixian/qb",
-			async: true,
-			data: {
-				qUserId:uid
-			},
-			success: function(data) {
-			console.log(data);
-//			  console.log(data[0].qMoney);
-			   var sMoney = data[0].qMoney;
-			     if(newM < sMoney){
-			     	console.log('你的钱包钱数大于你输入的钱数，可以提现哦！');
-			     	  if(newM != "") {
-			     	  	if(zhb != "" ){
-			     	  		if(kmPas != ""){
-			     	  			if(zhb.match(telExp) || zhb.match(regEmail)){
-			     	  				if(kmPas.match(pasExp)){			     	  				
-			     	  				console.log("密码正确");
-			     	  				$.ajax({
-										type: "post",
-										url: ""+ip+"/tixian/tixian",
-										async: true,
-										data: {
-											tMoney: newM,
-											baoBao: zhb,
-											speed: 0,
-											TuseId:uid
-										},
-										success: function(data) {
-											$(".priceInp").val("");
-											$(".AlipayInp").val("");
-											$(".VerificationInp").val("");
-											console.log(data);									
-											$(".zhj_Withdrawals").css("display", "none");
-												
-												$(".zhj_wallet").css("display", "block");
-						$(".zhj_Releases").css("display", "none");
-						$(".zhj_purchase").css("display", "none");
-						$(".zhj_resume").css("display", "none");								
-										}
-									})						
-			     	  				
-			     	  				}else{
-			     	  					console.log("密码错误")
-			     	  				}
-			     	  			}else{
-			     	  				console.log('no')
-			     	  			}		
-			     	  		}else{
-			     	  			console.log("咖芒密码为空哦！")
-			     	  		}
-			     	  	}else{
-			     	  		console.log("支护宝为空哦！")
-			     	  	}
-					}else {
-						console.log("提现为空哦！")
-					} 	
-			     }else if(newM == sMoney){
-			     	console.log('你的钱包钱数等于你输入的钱数，提现后就没有了哦！');
-			     }else{
-			     	console.log('你的钱包里得钱数不够了哦，快去充值哦！');
-			     }	    
-			   }			
-			 })
-		   }
-		  })
-		}
-		
-		
 		function allqb2(){
 			$.ajax({
 			type: "get",
@@ -768,14 +429,7 @@ $(".qianb").click(function(){
 		  })
 		}	
 		
-		
-		if(uid){
-			allqd()
-		}else{
-			allqb2()
-		}
-		
-		
+			allqb2()		
 		
 //		$.ajax({
 //			type: "get",
@@ -870,11 +524,6 @@ $(".qianb").click(function(){
 	$(".zhj_reset").click(function(){
 		location.href="personalSet.html"
 	})
-	
-	
-	
-	
-	
-	
+		
 	
 }, false);

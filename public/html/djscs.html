@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+	#clipArea {
+		margin: 20px;
+		height: 300px;
+	}
+	#file,
+	#clipBtn {
+		margin: 20px;
+	}
+	#view {
+		margin: 0 auto;
+		width: 200px;
+		height: 200px;
+	}
+	#tops{
+		position: absolute;
+		width: 500px;
+		height: 500px;
+		top:-600px;
+		transition: all 0.5s;
+	}
+	</style>
+		<script src="../../node_modules/jquery/dist/jquery.js"></script>
+		<script src="../javascripts/jquery.base64.js"></script>
+	</head>
+
+	<body>
+		用户名：<input type="text" class="username" /><br /> 密码：
+		<input type="password" class="pwd" /><br />
+		<input type="file" class="img" /><br />
+		<img style="width: 200px;height: 200px;" src="" alt="" /><br />
+		<input type="file" class="button" /><br />
+		<button class="shang">上传</button>
+		
+		<a target="_blank" href="http://47.92.145.129:8000/wenjai/undefined1495445759053.rar">下载</a>
+
+		<script>
+//			var file;
+//			var packageSrc = '';
+//			var imgSrc = '';
+//			$('.img').change(function() {
+//				file = this.files[0];
+//				if(file.size > 153600) {
+//					alert("图片过大")
+//				} else {
+//					var fileReader = new FileReader();
+//					fileReader.readAsDataURL(file);
+//					fileReader.onload = function(event) {
+//						imgSrc = event.target.result; //返回的dataURL  
+//						console.log(imgSrc)
+//						$('img').attr('src', imgSrc);
+//					}
+//					var formdata = new FormData();
+//					formdata.append("uploadeFile", file);
+//					$.ajax({
+//						url: "http://47.92.145.129:8000/users/huang",
+//						type: "post",
+//						data: formdata,
+//						contentType: false,
+//						processData: false,
+//						success: function(data) {
+//							console.log(data)
+//							if(data.nem == '正常') {
+//								imgSrc = $.base64.btoa(imgSrc)
+//							}
+//						}
+//					})
+//				}
+//
+//			})
+//			
+//			var packageSrc = '';
+//			$('.button').change(function() {
+//				file = this.files[0];
+//				console.log(file)
+//				if(file.size > 204800) {
+//					alert("压缩包文件过大")
+//				} else {
+//					var formdata = new FormData();
+//					formdata.append("uploadeFile", file);
+//					console.log(formdata)
+//					$.ajax({
+//						url: "http://47.92.145.129:8000/users/up",
+//						type: "post",
+//						data: formdata,
+//						contentType: false,
+//						processData: false,
+//						success: function(data) {
+//							console.log(data)
+////							if(data.fName) {
+////								packageSrc = "../images/listImages/" + data.fName;
+////							}
+//						}
+//					})
+//				}
+//
+//			})
+//
+//			$('.shang').click(function() {
+//				$.ajax({
+//					url: "http://47.92.145.129:8000/djsList/addList",
+//					type: "post",
+//					data: {
+//						cover: imgSrc,
+//						tradename: "商标",
+//						mainclass: "商标设计注册",
+//						subclass: "商标注册",
+//						content: "ertyuiodfghjklcvbnm,fghjkrtyui",
+//						pricing: "￥100/张",
+//						uid: 2,
+//						salas: 3000,
+//						package: packageSrc,
+//						original:1
+//					},
+//					success: function(data) {
+//						console.log(data)
+//					}
+//				})
+//			})
+
+			//			$.ajax({
+			//				url: "http://localhost:3000/djsList/obtainList",
+			//				type: "get",
+			//				data: {
+			//					mainclass: "UI设计"
+			//				},
+			//				success: function(data) {
+			//					console.log(data)
+			//
+			//				}
+			//			})
+
+//						$.ajax({
+//							url: "http://47.92.145.129:8000/djsList/buy",
+//							type: "post",
+//							data: {
+//								purchaserid: 2,
+//								commodityid: 4
+//							},
+//							success: function(data) {
+//								console.log(data)
+//			
+//							}
+//						})
+//
+//						$.ajax({
+//							url: "http://localhost:3000/djsList/buyList",
+//							type: "get",
+//							data: {
+//								purchaserid: "11"
+//							},
+//							success: function(data) {
+//								console.log(data)
+//							}
+//						})
+
+//						$.ajax({
+//							url: "http://localhost:3000/djsList/listDel",
+//							type: "get",
+//							data: {
+//								listId: 11
+//							},
+//							success: function(data) {
+//								console.log(data)
+//							}
+//						})
+
+//			$.ajax({
+//				url: "http://localhost:3000/djsList/obtainList",
+//				type: "get",
+//				data: {
+//					mainclass: '',
+//					subclass: ''
+//				},
+//				success: function(data) {
+//					console.log(data)
+//				}
+//			})
+			
+//			$.ajax({
+//				url: "http://localhost:3000/djsList/list",
+//				type: "get",
+//				success: function(data) {
+//					console.log(data)
+//				}
+//			})
+			
+//			$.ajax({
+//				url: "http://localhost:3000/djsList/issueList",
+//				type: "get",
+//				data: {
+//					uid: "23"
+//				},
+//				success: function(data) {
+//					console.log(data)
+//				}
+//			})
+
+//			$.ajax({
+//				url: "http://localhost:3000/djsList/searchList",
+//				type: "get",
+//				data: {
+//					search: 'UI设计'
+//				},
+//				success: function(data) {
+//					console.log(data)
+//				}
+//			})
+			
+//			$.ajax({
+//				url: "http://localhost:3000/djsList/listDetails",
+//				type: "get",
+//				data: {
+//					listId: 1
+//				},
+//				success: function(data) {
+//					console.log(data)
+//				}
+//			})
+			
+//			$.ajax({
+//				url: "http://localhost:3000/djsList/salespx",
+//				type: "get",
+//				data: {
+//					mainclass: 'CI系统设计',
+//					subclass: ''
+//				},
+//				success: function(data) {
+//					console.log(data)
+//				}
+//			})
+			
+//			$.ajax({
+//				url: "http://47.92.145.129:8000/djsList/original",
+//				type: "get",
+//				success: function(data) {
+//					console.log(data)
+//				}
+//			})
+//			
+//			$.ajax({
+//				url: "http://47.92.145.129:8000/djsList/originalClass",
+//				type: "get",
+//				data: {
+//					mainclass: '商标注册',
+//					subclass: ''
+//				},
+//				success: function(data) {
+//					console.log(data)
+//				}
+//			})
+		</script>
+	</body>
+
+</html>

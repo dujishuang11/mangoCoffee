@@ -23,7 +23,7 @@ window.addEventListener('load', function() {
 			url: "http://47.92.145.129:8000/djsList/issueList",
 			type: "get",
 			data: {
-				uid: sessionStorage.userId
+				uid: 10
 			},
 			success: function(data) {
 				console.log(data)

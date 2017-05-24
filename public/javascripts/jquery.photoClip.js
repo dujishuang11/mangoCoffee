@@ -22,6 +22,7 @@
  * @option_param {function} loadError 加载失败的回调函数。this指向 fileReader 对象，并将错误事件的 event 对象作为参数传入
  * @option_param {function} clipFinish 裁剪完成的回调函数。this指向图片对象，会将裁剪出的图像数据DataURL作为参数传入
  */
+
 //alert(1)
 (function(root, factory) {
 	"use strict";
@@ -44,6 +45,7 @@
 		}
 
 		var defaultOption = {
+
 			width: 200,
 			height: 200,
 			file: "",
@@ -103,6 +105,7 @@
 					console.log((e.loaded / e.total * 100).toFixed() + "%");
 				};
 				fileReader.onload = function(e) {
+
 					var kbs = e.total / 1024;//1024
 					if (kbs > 1024) {//1024
 						// 图片大于1M，需要压缩

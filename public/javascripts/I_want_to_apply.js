@@ -92,7 +92,7 @@ window.addEventListener('load', function() {
 				var formdata = new FormData();
 				formdata.append("uploadeFile", file);
 				$.ajax({
-					url: "http://47.92.145.129:8000/users/huang",
+					url: "http://47.92.145.129:8000/yanzhengs/huang",
 					type: "post",
 					data: formdata,
 					contentType: false,
@@ -252,7 +252,7 @@ window.addEventListener('load', function() {
 				var formdata = new FormData();
 				formdata.append("uploadeFile", file);
 				$.ajax({
-					url: "http://47.92.145.129:8000/users/huang",
+					url: "http://47.92.145.129:8000/yanzhengs/huang",
 					type: "post",
 					data: formdata,
 					contentType: false,
