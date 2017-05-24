@@ -76,117 +76,135 @@ window.addEventListener("load",function(){
 	})
 	// 个人点击审核按钮
 	$("#yu-submit").click(function(){
-				var telRex=/^1[34578]\d{9}$/;  //手机号验证
-				var emailRex =  /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;//邮箱验证
-    			var qqRex=/^\d{5,10}$/;    //qq验证
-    			var shenfRex=/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/; //身份证正则
-				var nickname_val=$("#yu_nickname").val(); //昵称
-				var select_val=$("#id_select").val();  //设计领域
-				var truename_val=$("#yu_tname").val(); //真实姓名
-				var email_val=$("#yu_email").val(); //邮箱
-				var tel_val=$("#yu_telhao").val(); //联系方式
-				var qq_val=$("#yu_qqhao").val(); //qq
-				var person_val=$("#yu_person").val(); //个人介绍
-				var headfile_val=$("#on_tpfil").val(); //上传头像
-				var personworks_val=$("#yuh_pic").val(); //个人作品
-				var address_val=$("#yu_ads").val(); //地址
-				var idcard_val=$("#yu_idhao").val(); //身份证号
-				var idpicz_val=$("#yu_sfzzheng").val(); //身份证正面照
-				var idpicf_val=$("#yu_sfzfan").val(); //身份证反面照
-				if(nickname_val==''){
-					alert("请输入昵称")
-				}
-				else if(select_val==""){
-					alert("请输入设计领域")
-				}
-				else if(truename_val==""){
-					alert("请输入真实姓名")
-				}
-				else if(email_val==""){
-					alert("请输入邮箱")
-				}
-				else if(!(email_val.match(emailRex))){
-			    	alert("邮箱格式输入有误")
-			    }
-				else if(tel_val==""){
-					alert("请输入联系方式")
-				}
-				else if(!(tel_val.match(telRex))){
-			    	alert("手机号输入有误")
-			    }
-				else if(qq_val==""){
-					alert("请输入QQ")
-				}
-				else if(!(qq_val.match(qqRex))){
-			    	alert("QQ输入有误")
-			    }
-				else if(person_val==""){
-					alert("请输入个人介绍")
-				}
-				else if(!photo_obj){
-					alert("请上传头像")
-				}
-				else if(lxm_works.length<=0){
-					alert("请上传个人作品")
-				}
-				else if(lxm_works.length<4){
-					alert("至少上传五张个人作品")
-				}
-				else if(address_val==""){
-					alert("请填写地址")
-				}
-				else if(idcard_val==""){
-					alert("请输入身份证号")
-				}
-				else if(!(idcard_val.match(shenfRex))){
-			    	alert("身份证号输入有误")
-			    }
-				else if(!lxm_idpic_top){
-					alert("请上传身份证正面照")
-				}
-				else if(!lxm_idpic_bottom){
-					alert("请上传身份证反面照")
-				}
-			    else{
-			    	if(!sessionStorage.userId){
-			    		alert('请先登录')
-			    	}else{
-					$.ajax({
-						type:"post",
-						url:'http://'+ip+'/personal/shop_register',
-						async:true,
-						data:{
-							shopName:nickname_val,
-							shopType:$("#id_select").val().join(','),
-							realName:truename_val,
-							email:email_val,
-							phone:tel_val,
-							qq:qq_val,
-							briefIntroduction:person_val,
-							portrait:photo_obj,
-							works:lxm_works.join('-'),
-							address:address_val,
-							userID:idcard_val,
-							idPhoto:lxm_idpic_top +'-'+ lxm_idpic_bottom,
-							secretKey: '',
-							examine:0,
-							Applicant: sessionStorage.userId //获取登录人ID填写 获取登录人ID填写 获取登录人ID填写
-						},
-						success:function(e){
-							console.log(e)
-							if(e.flag == 1){
-								alert('注册成功')
-							}else if(e.flag == 2){
-								alert('店铺名重复，请修改后重试')
-							}else{
-								alert('注册失败，请重试')
-							}
+		var telRex=/^1[34578]\d{9}$/;  //手机号验证
+		var emailRex =  /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;//邮箱验证
+    	var qqRex=/^\d{5,10}$/;    //qq验证
+    	var shenfRex=/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/; //身份证正则
+		var nickname_val=$("#yu_nickname").val(); //昵称
+		var select_val=$("#id_select").val();  //设计领域
+		var truename_val=$("#yu_tname").val(); //真实姓名
+		var email_val=$("#yu_email").val(); //邮箱
+		var tel_val=$("#yu_telhao").val(); //联系方式
+		var qq_val=$("#yu_qqhao").val(); //qq
+		var person_val=$("#yu_person").val(); //个人介绍
+		var headfile_val=$("#on_tpfil").val(); //上传头像
+		var personworks_val=$("#yuh_pic").val(); //个人作品
+		var address_val=$("#yu_ads").val(); //地址
+		var idcard_val=$("#yu_idhao").val(); //身份证号
+		var idpicz_val=$("#yu_sfzzheng").val(); //身份证正面照
+		var idpicf_val=$("#yu_sfzfan").val(); //身份证反面照
+		if(!sessionStorage.userId){
+			alert('请先登录')
+		}else{
+			$.ajax({
+				type:"get",
+				url:'http://'+ip+'/personal/people',
+				async:true,
+				data:{
+					Applicant:sessionStorage.userId				
+				},
+				success:function(e){
+					console.log(e)
+					if(e.flag == '1'){
+						alert('您已注册过个人店铺')
+					}else if(e.flag == '3'){
+//						alert('您没有注册')
+						if(nickname_val==''){
+							alert("请输入昵称")
 						}
-					});
+						else if(select_val==""){
+							alert("请输入设计领域")
+						}
+						else if(truename_val==""){
+							alert("请输入真实姓名")
+						}
+						else if(email_val==""){
+							alert("请输入邮箱")
+						}
+						else if(!(email_val.match(emailRex))){
+					    	alert("邮箱格式输入有误")
+					    }
+						else if(tel_val==""){
+							alert("请输入联系方式")
+						}
+						else if(!(tel_val.match(telRex))){
+					    	alert("手机号输入有误")
+					    }
+						else if(qq_val==""){
+							alert("请输入QQ")
+						}
+						else if(!(qq_val.match(qqRex))){
+					    	alert("QQ输入有误")
+					    }
+						else if(person_val==""){
+							alert("请输入个人介绍")
+						}
+						else if(!photo_obj){
+							alert("请上传头像")
+						}else if(legitimate != 1){
+							alert("头像不合法")
+						}
+						else if(lxm_works.length<=0){
+							alert("请上传个人作品")
+						}
+						else if(lxm_works.length<4){
+							alert("至少上传五张个人作品")
+						}
+						else if(address_val==""){
+							alert("请填写地址")
+						}
+						else if(idcard_val==""){
+							alert("请输入身份证号")
+						}
+						else if(!(idcard_val.match(shenfRex))){
+					    	alert("身份证号输入有误")
+					    }
+						else if(!lxm_idpic_top){
+							alert("请上传身份证正面照")
+						}
+						else if(!lxm_idpic_bottom){
+							alert("请上传身份证反面照")
+						}else{
+							$.ajax({
+								type:"post",
+								url:'http://'+ip+'/personal/shop_register',
+								async:true,
+								data:{
+									shopName:nickname_val,
+									shopType:$("#id_select").val().join(','),
+									realName:truename_val,
+									email:email_val,
+									phone:tel_val,
+									qq:qq_val,
+									briefIntroduction:person_val,
+									portrait:photo_obj,
+									works:lxm_works.join('-'),
+									address:address_val,
+									userID:idcard_val,
+									idPhoto:lxm_idpic_top +'-'+ lxm_idpic_bottom,
+									secretKey: '',
+									examine:0,
+									Applicant: sessionStorage.userId //获取登录人ID填写 获取登录人ID填写 获取登录人ID填写
+								},
+								success:function(e){
+									console.log(e)
+									if(e.flag == 1){
+										alert('注册成功')
+									}else if(e.flag == 2){
+										alert('店铺名重复，请修改后重试')
+									}else{
+										alert('注册失败，请重试')
+									}
+								}
+							});
+						}
 					}
 				}
-			    
 			})
+		}
+				
+				 
+	})
 	
 	function getObjectURL(file) {
         var url = null;
@@ -204,22 +222,47 @@ window.addEventListener("load",function(){
 	var photo_obj;
 	var lxm_idpic_top;
 	var lxm_idpic_bottom;
+	var legitimate; //判断头像是否合法
 //	 $('.on_tpfil').onload = function (e) {
 //                  console.log("成功读取....");
 //          }
 //	$('.on_tpfil').each(function(){
+	
+	
+		$("#clipArea").photoClip({
+			width: 200,
+			height: 200,
+			file: "#on_tpfil",
+			ok: "#clipBtn",
+			loadStart: function() {
+				console.log("照片读取中");
+			},
+			loadComplete: function() {
+				console.log("照片读取完成");
+			},
+			clipFinish: function(dataURL) {
+				$('.yu_imgon img')[0].src = dataURL
+				tops.style.top = '-100%';
+				photo_obj = $.base64.btoa(dataURL);
+				console.log(photo_obj);
+				console.log(dataURL.length);
+			}
+		});
+	
        
         $('.on_tpfil').change(function(evt){
-       		var max_size=51200;
+        	tops.style.top = 0;
+//      	alert(1)	
+       		var max_size=102400;
             var finput = $(this);   
             var files = evt.target.files; // 获得文件对象  
             var output = [];
             for (var i = 0, f; f = files[i]; i++){  
             	//检查文件大小
-                if(f.size > max_size){   
-                    alert("上传的图片不能超过50KB!");   
-                    $(this).val('');   
-                }else{
+//              if(f.size > max_size){   
+//                  alert("上传的图片不能超过100KB!");   
+//                  $(this).val('');   
+//              }else{
                 	var formdata = new FormData();
                 	var my_pic = this.files[0];
 					formdata.append("uploadeFile",this.files[0]);
@@ -232,23 +275,36 @@ window.addEventListener("load",function(){
 						success: function(data) {
 							console.log(data)
 							if(data.nem == '正常') {
-								var fileReader = new FileReader();
-								fileReader.readAsDataURL(my_pic);
-								fileReader.onload = function(event) {
-									var result = event.target.result; //返回的dataURL
-									photo_obj = $.base64.btoa(result)
-//									$('.yu_imgon span').css('display','block')
-									$('.yu_imgon img')[0].src = result
-//									console.log(result)
-								}
+								legitimate = 1;
+//								$('.yu_imgon img')[0].src = photo_obj;
+//								var fileReader = new FileReader();
+//								fileReader.readAsDataURL(my_pic);
+//								fileReader.onload = function(event) {
+//									var result = event.target.result; //返回的dataURL
+//									photo_obj = $.base64.btoa(result)
+////									$('.yu_imgon span').css('display','block')
+									
+////									console.log(result)
+//								}
 							}else{
-								alert('图片不合法，请重新上传')
+								legitimate = 2;
 							}
+//							console.log(legitimate)
 						}
 					})
-                }
+//              }
             }
         });
+		
+//		function lxmPho(){
+//			tops.style.top = 0;
+//		}
+        
+        
+        
+        
+        
+        
 //      $(".wyh_teamthings").on("change",".yuh_pic",function() {
 
         $('.yuh_pic').change(function(e){
@@ -327,10 +383,10 @@ window.addEventListener("load",function(){
             var output = [];
             for (var i = 0, f; f = files[i]; i++){  
 //          	//检查文件大小
-                if(f.size > max_size){   
-                    alert("上传的图片不能超过100KB!");   
-                    $(this).val('');   
-                }else{
+//              if(f.size > max_size){   
+//                  alert("上传的图片不能超过100KB!");   
+//                  $(this).val('');   
+//              }else{
 //              	var formdata = new FormData();
 //              	var my_pic = this.files[0];
 //					formdata.append("uploadeFile",this.files[0]);
@@ -338,21 +394,25 @@ window.addEventListener("load",function(){
                 	fd.append("uploadedFile", this.files[0]);
                 	$.ajax({
                 		type:"post",
-                		url:"http://47.92.145.129:8000/users/chan",
+                		url:"http://47.92.145.129:8000/users/shenfene",//shenfene
                 		async:true,
                 		data:fd,
                 		contentType: false,
             			processData: false,
                 		success:function(e){
                 			console.log(e)
-                			lxm_idpic_top = e.nem
-                			$('.yu_sfzzheng_top')[0].src = 'http://47.92.145.129:8000/'+e.nem
+                			if(e.nem == '请上传有效证件'){
+                				alert('请上传有效证件')
+                			}else{
+                				lxm_idpic_top = e.lu//e.lu
+                				$('.yu_sfzzheng_top')[0].src = 'http://47.92.145.129:8000/'+e.lu//e.lu
+                			}
                 		},
                 		error:function(){
-			                alert("图片不合法");
+			                alert("上传出错了");
 			            }
                 	});
-                }
+//              }
             }
         });
         
@@ -371,15 +431,19 @@ window.addEventListener("load",function(){
                 	fd.append("uploadedFile", this.files[0]);
                 	$.ajax({
                 		type:"post",
-                		url:"http://47.92.145.129:8000/users/chan",
+                		url:"http://47.92.145.129:8000/users/shenfene",
                 		async:true,
                 		data:fd,
                 		contentType: false,
             			processData: false,
                 		success:function(e){
                 			console.log(e)
-                			lxm_idpic_bottom = e.nem
-                			$('.yu_sfzzheng_bottom')[0].src = 'http://47.92.145.129:8000/'+e.nem
+                			if(e.nem == '请上传有效证件'){
+                				alert('请上传有效证件')
+                			}else{
+                				lxm_idpic_bottom = e.lu
+                				$('.yu_sfzzheng_bottom')[0].src = 'http://47.92.145.129:8000/'+e.lu
+                			}
                 		},
                 		error:function(){
 			                alert("图片不合法");
