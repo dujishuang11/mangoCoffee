@@ -125,7 +125,6 @@ router.get('/issueList', function(request, response) {
 	console.log("列表进入成功》》》》》")
 	var uid = request.query.uid;
 	getIssueList(uid, function(err, result) {
-		console.log("result:" + result)
 		if(result.length > 0) {
 			response.send({
 					success: "success",
@@ -292,16 +291,16 @@ router.post('/buy', function(request, response) {
 		if(err) {
 			response.send(err)
 		} else if(results.insertId > 0) {
-			response.send({
-				success: "success"
-			})
+//			response.send({
+//				success: "success"
+//			})
 			getSales(commodityid, function(err, result) {
 				console.log("result:" + result)
 				if(result.changedRows > 0) {
 					console.log("修改成功")
-//					response.send({
-//							success: "success"
-//						}) //列表分类不存在
+					response.send({
+							success: "success"
+						}) //列表分类不存在
 				} else if(err) {
 					response.send({
 							err: err
@@ -339,7 +338,6 @@ router.get('/buyList', function(request, response) {
 	console.log("购买详情进入成功》》》》》")
 	var purchaserid = request.query.purchaserid;
 	getBuyList(purchaserid, function(err, result) {
-		console.log("result:" + result)
 		if(result.length > 0) {
 			response.send({
 					success: "success",
@@ -418,27 +416,27 @@ function getSales(listid, callback) {
 	})
 }
 
-router.post('/sales', function(request, response) {
-	console.log("全部列表进入成功》》》》》")
-	var listid = request.body.listid;
-	getSales(listid, function(err, result) {
-		console.log("result:" + result)
-		if(result.changedRows > 0) {
-			response.send({
-					success: "success"
-				}) //列表分类不存在
-		} else if(err) {
-			response.send({
-					err: err
-				}) //列表获取错误
-		} else {
-			response.send({
-					success: 3
-				}) //列表获取错误
-		}
-	})
-
-})
+//router.post('/sales', function(request, response) {
+//	console.log("全部列表进入成功》》》》》")
+//	var listid = request.body.listid;
+//	getSales(listid, function(err, result) {
+//		console.log("result:" + result)
+//		if(result.changedRows > 0) {
+//			response.send({
+//					success: "success"
+//				}) //列表分类不存在
+//		} else if(err) {
+//			response.send({
+//					err: err
+//				}) //列表获取错误
+//		} else {
+//			response.send({
+//					success: 3
+//				}) //列表获取错误
+//		}
+//	})
+//
+//})
 
 
 //根据销量排序

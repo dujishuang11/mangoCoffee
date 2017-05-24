@@ -23,28 +23,7 @@ window.addEventListener('load', function() {
 
 
 // 初始我的发布
-    function fbb(){
-     	$.ajax({
-			type: "get",
-			url: ""+ip+"/djsList/issueList",
-			async: true,
-			data: {
-				uid:10
-			},
-			success: function(data) {
-				console.log(data)
-				if(data.success=="查无数据"){
-					return
-				}else{
-				var fbTxt=''		
-				for(var i=0;i<data.data.length;i++){
-					fbTxt+='<a href="listDetails.html?'+data.data[i].listid+'"><div class="zhj_Modular"><div class="zhj_ModularImg"><img src="'+$.base64.atob(data.data[i].cover)+'" alt="" /></div><div class="zhj_Title">'+data.data[i].tradename+'</div><div class="zhj_price">'+data.data[i].pricing+'</div></div></a>'
-				}
-				$(".allFB").append(fbTxt);
-				}		
-		  }		
-		})
-     }
+
      
      function fbb(){
      	$.ajax({
@@ -52,7 +31,7 @@ window.addEventListener('load', function() {
 			url: ""+ip+"/djsList/issueList",
 			async: true,
 			data: {
-				uid:sessionStorage.uid
+				uid:10
 			},
 			success: function(data) {
 				console.log(data)
@@ -102,29 +81,7 @@ window.addEventListener('load', function() {
 		$(".zhj_resume").css("display", "none");
 		
 //我的发布            
-     function fbb(){
-     	$.ajax({
-			type: "get",
-			url: ""+ip+"/djsList/issueList",
-			async: true,
-			data: {
-				uid:sessionStorage.uid
-			},
-			success: function(data) {
-				console.log(data)
-				if(data.success=="查无数据"){
-					return
-				}else{
-				var fbTxt=''		
-				for(var i=0;i<data.data.length;i++){
-					fbTxt+='<div class="zhj_Modular"><div class="zhj_ModularImg"><img src="'+$.base64.atob(data.data[i].cover)+'" alt="" /></div><div class="zhj_Title">'+data.data[i].tradename+'</div><div class="zhj_price">'+data.data[i].pricing+'</div></div>'
-				}
-				$(".allFB").append(fbTxt);
-				$(".allFB").append('<a href="publishProject.html"><div class="zhj_jiajia"><img src="../images/onImg.png" alt="" /></div></a>');
-				}		
-		  }		
-		})
-     }  
+
    	   fbb()		 
 	})
 
@@ -141,7 +98,7 @@ window.addEventListener('load', function() {
 			url: ""+ip+"/djsList/buyList",
 			async: true,
 			data: {
-				purchaserid:sessionStorage.uid
+				purchaserid:10
 			},
 			success: function(data) {				
 				console.log(data);
@@ -157,10 +114,11 @@ window.addEventListener('load', function() {
 				data: {
 					listId:data.data[i].commodityid
 				},
-				success: function(data) {									
+				success: function(data) {
+					console.log(data)
 					var JlTxt='';						
 					for(var i=0;i<data.data.length;i++){
-					JlTxt+='<div class="zhj_purchaseModule"><div class="zhj_purchaseModules"><img src="'+$.base64.atob(data.data[i].cover)+'" alt="" /></div><div class="zhj_purchaseTitle">'+data.data[i].tradename+'</div><div class="zhj_purchaseprice">'+data.data[i].pricing+'</div></div>'
+					JlTxt+='<div class="zhj_purchaseModule"><div class="zhj_purchaseModules"><img src="'+$.base64.atob(data.data[i].cover)+'" alt="" /></div><div class="zhj_purchaseTitle">'+data.data[i].tradename+'</div><div class="zhj_purchaseprice">下载</div></div>'
 				}
 				$(".allJL").append(JlTxt);
 				}
