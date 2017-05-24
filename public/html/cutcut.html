@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta charset="UTF-8">
+		<meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<title>咖芒网</title>
+		<link href="../images/logo.png" rel="shortcut icon"/>
+		<link rel="stylesheet" type="text/css" href="../../node_modules/bootstrap/dist/css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="../stylesheets/rester.css"/>
+		<!--<link rel="stylesheet" type="text/css" href="../stylesheets/footer.css"/>-->
+		<link rel="stylesheet" type="text/css" href="../stylesheets/enterprisesShop.css"/>
+		<!--<link rel="stylesheet" type="text/css" href="../stylesheets/nav.css"/>-->
+		<link rel="stylesheet" type="text/css" href="../stylesheets/normalize.css"/>
+		<script src="../../node_modules/jquery/dist/jquery.js"></script>
+		<script src="../javascripts/jquery-2.1.1.min.js"></script>
+		<script src="../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+		<!--<script src="../javascripts/enterprisesShop.js"></script>-->
+		<script src="../javascripts/iscroll-zoom.js"></script>
+		<script src="../javascripts/hammer.js"></script>
+		<script src="../javascripts/jquery.photoClip.js"></script>
+		<script src="../javascripts/jquery.photoClip.min.js"></script>
+		<!--<script src="../javascripts/gVerify.js"></script>
+		<script src="../javascripts/layer/layer.js"></script>-->
+		<!--[if lt IE 10]-->
+    	<!--<script src="../javascripts/jquery.1.4.4.min.js"></script>-->
+    	<!--[endif]-->
+		<script src="../javascripts/jquery.base64.js"></script>
+	</head>
+	<style>
+		html,body{
+			height:100%;
+		}
+	#clipArea {
+		height: 100%;
+		position: relative;
+	}
+	#clipBtn {
+		padding:8px 15px;
+		z-index: 999999;
+		position:absolute ;
+		bottom:6%;
+		left:46%;
+	}
+	.cut_out_text{
+		position: absolute;
+		bottom:1%;
+		left:42%;
+		z-index: 999999;
+		color:white;
+		font-size: 15px;
+	}
+	#view {
+		margin: 0 auto;
+		width: 160px;
+		height: 160px;
+		background: url(../images/hhou.png) no-repeat center;
+		background-size: 90% 100%;
+	}
+	#tops{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top:-103%;
+		transition: all 0.5s;
+		z-index: 9999;
+	}
+	
+	</style>
+	<body>
+		<!--<input type="file" id="headfile" >
+		<div id="tops">
+			<div id="clipArea">
+				<button id="clipBtn" >截取</button>
+			</div>
+		</div>
+		<div id="view">111</div>-->
+		
+		
+		
+		<div class="yu_ontp fl cur">
+			<input class="on_tpfil cur" type="file" id="headfile">
+			<input type="button" value="上传头像" class="btn btn-info yu_ontpbt cur"/>
+			<div class="cron_yu">(*图片大小不大于150kb)</div>
+		</div>
+		<div id="tops">
+			<div id="clipArea">
+				<button id="clipBtn" class="btn btn-info yu_cut_out">确定裁剪</button>
+				<p class="cut_out_text">(滚动滑轮改变大小,双击转换方向)</p>
+			</div>
+		</div>
+		<div id="view">111</div>
+		<script>
+			//document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+//			function hua(){
+//				tops.style.top = 0
+//			}
+			var ip="localhost:1998"; //ip地址
+			var aip="47.92.145.129:8000"; //ip地址
+			  
+			  
+			
+			var fileH;
+			var imgSrcheader = '';
+			$('#headfile').change(function() {
+				tops.style.top = 0
+				fileH = this.files[0];
+				console.log(fileH)
+				var formdata = new FormData();
+				formdata.append("uploadeFile", fileH);
+				
+				$.ajax({
+					url: "http://47.92.145.129:8000/users/huang",
+					type: "post",
+					data: formdata,
+					contentType: false,
+					processData: false,
+					success: function(data) {
+						console.log(data)
+						sessionStorage.nem=data.nem;
+						console.log(sessionStorage.nem)
+						if(data.nem == '正常') {
+							formdata = $.base64.btoa(formdata)
+							console.log(formdata);
+						}
+					}
+				})
+//				console.log(formdata);
+			})
+			$('#clipBtn').click(function() {
+				tops.style.top = '-100%'
+			})
+//			function hua2(){
+//				tops.style.top = '-120%'
+//			}
+			$("#clipArea").photoClip({
+				width: 200,
+				height: 200,
+				file: "#headfile",
+				view: "#view",
+				ok: "#clipBtn",
+				loadStart: function() {
+					console.log("照片读取中");
+				},
+				loadComplete: function() {
+					console.log("照片读取完成");
+				},
+				clipFinish: function(dataURL) {
+					console.log(dataURL);
+					$('.yu_imghead').attr('src', dataURL);
+					if(sessionStorage.nem){
+						$.ajax({
+							type:"post",
+							url:"http://"+aip+"/qenter/enterprise",
+							async:true,
+							data:{
+								CorporateHead: dataURL    //企业头像
+							},
+							success:function(e){
+								console.log(e)
+								if(sessionStorage.nem=="正常"){
+									console.log("ok")
+								}else{
+									console.log("no")
+								}
+								console.log("aaaaaaaaok")
+							}
+						})
+					}else{
+						console.log("没有nem")
+					}
+				}
+			});
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			//上传头像
+	/*var fileH;
+	var imgSrcheader = '';
+	$('#headfile').change(function() {
+		tops.style.top = 0
+		fileH = this.files[0];
+		if(fileH.size > 153600) {
+			alert("图片过大")
+		} else {
+		var fileReader = new FileReader();
+		fileReader.readAsDataURL(fileH);
+		console.log(fileH)
+		fileReader.onload = function(event) {
+			imgSrcheader = event.target.result; //返回的dataURL  
+			console.log(imgSrcheader)
+			$('.yu_imghead').attr('src', imgSrcheader);
+		}
+		var formdata = new FormData();
+		formdata.append("uploadeFile", fileH);
+		console.log("上传头像成功")
+//			$.ajax({
+//				url: "http://47.92.145.129:8000/users/huang",
+//				type: "post",
+//				data: formdata,
+//				contentType: false,
+//				processData: false,
+//				success: function(data) {
+//					console.log(data)
+//					if(data.nem == '正常') {
+//						imgSrcheader = $.base64.btoa(imgSrcheader)
+//					}
+//				}
+//			})
+		}
+	})*/
+		
+			</script>
+	</body>
+</html>

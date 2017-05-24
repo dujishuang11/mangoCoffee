@@ -13,7 +13,7 @@ window.addEventListener('load', function() {
 			$('.djs-text h4').text(data.data[0].tradename)
 			$('.djs-price').text(data.data[0].pricing)
 			$('.djs-pr').text(data.data[0].pricing)
-			$('.djs-right div span:last-child').text("￥" + parseInt(data.data[0].pricing.split('￥')[1]) * Number($('.djs-right div span:nth-child(2)').text()));
+			$('.djs-right div span:last-child').text("￥" + parseFloat(data.data[0].pricing.split('￥')[1]) * Number($('.djs-right div span:nth-child(2)').text()));
 
 			$.ajax({
 				url: "http://47.92.145.129:8000/personal/people",

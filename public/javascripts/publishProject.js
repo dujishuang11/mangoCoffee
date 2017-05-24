@@ -37,7 +37,7 @@ window.addEventListener('load', function() {
 			var formdata = new FormData();
 			formdata.append("uploadeFile", file);
 			$.ajax({
-				url: "http://47.92.145.129:8000/users/huang",
+				url: "http://47.92.145.129:8000/yanzhengs/huang",
 				type: "post",
 				data: formdata,
 				contentType: false,
@@ -122,7 +122,7 @@ window.addEventListener('load', function() {
 		fd.append("uploadedFile", files);
 
 		$.ajax({
-			url: "http://47.92.145.129:8000/users/chan",
+			url: "http://47.92.145.129:8000/yanzhengs/chan",
 			type: "post",
 			data: fd,
 			contentType: false,
@@ -156,7 +156,7 @@ window.addEventListener('load', function() {
 			formdata.append("uploadeFile", file);
 			console.log(formdata)
 			$.ajax({
-				url: "http://47.92.145.129:8000/users/up",
+				url: "http://47.92.145.129:8000/yanzhengs/up",
 				type: "post",
 				data: formdata,
 				contentType: false,

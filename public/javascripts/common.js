@@ -3,8 +3,6 @@ var ip = '47.92.145.129:8000'
 var cc = 'ZGF0YTppbWFnZS9wbmc7YmFzZTY0LGlWQk9SdzBLR2dvQUFBQU5TVWhFVWdBQUFFQUFBQUJBQ0FZQUFBQ3FhWEhlQUFBR3hrbEVRVlI0WHRWYmJWTGNOaGlXMXZtVHNET2xKK2ptSDBUS05Kd2djSUxTRXdST1VIS0N3Z215bkNEYkV4Uk9rT1VFQ1JNcnliOXNUMUFZN09HUGpUclBqdXlSdGZKYWx1UWwxUXd6d0hyMThlajlmTjdYbEF3OEpwUEo5ck5uejE2UFJxTlhVc29KcFhTaWx0dzNscDdqYnlubGdsS0tuL25kM2QzMVlyRzRHWEtMZElqSkdXT3ZDQ0Z2Q0NIN2xGTDg3ajJrbEo4SUlmT3lMTSsvZmZ1MjhKNm81WXZSQU1CTmo4ZmpOMUxLbzlCRHR4MVNnVEhOOC93eWxtUUVBNkFPL2djaDVJUVFzaDM3aGxybWcxcE1zeXc3RHdVaUNBREcyQnRLNlhTREJ6Znh1Q25MOHZqcjE2OFh2c0I3QWJDenN6TjU4dVRKZStpNDc4S1J2emN2aXVMWXgwYjBCbUIzZC9jd1NSSWNmbFBpN29xVmx6VDBBb0F4OW81U0NsMy9ZWWVVY2lxRWVPdTZRV2NBR0dQdkthVkhyaE0vNW5OU3lwa1E0dGhsRDA0QURIVjRLZVUvMkNTbDlCZVh6Zlo1eGhXRVRnQmlIbDVLZVVrSXVjanovTUowWDNDblcxdGJoNFNRUTBycGIzME91eVp1NkpTRXRRQzhlUEZpT2hxTjRPT0RocFR5cjdJc1QxMnROTHhNa2lTbmxGSkVrMEhqNGVIaC9NdVhMNjEycXhVQVplMy9EbHFka0Z2Y2FKcW15emkvNytDY3c4M0N4Ly9VOTd2NjgyVlovdDRXSzFnQlVINytZNGlyVS9wOUtJUkFMTjhZTDErK2ZDMmxiTVFRU0g0K2YvNThaVDZyOG9xTFFEdHhVeFRGbmswQ3JRQnd6ajhFQmptM09LQjVlTTc1bngwaE0wTGMwelJOejNVZ0FBSUFDcFNFZVpxbUJ5YkFLd0F3eHBETUlORHhIcWJJS1FQM3dUVkpRdEtUNS9tQmJpaGpxS1JORlJvQXFNVG1lNGpvRTBLdTBqU3R4VnNkL3FQR0F6Z0JDMTRnei9NOUhRVE9PYVRndGRNRWxvZHNjellBNEp5ZkVrSWdwdDVEU3Jtbml6NWpESWYzNVFRYVlxdU1JdFF6Wkp5bGFZcHpMa2NOUUl6YmwxSmVDeUhxdzhaUUp5bmxzUkJpVm0yWU1mYUpVdnByQUFJM1daWTlyeVNyQm9BeGRrSXBmUmN3TWI3YVFEZnc5cGRiZ1QwUVF1eFYrNG9SbStpZzZnQjg3NnVuRnJBT0twK3ZYQ25zU2ZBb2l1SjU1Y0ppcUlFTzZoSUE1V2JnOTRPR3J2OHhOcXB0cGdZMjFyd1ZxRXNBWW9nVjVrblROTFpLVldyUXNBT2NjeGwwVTRTUUtrU3VKQ0RFVXRkN01RQUlqaWVxaVUzL0hRT0FTZzJvc3Y3L2hpS3FERmJ0QW1PSnF0cFhkQlhBdkZtVy9VeGpSRmhEM2hRaDVEWk4wNXAraStGYWRkdENZd1EvMVlSSWU0VVFOV3ZFR0p1RnByUkR6S2tCY0VZWlk4aTBZaEVRQ3lIRTgycUJHSzVRZDRHWWwzTU9kWTFDeUFKY1NFQlFmRzNhRGt2azVoMWdTU25mQ2lGUWQxaU95T0tQS2E4Z0FURUNvQm9IVzhMaG93cW02UHNtVlIzRy9Rb1NFT3hUTFZLd3dzV3BVQnRKU0JlN0F5N2hSSS8vMWUwUHdrb1BBb0J5aVkzZ0JmOVRwWEp3ZlNBK0cwd3dHQ1JLNlN6THNxbEptQTRnK3ZXZERRWkFHd2k2dEtoWUFSRmtLMmZJT1FjcFc5dUJHUEdLUHNlZ0FDZ1FHb2FzendFaVphaHJsNFFSUkRkRzlNSUVMS3ppOTd3WTRXclhTa3BnTzd5Wm9EVUlMSTFnVkRlSXlNMW14R3liQUR1TS85dllZUFA1SGthMGo1QXQzV0RNUU9pNkxNdERHLzJzZ2lJRVhPQUxVUUd5RGRRQVVPcStiSnNqU1JMc040UVIwbDMyTWhBSzVnR1ZybC9uZWI1dkszbU54Mk1Zc3BxSGM3eWlVMXNIaUlvSDVwRkFPSXVTRElFTHRCMCtRaStCdGVZZkVZU0RHT253YlpabEUvUG1WUkdrNzYyM0NRZUtKV2Y2aHlxTlI5ZFlWMkRWS25ETGRGaEZXU0ZNYTUycmE1WTdpbG9aTzI4UXJ2Z3NoSE9vR093Z1NnemxiaUZFdzZBTkdiV1ppWmE2UEM4amJsSmlxTDMxSmtYTlZEVkcrdHRsSUdPdFdSRzRPb25aS3lBeXN6VWxrcUZGMWE3ejQvT1ZJbWZmYkZNdjRIaXp1SllTV0RRU3RBc0ZVeFg2MmdLZFp6QkxZNjVXdGNIVGJmRDJLMnhXcElCemp0SzZpMGRvZUMydjRxaUZwL095SVYwM3ZlNXoweGIwaUdqdHhWRXMxc08zTmlhSkZVMzJCTVJuRHlzeGkyK0RSTVAzRDVCUXVXRFI2RU53b2ZkdGJyU3RSYVlyUXpRQmlFNnJ1U0NnVjZJY0RHRURzR3IrZFUxU2FHNnlHaFhkaW02Q3RHZ0RRMitHN0dqanZTMks0cFZ6a3hRV2RCRXBsMXY2RVo3cDNTWlhiVHBXMWZneFFmQnVsS3cyM1RmS2VzekRtbXZib2xYem1jNWU0WkNFNHpIQmNEazg5dWNFZ0FJaHVOQzVLVUJjRDk4TEFEejhmN0FKWFRydnBRTDZsNVIzUU51YVM5eTlxVXZIT3JkbFdSNzFmWUhLV1FYMGs2aThIeUFNd2RYN2dIWlZGTVdSYXp1K3ZvQVhBSnFIUUFxTXN0VmpTWU56RGFJTjFTQUF0QVFLTHlUZ1oxTkE0RDBFdkRpNVVranRLejdCQUZRTEtxb2E3VEZvaUJpaTFJYXUwV3RDeUN6UDgxbm9HNk5yYzRHK0tKclBvL0ZTdlVPTWw2ZURxamc0dEpRU2hSRDBIS3k4ZkJHNjEyZ1MwTFlSU01iVHAwLzNreVFCS0NCT3R0VnI5TGIrZ0VYMStueFpscC91NysvbnNXNjZiWC8vQWEyTU5FdUFVRVhQQUFBQUFFbEZUa1N1UW1DQw=='
 
 //sessionStorage.img = cc;
-
-
 var code;
 function createCode() {
 	//首先默认code为空字符串
@@ -88,6 +86,54 @@ if(judge2){
 	$('.search_now').click(function(){
 		location.href = '../html/commodityList.html?'+$('.search_con').val()+''
 	})
+	
+	$('.register_sub').click(function(){
+			if($('.resgister_pass').val() == ''){
+				layer.msg('请输入密码');
+			}else if(!pass.test($('.resgister_pass').val())){
+				layer.msg('密码长度为6-20位，由数字字母组成');
+			}else if($('.resgister_pass_agin').val() == ''){
+				layer.msg('请再次输入密码');
+			}else if($('.resgister_pass_agin').val() != $('.resgister_pass').val()){
+				layer.msg('两次输入密码不同');
+			}else if($('.resgister_Check').is(':checked') == false){
+				layer.msg('请阅读协议');
+			}else{
+				$.ajax({
+					type:"post",
+					url:'http://'+ip+'/users/register',
+					async:true,
+					data:{
+						username: $('.lxm_resgister_num').val(),
+		            	password: $('.resgister_pass').val()
+					},
+					success:function(e){
+						console.log(e)
+						if(e.num == '成功'){
+							layer.msg('注册成功');
+							sessionStorage.userId = e.xinxi[0].uid
+							location.href = ''
+							if(e.xinxi[0].images == '1.jpg'){
+								$('.user img').attr('src',$.base64.atob(cc))
+							}else{
+								$('.user img').attr('src',$.base64.atob(e[0].images))
+							}
+							$('.login_wrapper').css('display','none')
+							$('.register').css('display','none')
+							$('.login').css('display','none')
+							$('.res').css('display','none')
+							$('.user').css('display','block')
+							location.href = 'personalSet.html'
+						}else if(e.num == '账户已存在'){
+							layer.msg('账户已存在');
+						}else{
+							layer.msg('注册失败');
+						}
+					}
+				});
+		//		console.log($(".resgister_problem").find("option:selected").text(),$('.resgister_user').val(),$('.resgister_pass').val(),$('.resgister_Answer').val())
+			}
+		})
 }else{
 	$('.lxm_Agreement').attr('href','html/Agreement.html')
 	$('.lxm_shejishi a').attr('href','html/star.html')
@@ -109,6 +155,58 @@ if(judge2){
 	$('.search_now').click(function(){
 		location.href = 'html/commodityList.html?'+$('.search_con').val()+''
 	})
+	
+	
+	$('.register_sub').click(function(){
+			if($('.resgister_pass').val() == ''){
+				layer.msg('请输入密码');
+			}else if(!pass.test($('.resgister_pass').val())){
+				layer.msg('密码长度为6-20位，由数字字母组成');
+			}else if($('.resgister_pass_agin').val() == ''){
+				layer.msg('请再次输入密码');
+			}else if($('.resgister_pass_agin').val() != $('.resgister_pass').val()){
+				layer.msg('两次输入密码不同');
+			}else if($('.resgister_Check').is(':checked') == false){
+				layer.msg('请阅读协议');
+			}else{
+				$.ajax({
+					type:"post",
+					url:'http://'+ip+'/users/register',
+					async:true,
+					data:{
+						username: $('.lxm_resgister_num').val(),
+		            	password: $('.resgister_pass').val()
+					},
+					success:function(e){
+						console.log(e)
+						if(e.num == '成功'){
+							layer.msg('注册成功');
+							sessionStorage.userId = e.xinxi[0].uid
+							location.href = ''
+							if(e.xinxi[0].images == '1.jpg'){
+								$('.user img').attr('src',$.base64.atob(cc))
+							}else{
+								$('.user img').attr('src',$.base64.atob(e[0].images))
+							}
+							$('.login_wrapper').css('display','none')
+							$('.register').css('display','none')
+							$('.login').css('display','none')
+							$('.res').css('display','none')
+							$('.user').css('display','block')
+							location.href = 'html/personalSet.html'
+						}else if(e.num == '账户已存在'){
+							layer.msg('账户已存在');
+						}else{
+							layer.msg('注册失败');
+						}
+					}
+				});
+		//		console.log($(".resgister_problem").find("option:selected").text(),$('.resgister_user').val(),$('.resgister_pass').val(),$('.resgister_Answer').val())
+			}
+		})
+	
+	
+
 }
 
 //$('.search_con').keydown(function(event){
@@ -196,7 +294,7 @@ $('.resgister_now').click(function(){
 		$('.login_user')[0].innerHTML = '已有账号？'
 		$('.forget_pass').text('忘记密码')
 		$(".login_con p:nth-child(1)")[0].innerHTML = '用第三方帐号注册咖芒'
-		$(".login_email p:nth-child(2)	")[0].innerHTML = '用邮箱/手机号注册咖芒'
+		$(".login_email p:nth-child(2)	")[0].innerHTML = '使用邮箱号注册咖芒'
 		$('.login_enter_main').css('display','none')
 		$('.login_enter_forget').css('display','none')
 		$('.lxm_new_pass').css('display','none')
@@ -228,6 +326,7 @@ $('.resgister_list').click(function(){
 		$('.lxm_my_num').text($('.lxm_resgister_num').val())
 	}
 })
+
 
 $('.register_sub').click(function(){
 		//	alert(1)	
@@ -281,6 +380,7 @@ $('.register_sub').click(function(){
 
 
 
+
 $('.resgister_back').click(function(){
 	$('.resgister').css('display','none')
 })
@@ -329,20 +429,22 @@ var email = /^[_\.0-9a-z-]+@([0-9a-z][0-9a-z-]+\.){1,4}[a-z]{2,3}$/; //邮箱
 
 $('.lxm_login_one').click(function(){
 	console.log(code)
+	$('.lxm_login_one').attr('disabled','disabled')
+	
 //	var lxm_yzm = code($('.lxm_login_one_yzm').val());
 	if($('.lxm_login_one_user').val() == ''){
-		layer.msg('请输入邮箱');
+		layer.msg('请输入邮箱',{time:1000});
 	}else if(!email.test($('.lxm_login_one_user').val())){
-		layer.msg('请输入正确的邮箱');
+		layer.msg('请输入正确的邮箱',{time:1000});
 	}else if($('.lxm_login_one_pass').val() == ''){
-		layer.msg('请输入密码');
+		layer.msg('请输入密码',{time:1000});
 	}else if(!pass.test($('.lxm_login_one_pass').val())){
-		layer.msg('密码长度为6-20位，由数字字母组成');
+		layer.msg('密码长度为6-20位，由数字字母组成',{time:1000});
 	}else if($('.lxm_login_one_yzm').val() == ''){
-		layer.msg('请输入验证码');
+		layer.msg('请输入验证码',{time:1000});
 	}else{
 		if($('.lxm_login_one_yzm').val().toUpperCase() != code){
-			layer.msg('验证码错误，请重新输入');
+			layer.msg('验证码错误，请重新输入',{time:1000});
 			createCode()
 			$('.lxm_login_one_yzm').val('')
 		}else{
@@ -357,7 +459,7 @@ $('.lxm_login_one').click(function(){
 				success:function(e){
 					console.log(e)
 					if(e.num == 1){
-						layer.msg('登录成功');
+						layer.msg('登录成功',{time:1000});
 						sessionStorage.userId = e.uid
 //						$('.login_wrapper').css('opacity','0')
 //						$('.login_wrapper').css('z-index','-1')
@@ -393,18 +495,21 @@ $('.lxm_login_one').click(function(){
 						
 						
 					}else if(e.num == 2){
-						layer.msg('密码错误');
+						layer.msg('密码错误',{time:1000});
 						createCode()
 						$('.lxm_login_one_yzm').val('')
 						$('.lxm_login_one_pass').val('')
 					}else if(e.num == 3){
-						layer.msg('账号不存在');
+						layer.msg('账号不存在',{time:1000});
 					}
 				}
 			});
 //			console.log($('.lxm_login_one_user').val(),$('.lxm_login_one_pass').val())
 		}
 	}
+	setInterval(function(){
+		$('.lxm_login_one').removeAttr("disabled")
+	},3000)
 })
 
 $('.user_out').click(function(){

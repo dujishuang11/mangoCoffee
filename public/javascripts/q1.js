@@ -23,19 +23,62 @@
 			root:'./',
 			callback:function(){}
 		},$body = $("body");
+		
 		$.extend(opts,options);
+		
+		
+		
+		var listId = location.href.split('?')[1];
+		if(listId){
+			listId = listId.split("#")[0];
+			$.ajax({
+				url: "http://47.92.145.129:8000/djsList/listDetails",
+				type: "get",
+				data: {
+					listId: listId
+				},
+				success: function(data) {
+					console.log(data)
+					var uid = data.data[0].uid;
+					personalData(uid)
+				}
+			})
+		}
+		
+        
+        
+        function personalData(uid) {
+		$.ajax({
+			url: "http://47.92.145.129:8000/personal/people",
+			type: "get",
+			data: {
+				Applicant: uid
+			},
+			success: function(data) {
+				console.log(data)
+				var djs = {
+            		qqs:[{'name':data.results[0].shopName,'qq':data.results[0].qq}]
+            	};
+				$.extend(opts,djs)
+				console.log(opts)
+				console.log($("#lrkfwarp").length)
+				//插入html结构和基础css
+		
 
-		//插入html结构和基础css
-		if(!$("#lrkfwarp").length){
+        
+
+        
+			}
+		})
+	}
+        if(!$("#lrkfwarp").length){
 			$body.append("<div id='lrkfwarp' class='lrkf lrkf-"+opts.direction+" lrkfshow' style="+opts.position+"><a href='#' class='lrkf_btn lrkf_btn_hide'>"+opts.btnText+"</a><div class='lrkf_box'><div class='lrkf_header'><a href='#' title='关闭' class='lrkf_x'></a></div><div class='lrkf_con'><ul class='kflist'></ul></div><div class='lrkf_foot'>"+opts.foot+"</div></div></div>");
             loadCss(opts.root+"css/lrkf.css"); //打开页面时浏览器动态的加载.css 文件
             loadCss(opts.root+"skin/"+opts.skin+".css"); //打开页面时浏览器动态的加载.css 文件
 		}
-
         $(window).load(function(){
             init()
         });
-
         function init(){
                 var $lrKfWarp = $("#lrkfwarp"),
                     $lrKf_con = $lrKfWarp.find(".lrkf_con"),
@@ -117,5 +160,6 @@
             document.getElementsByTagName("head")[0].appendChild(fileRef)
         }
     }
+		
 
 })(jQuery);

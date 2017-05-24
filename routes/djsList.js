@@ -1,7 +1,5 @@
 var express = require('express');
 var mysql = require('mysql');
-var fs = require('fs');
-var formidable = require('formidable');
 
 var router = express.Router();
 
@@ -23,37 +21,6 @@ router.all('*', function(req, res, next) {
 });
 
 //插入列表
-router.post('/package', function(request, response) {
-	console.log("进入压缩包上传》》》》》》")
-	var form = new formidable.IncomingForm();
-	form.uploadDir = "public/images/listImages/";
-	form.parse(request, function(error, fields, files) {
-		console.log("request:" + request)
-		for(var i in files) {
-			var file = files[i];
-			var fName = (new Date()).getTime();
-			var name = file.name.split(".")
-			var hz = name[name.length - 1]
-			console.log(hz)
-			switch(hz) {
-				case "zip":
-					fName = fName + ".zip";z
-				case "rar":
-					fName = fName + ".rar";
-					break;
-				case "7-zip":
-					fName = fName + ".7-zip";
-					break;
-			}
-			var newPath = "public/images/listImages/" + fName;
-			fs.renameSync(file.path, newPath);
-			response.send({
-				fName: fName
-			});
-		}
-	})
-})
-
 function getAddList(cover, tradename, mainclass, subclass, content, pricing, uid, salas, package,original, callback) {
 	pool.getConnection(function(err, connection) {
 		var sql = 'insert into list (cover, tradename, mainclass, subclass, content, pricing, uid, salas, package,original) values (?,?,?,?,?,?,?,?,?,?)';
@@ -158,7 +125,6 @@ router.get('/issueList', function(request, response) {
 	console.log("列表进入成功》》》》》")
 	var uid = request.query.uid;
 	getIssueList(uid, function(err, result) {
-		console.log("result:" + result)
 		if(result.length > 0) {
 			response.send({
 					success: "success",
@@ -325,16 +291,16 @@ router.post('/buy', function(request, response) {
 		if(err) {
 			response.send(err)
 		} else if(results.insertId > 0) {
-			response.send({
-				success: "success"
-			})
+//			response.send({
+//				success: "success"
+//			})
 			getSales(commodityid, function(err, result) {
 				console.log("result:" + result)
 				if(result.changedRows > 0) {
 					console.log("修改成功")
-//					response.send({
-//							success: "success"
-//						}) //列表分类不存在
+					response.send({
+							success: "success"
+						}) //列表分类不存在
 				} else if(err) {
 					response.send({
 							err: err
@@ -372,7 +338,6 @@ router.get('/buyList', function(request, response) {
 	console.log("购买详情进入成功》》》》》")
 	var purchaserid = request.query.purchaserid;
 	getBuyList(purchaserid, function(err, result) {
-		console.log("result:" + result)
 		if(result.length > 0) {
 			response.send({
 					success: "success",
@@ -451,27 +416,27 @@ function getSales(listid, callback) {
 	})
 }
 
-router.post('/sales', function(request, response) {
-	console.log("全部列表进入成功》》》》》")
-	var listid = request.body.listid;
-	getSales(listid, function(err, result) {
-		console.log("result:" + result)
-		if(result.changedRows > 0) {
-			response.send({
-					success: "success"
-				}) //列表分类不存在
-		} else if(err) {
-			response.send({
-					err: err
-				}) //列表获取错误
-		} else {
-			response.send({
-					success: 3
-				}) //列表获取错误
-		}
-	})
-
-})
+//router.post('/sales', function(request, response) {
+//	console.log("全部列表进入成功》》》》》")
+//	var listid = request.body.listid;
+//	getSales(listid, function(err, result) {
+//		console.log("result:" + result)
+//		if(result.changedRows > 0) {
+//			response.send({
+//					success: "success"
+//				}) //列表分类不存在
+//		} else if(err) {
+//			response.send({
+//					err: err
+//				}) //列表获取错误
+//		} else {
+//			response.send({
+//					success: 3
+//				}) //列表获取错误
+//		}
+//	})
+//
+//})
 
 
 //根据销量排序
