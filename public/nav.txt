@@ -1,32 +1,29 @@
-ÓÐ¸ö¹«¹²js ½Ðcomment.js ÒýÈëÒ»ÏÂ
+ï¿½Ð¸ï¿½ï¿½ï¿½ï¿½ï¿½js ï¿½ï¿½comment.js ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½
 
-µ¼º½ÓÐÁíÒ»Ì×ÑùÊ½ 
-1¡¢ÔÚ nav_wrapper ¼Ó class nav_bg_a Ä¬ÈÏÃ»ÓÐclass
-2¡¢ÔÚ nav_list ÏÂµÄµÚÒ»¸öUL °Ñclass nav_color_f ¸ÄÎª nav_color_a  Ä¬ÈÏÎª nav_color_f
-
-<<<<<<< HEAD
-=======
-
-<p>Ê¹ÓÃÓÊÏäºÅµÇÂ¼¿§Ã¢</p> ////////103ÐÐ¸½½ü Ìæ»»
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Ê½ 
+1ï¿½ï¿½ï¿½ï¿½ nav_wrapper ï¿½ï¿½ class nav_bg_a Ä¬ï¿½ï¿½Ã»ï¿½ï¿½class
+2ï¿½ï¿½ï¿½ï¿½ nav_list ï¿½ÂµÄµï¿½Ò»ï¿½ï¿½UL ï¿½ï¿½class nav_color_f ï¿½ï¿½Îª nav_color_a  Ä¬ï¿½ï¿½Îª nav_color_f
 
 
->>>>>>> origin/master
+<p>Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Åµï¿½Â¼ï¿½ï¿½Ã¢</p> ////////103ï¿½Ð¸ï¿½ï¿½ï¿½ ï¿½æ»»
+
+
 <script src="../javascripts/gVerify.js"></script>
 <script src="../javascripts/layer/layer.js"></script>
-ÒýÈëÁ½¸öjs
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½js
 
 
 
-<div class="yzm_pic" id="lxm_said" style="width: 100px;height: 50px; text-align: center; line-height: 50px; background: url(images/login_yanzheng.jpg) no-repeat;background-size: cover;font-size: 20px;letter-spacing: 3px;"></div> ///////////////////////////ÑéÖ¤
+<div class="yzm_pic" id="lxm_said" style="width: 100px;height: 50px; text-align: center; line-height: 50px; background: url(images/login_yanzheng.jpg) no-repeat;background-size: cover;font-size: 20px;letter-spacing: 3px;"></div> ///////////////////////////ï¿½ï¿½Ö¤
 
 
-<div class="login_wrapper" style="display: none;z-index: 99999;"> ///////////¸²¸Ç
+<div class="login_wrapper" style="display: none;z-index: 99999;"> ///////////ï¿½ï¿½ï¿½ï¿½
 
 
 
 
 
-µÇÂ¼³É¹¦ºó»áÔÚsessionStorage ´æÈë userID ×Ö¶Î  Ò²¾ÍÊÇµÇÂ¼ÈËID
+ï¿½ï¿½Â¼ï¿½É¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½sessionStorage ï¿½ï¿½ï¿½ï¿½ userID ï¿½Ö¶ï¿½  Ò²ï¿½ï¿½ï¿½Çµï¿½Â¼ï¿½ï¿½ID
 
 <div id="lxm_nav" class="nav_wrapper">
 				<div class="nav">
@@ -35,46 +32,46 @@
 					</div>
 					<div class="nav_list">
 						<ul class="nav_color_f">
-							<li class="nav_one lxm_nav_first"><a class="lxm_first_nav" href="#">Ê×Ò³</a></li>
+							<li class="nav_one lxm_nav_first"><a class="lxm_first_nav" href="#">ï¿½ï¿½Ò³</a></li>
 							<li class="nav_one">
-								<a href="#">Éè¼Æ·þÎñ</a><i class="glyphicon glyphicon-triangle-bottom"></i>
+								<a href="#">ï¿½ï¿½Æ·ï¿½ï¿½ï¿½</a><i class="glyphicon glyphicon-triangle-bottom"></i>
 								<div class="nav_hide">
 									<ul class="nav_hide_list">
-										<!--<li><a href="#">LOGO/Æ·ÅÆ</a></li>
-										<li><a href="#">UIÉè¼Æ</a></li>
-										<li><a href="#">¹¤Òµ/²úÆ·Éè¼Æ</a></li>
-										<li><a href="#">ÉãÓ°</a></li>
-										<li><a href="#">ÊÒÄÚÉè¼Æ</a></li>
-										<li><a href="#">Ë½¼Ò¶¨ÖÆ</a></li>
-										<li><a href="#">Æ½ÃæÉè¼Æ</a></li>
-										<li><a href="#">»æ»­/²å»­</a></li>
-										<li><a href="#">Ó°ÊÓ/¶¯»­</a></li>
-										<li><a href="#">·þ×°Éè¼Æ</a></li>
-										<li><a href="#">ÔìÐÍÉè¼Æ</a></li>
-										<li><a href="#">ÆäËü</a></li>
-										<li><a href="#">ÔìÐÍÉè¼Æ</a></li>-->
+										<!--<li><a href="#">LOGO/Æ·ï¿½ï¿½</a></li>
+										<li><a href="#">UIï¿½ï¿½ï¿½</a></li>
+										<li><a href="#">ï¿½ï¿½Òµ/ï¿½ï¿½Æ·ï¿½ï¿½ï¿½</a></li>
+										<li><a href="#">ï¿½ï¿½Ó°</a></li>
+										<li><a href="#">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a></li>
+										<li><a href="#">Ë½ï¿½Ò¶ï¿½ï¿½ï¿½</a></li>
+										<li><a href="#">Æ½ï¿½ï¿½ï¿½ï¿½ï¿½</a></li>
+										<li><a href="#">ï¿½æ»­/ï¿½å»­</a></li>
+										<li><a href="#">Ó°ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½</a></li>
+										<li><a href="#">ï¿½ï¿½×°ï¿½ï¿½ï¿½</a></li>
+										<li><a href="#">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a></li>
+										<li><a href="#">ï¿½ï¿½ï¿½ï¿½</a></li>
+										<li><a href="#">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a></li>-->
 									</ul>
 									<div class="nav_title"></div>
 								</div>
 							</li>
-							<li class="nav_one lxm_shejishi"><a href="#">Éè¼ÆÊ¦</a></li>
+							<li class="nav_one lxm_shejishi"><a href="#">ï¿½ï¿½ï¿½Ê¦</a></li>
 						</ul>
 					</div>
 					<div class="nav_right">
 						<div class="nav_search">
-							<input class="search_con" type="text" placeholder="ËÑË÷Éè¼Æ·þÎñ" />
+							<input class="search_con" type="text" placeholder="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½" />
 							<i class="glyphicon glyphicon-search search_now"></i>
 						</div>
-						<p class="login">µÇÂ¼</p>
-						<p class="res">×¢²á</p>
+						<p class="login">ï¿½ï¿½Â¼</p>
+						<p class="res">×¢ï¿½ï¿½</p>
 						<div class="user" style = 'display: none;'>
 							<img src="../images/40x40.jpg" alt="" />
 							<div class="user_list_wrapper">
 								<div class="user_list">
 									<ul>
-										<li class="user_shop"><a href="#">¸öÈË¿ªµê</a></li>
-										<li class="user_data"><a href="#">¸öÈË×ÊÁÏ</a></li>
-										<li class="user_out"><a href="#">ÍË³öµÇÂ¼</a></li>
+										<li class="user_shop"><a href="#">ï¿½ï¿½ï¿½Ë¿ï¿½ï¿½ï¿½</a></li>
+										<li class="user_data"><a href="#">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a></li>
+										<li class="user_out"><a href="#">ï¿½Ë³ï¿½ï¿½ï¿½Â¼</a></li>
 									</ul>
 									<div class="user_title"></div>
 								</div>
@@ -83,95 +80,95 @@
 					</div>
 				</div>
 			</div>
-			<!--<p class="inter">¿§Ã¢Íø</p>-->
+			<!--<p class="inter">ï¿½ï¿½Ã¢ï¿½ï¿½</p>-->
 			<div class="login_wrapper" style="opacity: 0; z-index: -1;">
 				<div class="login_con">
-					<p>ÓÃµÚÈý·½ÕÊºÅµÇÂ¼¿§Ã¢</p>
+					<p>ï¿½Ãµï¿½ï¿½ï¿½ï¿½ÊºÅµï¿½Â¼ï¿½ï¿½Ã¢</p>
 					<i class="glyphicon glyphicon-remove login_remove"></i>
 					
-					<!--µÚÈý·½-->
+					<!--ï¿½ï¿½ï¿½ï¿½-->
 					<div class="other_mode">
 						<div class="tencent"><img src="../images/QQ-1.png" alt="" /></div>
 						<div class="WeChat"><img src="../images/wx-1.png" alt="" /></div>
 					</div>
 					
-					<!--±êÌâ-->
+					<!--ï¿½ï¿½ï¿½ï¿½-->
 					<div class="login_email">
 						<p></p>
-						<p>ÓÃÓÊÏä/ÊÖ»úºÅµÇÂ¼¿§Ã¢</p>
+						<p>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/ï¿½Ö»ï¿½Åµï¿½Â¼ï¿½ï¿½Ã¢</p>
 						<p></p>
 					</div>
 					
 
 					<div class="login_enter">
-						<!--ÆÕÍ¨µÇÂ¼-->
+						<!--ï¿½ï¿½Í¨ï¿½ï¿½Â¼-->
 						<div class="login_enter_main" style="display: block;">
-							<input class="lxm_login_one_user" type="text" placeholder="ÊäÈëÓÊÏäºÅ" />
-							<input class="lxm_login_one_pass" type="password" placeholder="ÃÜÂë" />
+							<input class="lxm_login_one_user" type="text" placeholder="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" />
+							<input class="lxm_login_one_pass" type="password" placeholder="ï¿½ï¿½ï¿½ï¿½" />
 							<div class="login_yzm">
 								<div class="yzm_pic" id="v_container" style="width: 100px;height: 50px;"></div>
-								<input class="lxm_login_one_yzm" type="text" placeholder="ÇëÊäÈëÑéÖ¤Âë" />
+								<input class="lxm_login_one_yzm" type="text" placeholder="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¤ï¿½ï¿½" />
 							</div>
-							<button class="lxm_login_one">µÇÂ¼</button>
+							<button class="lxm_login_one">ï¿½ï¿½Â¼</button>
 						</div>
 						
-						<!--Íü¼ÇÃÜÂë-->
+						<!--ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-->
 						<div class="login_enter_forget" style="display: none;">
-							<input type="text" placeholder="ÊäÈëÓÊÏäºÅ" />
-							ÃÜ±£ÎÊÌâ
+							<input type="text" placeholder="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" />
+							ï¿½Ü±ï¿½ï¿½ï¿½ï¿½ï¿½
 							<p>
-								<!--ÃÜ±£ÎÊÌâ¡¡-->
+								<!--ï¿½Ü±ï¿½ï¿½ï¿½ï¿½â¡¡-->
 								<select>
-									<option>ÎÒµÄÃû×Ö</option>
-									<option>ÎÒ×îÏ²»¶µÄÈË</option>
-									<option>ÎÒµÄÐ¡Ñ§Ð£Ãû</option>
-									<option>ÎÒµÄÖÐÑ§Ð£Ãû</option>
-									<option>ÎÒµÄ´óÑ§Ð£Ãû</option>
+									<option>ï¿½Òµï¿½ï¿½ï¿½ï¿½ï¿½</option>
+									<option>ï¿½ï¿½ï¿½ï¿½Ï²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</option>
+									<option>ï¿½Òµï¿½Ð¡Ñ§Ð£ï¿½ï¿½</option>
+									<option>ï¿½Òµï¿½ï¿½ï¿½Ñ§Ð£ï¿½ï¿½</option>
+									<option>ï¿½ÒµÄ´ï¿½Ñ§Ð£ï¿½ï¿½</option>
 								</select>
 							</p>
-							<p>ÎÊÌâ´ð°¸¡¡<input type="text" class="resgister_Answer_forget	" placeholder="ÊäÈëÎÊÌâ´ð°¸" /></p>
-							<button class="lxm_login_two">ÖØÖÃ</button>
+							<p>ï¿½ï¿½ï¿½ï¿½ð°¸¡ï¿½<input type="text" class="resgister_Answer_forget	" placeholder="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" /></p>
+							<button class="lxm_login_two">ï¿½ï¿½ï¿½ï¿½</button>
 						</div>
 						
 						<div class="lxm_new_pass" style="display: none;">
-							<p><input class="resgister_pass_new" type="password" placeholder="ÇëÊäÈëÐÂÃÜÂë" /></p>
-							<p><input class="resgister_pass_agin_new" type="password" placeholder="È·ÈÏÃÜÂë" /></p>
-							<button>Ìá½»</button>
+							<p><input class="resgister_pass_new" type="password" placeholder="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" /></p>
+							<p><input class="resgister_pass_agin_new" type="password" placeholder="È·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" /></p>
+							<button>ï¿½á½»</button>
 						</div>
 						
-						<!--×¢²áÕËºÅ-->
+						<!--×¢ï¿½ï¿½ï¿½Ëºï¿½-->
 						<div class="login_enter_resgister" style="display: none;">
-							<input class="lxm_resgister_num" type="text" placeholder="ÊäÈëÓÊÏäºÅ" />
-							<button class="resgister_list">×¢²á</button>
+							<input class="lxm_resgister_num" type="text" placeholder="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" />
+							<button class="resgister_list">×¢ï¿½ï¿½</button>
 						</div>
-						<a href="#" style="display: none;" class="forget_pass">Íü¼ÇÃÜÂë</a><a href="#" class="resgister_now">Á¢¼´×¢²á</a><span class="login_user">»¹Ã»ÓÐÕËºÅ£¿</span>
+						<a href="#" style="display: none;" class="forget_pass">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a><a href="#" class="resgister_now">ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½</a><span class="login_user">ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ËºÅ£ï¿½</span>
 					</div>
 					
 					
 					
 						
 					
-					<!--×¢²áÁÐ±í-->
+					<!--×¢ï¿½ï¿½ï¿½Ð±ï¿½-->
 					<div class="resgister" style="display: none;">
 						<img src="../images/logo.png" alt="" />
 						<p></p>
-						<p>»¶Ó­À´µ½¿§Ã¢£¡ÇëÍêÉÆÄãµÄÐÅÏ¢</p>
-						<p>ÕËºÅ¡¡<span class="lxm_my_num">17600022763</span></p>
-						<p style="display: none;">êÇ³Æ¡¡<input class="resgister_user" type="text" placeholder="êÇ³Æ" /></p>
-						<p>ÃÜÂë¡¡<input class="resgister_pass" type="password" placeholder="Éè¶¨µÇÂ¼ÃÜÂë" /></p>
-						<p>È·ÈÏÃÜÂë¡¡<input class="resgister_pass_agin" type="password" placeholder="ÇëÔÙÊäÈëÒ»´ÎµÇÂ¼ÃÜÂë" /></p>
+						<p>ï¿½ï¿½Ó­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢</p>
+						<p>ï¿½ËºÅ¡ï¿½<span class="lxm_my_num">17600022763</span></p>
+						<p style="display: none;">ï¿½Ç³Æ¡ï¿½<input class="resgister_user" type="text" placeholder="ï¿½Ç³ï¿½" /></p>
+						<p>ï¿½ï¿½ï¿½ë¡¡<input class="resgister_pass" type="password" placeholder="ï¿½è¶¨ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½" /></p>
+						<p>È·ï¿½ï¿½ï¿½ï¿½ï¿½ë¡¡<input class="resgister_pass_agin" type="password" placeholder="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½Îµï¿½Â¼ï¿½ï¿½ï¿½ï¿½" /></p>
 						<p style="display: none;">
-							ÃÜ±£ÎÊÌâ¡¡<select class="resgister_problem">
-								<option>ÎÒµÄÃû×Ö</option>
-								<option>ÎÒ×îÏ²»¶µÄÈË</option>
-								<option>ÎÒµÄÐ¡Ñ§Ð£Ãû</option>
-								<option>ÎÒµÄÖÐÑ§Ð£Ãû</option>
-								<option>ÎÒµÄ´óÑ§Ð£Ãû</option>
+							ï¿½Ü±ï¿½ï¿½ï¿½ï¿½â¡¡<select class="resgister_problem">
+								<option>ï¿½Òµï¿½ï¿½ï¿½ï¿½ï¿½</option>
+								<option>ï¿½ï¿½ï¿½ï¿½Ï²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</option>
+								<option>ï¿½Òµï¿½Ð¡Ñ§Ð£ï¿½ï¿½</option>
+								<option>ï¿½Òµï¿½ï¿½ï¿½Ñ§Ð£ï¿½ï¿½</option>
+								<option>ï¿½ÒµÄ´ï¿½Ñ§Ð£ï¿½ï¿½</option>
 							</select>
 						</p>
-						<p style="display: none;">ÎÊÌâ´ð°¸¡¡<input type="text" class="resgister_Answer" placeholder="ÊäÈëÎÊÌâ´ð°¸" /></p>
-						<p class="lxm_rules"><input class="resgister_Check" type="checkbox" id="aa" /><label for="aa">ÎÒÒÑÔÄ¶Á²¢½ÓÊÜ<a href="#">¡¶¿§Ã¢ÍøÃâÔðÉùÃ÷¡·</a></label></p>
-						<button class="register_sub">Ìá½»</button>
+						<p style="display: none;">ï¿½ï¿½ï¿½ï¿½ð°¸¡ï¿½<input type="text" class="resgister_Answer" placeholder="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" /></p>
+						<p class="lxm_rules"><input class="resgister_Check" type="checkbox" id="aa" /><label for="aa">ï¿½ï¿½ï¿½ï¿½ï¿½Ä¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½<a href="#">ï¿½ï¿½ï¿½ï¿½Ã¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a></label></p>
+						<button class="register_sub">ï¿½á½»</button>
 						<i class="glyphicon glyphicon-arrow-left resgister_back"></i>
 						<i class="glyphicon glyphicon-remove resgister_remove"></i>
 					</div>

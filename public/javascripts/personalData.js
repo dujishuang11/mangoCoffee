@@ -41,7 +41,6 @@ window.addEventListener('load', function() {
 					fbTxt+='<a href="listDetails.html?'+data.data[i].listid+'"><div class="zhj_Modular"><div class="zhj_ModularImg"><img src="'+$.base64.atob(data.data[i].cover)+'" alt="" /></div><div class="zhj_Title">'+data.data[i].tradename+'</div><div class="zhj_price">'+data.data[i].pricing+'</div></div></a>'
 				}
 				$(".allFB").append(fbTxt);
-<<<<<<< HEAD
 				}		
 		  }		
 		})
@@ -65,9 +64,7 @@ window.addEventListener('load', function() {
 					fbTxt+='<a href="listDetails.html?'+data.data[i].listid+'"><div class="zhj_Modular"><div class="zhj_ModularImg"><img src="'+$.base64.atob(data.data[i].cover)+'" alt="" /></div><div class="zhj_Title">'+data.data[i].tradename+'</div><div class="zhj_price">'+data.data[i].pricing+'</div></div></a>'
 				}
 				$(".allFB").append(fbTxt);
-=======
-                $('.allFB').append('<a href="publishProject.html"><div class="zhj_jiajia"><img src="../images/onImg.png" alt="" /></div></a>');				
->>>>>>> origin/master
+//              $('.allFB').append('<a href="publishProject.html"><div class="zhj_jiajia"><img src="../images/onImg.png" alt="" /></div></a>');				
 				}		
 		  }		
 		})

@@ -100,10 +100,7 @@ window.addEventListener('load', function() {
 	}
 
 	function djsList(i, data) {
-<<<<<<< HEAD
 		console.log(i, data)
-=======
->>>>>>> origin/master
 		$('.djs-list>ul').append('<li class="djs-List"><a href="personalData2.html?' + arrList[i].Applicant + '"><div class = "djs-top"><img src = "' + $.base64.atob(arrList[i].portrait) + '" alt = ""/><div class = "djs-text fl"><p class = "djs-name">' + arrList[i].shopName + '</p><div><span class = "djs-num">' + data + '</span><span>个设计服务 </span></div><ul class="djs-category"></ul></div></div><div class = "djs-bottom">' + arrList[i].briefIntroduction + '</div></a></li>');
 		var shopType = arrList[i].shopType.split(",")
 		for(var j = 0; j < shopType.length; j++) {
