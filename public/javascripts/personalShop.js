@@ -96,114 +96,99 @@ window.addEventListener("load",function(){
 		if(!sessionStorage.userId){
 			alert('请先登录')
 		}else{
+			if(nickname_val==''){
+				alert("请输入昵称")
+			}
+			else if(select_val==""){
+				alert("请输入设计领域")
+			}
+			else if(truename_val==""){
+				alert("请输入真实姓名")
+			}
+			else if(email_val==""){
+				alert("请输入邮箱")
+			}
+			else if(!(email_val.match(emailRex))){
+		    	alert("邮箱格式输入有误")
+		    }
+			else if(tel_val==""){
+				alert("请输入联系方式")
+			}
+			else if(!(tel_val.match(telRex))){
+		    	alert("手机号输入有误")
+		    }
+			else if(qq_val==""){
+				alert("请输入QQ")
+			}
+			else if(!(qq_val.match(qqRex))){
+		    	alert("QQ输入有误")
+		    }
+			else if(person_val==""){
+				alert("请输入个人介绍")
+			}
+			else if(!photo_obj){
+				alert("请上传头像")
+			}else if(legitimate != 1){
+				alert("头像不合法")
+			}
+			else if(lxm_works.length<=0){
+				alert("请上传个人作品")
+			}
+			else if(lxm_works.length<4){
+				alert("至少上传五张个人作品")
+			}
+			else if(address_val==""){
+				alert("请填写地址")
+			}
+			else if(idcard_val==""){
+				alert("请输入身份证号")
+			}
+			else if(!(idcard_val.match(shenfRex))){
+		    	alert("身份证号输入有误")
+		    }
+			else if(!lxm_idpic_top){
+				alert("请上传身份证正面照")
+			}
+			else if(!lxm_idpic_bottom){
+				alert("请上传身份证反面照")
+			}else{
 			$.ajax({
-				type:"get",
-				url:'http://'+ip+'/personal/people',
+				type:"post",
+				url:'http://'+ip+'/personal/lxmMe',
 				async:true,
 				data:{
-					Applicant:sessionStorage.userId				
+					shopName:nickname_val,
+					shopType:$("#id_select").val().join(','),
+					realName:truename_val,
+					email:email_val,
+					phone:tel_val,
+					qq:qq_val,
+					briefIntroduction:person_val,
+					portrait:photo_obj,
+					works:lxm_works.join('-'),
+					address:address_val,
+					userID:idcard_val,
+					idPhoto:lxm_idpic_top +'-'+ lxm_idpic_bottom,
+					secretKey: '',
+					examine:0,
+					Applicant: sessionStorage.userId, //获取登录人ID填写 获取登录人ID填写 获取登录人ID填写
+					nameuid: sessionStorage.userId
 				},
 				success:function(e){
 					console.log(e)
-					if(e.flag == '1'){
-						alert('您已注册过个人店铺')
-					}else if(e.flag == '3'){
-//						alert('您没有注册')
-						if(nickname_val==''){
-							alert("请输入昵称")
-						}
-						else if(select_val==""){
-							alert("请输入设计领域")
-						}
-						else if(truename_val==""){
-							alert("请输入真实姓名")
-						}
-						else if(email_val==""){
-							alert("请输入邮箱")
-						}
-						else if(!(email_val.match(emailRex))){
-					    	alert("邮箱格式输入有误")
-					    }
-						else if(tel_val==""){
-							alert("请输入联系方式")
-						}
-						else if(!(tel_val.match(telRex))){
-					    	alert("手机号输入有误")
-					    }
-						else if(qq_val==""){
-							alert("请输入QQ")
-						}
-						else if(!(qq_val.match(qqRex))){
-					    	alert("QQ输入有误")
-					    }
-						else if(person_val==""){
-							alert("请输入个人介绍")
-						}
-						else if(!photo_obj){
-							alert("请上传头像")
-						}else if(legitimate != 1){
-							alert("头像不合法")
-						}
-						else if(lxm_works.length<=0){
-							alert("请上传个人作品")
-						}
-						else if(lxm_works.length<4){
-							alert("至少上传五张个人作品")
-						}
-						else if(address_val==""){
-							alert("请填写地址")
-						}
-						else if(idcard_val==""){
-							alert("请输入身份证号")
-						}
-						else if(!(idcard_val.match(shenfRex))){
-					    	alert("身份证号输入有误")
-					    }
-						else if(!lxm_idpic_top){
-							alert("请上传身份证正面照")
-						}
-						else if(!lxm_idpic_bottom){
-							alert("请上传身份证反面照")
-						}else{
-							$.ajax({
-								type:"post",
-								url:'http://'+ip+'/personal/shop_register',
-								async:true,
-								data:{
-									shopName:nickname_val,
-									shopType:$("#id_select").val().join(','),
-									realName:truename_val,
-									email:email_val,
-									phone:tel_val,
-									qq:qq_val,
-									briefIntroduction:person_val,
-									portrait:photo_obj,
-									works:lxm_works.join('-'),
-									address:address_val,
-									userID:idcard_val,
-									idPhoto:lxm_idpic_top +'-'+ lxm_idpic_bottom,
-									secretKey: '',
-									examine:0,
-									Applicant: sessionStorage.userId //获取登录人ID填写 获取登录人ID填写 获取登录人ID填写
-								},
-								success:function(e){
-									console.log(e)
-									if(e.flag == 1){
-										alert('注册成功')
-									}else if(e.flag == 2){
-										alert('店铺名重复，请修改后重试')
-									}else{
-										alert('注册失败，请重试')
-									}
-								}
-							});
-						}
+					if(e.flag == '企业已注册'){
+						alert('您已注册过企业')
+					}else if(e.flag == '团队已注册'){
+						alert('您已注册过团队')
+					}else if(e.flag == '个人已注册'){
+						alert('您已注册过个人')
+					}else if(e.flag == '1'){
+						alert('注册成功')	
 					}
 				}
 			})
-		}
-				
-				 
+			}
+		}		 
 	})
 	
 	function getObjectURL(file) {
@@ -267,7 +252,7 @@ window.addEventListener("load",function(){
                 	var my_pic = this.files[0];
 					formdata.append("uploadeFile",this.files[0]);
                 	$.ajax({
-						url: "http://47.92.145.129:8000/users/huang",
+						url: "http://47.92.145.129:8000/yanzhengs/huang",
 						type: "post",
 						data: formdata,
 						contentType: false,
@@ -316,14 +301,12 @@ window.addEventListener("load",function(){
 				if(f.size > max_size){   
                     alert("上传的图片不能超过100KB!");   
                     $(this).val('');   
-                }else{
-                	
-                	
+               }else{
                 	var fd = new FormData();
                 	fd.append("uploadedFile", this.files[0]);
                 	$.ajax({
                 		type:"post",
-                		url:"http://47.92.145.129:8000/users/chan",
+                		url:"http://47.92.145.129:8000/yanzhengs/chan",
                 		async:true,
                 		data:fd,
                 		contentType: false,
@@ -394,7 +377,7 @@ window.addEventListener("load",function(){
                 	fd.append("uploadedFile", this.files[0]);
                 	$.ajax({
                 		type:"post",
-                		url:"http://47.92.145.129:8000/users/shenfene",//shenfene
+                		url:"http://47.92.145.129:8000/yanzhengs/shenfene",//shenfene
                 		async:true,
                 		data:fd,
                 		contentType: false,
@@ -431,7 +414,7 @@ window.addEventListener("load",function(){
                 	fd.append("uploadedFile", this.files[0]);
                 	$.ajax({
                 		type:"post",
-                		url:"http://47.92.145.129:8000/users/shenfene",
+                		url:"http://47.92.145.129:8000/yanzhengs/shenfene",
                 		async:true,
                 		data:fd,
                 		contentType: false,
@@ -452,11 +435,6 @@ window.addEventListener("load",function(){
                 }
             }
         });
-        
-	
-	
-	
-	
 	
 //点击协议----团队
 	var off2=false;
@@ -480,8 +458,6 @@ window.addEventListener("load",function(){
 		}else{
 			$("#yu-submitt").removeAttr("disabled");
 			off22=true;
-			
-			
 		}
 	})
 	//团队点击团队审核

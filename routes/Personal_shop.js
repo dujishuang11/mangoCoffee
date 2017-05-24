@@ -389,5 +389,99 @@ router.post('/shop_del',function(req,res){//请求参数 响应参数
 })
 
 
+//个人申请入驻信息
+router.post('/lxm_enterprise',function(req,res){  //请求参数，响应参数
+	console.log("进入个人入驻  >>>");
+	
+	var shopName = req.body.shopName;
+	var shopType = req.body.shopType;
+	var realName = req.body.realName;
+	var email = req.body.email;
+	var phone = req.body.phone;
+	var qq = req.body.qq;
+	var briefIntroduction = req.body.briefIntroduction;
+	var portrait = req.body.portrait;
+	var works = req.body.works;
+	var address = req.body.address;
+	var userID = req.body.userID;
+	var idPhoto = req.body.idPhoto;
+	var secretKey = req.body.secretKey;
+	var examine = req.body.examine;
+	var Applicant = req.body.Applicant;
+	
+	getUserByNamekey(companykeys,function(err,result){
+		if(result=="" || result==null){
+			//团队进行判断
+			getUserByNamekeyteam(companykeys,function(err,result){
+				if(result=="" || result==null){
+					//个人
+					getUserByNamekeysingle(companykeys,function(err,result){
+						if(result=="" || result==null){
+							console.log("个人没注册过");
+							//个人进行判断
+							save(shopName,shopType,realName,email,phone,qq,briefIntroduction,portrait,works,address,userID,idPhoto,secretKey,examine,Applicant,function(err,result){
+								res.send({flag:1,shopUid:result.insertId})
+							})
+						}else if(result.length>0){
+							res.send({flag:"个人已注册"}); //查询成功
+						}else{
+							res.send({flag:6}); //失败
+						}
+					})
+				}else if(result.length>0){
+					res.send({flag:"团队已注册"}); //查询成功
+				}else{
+					res.send({flag:6}); //失败
+				}
+			})
+		}else if(result.length>0){
+			res.send({flag:"企业已注册",result}); //该用户已注册
+			console.log("查到了");
+		}else{
+			res.send({flag:8}); //失败
+		}
+	})
+	
+});
+
+//查询个人的nameuid
+function getUserByNamekeysingle(conpanyname,callback){
+	console.log("进入团队查询nameuid")
+	pool.getConnection(function(err,conn){
+		var sql='select * from settled where Applicant = ?';
+		conn.query(sql,[conpanyname],function(err,result){
+			console.log('result:'+result);
+			conn.release();
+			callback(err,result);
+		})
+	})
+}
+
+//查询团队的nameuid
+function getUserByNamekeyteam(conpanyname,callback){
+	console.log("进入团队查询nameuid")
+	pool.getConnection(function(err,conn){
+		var sql='select * from team where nameuid = ?';
+		conn.query(sql,[conpanyname],function(err,result){
+			console.log('result:'+result);
+			conn.release();
+			callback(err,result);
+		})
+	})
+}
+
+//查询企业的nameuid
+function getUserByNamekey(conpanyname,callback){
+	pool.getConnection(function(err,conn){
+		var sql='select * from qiye where nameuid = ?';
+		conn.query(sql,[conpanyname],function(err,result){
+			console.log('result:'+result);
+			conn.release();
+			callback(err,result);
+		})
+	})
+}
 
 module.exports = router;
+
+
