@@ -143,3 +143,14 @@
 	width: 100%;
 	margin-top: 20px;
 }
+.djs-t {
+	padding: 5px 20px;
+	position: fixed;
+	left: 40%;
+	top: 50%;
+	background: rgba(0,0,0,.5);
+	color: white;
+	opacity: 0;
+	transition: .5s;
+	transform: scale(0.5);
+}
