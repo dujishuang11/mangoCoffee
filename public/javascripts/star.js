@@ -8,7 +8,6 @@ window.addEventListener('load', function() {
 		success: function(data) {
 			$('.djs-navTop ul li').remove()
 			$('.djs-navTop ul').append('<li index="0">全部</li>')
-			console.log(data)
 			var html = ''
 			for(var i = 0; i < data.length; i++) {
 				html += '<li index="' + data[i].uid + '">' + data[i].names + '</li>'
@@ -31,6 +30,7 @@ window.addEventListener('load', function() {
 		mainclass = $(this).text();
 		if(id > 0) {
 			obtainList(mainclass)
+			
 		} else {
 			quan()
 		}
@@ -53,7 +53,6 @@ window.addEventListener('load', function() {
 			url: "http://47.92.145.129:8000/personal/all",
 			type: "get",
 			success: function(data) {
-				console.log(data)
 				if(data.flag == 1) {
 					arrList = data.results;
 					num = 1;
@@ -69,7 +68,6 @@ window.addEventListener('load', function() {
 	}
 
 	function list(num, len) {
-		console.log(num, len)
 //		var now = 0;
 		$('.djs-list ul li').remove()
 		var html = '';
@@ -90,16 +88,22 @@ window.addEventListener('load', function() {
 				uid: arrList[i].Applicant
 			},
 			success: function(data) {
-				console.log(data, data.data.length)
-				if(i < arrList.length) {
-					djsList(i, data.data.length)
+				if(data.success == "查无数据"){
+					return;
+				}else {
+					if(i < arrList.length) {
+						djsList(i, data.data.length)
+					}
 				}
 			}
 		})
 	}
 
 	function djsList(i, data) {
+<<<<<<< HEAD
 		console.log(i, data)
+=======
+>>>>>>> origin/master
 		$('.djs-list>ul').append('<li class="djs-List"><a href="personalData2.html?' + arrList[i].Applicant + '"><div class = "djs-top"><img src = "' + $.base64.atob(arrList[i].portrait) + '" alt = ""/><div class = "djs-text fl"><p class = "djs-name">' + arrList[i].shopName + '</p><div><span class = "djs-num">' + data + '</span><span>个设计服务 </span></div><ul class="djs-category"></ul></div></div><div class = "djs-bottom">' + arrList[i].briefIntroduction + '</div></a></li>');
 		var shopType = arrList[i].shopType.split(",")
 		for(var j = 0; j < shopType.length; j++) {
@@ -110,7 +114,6 @@ window.addEventListener('load', function() {
 	//获取分类列表
 
 	function obtainList(mainclass) {
-		console.log(mainclass)
 		var html = '';
 		var now = 0;
 		$.ajax({
@@ -120,7 +123,6 @@ window.addEventListener('load', function() {
 				name: mainclass
 			},
 			success: function(data) {
-				console.log(data)
 				if(data.flag == 2) {
 					return;
 				} else {

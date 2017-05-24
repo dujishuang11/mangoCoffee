@@ -4,8 +4,10 @@ window.addEventListener('load', function() {
 		salas = 0,
 		html = '',
 		num = 0;
-
+		
+	
 	if(listId) {
+		listId = listId.split("#")[0];
 		$.ajax({
 			url: "http://47.92.145.129:8000/djsList/listDetails",
 			type: "get",
@@ -14,8 +16,8 @@ window.addEventListener('load', function() {
 			},
 			success: function(data) {
 				console.log(data)
+				
 				uid = data.data[0].uid;
-//				var img = data.data[0].content.split('+')
 				$('.djs-returnTitle').text(data.data[0].mainclass)
 				$('.djs-content>p').text(data.data[0].tradename)
 				$('.djs-Content').html(data.data[0].content)
@@ -25,7 +27,6 @@ window.addEventListener('load', function() {
 			}
 		})
 	} else {
-		console.log(listId)
 		console.log("无参数传递")
 	}
 
@@ -6313,7 +6314,19 @@ window.addEventListener('load', function() {
 	}
 
 	$('.buy').click(function() {
-		location.href = "buy.html?" + listId;
+		if(sessionStorage.userId){
+			location.href = "buy.html?" + listId;
+		}else {
+			$(".djs-t").text('您还没有登陆，请先登录');
+			setTimeout(function(){
+				$(".djs-t").css('opacity',1);
+				$(".djs-t").css("transform","scale(1)")
+			},0)
+			setTimeout(function(){
+				$(".djs-t").css('opacity',0);
+				$(".djs-t").css("transform","scale(0.5)")
+			},1500)
+		}
 	})
 
 }, false)

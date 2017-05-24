@@ -23,6 +23,7 @@
  * @option_param {function} clipFinish 裁剪完成的回调函数。this指向图片对象，会将裁剪出的图像数据DataURL作为参数传入
  */
 
+//alert(1)
 (function(root, factory) {
 	"use strict";
 
@@ -44,8 +45,9 @@
 		}
 
 		var defaultOption = {
-			width: 500,
-			height: 500,
+
+			width: 200,
+			height: 200,
 			file: "",
 			view: "",
 			ok: "",
@@ -103,10 +105,11 @@
 					console.log((e.loaded / e.total * 100).toFixed() + "%");
 				};
 				fileReader.onload = function(e) {
-					var kbs = e.total / 1024;
-					if (kbs > 1024) {
+
+					var kbs = e.total / 1024;//1024
+					if (kbs > 1024) {//1024
 						// 图片大于1M，需要压缩
-						var quality = 1024 / kbs;
+						var quality = 1024 / kbs;//1024
 						var $tempImg = $("<img>").hide();
 						$tempImg.load(function() {
 							// IOS 设备中，如果的照片是竖屏拍摄的，虽然实际在网页中显示出的方向也是垂直，但图片数据依然是以横屏方向展示

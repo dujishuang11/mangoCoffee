@@ -4,6 +4,13 @@
 1、在 nav_wrapper 加 class nav_bg_a 默认没有class
 2、在 nav_list 下的第一个UL 把class nav_color_f 改为 nav_color_a  默认为 nav_color_f
 
+<<<<<<< HEAD
+=======
+
+<p>使用邮箱号登录咖芒</p> ////////103行附近 替换
+
+
+>>>>>>> origin/master
 <script src="../javascripts/gVerify.js"></script>
 <script src="../javascripts/layer/layer.js"></script>
 引入两个js
