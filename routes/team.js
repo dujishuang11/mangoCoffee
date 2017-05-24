@@ -34,10 +34,10 @@ function getUserByName(teamid,callback){
 	})
 }
 //插入数据
-function save(tavatar,tname,taddress,tleader,tinformation,tcard,tcardZheng,tcardFan,tkey,twork,taudit,callback){
+function save(tavatar,tname,taddress,tleader,tinformation,tcard,tcardZheng,tcardFan,tkey,twork,taudit,companykeys,callback){
 	pool.getConnection(function(err,connection){
-		var sql='insert into team (tuid,theader,ttitle,taddress,tpeople,ttel,tnumberid,tcardzheng,tcardfan,tkey,tworks,tpass) values (0,?,?,?,?,?,?,?,?,?,?,?)';
-		connection.query(sql,[tavatar,tname,taddress,tleader,tinformation,tcard,tcardZheng,tcardFan,tkey,twork,taudit],function(err,result){
+		var sql='insert into team (tuid,theader,ttitle,taddress,tpeople,ttel,tnumberid,tcardzheng,tcardfan,tkey,tworks,tpass,nameuid) values (0,?,?,?,?,?,?,?,?,?,?,?,?)';
+		connection.query(sql,[tavatar,tname,taddress,tleader,tinformation,tcard,tcardZheng,tcardFan,tkey,twork,taudit,companykeys],function(err,result){
 			if(err){
 				console.log('insertUser_Sql Error:'+ err.message);
 				return;
@@ -61,24 +61,117 @@ router.post('/team',function(req,res){  //请求参数，响应参数
 	var Tkey=req.body.TeamKey;//：团队密钥
 	var Twork=req.body.TeamWork; //：团队作品
 	var Taudit=req.body.TeamAudit;//：审核
-	getUserByName(Tname,function(err,result){ 
-		if(result=='' || result==null){
-			console.log('insert into mysql');
-			save(Tavatar,Tname,Taddress,Tleader,Tinformation,Tcard,TcardZheng,TcardFan,Tkey,Twork,Taudit,function(err,result){
-				if(result.insertId>0){
-					console.log("okokok")
-//					res.send({flag:1}); //注册成功
-					res.send(result)
+	var companykeys=req.body.nameuid;//：审核
+	
+	getUserByNamekey(companykeys,function(err,result){
+		if(result=="" || result==null){
+			//团队进行判断
+			getUserByNamekeyteam(companykeys,function(err,result){
+				if(result=="" || result==null){
+					//个人
+					getUserByNamekeysingle(companykeys,function(err,result){
+						if(result=="" || result==null){
+							console.log("个人没注册过");
+							//个人进行判断
+							save(Tavatar,Tname,Taddress,Tleader,Tinformation,Tcard,TcardZheng,TcardFan,Tkey,Twork,Taudit,companykeys,function(err,result){
+								if(result.insertId>0){
+									console.log("okokok")
+									res.send({flag:"注册成功",result})
+								}
+								console.log('result:'+result);
+							});
+						}else if(result.length>0){
+							res.send({flag:"个人已注册"}); //查询成功
+						}else{
+							res.send({flag:6}); //失败
+						}
+					})
+				}else if(result.length>0){
+					res.send({flag:"团队已注册"}); //查询成功
+				}else{
+					res.send({flag:6}); //失败
 				}
-				console.log('result:'+result);
-			});
-		}else if(result!='' ||result != null){
-			res.send({flag:2});//用户名已被占用
+			})
+			
+		}else if(result.length>0){
+			res.send({flag:"企业已注册",result}); //该用户已注册
+			console.log("查到了");
 		}else{
-			res.send({flag:3});//注册失败
+			res.send({flag:8}); //失败
 		}
 	})
+	
+	
+	
+	/*getUserByNamekeys(companykeys,function(err,result){
+		if(result=="" || result==null){
+			getUserByName(Tname,function(err,result){ 
+				if(result=='' || result==null){
+					console.log('insert into mysql');
+					save(Tavatar,Tname,Taddress,Tleader,Tinformation,Tcard,TcardZheng,TcardFan,Tkey,Twork,Taudit,companykeys,function(err,result){
+						if(result.insertId>0){
+							console.log("okokok")
+							res.send(result)
+						}
+						console.log('result:'+result);
+					});
+				}else if(result!='' ||result != null){
+					res.send({flag:2});//用户名已被占用
+				}else{
+					res.send({flag:3});//注册失败
+				}
+			})
+			
+		}else if(result.length>0){
+			res.send({flag:4}); //该登录人已经注册过
+			console.log("查到了");
+		}else{
+			res.send({flag:5}); //失败
+		}
+	})*/
+	
+	
+	
 });
+
+
+//查询个人的nameuid
+function getUserByNamekeysingle(conpanyname,callback){
+	console.log("进入团队查询nameuid")
+	pool.getConnection(function(err,conn){
+		var sql='select * from settled where Applicant = ?';
+		conn.query(sql,[conpanyname],function(err,result){
+			console.log('result:'+result);
+			conn.release();
+			callback(err,result);
+		})
+	})
+}
+//查询团队的nameuid
+function getUserByNamekeyteam(conpanyname,callback){
+	pool.getConnection(function(err,conn){
+		var sql='select * from team where nameuid = ?';
+		conn.query(sql,[conpanyname],function(err,result){
+			console.log('result:'+result);
+			conn.release();
+			callback(err,result);
+		})
+	})
+}
+
+//查询企业的nameuid
+function getUserByNamekey(conpanyname,callback){
+	pool.getConnection(function(err,conn){
+		var sql='select * from qiye where nameuid = ?';
+		conn.query(sql,[conpanyname],function(err,result){
+			console.log('result:'+result);
+			conn.release();
+			callback(err,result);
+		})
+	})
+}
+
+
 
 
 
@@ -289,6 +382,37 @@ router.get('/chauid',function(request,response){  //请求参数，响应参数
 			})
 	})
 
+	
+	
+	
+	
+// 根据登录人uid查询团队密钥
+
+router.get('/searchkeys',function(request,response){  //请求参数，响应参数
+	var companykeys=request.query.companykeyss;
+	console.log("查询密钥");
+	console.log(companykeys);
+	getUserByNamekeys(companykeys,function(err,result){
+		if(err){
+			response.send({flag:2,err});  //查不到，失败
+			console.log("chen查不到ggong");
+			
+		}else if(result.length>0){
+			response.send({flag:1,result}); //查询成功
+			console.log("查到了");
+		}else{
+			response.send({flag:3,result}); //失败
+		}
+	})
+});
+
+
+	
+	
+	
+	
+	
+	
 	
 
 

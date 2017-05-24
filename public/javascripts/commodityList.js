@@ -10,6 +10,10 @@ window.addEventListener('load', function() {
 			url: "http://47.92.145.129:8000/users/nav",
 			async: true,
 			success: function(data) {
+<<<<<<< HEAD
+				console.log("nav" + data)
+=======
+>>>>>>> origin/master
 				$('.djs-navTop ul li').remove()
 				$('.djs-navTop ul').append('<li index="0">全部</li>')
 				var html = ''
@@ -23,6 +27,10 @@ window.addEventListener('load', function() {
 	}
 	
 	var fenlei = location.href.split('?')[1];
+<<<<<<< HEAD
+	console.log("fenlei" + fenlei)
+=======
+>>>>>>> origin/master
 
 	if(fenlei == 1) {
 		mainclass = '商标设计注册';
@@ -115,10 +123,14 @@ window.addEventListener('load', function() {
 		});
 		zilei(fenlei)
 		obtainList(mainclass, subclass)
+<<<<<<< HEAD
+	} else {
+=======
 	} else if(fenlei == 0) {
 		$(document).ajaxComplete(function() {
 			$('.djs-navTop ul li').eq(Number(fenlei)).addClass("color");
 		});
+>>>>>>> origin/master
 		quan()
 	}else {
 		$(document).ajaxComplete(function() {
@@ -127,6 +139,8 @@ window.addEventListener('load', function() {
 		searchList(decodeURI(fenlei))
 	}
 	
+<<<<<<< HEAD
+=======
 	function searchList(fenlei){
 		$.ajax({
 			type: "get",
@@ -147,6 +161,7 @@ window.addEventListener('load', function() {
 		});
 	}
 	
+>>>>>>> origin/master
 
 	$('.djs-navTop ul').delegate('li', 'mouseover', function() {
 		$(this).css('color', '#EA5813');
@@ -159,6 +174,10 @@ window.addEventListener('load', function() {
 		$(this).addClass("color").siblings().removeClass('color');
 		var id = $(this).attr('index');
 		location.href = "commodityList.html?"+id;
+<<<<<<< HEAD
+		console.log("id" + id)
+=======
+>>>>>>> origin/master
 		mainclass = $(this).text();
 		if(id > 0) {
 			obtainList(mainclass, subclass)

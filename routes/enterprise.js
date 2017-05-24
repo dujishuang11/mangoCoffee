@@ -43,31 +43,89 @@ router.post('/enterprise',function(req,res){  //请求参数，响应参数
 	var Qinformation=req.body.CompanyInformation;//：联系方式
 	var Qkey=req.body.CompanyKey;//：企业密钥
 	var Qwork=req.body.CompanyWork; //：企业营业执行照
-	var Qaudit=req.body.CompanyAudit;//：企业审核
-	getUserByName(Qname,function(err,result){ 
-		if(result==''||result==null){
-			console.log('insert into mysql');
-			save(Qavatar,Qname,Qaddress,Qleader,Qinformation,Qwork,Qkey,Qaudit,function(err,result){
-				if(result.insertId>0){
-					console.log("okokok")
-					res.send({flag:1}); //注册成功
+	var Qaudit=req.body.CompanyAudit;//：企业审核、
+	var companykeys=req.body.nameuid;//：登录人uid、
+	
+	getUserByNamekey(companykeys,function(err,result){
+		if(result=="" || result==null){
+			//团队进行判断
+			getUserByNamekeyteam(companykeys,function(err,result){
+				if(result=="" || result==null){
+					//个人
+					getUserByNamekeysingle(companykeys,function(err,result){
+						if(result=="" || result==null){
+							console.log("个人没注册过");
+							//个人进行判断
+							save(Qavatar,Qname,Qaddress,Qleader,Qinformation,Qwork,Qkey,Qaudit,companykeys,function(err,result){
+								if(result.insertId>0){
+									console.log("okokok")
+									res.send({flag:1,result}); //注册成功
+								}
+								console.log('result:'+result);
+							});
+						}else if(result.length>0){
+							res.send({flag:"个人已注册"}); //查询成功
+						}else{
+							res.send({flag:6}); //失败
+						}
+					})
+				}else if(result.length>0){
+					res.send({flag:"团队已注册"}); //查询成功
+				}else{
+					res.send({flag:6}); //失败
 				}
-				console.log('result:'+result);
-			});
-		}else if(result!=''||result!=null){
-			res.send({flag:2});//用户名已被占用
+			})
+			
+		}else if(result.length>0){
+			res.send({flag:"企业已注册",result}); //该用户已注册
+			console.log("查到了");
 		}else{
-			res.send({flag:3});//注册失败
+			res.send({flag:8}); //失败
 		}
 	})
 	
 });
 
+//查询个人的nameuid
+function getUserByNamekeysingle(conpanyname,callback){
+	console.log("进入团队查询nameuid")
+	pool.getConnection(function(err,conn){
+		var sql='select * from settled where Applicant = ?';
+		conn.query(sql,[conpanyname],function(err,result){
+			console.log('result:'+result);
+			conn.release();
+			callback(err,result);
+		})
+	})
+}
+//查询团队的nameuid
+function getUserByNamekeyteam(conpanyname,callback){
+	console.log("进入团队查询nameuid")
+	pool.getConnection(function(err,conn){
+		var sql='select * from team where nameuid = ?';
+		conn.query(sql,[conpanyname],function(err,result){
+			console.log('result:'+result);
+			conn.release();
+			callback(err,result);
+		})
+	})
+}
+//查询企业的nameuid
+function getUserByNamekey(conpanyname,callback){
+	pool.getConnection(function(err,conn){
+		var sql='select * from qiye where nameuid = ?';
+		conn.query(sql,[conpanyname],function(err,result){
+			console.log('result:'+result);
+			conn.release();
+			callback(err,result);
+		})
+	})
+}
 //插入数据
-	function save(qavatar,qname,qaddress,qleader,qinformation,qwork,qkey,qaudit,callback){
+	function save(qavatar,qname,qaddress,qleader,qinformation,qwork,qkey,qaudit,companykeys,callback){
 		pool.getConnection(function(err,connection){
-			var sql='insert into qiye (quid,qheader,qtitle,qaddress,qpeople,qtel,qimg,qkey,qpass) values (0,?,?,?,?,?,?,?,?)';
-			connection.query(sql,[qavatar,qname,qaddress,qleader,qinformation,qwork,qkey,qaudit],function(err,result){
+			var sql='insert into qiye (quid,qheader,qtitle,qaddress,qpeople,qtel,qimg,qkey,qpass,nameuid) values (0,?,?,?,?,?,?,?,?,?)';
+			connection.query(sql,[qavatar,qname,qaddress,qleader,qinformation,qwork,qkey,qaudit,companykeys],function(err,result){
 				if(err){
 					console.log('insertUser_Sql Error:'+ err.message);
 					return;
@@ -164,12 +222,11 @@ router.post('/qdetailPass',function(req,response){  //请求参数，响应参�
 	var xTaudit=req.body.qiyAudit;//：审核
 	var qquid = req.body.quid; //获取id
    	pool.getConnection(function(err,connection){
-		data_sql='update qiye set qkey=?,qpass=? where quid=? ';
+		data_sql='update qiye set qkey=?,qpass=? where nameuid=? ';
 		connection.query(data_sql,[xTkey,xTaudit,qquid],function(err,result){
 			console.log(result);
 			if(err){
 				response.send({flag:3});//修改失败
-//				return;
 			}
 			if(result != ''){
 				response.send({flag:1,result});//修改成功
@@ -207,7 +264,6 @@ router.post('/qdetailPass',function(req,response){  //请求参数，响应参�
 	})
 
 //查看详情
-
 	function getdetail(qiyId,callback){
 		pool.getConnection(function(err,connection){
 			var sql = 'select * from qiye where quid = ?';
@@ -236,6 +292,25 @@ router.post('/qdetailPass',function(req,response){  //请求参数，响应参�
 	
 
 
+
+// 根据登录人uid查询企业密钥
+router.get('/searchkeys',function(request,response){  //请求参数，响应参数
+	var companykeys=request.query.companykeyss;
+	console.log("查询密钥");
+	console.log(companykeys);
+	getUserByNamekey(companykeys,function(err,result){
+		if(err){
+			response.send({flag:2,err});  //查不到，失败
+			console.log("chen查不到ggong");
+			
+		}else if(result.length>0){
+			response.send({flag:1,result}); //查询成功
+			console.log("查到了");
+		}else{
+			response.send({flag:3}); //失败
+		}
+	})
+});
 
 
 

@@ -42,7 +42,7 @@ window.addEventListener('load',function(){
 			data:{
 				qiyKey: rand+sessionStorage.uid, //：团队密钥（时间戳+uid)
 				qiyAudit:"1",
-				quid:sessionStorage.quid //：审核状态
+				quid:"sessionStorage.quid" //：审核状态
 			},
 			success:function(data){
 				console.log(data)
