@@ -22,7 +22,7 @@
 	height: 70px;
 	float: left;
 }
-.lhq_recruitList>p:nth-child(1)>button{
+.lhq_recruitList>p:nth-child(1)>.lhq_ypbutton{
 	font-size:14px;
 	line-height: 30px;
 	width: auto;
@@ -59,7 +59,7 @@
 	float: left;
 	text-align: center;
 	line-height: 50px;
-	padding-left: 4%;
+	padding-left: 5%;
 	padding-right: 4%;
 	margin-right: 1.85%;
 	margin-top: 5px;
@@ -102,6 +102,9 @@
 .lhq_recruitList>ul>li{
 	width: 90%;
 	height: 60px;
+	line-height: 60px;
+	font-size: 16px;
+	text-align: center;
 	background: #FFFFFF;
 	margin: 0 auto;
 }

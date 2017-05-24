@@ -241,6 +241,7 @@ window.addEventListener("load",function(){
 //上传身份照正面	
 	$('#sfzzfile').change(function(evt){
    		var max_size=102400;
+// 		var max_size=153600;
         var finput = $(this);   
         var files = evt.target.files; // 获得文件对象  
         var output = [];

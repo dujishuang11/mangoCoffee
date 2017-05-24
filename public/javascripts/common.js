@@ -11,7 +11,7 @@ function createCode() {
 	code = '';
 	//设置长度，这里看需求，我这里设置了4
 	var codeLength = 4;
-	var codeV = document.getElementById('lxm_said');
+//	var codeV = document.getElementById('lxm_said');
 	//设置随机字符
 	var random = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z');
 	//循环codeLength 我设置的4就是循环4次
@@ -22,7 +22,7 @@ function createCode() {
 		code += random[index];
 	}
 	//将拼接好的字符串赋值给展示的Value
-	codeV.innerHTML = code;
+	$('#lxm_said').text(code);
 }
 createCode()
 
@@ -67,6 +67,7 @@ var judge1 = $('body').hasClass('lxm_despair') == true
 var judge2 = $('.nav_wrapper').hasClass('nav_bg_a') == true
 
 if(judge2){
+//	$('.lxm_rules label a').attr('href','')
 	$('.lxm_Agreement').attr('href','Agreement.html')
 	$('.lxm_first_nav').attr('href','../index.html')
 	$('.lxm_shejishi a').attr('href','star.html')
@@ -84,6 +85,9 @@ if(judge2){
 			$('.nav_hide_list').append(html)
 		}
 	});
+	$('.search_now').click(function(){
+		location.href = '../html/commodityList.html?'+$('.search_con').val()+''
+	})
 }else{
 	$('.lxm_Agreement').attr('href','html/Agreement.html')
 	$('.lxm_shejishi a').attr('href','html/star.html')
@@ -102,19 +106,20 @@ if(judge2){
 			$('.nav_hide_list').append(html)
 		}
 	});
+	$('.search_now').click(function(){
+		location.href = 'html/commodityList.html?'+$('.search_con').val()+''
+	})
 }
 
-$('.search_con').keydown(function(event){
-//	alert(event.keyCode)
-	var key_code = event.keyCode;
-	if(key_code==13){
-		location.href = 'html/commodityList.html?'+$('.search_con').val()+''
-	}
-})
+//$('.search_con').keydown(function(event){
+////	alert(event.keyCode)
+//	var key_code = event.keyCode;
+//	if(key_code==13){
+//		location.href = 'html/commodityList.html?'+$('.search_con').val()+''
+//	}
+//})
 
-$('.search_now').click(function(){
-	location.href = 'html/commodityList.html?'+$('.search_con').val()+''
-})
+
 
 $('.search_con').focus(function(){
 	$('.nav_search').css('background','#fff')
@@ -217,6 +222,8 @@ $('.resgister_list').click(function(){
 	}else if(!email.test($('.lxm_resgister_num').val())){
 		layer.msg('请输入正确的邮箱号');
 	}else{
+		$('.resgister_pass').val('')
+		$('.resgister_pass_agin').val('')
 		$('.resgister').css('display','block')
 		$('.lxm_my_num').text($('.lxm_resgister_num').val())
 	}
@@ -251,14 +258,13 @@ $('.register_sub').click(function(){
 						if(e.num == '成功'){
 							layer.msg('注册成功');
 							sessionStorage.userId = e.xinxi[0].uid
-							
 							if(e.xinxi[0].images == '1.jpg'){
 								$('.user img').attr('src',$.base64.atob(cc))
 							}else{
 								$('.user img').attr('src',$.base64.atob(e[0].images))
 							}
-							$('.login_wrapper').css('opacity','0')
-							$('.login_wrapper').css('z-index','-1')
+							$('.login_wrapper').css('display','none')
+							$('.register').css('display','none')
 							$('.login').css('display','none')
 							$('.res').css('display','none')
 							$('.user').css('display','block')				
@@ -295,6 +301,7 @@ $('.login').click(function(){
 //	$('.login_wrapper').css('opacity','1')
 //	$('.login_wrapper').css('z-index','9999')
 	$('.login_wrapper').css('display','block')
+	$('.resgister').css('display','none')
 	if($('.resgister_now').text() == '立即登录'){
 		$('.resgister_now').click()*2
 	}
@@ -305,6 +312,8 @@ $('.res').click(function(){
 //	$('.login_wrapper').css('z-index','9999')
 	$('.login_wrapper').css('display','block')
 	$('.resgister_now').click()
+	$('.resgister').css('display','none')
+	$('.lxm_resgister_num').val('')
 })
 
 $('.lxm_login_two').click(function(){

@@ -47,9 +47,31 @@ window.addEventListener("load", function() {
 
 	})
 	
+		var lhqzy = '';
+		var lhqnewsarr = [];
+
+		var html = '';
+	
 	$('.lhq_zpfl_one').delegate("span",'click',function(){
 		var lhq_zpfl = $(this).html();
-		$.ajax({
+		if(lhq_zpfl=='全部'){
+			$.ajax({
+				type: 'get',
+				url: 'http://47.92.145.129:8000/resume/list',
+				async: true,
+				success: function(data) {
+					$('.djs-fy').css('display','block');
+					$('.lhq_rlist_ul li').remove();
+					$('.djs-fy li').remove();
+					lhqzy = Math.ceil(data.length / 8)
+					lhqnewsarr = data;
+					console.log(lhqnewsarr)
+					$('.djs-fy').append(showPages(1, lhqzy))
+					lhqfyhan(num)
+		}
+	})
+		}else{
+					$.ajax({
 			type: 'get',
 			url:'http://47.92.145.129:8000/resume/lhqsearch',
 			async: true,
@@ -57,9 +79,25 @@ window.addEventListener("load", function() {
 				Workarea:lhq_zpfl
 			},
 			success: function(data) {
-					console.log(data)
+					console.log(data.data)
+					if(data.data == ''){
+						$('.lhq_rlist_ul li').remove();
+						$('.djs-fy').css('display','none');
+						$('.lhq_rlist_ul').append('<li>搜索不到'+lhq_zpfl+'的简历信息</li>');
+					}else{
+						$('.djs-fy').css('display','block');
+						$('.lhq_rlist_ul li').remove();
+						$('.djs-fy li').remove();
+						lhqzy = Math.ceil(data.length / 8)
+						lhqnewsarr = data.data;
+						console.log(lhqnewsarr)
+						$('.djs-fy').append(showPages(1, lhqzy))
+						lhqfyhan(num)
+					}
 			}
 		})
+		}
+
 	})
 	
 	
@@ -71,10 +109,7 @@ window.addEventListener("load", function() {
 	
 	
 	
-	var lhqzy = '';
-	var lhqnewsarr = [];
 	//查询
-	var html = '';
 	$.ajax({
 		type: 'get',
 		url: 'http://47.92.145.129:8000/resume/list',
@@ -91,7 +126,6 @@ window.addEventListener("load", function() {
 	function lhqfyhan(newsindex) {
 		$('.lhq_rlist_ul li').remove();
 		html = ''
-		console.log(newsindex)
 		for(var i = ((newsindex - 1) * 8); i < (newsindex * 8); i++) {
 			if(i == lhqnewsarr.length){
 				break;
@@ -103,9 +137,11 @@ window.addEventListener("load", function() {
 	}
 	
 	
-	$('.lhq_ypbutton').on('click',function(){
-		location.href='I_want_to_apply.html'
+	$('.lhq_ypbutton').click(function(){
+			location.href='I_want_to_apply.html'
 	})
+	
+	
 	
 	
 })
