@@ -1,84 +1,126 @@
 window.addEventListener('load', function() {
-	var fenlei = location.href.split('?');
-	
-	if(fenlei == 1){
-		mainclass = '商标设计注册';
-//		$('.djs-navTop ul li').eq(fenlei+1).addClass("color")
-		zilei(fenlei)
-		obtainList(mainclass, subclass)
-	}else if(fenlei == 2){
-		mainclass = 'CI系统设计';
-		zilei(fenlei)
-		obtainList(mainclass, subclass)
-	}else if(fenlei == 3){
-		mainclass = '包装设计';
-		zilei(fenlei)
-		obtainList(mainclass, subclass)
-	}else if(fenlei == 4){
-		mainclass = '工业产品设计';
-		zilei(fenlei)
-		obtainList(mainclass, subclass)
-	}else if(fenlei == 5){
-		mainclass = '商业展示设计';
-		zilei(fenlei)
-		obtainList(mainclass, subclass)
-	}else if(fenlei == 6){
-		mainclass = '平面设计';
-		zilei(fenlei)
-		obtainList(mainclass, subclass)
-	}else if(fenlei == 7){
-		mainclass = '摄影';
-		zilei(fenlei)
-		obtainList(mainclass, subclass)
-	}else if(fenlei == 8){
-		mainclass = '字画手绘';
-		zilei(fenlei)
-		obtainList(mainclass, subclass)
-	}else if(fenlei == 9){
-		mainclass = '营销策划';
-		zilei(fenlei)
-		obtainList(mainclass, subclass)
-	}else if(fenlei == 10){
-		mainclass = '文案';
-		zilei(fenlei)
-		obtainList(mainclass, subclass)
-	}else if(fenlei == 11){
-		mainclass = 'UI设计';
-		zilei(fenlei)
-		obtainList(mainclass, subclass)
-	}else if(fenlei == 12){
-		mainclass = 'H5网站开发';
-		zilei(fenlei)
-		obtainList(mainclass, subclass)
-	}else if(fenlei == 13){
-		mainclass = 'APP开发';
-		zilei(fenlei)
-		obtainList(mainclass, subclass)
-	}else {
-		quan()
-	}
-	
-	
-	
-	
 	//导航
 	var mainclass = '',
 		subclass = '';
-	$.ajax({
-		type: "get",
-		url: "http://47.92.145.129:8000/users/nav",
-		async: true,
-		success: function(data) {
-			$('.djs-navTop ul li').remove()
-			$('.djs-navTop ul').append('<li index="0">全部</li>')
-			var html = ''
-			for(var i = 0; i < data.length; i++) {
-				html += '<li index="' + data[i].uid + '">' + data[i].names + '</li>'
+	
+	mainNav()
+	function mainNav() {
+		$.ajax({
+			type: "get",
+			url: "http://47.92.145.129:8000/users/nav",
+			async: true,
+			success: function(data) {
+				console.log("nav" + data)
+				$('.djs-navTop ul li').remove()
+				$('.djs-navTop ul').append('<li index="0">全部</li>')
+				var html = ''
+				for(var i = 0; i < data.length; i++) {
+					html += '<li index="' + data[i].uid + '">' + data[i].names + '</li>'
+				}
+				$('.djs-navTop ul').append(html)
+//				$('.djs-navTop ul li:nth-child(1)').addClass("color");
 			}
-			$('.djs-navTop ul').append(html)
-//			$('.djs-navTop ul li:nth-child(1)').addClass("color");
-		}
-	});
+		});
+	}
+	
+	var fenlei = location.href.split('?')[1];
+	console.log("fenlei" + fenlei)
+
+	if(fenlei == 1) {
+		mainclass = '商标设计注册';
+		$(document).ajaxComplete(function() {
+			$('.djs-navTop ul li').eq(Number(fenlei)).addClass("color");
+		});
+		zilei(fenlei)
+		obtainList(mainclass, subclass)
+	} else if(fenlei == 2) {
+		mainclass = 'CI系统设计';
+		$(document).ajaxComplete(function() {
+			$('.djs-navTop ul li').eq(Number(fenlei)).addClass("color");
+		});
+		zilei(fenlei)
+		obtainList(mainclass, subclass)
+	} else if(fenlei == 3) {
+		mainclass = '包装设计';
+		$(document).ajaxComplete(function() {
+			$('.djs-navTop ul li').eq(Number(fenlei)).addClass("color");
+		});
+		zilei(fenlei)
+		obtainList(mainclass, subclass)
+	} else if(fenlei == 4) {
+		mainclass = '工业产品设计';
+		$(document).ajaxComplete(function() {
+			$('.djs-navTop ul li').eq(Number(fenlei)).addClass("color");
+		});
+		zilei(fenlei)
+		obtainList(mainclass, subclass)
+	} else if(fenlei == 5) {
+		mainclass = '商业展示设计';
+		$(document).ajaxComplete(function() {
+			$('.djs-navTop ul li').eq(Number(fenlei)).addClass("color");
+		});
+		zilei(fenlei)
+		obtainList(mainclass, subclass)
+	} else if(fenlei == 6) {
+		mainclass = '平面设计';
+		$(document).ajaxComplete(function() {
+			$('.djs-navTop ul li').eq(Number(fenlei)).addClass("color");
+		});
+		zilei(fenlei)
+		obtainList(mainclass, subclass)
+	} else if(fenlei == 7) {
+		mainclass = '摄影';
+		$(document).ajaxComplete(function() {
+			$('.djs-navTop ul li').eq(Number(fenlei)).addClass("color");
+		});
+		zilei(fenlei)
+		obtainList(mainclass, subclass)
+	} else if(fenlei == 8) {
+		mainclass = '字画手绘';
+		$(document).ajaxComplete(function() {
+			$('.djs-navTop ul li').eq(Number(fenlei)).addClass("color");
+		});
+		zilei(fenlei)
+		obtainList(mainclass, subclass)
+	} else if(fenlei == 9) {
+		mainclass = '营销策划';
+		$(document).ajaxComplete(function() {
+			$('.djs-navTop ul li').eq(Number(fenlei)).addClass("color");
+		});
+		zilei(fenlei)
+		obtainList(mainclass, subclass)
+	} else if(fenlei == 10) {
+		mainclass = '文案';
+		$(document).ajaxComplete(function() {
+			$('.djs-navTop ul li').eq(Number(fenlei)).addClass("color");
+		});
+		zilei(fenlei)
+		obtainList(mainclass, subclass)
+	} else if(fenlei == 11) {
+		mainclass = 'UI设计';
+		$(document).ajaxComplete(function() {
+			$('.djs-navTop ul li').eq(Number(fenlei)).addClass("color");
+		});
+		zilei(fenlei)
+		obtainList(mainclass, subclass)
+	} else if(fenlei == 12) {
+		mainclass = 'H5网站开发';
+		$(document).ajaxComplete(function() {
+			$('.djs-navTop ul li').eq(Number(fenlei)).addClass("color");
+		});
+		zilei(fenlei)
+		obtainList(mainclass, subclass)
+	} else if(fenlei == 13) {
+		mainclass = 'APP开发';
+		$(document).ajaxComplete(function() {
+			$('.djs-navTop ul li').eq(Number(fenlei)).addClass("color");
+		});
+		zilei(fenlei)
+		obtainList(mainclass, subclass)
+	} else {
+		quan()
+	}
+	
 
 	$('.djs-navTop ul').delegate('li', 'mouseover', function() {
 		$(this).css('color', '#EA5813');
@@ -90,6 +132,8 @@ window.addEventListener('load', function() {
 	$('.djs-navTop ul').delegate('li', 'click', function() {
 		$(this).addClass("color").siblings().removeClass('color');
 		var id = $(this).attr('index');
+		location.href = "commodityList.html?"+id;
+		console.log("id" + id)
 		mainclass = $(this).text();
 		if(id > 0) {
 			obtainList(mainclass, subclass)
@@ -98,8 +142,8 @@ window.addEventListener('load', function() {
 		}
 		zilei(id)
 	})
-	
-	function zilei(id){
+
+	function zilei(id) {
 		$.ajax({
 			type: "post",
 			url: "http://47.92.145.129:8000/users/nav2",
@@ -146,8 +190,6 @@ window.addEventListener('load', function() {
 
 	var arrList;
 	var len;
-
-	
 
 	function quan() {
 		$.ajax({
@@ -197,6 +239,7 @@ window.addEventListener('load', function() {
 			success: function(data) {
 				console.log(data)
 				if(data.success == "查无数据") {
+					alert("此分类暂时没有数据")
 					return;
 				} else {
 					arrList = data.data;

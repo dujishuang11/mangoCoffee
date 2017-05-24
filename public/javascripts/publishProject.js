@@ -1,6 +1,6 @@
 window.addEventListener('load', function() {
 	//点击获取封面
-	$('.lhq_bjt').on('click', function() {
+	$('.lhq_bjt').click(function(){
 		$('.lhm').click();
 	})
 	var indexx = '';
@@ -134,10 +134,16 @@ window.addEventListener('load', function() {
 			}
 		})
 	})
-	var lhqdata_name = ''
-	$('.lhq_scysb').on('click', function() {
+	var lhqdata_name = '';
+
+	$('.lhq_scysb').click(function(){
 		$('.ysb_input').click();
 	})
+
+		
+		
+		
+	
 	var packageSrc = '';
 	$('.ysb_input').change(function() {
 		file = this.files[0];
@@ -163,7 +169,7 @@ window.addEventListener('load', function() {
 
 	})
 
-	$('.lhq_fbb').on('click', function() {
+	$('.lhq_fbb').click(function(){
 		var lhq_fwmc = $('.lhq_fwmc').val();
 		var select_twolhq = $('.select_twolhq').val()
 		var select_onelhq = $('.select_onelhq').val()
@@ -188,7 +194,10 @@ window.addEventListener('load', function() {
 					console.log(data)
 				}
 			})
+		}else{
+			alert('请输入内容')
 		}
 	})
+		
 
 }, false)

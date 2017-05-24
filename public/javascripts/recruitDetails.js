@@ -1,7 +1,8 @@
 window.addEventListener('load',function(){
-	$('.lhq_button').on('click',function(){
+	$('.lhq_button').click(function(){
 		$('.lhq_file').click();
 	})
+		
 		$('.lhq_fhzplb_i').text('咖芒招聘');
 		$('.lhq_fhzplb').click(function(){
 			location.href='recruitList.html'

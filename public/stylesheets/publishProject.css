@@ -245,11 +245,11 @@ input.lhq_dj{
 }
 .lhq_ysb{
 	width: 70%;
-	min-height: 200px;
+	height: auto;
 	margin: 0 auto;
 	clear: both;
-	border:2px dashed #E3E3E3;
-	background: #FAFAFA;
+	/*border:2px dashed #E3E3E3;*/
+	background: #FFFFFF;
 }
 .lhq_bjt_tu{
 width: 100%;
@@ -272,6 +272,12 @@ display: block;
 	height: 30px;
 	line-height: 30px;
 	text-align: center;
+	cursor: pointer;
 	color:#252525;
+	background:#BBBBBB;
+	border-radius: 3px;
+	margin-bottom: 3px;
+	outline: none;
 	font-size: 14px;
+	border:none;
 }
