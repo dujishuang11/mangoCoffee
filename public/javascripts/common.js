@@ -71,6 +71,7 @@ if(judge2){
 	$('.lxm_shejishi a').attr('href','star.html')
 	$('.user_shop a').attr('href','personalShop.html')
 	$('.user_data a').attr('href','personalData.html')
+	
 	$.ajax({
 		type:"get",
 		url:"http://47.92.145.129:8000/users/nav",
@@ -83,6 +84,7 @@ if(judge2){
 			$('.nav_hide_list').append(html)
 		}
 	});
+	
 	$('.search_now').click(function(){
 		location.href = '../html/commodityList.html?'+$('.search_con').val()+''
 	})
@@ -112,7 +114,7 @@ if(judge2){
 						if(e.num == '成功'){
 							layer.msg('注册成功');
 							sessionStorage.userId = e.xinxi[0].uid
-							location.href = ''
+							location.href = 'personalSet.html'
 							if(e.xinxi[0].images == '1.jpg'){
 								$('.user img').attr('src',$.base64.atob(cc))
 							}else{
@@ -131,7 +133,6 @@ if(judge2){
 						}
 					}
 				});
-		//		console.log($(".resgister_problem").find("option:selected").text(),$('.resgister_user').val(),$('.resgister_pass').val(),$('.resgister_Answer').val())
 			}
 		})
 }else{
@@ -152,10 +153,10 @@ if(judge2){
 			$('.nav_hide_list').append(html)
 		}
 	});
+	
 	$('.search_now').click(function(){
 		location.href = 'html/commodityList.html?'+$('.search_con').val()+''
 	})
-	
 	
 	$('.register_sub').click(function(){
 			if($('.resgister_pass').val() == ''){
@@ -182,7 +183,7 @@ if(judge2){
 						if(e.num == '成功'){
 							layer.msg('注册成功');
 							sessionStorage.userId = e.xinxi[0].uid
-							location.href = ''
+							location.href = 'html/personalSet.html'
 							if(e.xinxi[0].images == '1.jpg'){
 								$('.user img').attr('src',$.base64.atob(cc))
 							}else{
@@ -294,7 +295,7 @@ $('.resgister_now').click(function(){
 		$('.login_user')[0].innerHTML = '已有账号？'
 		$('.forget_pass').text('忘记密码')
 		$(".login_con p:nth-child(1)")[0].innerHTML = '用第三方帐号注册咖芒'
-		$(".login_email p:nth-child(2)	")[0].innerHTML = '使用邮箱号注册咖芒'
+		$(".login_email p:nth-child(2)")[0].innerHTML = '使用邮箱号注册咖芒'
 		$('.login_enter_main').css('display','none')
 		$('.login_enter_forget').css('display','none')
 		$('.lxm_new_pass').css('display','none')
@@ -305,7 +306,7 @@ $('.resgister_now').click(function(){
 		$('.login_user')[0].innerHTML = '还没有账号？'
 		$('.forget_pass').text('忘记密码')
 		$(".login_con p:nth-child(1)")[0].innerHTML = '用第三方帐号登录咖芒'
-		$(".login_email p:nth-child(2)	")[0].innerHTML = '用邮箱/手机号登录咖芒'
+		$(".login_email p:nth-child(2)")[0].innerHTML = '使用邮箱号登录咖芒'
 		$('.login_enter_main').css('display','block')
 		$('.login_enter_forget').css('display','none')
 		$('.lxm_new_pass').css('display','none')
@@ -377,9 +378,6 @@ $('.register_sub').click(function(){
 		//		console.log($(".resgister_problem").find("option:selected").text(),$('.resgister_user').val(),$('.resgister_pass').val(),$('.resgister_Answer').val())
 			}
 		})
-
-
-
 
 $('.resgister_back').click(function(){
 	$('.resgister').css('display','none')
@@ -514,8 +512,8 @@ $('.lxm_login_one').click(function(){
 
 $('.user_out').click(function(){
 //	alert(1)
-		$('.login').css('display','block')
-		$('.res').css('display','block')
-		$('.user').css('display','none')
+	$('.login').css('display','block')
+	$('.res').css('display','block')
+	$('.user').css('display','none')
 	sessionStorage.clear()
 })
