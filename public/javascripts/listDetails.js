@@ -4,8 +4,10 @@ window.addEventListener('load', function() {
 		salas = 0,
 		html = '',
 		num = 0;
-
+		
+	
 	if(listId) {
+		listId = listId.split("#")[0];
 		$.ajax({
 			url: "http://47.92.145.129:8000/djsList/listDetails",
 			type: "get",
@@ -25,7 +27,6 @@ window.addEventListener('load', function() {
 			}
 		})
 	} else {
-		console.log(listId)
 		console.log("无参数传递")
 	}
 

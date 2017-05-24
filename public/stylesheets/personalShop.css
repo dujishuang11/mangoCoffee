@@ -336,14 +336,14 @@
 }
 .yuon_diy{
 	width:100%;
-	height:210px;
+	height:auto;
 	border:2px dashed #E3E3E3;
 	background: #FAFAFA;
-	overflow: auto;
+	/*overflow: auto;*/
 }
 .yuhan_img{
     position: relative;
-   border:5px solid #E3E3E3;
+    border:5px solid #E3E3E3;
     width:150px;
 	height:160px;
 	padding:5px;
